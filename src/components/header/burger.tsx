@@ -77,6 +77,8 @@ const Burger = ({ isOpen, setIsOpen }: BurgerProps) => {
       <SheetContent
         side="right"
         className="w-full p-0 [&>button[data-slot='sheet-close']]:hidden bg-[#0B0B0B] border-none overflow-hidden"
+        onPointerDownOutside={(e) => e.preventDefault()}
+        onInteractOutside={(e) => e.preventDefault()}
       >
         <div className="flex flex-col h-full overflow-y-auto px-[20px] pt-[160px] pb-[40px]">
           <LazyMotion features={domAnimation}>

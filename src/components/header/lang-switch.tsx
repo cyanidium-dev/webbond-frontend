@@ -62,27 +62,37 @@ const LocaleSwitcher = ({ className }: LangsProps) => {
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="end"
-          className="border border-[#232323] bg-white rounded-[24px] p-[16px] w-[var(--radix-dropdown-menu-trigger-width)] shadow-[0px_4px_24px_0px_rgba(0,0,0,0.12)] mt-2"
+          className="relative border-none bg-white/3 backdrop-blur-[32px] rounded-[24px] p-[16px] w-[var(--radix-dropdown-menu-trigger-width)] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] mt-2 z-[250] overflow-hidden"
         >
-          <div className="flex flex-col gap-[8px]">
+          {/* Gradient Border Overlay for Dropdown */}
+          <div
+            className="absolute inset-0 rounded-[24px] pointer-events-none"
+            style={{
+              padding: '1px',
+              background:
+                'linear-gradient(to right, rgba(74, 14, 14, 0.6), rgba(74, 14, 14, 0.1))',
+              WebkitMask:
+                'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+              WebkitMaskComposite: 'xor',
+              maskComposite: 'exclude',
+            }}
+          />
+          <div className="relative flex flex-col gap-[8px] z-10">
             {languages.map((lang) => (
               <DropdownMenuItem
                 key={lang.code}
                 onClick={() => onLocaleChange(lang.code)}
-                className="flex items-center justify-between p-0 focus:bg-transparent cursor-pointer"
+                className="flex items-center justify-between p-0 focus:bg-white/10 cursor-pointer rounded-lg px-2 py-1 transition-colors"
               >
                 <div className="flex items-center gap-[12px]">
                   <div className="w-[16px] flex justify-center">
                     {optimisticLocale === lang.code && (
-                      <Check className="w-[16px] h-[16px] text-[#232323]" />
+                      <Check className="w-[16px] h-[16px] text-white" />
                     )}
                   </div>
                   <span
                     className={cn(
-                      'font-montserrat font-medium text-[16px] uppercase',
-                      optimisticLocale === lang.code
-                        ? 'text-[#232323]'
-                        : 'text-[#232323]',
+                      'font-montserrat font-medium text-[16px] uppercase text-white',
                     )}
                   >
                     {lang.label}
