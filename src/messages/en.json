@@ -1,0 +1,9 @@
+{
+  "Navigation": {
+    "home": "HOME",
+    "services": "SERVICES",
+    "prices": "PRICES",
+    "about": "ABOUT US",
+    "cases": "CASES"
+  }
+}

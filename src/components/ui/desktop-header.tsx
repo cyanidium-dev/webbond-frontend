@@ -1,7 +1,9 @@
 'use client';
-import React from 'react';
+
 import { cn } from '@/lib/utils';
 import { LazyMotion, domAnimation, m, Variants } from 'framer-motion';
+import { navItems } from '@/components/header/navigate-data';
+import { useTranslations } from 'next-intl';
 
 interface DesktopHeaderProps {
   className?: string;
@@ -12,15 +14,8 @@ const circleVariants: Variants = {
   hover: { x: 8 },
 };
 
-const navItems = [
-  { name: 'HJEM', href: '#' },
-  { name: 'SERVICES', href: '#' },
-  { name: 'PRISER', href: '#' },
-  { name: 'OM OS', href: '#' },
-  { name: 'CASES', href: '#' },
-];
-
 export default function DesktopHeader({ className }: DesktopHeaderProps) {
+  const t = useTranslations();
   return (
     <LazyMotion features={domAnimation}>
       <m.header
@@ -208,11 +203,11 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
             <nav className="flex items-center gap-8">
               {navItems.map((item) => (
                 <a
-                  key={item.name}
+                  key={item.titleKey}
                   href={item.href}
                   className="font-montserrat text-[12px] font-medium tracking-wider text-white/80 transition-colors hover:text-white"
                 >
-                  {item.name}
+                  {t(item.titleKey)}
                 </a>
               ))}
             </nav>
