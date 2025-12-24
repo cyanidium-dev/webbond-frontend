@@ -4,7 +4,7 @@ import './globals.css';
 import { routing } from '@/i18n/routing';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -45,7 +45,6 @@ export default async function RootLayout({
     notFound();
   }
   setRequestLocale(locale);
-  // const messages = await getMessages();
   return (
     <html lang={locale} suppressHydrationWarning={true}>
       <body
