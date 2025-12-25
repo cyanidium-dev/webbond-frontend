@@ -8,6 +8,11 @@ interface GlassGooeyButtonProps {
   text?: string;
   className?: string;
   onClick?: () => void;
+  width?: number;
+  height?: number;
+  backgroundColor?: string;
+  blur?: string;
+  boxShadow?: string;
 }
 
 const containerVariants: Variants = {
@@ -29,7 +34,47 @@ export default function GlassGooeyButton({
   text = 'Se mere',
   className,
   onClick,
+  width = 149,
+  height = 42,
+  backgroundColor = 'rgba(255, 255, 255, 0.03)',
+  blur = '8px',
+  boxShadow = 'inset 3px -1px 11px -1px rgba(255, 255, 255, 0.12)',
 }: GlassGooeyButtonProps) {
+  const radius = height / 2;
+  const bridgeWidth = height * 1.357; // Пропорция из оригинала (57/42)
+  const mainBodyRight = width - bridgeWidth;
+  const circleX = width - radius;
+  const circleY = radius;
+
+  // Рассчитываем путь для SVG маски
+  const pathData = `
+    M${mainBodyRight} 0
+    C${mainBodyRight + 5.8517} 0 ${mainBodyRight + 11.144} 2.3935 ${
+    mainBodyRight + 14.952
+  } 6.25484
+    C${mainBodyRight + 16.539} 7.86386 ${mainBodyRight + 19.461} 7.86386 ${
+    mainBodyRight + 21.048
+  } 6.25484
+    C${mainBodyRight + 24.856} 2.3935 ${mainBodyRight + 30.148} 0 ${circleX} 0
+    C${width - radius + 11.598} 0 ${width} 9.40202 ${width} ${radius}
+    C${width} ${height - 9.402} ${
+    width - radius + 11.598
+  } ${height} ${circleX} ${height}
+    C${mainBodyRight + 30.148} ${height} ${mainBodyRight + 24.856} ${
+    height - 2.3938
+  } ${mainBodyRight + 21.048} ${height - 6.2553}
+    C${mainBodyRight + 19.461} ${height - 7.8645} ${mainBodyRight + 16.539} ${
+    height - 7.8645
+  } ${mainBodyRight + 14.952} ${height - 6.2553}
+    C${mainBodyRight + 11.144} ${height - 2.3938} ${
+    mainBodyRight + 5.8518
+  } ${height} ${mainBodyRight} ${height}
+    H${radius}
+    C${radius - 11.59798} ${height} 0 ${height - 9.402} 0 ${radius}
+    C0 9.40202 ${radius - 11.59798} 0 ${radius} 0
+    H${mainBodyRight}Z
+  `;
+
   return (
     <LazyMotion features={domAnimation}>
       <m.button
@@ -38,9 +83,10 @@ export default function GlassGooeyButton({
         whileHover="hover"
         variants={containerVariants}
         className={cn(
-          'group relative flex h-[42px] w-[149px] cursor-pointer items-center justify-between overflow-visible bg-transparent transition-transform active:scale-95',
+          'group relative flex cursor-pointer items-center overflow-visible bg-transparent transition-transform active:scale-95',
           className,
         )}
+        style={{ width, height }}
       >
         {/* SVG определения для динамической Gooey маски */}
         <svg className="pointer-events-none absolute h-0 w-0">
@@ -67,21 +113,15 @@ export default function GlassGooeyButton({
               maskUnits="userSpaceOnUse"
               x="0"
               y="0"
-              width="160"
-              height="42"
+              width={width + 20}
+              height={height}
             >
               <g filter="url(#glass-goo-filter)">
-                {/* Оригинальный путь из Figma в качестве базы */}
-                <path
-                  d="M92 0C97.8517 5.52596e-07 103.144 2.3935 106.952 6.25484C108.539 7.86386 111.461 7.86386 113.048 6.25484C116.856 2.3935 122.148 0 128 0C139.598 0 149 9.40202 149 21C149 32.598 139.598 42 128 42C122.148 42 116.856 39.6062 113.048 35.7447C111.461 34.1355 108.539 34.1355 106.952 35.7447C103.144 39.6062 97.8518 42 92 42H21C9.40202 42 0 32.598 0 21C0 9.40202 9.40202 1.85224e-07 21 0H92Z"
-                  fill="white"
-                />
-                {/* Анимированный круг, который расширяет форму при ховере.
-                    По умолчанию он лежит ровно в правой части пути (cx=128, r=21) */}
+                <path d={pathData} fill="white" />
                 <m.circle
-                  cx="128"
-                  cy="21"
-                  r="21"
+                  cx={circleX}
+                  cy={circleY}
+                  r={radius}
                   fill="white"
                   variants={circleVariants}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
@@ -95,24 +135,31 @@ export default function GlassGooeyButton({
         <div
           className="absolute inset-y-0 left-0 right-[-10px] z-0"
           style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.03)',
-            backdropFilter: 'blur(32px)',
-            WebkitBackdropFilter: 'blur(32px)',
-            boxShadow: 'inset 3px -1px 11px -1px rgba(255, 255, 255, 0.12)',
+            backgroundColor: backgroundColor,
+            backdropFilter: `blur(${blur})`,
+            WebkitBackdropFilter: `blur(${blur})`,
+            boxShadow: boxShadow,
             maskImage: 'url(#glass-goo-mask)',
             WebkitMaskImage: 'url(#glass-goo-mask)',
           }}
         />
 
         {/* Слой контента */}
-        <div className="relative z-10 flex w-full items-center justify-between pl-[32px] pr-[14px]">
+        <div className="relative z-10 flex h-full w-full items-center justify-center">
+          {/* Spacer to balance the icon area on the right */}
+          <div className="shrink-0" />
+
           <m.span
             variants={textVariants}
-            className="font-montserrat text-[12px] font-light text-white"
+            className="flex-1 text-center font-montserrat text-[12px] font-light leading-none"
           >
             {text}
           </m.span>
-          <div className="flex items-center justify-center">
+
+          <div
+            style={{ width: height }}
+            className="flex shrink-0 items-center justify-center pt-px"
+          >
             <m.svg
               width="14"
               height="14"
