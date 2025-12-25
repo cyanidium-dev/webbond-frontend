@@ -84,7 +84,7 @@ const ServicesSlider = () => {
                   alt="services-slider-image"
                   width={378}
                   height={241}
-                  className="absolute left-0 bottom-[-217px] max-w-none w-[378px] h-auto"
+                  className="absolute left-0 bottom-[-212px] max-w-none w-[378px] h-auto"
                 />
               </div>
             </CarouselItem>
