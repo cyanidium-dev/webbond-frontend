@@ -14,6 +14,8 @@ import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import { LazyMotion, domAnimation, m, Variants } from 'framer-motion';
 import ArrowUpRightForBtn from './arrow-up-right-for-btn';
+import MobileLaptopHeader from '../ui/mobile-laptop-header';
+import { useEffect } from 'react';
 
 interface BurgerProps {
   isOpen: boolean;
@@ -25,6 +27,13 @@ const Burger = ({ isOpen, setIsOpen }: BurgerProps) => {
   const pathname = usePathname();
   const locale = useLocale();
   const isActive = (href: string) => pathname === href;
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },

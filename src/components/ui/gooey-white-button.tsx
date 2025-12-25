@@ -119,7 +119,7 @@ const GooeyWhiteButton = ({
           {/* Spacer to balance the icon area on the right */}
           <div style={{ width: height }} className="shrink-0" />
 
-          <span className="flex-1 text-center leading-none">{text}</span>
+          <span className="flex-1 leading-none">{text}</span>
 
           <div
             style={{ width: height }}

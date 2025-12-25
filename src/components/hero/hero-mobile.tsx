@@ -3,15 +3,15 @@ import GooeyWhiteButton from '../ui/gooey-white-button';
 
 const HeroMobile = () => {
   return (
-    <section className="px-[20px] pt-[36px] pb-[148px]">
-      <p className="mb-[74px] max-w-[206px] ml-auto text-[12px] font-light font-montserrat text-right text-white">
+    <section className="px-[20px] pt-[106px] pb-[148px]">
+      <p className="mb-[74px] max-w-[206px] ml-auto text-[12px] leading-[120%] font-light font-montserrat text-right text-white">
         Vi forvandler jeres hjemmesider til kunde-genererende maskiner
       </p>
-      <p className="font-light font-manrope text-[14px] text-white uppercase mb-[12px]">
+      <p className="font-light font-manrope text-[14px] leading-[120%] text-white uppercase mb-[12px]">
         Alt til din virksomhed:
       </p>
       <div className="relative">
-        <h1 className="max-w-[261px] font-manrope text-[40px] text-white uppercase font-light">
+        <h1 className="max-w-[261px] font-manrope text-[40px] leading-[120%] text-white uppercase font-light">
           hjemmeside, SEO, logo og annoncer
         </h1>
         <div className="absolute bottom-[10px] right-[12px] flex items-center justify-center rounded-[20px] w-[67px] py-1 ppx-[7px] backdrop-blur-[17.71900749206543px] bg-white/3 shadow-[inset_2px_-1px_5px_-1px_rgba(255,255,255,0.12)]">
@@ -35,7 +35,7 @@ const HeroMobile = () => {
             height={88}
             className="absolute bottom-[-5px] left-0 w-[2px] h-[97px]"
           />
-          <p className="font-montserrat font-light text-[14px] text-white max-w-[244px] ml-auto">
+          <p className="font-montserrat font-light text-[14px] leading-[120%] text-white max-w-[244px] ml-auto">
             <span className="text-[#818181]">
               Med vores komplette løsning på ét sted sparer
             </span>{' '}
@@ -46,7 +46,7 @@ const HeroMobile = () => {
       </div>
       <GooeyWhiteButton
         text="Bestil din hjemmeside"
-        className="w-full text-[14px] font-montserrat font-light text-black pl-2"
+        className="mx-auto text-start w-full text-[14px] font-montserrat font-light text-black"
         width={310}
         height={52}
       />

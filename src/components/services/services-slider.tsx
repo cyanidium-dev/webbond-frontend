@@ -20,10 +20,10 @@ const ServicesSlider = () => {
             <CarouselItem key={service.id}>
               <div className="relative pt-[6px] pr-[6px] pb-[14px] pl-[16px] flex gap-3 backdrop-blur-[20.686866760253906px] bg-white/3 rounded-[13px] shadow-[inset_2px_-1px_6px_-1px_rgba(255,255,255,0.12)]">
                 <div className="mt-[10px]">
-                  <h2 className="font-manrope font-light text-[20px] text-white uppercase mb-[12px]">
+                  <h2 className="font-manrope font-light text-[20px] leading-[120%] text-white uppercase mb-[12px]">
                     {service.title}
                   </h2>
-                  <p className="font-montserrat font-light text-[8px] text-[#bebebe] max-w-[122px] mb-[15px]">
+                  <p className="font-montserrat font-light text-[8px] leading-[120%] text-[#bebebe] max-w-[122px] mb-[15px]">
                     {service.description}
                   </p>
                   <div className="font-montserrat font-light text-[9px] text-white uppercase mb-[23px]">
@@ -68,14 +68,14 @@ const ServicesSlider = () => {
                     boxShadow="inset 3px -1px 9px -1px rgba(255, 255, 255, 0.12)"
                   /> */}
                 </div>
-                <div className="relative rounded-[6px] w-[159px] h-[165px] bg-[linear-gradient(168deg,#e63b44_0%,#1b0000_100%)]">
+                <div className="relative rounded-[6px] w-full h-[165px] bg-[linear-gradient(168deg,#e63b44_0%,#1b0000_100%)]">
                   <div className="relative overflow-hidden w-full h-full rounded-[6px]">
                     <Image
                       src={service.imageDesktop}
                       alt="services-slider-image"
-                      width={460}
+                      width={370}
                       height={489}
-                      className="absolute max-w-none w-[360px] h-auto left-[-92px] bottom-[-65%]"
+                      className="absolute max-w-none w-[370px] h-auto right-[-120px] bottom-[-63%]"
                     />
                   </div>
                 </div>
