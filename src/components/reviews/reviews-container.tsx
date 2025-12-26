@@ -1,5 +1,4 @@
 import ReviewsSlider from './reviews-slider';
-import Image from 'next/image';
 import SkobkiUI from './skobki-ui';
 import ReviewsShadow from './reviews-shadow';
 

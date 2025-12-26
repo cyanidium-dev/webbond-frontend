@@ -4,7 +4,7 @@ import ServicesSlider from './services-slider';
 
 const ServicesContainer = () => {
   return (
-    <section className="px-[20px] pb-[148px] overflow-x-clip">
+    <section className="px-[20px] pb-[148px]">
       <h2 className="font-light font-manrope text-[40px] leading-[120%] text-white uppercase max-w-[260px]">
         Services og Priser
       </h2>
