@@ -17,7 +17,7 @@ export default async function Home({
   const { locale } = await params;
   setRequestLocale(locale);
   return (
-    <section className="py-[20px]">
+    <section className="py-[20px] overflow-x-clip">
       <Header />
       <HeroMobile />
       <ServicesContainer />
