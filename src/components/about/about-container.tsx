@@ -3,7 +3,7 @@ import GooeyWhiteButton from '../ui/gooey-white-button';
 
 const AboutContainer = () => {
   return (
-    <section className="relative z-10 container px-[20px] pt-[150px] overflow-x-clip">
+    <section className="relative z-10 px-[20px] pt-[150px] overflow-x-clip">
       <h2 className="mb-[28px] text-[40px] font-manrope font-light uppercase text-white leading-[120%]">
         Om WebBond {'{ }'} Code.Site.Art
       </h2>

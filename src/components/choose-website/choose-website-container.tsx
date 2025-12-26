@@ -6,7 +6,7 @@ import WebsiteSelector from './website-selector';
 
 const ChooseWebsiteContainer = () => {
   return (
-    <section className="relative z-10 container mx-auto px-[20px] overflow-x-clip">
+    <section className="relative z-10 px-[20px] overflow-x-clip">
       <Image
         src="/fon-choose.png"
         alt="choose-website-banner"

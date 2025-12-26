@@ -4,7 +4,7 @@ import CasesSlider from './cases-slider';
 
 const CasesContainer = () => {
   return (
-    <section className="container px-[20px] relative z-10 pt-[148px] overflow-x-clip">
+    <section className="px-[20px] relative z-10 pt-[148px] overflow-x-clip">
       <h2 className="ml-auto max-w-[275px] mb-[24px] text-[40px] font-manrope font-light uppercase text-right text-white leading-[120%]">
         <span className="text-[#818181]">Cases</span> WebBond {'{ }'}{' '}
         CodeSite.Art

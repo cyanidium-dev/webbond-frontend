@@ -4,7 +4,7 @@ import GooeyWhiteButton from '../ui/gooey-white-button';
 
 const TeamContainer = () => {
   return (
-    <section className="relative z-10 container pt-[68px] overflow-x-clip">
+    <section className="relative pt-[68px] overflow-x-clip">
       <Image
         src="/team-text-mobile.png"
         alt="team-text"
