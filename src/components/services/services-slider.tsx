@@ -8,8 +8,7 @@ import {
 } from '@/components/ui/carousel';
 import { servicesData } from './services-data';
 import Image from 'next/image';
-import GlassGooeyButton from '../ui/glass-gooey-button';
-import { Button } from '../ui/button';
+// import GlassGooeyButton from '../ui/glass-gooey-button';
 
 const ServicesSlider = () => {
   return (
