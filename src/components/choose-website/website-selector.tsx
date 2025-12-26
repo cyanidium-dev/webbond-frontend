@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
-import { WEBSITE_TYPES_MOCK} from './choose-website-mock';
+import { WEBSITE_TYPES_MOCK } from './choose-website-mock';
 import { LazyMotion, domAnimation, m, AnimatePresence } from 'framer-motion';
 
 const WebsiteSelector = () => {
@@ -74,7 +74,7 @@ const WebsiteSelector = () => {
         </DropdownMenuContent>
       </DropdownMenu>
 
-      <div className="relative mt-[32px] mb-[28px] h-[333px] overflow-hidden">
+      <div className="relative mt-[32px] mb-[28px] h-[333px]">
         <LazyMotion features={domAnimation}>
           <AnimatePresence mode="wait">
             <m.div
