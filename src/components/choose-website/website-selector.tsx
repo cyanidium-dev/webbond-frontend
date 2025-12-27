@@ -79,11 +79,15 @@ const WebsiteSelector = () => {
           <AnimatePresence mode="wait">
             <m.div
               key={selectedData.id}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4, ease: 'easeInOut' }}
-              className="mx-auto relative max-w-[320px] h-[333px] bg-white/6 rounded-[14px]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'linear' }}
+              className="mx-auto relative max-w-[320px] h-[333px] bg-white/6 rounded-[14px] isolation-isolate"
+              style={{
+                transform: 'translate3d(0,0,0)',
+                WebkitTransform: 'translate3d(0,0,0)',
+              }}
             >
               <p className="absolute z-10 top-[24px] right-[16px] max-w-[183px] leading-[120%] font-montserrat font-light text-[12px] text-white">
                 {selectedData.description}
@@ -94,6 +98,11 @@ const WebsiteSelector = () => {
                 fill
                 quality={80}
                 className="rounded-[14px]"
+                priority
+                style={{
+                  transform: 'translate3d(0,0,0)',
+                  WebkitTransform: 'translate3d(0,0,0)',
+                }}
               />
               <Image
                 src={selectedData.phoneImage}
@@ -102,6 +111,11 @@ const WebsiteSelector = () => {
                 height={550}
                 quality={100}
                 className="absolute top-[-13px] left-[36px] max-w-none h-auto w-[360px]"
+                priority
+                style={{
+                  transform: 'translate3d(0,0,0)',
+                  WebkitTransform: 'translate3d(0,0,0)',
+                }}
               />
             </m.div>
           </AnimatePresence>

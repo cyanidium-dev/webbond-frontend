@@ -4,7 +4,7 @@ import ReviewsShadow from './reviews-shadow';
 
 const ReviewsContainer = () => {
   return (
-    <section className="relative z-10 px-[20px] pt-[148px] isolate">
+    <section className="relative z-10 px-[20px] pt-[148px] isolate will-change-transform transform-gpu [-webkit-transform:translate3d(0,0,0)]">
       <h2 className="max-w-[307px] mb-[24px] font-manrope font-light text-[40px] leading-[120%] text-white uppercase">
         Vores kunders anmeldelser
       </h2>
