@@ -11,8 +11,9 @@ const ShadowRedDarkEllipseForBigDecor = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      overflow="visible"
     >
-      <g filter="url(#filter0_f_341_4385)">
+      <g style={{ filter: 'blur(70.829px)', willChange: 'filter' }}>
         <ellipse
           cx="101.069"
           cy="85.8676"
@@ -22,7 +23,7 @@ const ShadowRedDarkEllipseForBigDecor = ({
           fill="#FF1D2C"
         />
       </g>
-      <g filter="url(#filter1_f_341_4385)">
+      <g style={{ filter: 'blur(52.7137px)', willChange: 'filter' }}>
         <ellipse
           cx="197.759"
           cy="178.41"
@@ -32,50 +33,6 @@ const ShadowRedDarkEllipseForBigDecor = ({
           fill="#0A0705"
         />
       </g>
-      <defs>
-        <filter
-          id="filter0_f_341_4385"
-          x="-47.7836"
-          y="143.99"
-          width="474.909"
-          height="466.75"
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="BackgroundImageFix"
-            result="shape"
-          />
-          <feGaussianBlur
-            stdDeviation="70.829"
-            result="effect1_foregroundBlur_341_4385"
-          />
-        </filter>
-        <filter
-          id="filter1_f_341_4385"
-          x="-53.5327"
-          y="7.62939e-06"
-          width="579.195"
-          height="595.757"
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="BackgroundImageFix"
-            result="shape"
-          />
-          <feGaussianBlur
-            stdDeviation="52.7137"
-            result="effect1_foregroundBlur_341_4385"
-          />
-        </filter>
-      </defs>
     </svg>
   );
 };

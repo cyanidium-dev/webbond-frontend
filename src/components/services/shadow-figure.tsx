@@ -7,8 +7,9 @@ const ShadowFigure = ({ className }: { className?: string }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      overflow="visible"
     >
-      <g filter="url(#filter0_f_341_4364)">
+      <g style={{ filter: 'blur(96.3942px)', willChange: 'filter' }}>
         <ellipse
           cx="145.901"
           cy="334.37"
@@ -18,7 +19,7 @@ const ShadowFigure = ({ className }: { className?: string }) => {
           fill="#FF1D2C"
         />
       </g>
-      <g filter="url(#filter1_f_341_4364)">
+      <g style={{ filter: 'blur(74.7025px)', willChange: 'filter' }}>
         <ellipse
           cx="136.34"
           cy="449.373"
@@ -28,50 +29,6 @@ const ShadowFigure = ({ className }: { className?: string }) => {
           fill="#0A0705"
         />
       </g>
-      <defs>
-        <filter
-          id="filter0_f_341_4364"
-          x="-171.263"
-          y="-1.52588e-05"
-          width="634.328"
-          height="668.74"
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="BackgroundImageFix"
-            result="shape"
-          />
-          <feGaussianBlur
-            stdDeviation="96.3942"
-            result="effect1_foregroundBlur_341_4364"
-          />
-        </filter>
-        <filter
-          id="filter1_f_341_4364"
-          x="-212.879"
-          y="75.1842"
-          width="698.439"
-          height="748.378"
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="BackgroundImageFix"
-            result="shape"
-          />
-          <feGaussianBlur
-            stdDeviation="74.7025"
-            result="effect1_foregroundBlur_341_4364"
-          />
-        </filter>
-      </defs>
     </svg>
   );
 };
