@@ -1,4 +1,5 @@
 import AboutContainer from '@/components/about/about-container';
+import BusinessContainer from '@/components/business/business-container';
 import CasesContainer from '@/components/cases/cases-container';
 import ChooseWebsiteContainer from '@/components/choose-website/choose-website-container';
 import Header from '@/components/header/header';
@@ -27,6 +28,7 @@ export default async function Home({
       <TeamContainer />
       <ReviewsContainer />
       <QuestionsAndAnswersContainer />
+      <BusinessContainer />
     </section>
   );
 }
