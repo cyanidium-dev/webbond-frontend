@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import ShadowEllipseForIphone from './shadow-ellipse-for-iphone';
 import GooeyWhiteButton from '../ui/gooey-white-button';
-import ShadowRedDarkEllipseForBigDecor from './shadow-red-dark-ellipse-for-big-decor';
+// import ShadowRedDarkEllipseForBigDecor from './shadow-red-dark-ellipse-for-big-decor';
 import WebsiteSelector from './website-selector';
 
 const ChooseWebsiteContainer = () => {
@@ -15,7 +15,7 @@ const ChooseWebsiteContainer = () => {
         quality={100}
         className="w-[1000px] h-auto max-w-none absolute top-[20px] right-[-73%]"
       />
-      <ShadowRedDarkEllipseForBigDecor className="absolute bottom-[-55%] right-0 left-0 w-full" />
+      {/* <ShadowRedDarkEllipseForBigDecor className="absolute bottom-[-55%] right-0 left-0 w-full" /> */}
       <h2 className="mb-[22px] max-w-[320px] font-manrope font-light text-[40px] leading-[120%] text-white uppercase">
         <span className="text-[#818181]">Vælg et website,</span> der arbejder
         for din virksomhed

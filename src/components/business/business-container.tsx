@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import GooeyWhiteButton from '../ui/gooey-white-button';
-import BusinessRadialShadow from './business-radial-shadow';
-import ShadowRadialForDecorTop from './shadow-radial-for-decor-top';
-import ShadorRadialForDecor from './shador-radial-for-decor';
+// import BusinessRadialShadow from './business-radial-shadow';
 
 const BusinessContainer = () => {
   return (
@@ -34,7 +32,6 @@ const BusinessContainer = () => {
         width={310}
         height={52}
       />
-      <ShadowRadialForDecorTop className="absolute top-[120px] right-[-250px] -z-10" />
       <Image
         src="/business-right-decor.png"
         alt="business-left-decor"
@@ -43,12 +40,11 @@ const BusinessContainer = () => {
         height={1257}
         className="absolute top-[-30px] right-[-750px] max-w-none pointer-events-none -z-20 mix-blend-screen contrast-125 saturate-150"
       />
-      <ShadorRadialForDecor className="absolute bottom-[120px] right-0 pointer-events-none -z-10 max-w-none" />
       <div
         className="absolute top-[300px] left-[-5px] pointer-events-none -z-10"
         style={{ filter: 'blur(30px)', willChange: 'filter' }}
       >
-        <BusinessRadialShadow />
+        {/* <BusinessRadialShadow /> */}
       </div>
     </section>
   );

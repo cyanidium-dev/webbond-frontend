@@ -6,9 +6,9 @@ const Footer = () => {
     <footer className="px-[20px] pt-[20px] pb-[40px]">
       <div className="w-full h-px bg-linear-to-r from-white via-white to-[#686868] mb-[32px]" />
 
-      <div className="relative w-full h-[143px] flex items-center rounded-[12px] overflow-hidden">
+      <div className="relative w-full h-[143px] flex items-center rounded-[12px]">
         {/* Логотип со встроенным градиентным фоном теперь внизу */}
-        <FooterLogo className="absolute inset-0" />
+        <FooterLogo className="absolute inset-0 w-full max-w-[400px]" />
 
         {/* Декор накладывается сверху в режиме multiply для эффекта глубоких теней */}
         <Image

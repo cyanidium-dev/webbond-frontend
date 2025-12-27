@@ -1,16 +1,16 @@
 import QuestionsAccordion from './questions-accordion';
-import QuestionsRadialShadow from './qustions-radial-shadow';
+// import QuestionsRadialShadow from './qustions-radial-shadow';
 import Image from 'next/image';
 
 const QuestionsAndAnswersContainer = () => {
   return (
     <section className="relative px-[20px] pt-[148px]">
-      <div
+      {/* <div
         className="absolute top-[-120px] left-[-440px] -z-10 pointer-events-none w-full h-full"
         style={{ filter: 'blur(30px)', willChange: 'filter' }}
       >
         <QuestionsRadialShadow className="max-w-none" />
-      </div>
+      </div> */}
       <h2 className="max-w-[240px] mb-[48px] font-manrope font-light text-[40px] leading-[120%] text-white uppercase [text-shadow:4px_3px_9px_rgba(255,0,166,0.2)]">
         Spørgsmål og svar
       </h2>

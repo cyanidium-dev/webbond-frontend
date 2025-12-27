@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import ShadowFigure from './shadow-figure';
+// import ShadowFigure from './shadow-figure';
 import ServicesSlider from './services-slider';
 
 const ServicesContainer = () => {
@@ -25,7 +25,7 @@ const ServicesContainer = () => {
           quality={100}
           className="absolute left-[-48px] max-w-none w-[616px] h-[155px]"
         />
-        <ShadowFigure className="absolute top-[-60%] left-0 right-0 w-full" />
+        {/* <ShadowFigure className="absolute top-[-60%] left-0 right-0 w-full" /> */}
       </div>
       <ServicesSlider />
     </section>
