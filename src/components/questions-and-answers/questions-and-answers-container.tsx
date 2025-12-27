@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const QuestionsAndAnswersContainer = () => {
   return (
-    <section className="relative z-10 px-[20px] pt-[148px]">
+    <section className="relative z-10 px-[20px] pt-[148px] isolate">
       <QuestionsRadialShadow className="absolute top-[-120px] left-[-440px] max-w-none -z-20 pointer-events-none" />
       <h2 className="max-w-[240px] mb-[48px] font-manrope font-light text-[40px] leading-[120%] text-white uppercase [text-shadow:4px_3px_9px_rgba(255,0,166,0.2)]">
         Spørgsmål og svar
