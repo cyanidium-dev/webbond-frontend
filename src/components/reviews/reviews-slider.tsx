@@ -18,7 +18,13 @@ const ReviewsSlider = () => {
             key={reviewItem.id}
             className="pl-4 basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
           >
-            <div className="relative w-full h-[160px] p-[20px] rounded-[6px] flex flex-col backdrop-blur-sm bg-white/3 shadow-[inset_2px_-1px_5px_-1px_rgba(255,255,255,0.12)]">
+            <div
+              className="relative w-full h-[160px] p-[20px] rounded-[6px] flex flex-col backdrop-blur-sm bg-white/3 shadow-[inset_2px_-1px_5px_-1px_rgba(255,255,255,0.12)] isolation-isolate"
+              style={{
+                willChange: 'backdrop-filter',
+                transform: 'translateZ(0)',
+              }}
+            >
               <div className="flex items-center gap-[28px]">
                 <Image
                   src={reviewItem.image}

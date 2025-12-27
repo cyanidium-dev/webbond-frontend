@@ -18,7 +18,13 @@ const TeamSlider = () => {
             key={teamItem.id}
             className="pl-4 basis-[85%] md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
           >
-            <div className="relative w-full max-w-[389px] h-[398px] p-[16px] rounded-[12px] flex flex-col backdrop-blur-md bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
+            <div
+              className="relative w-full max-w-[389px] h-[398px] p-[16px] rounded-[12px] flex flex-col backdrop-blur-md bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] isolation-isolate"
+              style={{
+                willChange: 'backdrop-filter',
+                transform: 'translateZ(0)',
+              }}
+            >
               <Image
                 src={teamItem.image}
                 alt={teamItem.name}
@@ -27,7 +33,13 @@ const TeamSlider = () => {
                 className="object-contain rounded-[13px]"
               />
               <div className="mt-auto flex flex-col gap-[6px] relative z-10">
-                <div className="px-[24px] w-fit flex items-center justify-center h-[47px] rounded-[32px] border border-white backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] font-manrope font-light text-[14px] leading-[120%] text-white uppercase">
+                <div
+                  className="px-[24px] w-fit flex items-center justify-center h-[47px] rounded-[32px] border border-white backdrop-blur-[12px] md:backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] font-manrope font-light text-[14px] leading-[120%] text-white uppercase"
+                  style={{
+                    willChange: 'backdrop-filter',
+                    transform: 'translateZ(0)',
+                  }}
+                >
                   {teamItem.position}
                 </div>
                 <div className="px-[24px] w-fit flex items-center justify-center h-[47px] rounded-[32px] bg-white font-manrope font-light text-[14px] leading-[120%] text-black uppercase">
