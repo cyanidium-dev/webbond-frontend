@@ -21,7 +21,6 @@ const ServicesSlider = () => {
                 className="relative pt-[6px] pr-[6px] pb-[14px] pl-[16px] flex gap-3 backdrop-blur-[8px] md:backdrop-blur-[20.686866760253906px] bg-white/3 rounded-[13px] shadow-[inset_2px_-1px_6px_-1px_rgba(255,255,255,0.12)] isolation-isolate"
                 style={{
                   willChange: 'backdrop-filter',
-                  transform: 'translateZ(0)',
                 }}
               >
                 <div className="mt-[10px]">
