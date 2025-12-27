@@ -51,13 +51,7 @@ const ReviewsSlider = () => {
         ))}
       </CarouselContent>
       {/* Custom Navigation Buttons */}
-      <div
-        className="flex justify-center lg:justify-end gap-[12px] mt-[24px] mb-[40px] isolation-isolate"
-        style={{
-          transform: 'translate3d(0,0,0)',
-          WebkitTransform: 'translate3d(0,0,0)',
-        }}
-      >
+      <div className="flex justify-center lg:justify-end gap-[12px] mt-[24px] mb-[40px]">
         <CarouselPrevious
           iconSize={32}
           className="static translate-y-0 w-[44px] h-[44px] rounded-full border-2 bg-transparent border-white text-white transition-colors cursor-pointer"
