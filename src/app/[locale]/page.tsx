@@ -8,7 +8,9 @@ import QuestionsAndAnswersContainer from '@/components/questions-and-answers/que
 import ReviewsContainer from '@/components/reviews/reviews-container';
 import ServicesContainer from '@/components/services/services-container';
 import TeamContainer from '@/components/team/team-container';
+import ContactsContainer from '@/components/contacts/contacts-container';
 import { setRequestLocale } from 'next-intl/server';
+import Footer from '@/components/footer/footer';
 
 export default async function Home({
   params,
@@ -29,6 +31,8 @@ export default async function Home({
       <ReviewsContainer />
       <QuestionsAndAnswersContainer />
       <BusinessContainer />
+      <ContactsContainer />
+      <Footer />
     </section>
   );
 }

@@ -41,7 +41,7 @@ const BusinessContainer = () => {
         quality={80}
         width={1257}
         height={1257}
-        className="absolute top-[-30px] right-[-750px] max-w-none pointer-events-none -z-20"
+        className="absolute top-[-30px] right-[-750px] max-w-none pointer-events-none -z-20 mix-blend-screen contrast-125 saturate-150"
       />
       <ShadorRadialForDecor className="absolute bottom-[120px] right-0 pointer-events-none -z-10 max-w-none" />
       <div

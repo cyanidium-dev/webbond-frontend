@@ -21,7 +21,7 @@ const QuestionsAndAnswersContainer = () => {
         quality={80}
         width={1873}
         height={1873}
-        className="absolute top-[-240px] right-[-980px] max-w-none -z-20 pointer-events-none"
+        className="absolute top-[-240px] right-[-980px] max-w-none -z-20 pointer-events-none mix-blend-screen contrast-125 saturate-150"
       />
     </section>
   );

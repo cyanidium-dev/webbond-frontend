@@ -75,7 +75,7 @@ const AboutContainer = () => {
         width={1300}
         height={1300}
         quality={80}
-        className="absolute top-[150px] right-[-840px] h-auto max-w-none z-20 pointer-events-none"
+        className="absolute top-[150px] right-[-840px] h-auto max-w-none z-20 pointer-events-none mix-blend-screen contrast-125 saturate-150"
       />
     </section>
   );

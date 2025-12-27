@@ -24,8 +24,8 @@ const CasesContainer = () => {
         alt="case-red-decor-left"
         width={1192}
         height={1192}
-        quality={80}
-        className="h-auto max-w-none absolute bottom-[-765px] left-[-730px] pointer-events-none"
+        quality={100}
+        className="h-auto max-w-none absolute bottom-[-765px] left-[-730px] pointer-events-none contrast-125 saturate-150 z-20 opacity-85"
       />
     </section>
   );

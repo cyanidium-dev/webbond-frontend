@@ -74,10 +74,21 @@ const GooeyWhiteButton = ({
         )}
         style={{ width, height }}
       >
-        {/* SVG маска на основе пути из Figma */}
-        <svg className="pointer-events-none absolute h-0 w-0">
+        {/* Динамический фон отрисованный напрямую в SVG с поддержкой Gooey эффекта */}
+        <svg
+          className="pointer-events-none absolute inset-0 z-0"
+          width={width}
+          height={height}
+          style={{ overflow: 'visible' }}
+        >
           <defs>
-            <filter id="goo-filter-white">
+            <filter
+              id="goo-filter-white"
+              x="-20%"
+              y="-20%"
+              width="140%"
+              height="140%"
+            >
               <feGaussianBlur
                 in="SourceGraphic"
                 stdDeviation="1"
@@ -89,30 +100,19 @@ const GooeyWhiteButton = ({
                 values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -12"
               />
             </filter>
-            <mask id="white-goo-mask">
-              <g filter="url(#goo-filter-white)">
-                <path d={pathData} fill="white" />
-                <m.circle
-                  cx={circleX}
-                  cy={circleY}
-                  r={radius}
-                  fill="white"
-                  variants={circleVariants}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                />
-              </g>
-            </mask>
           </defs>
+          <g filter="url(#goo-filter-white)">
+            <path d={pathData} fill="white" />
+            <m.circle
+              cx={circleX}
+              cy={circleY}
+              r={radius}
+              fill="white"
+              variants={circleVariants}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            />
+          </g>
         </svg>
-
-        {/* Белый фон с примененной маской */}
-        <div
-          className="absolute inset-y-0 left-0 right-[-14px] z-0 bg-white"
-          style={{
-            maskImage: 'url(#white-goo-mask)',
-            WebkitMaskImage: 'url(#white-goo-mask)',
-          }}
-        />
 
         {/* Слой контента */}
         <div className="relative z-10 flex h-full w-full items-center">
