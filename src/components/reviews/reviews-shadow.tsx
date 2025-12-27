@@ -7,7 +7,7 @@ const ReviewsShadow = ({ className }: { className?: string }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      style={{ filter: 'blur(10px)', willChange: 'filter' }}
+      // style={{ filter: 'blur(10px)', willChange: 'filter' }}
     >
       <g filter="url(#filter0_f_341_4465)">
         <ellipse
