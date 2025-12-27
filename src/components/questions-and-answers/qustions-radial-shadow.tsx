@@ -7,7 +7,7 @@ const QuestionsRadialShadow = ({ className }: { className?: string }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      style={{ filter: 'blur(10px)', willChange: 'transform' }}
+      // style={{ filter: 'blur(10px)', willChange: 'transform' }}
     >
       <g filter="url(#filter0_f_341_4523)">
         <ellipse
