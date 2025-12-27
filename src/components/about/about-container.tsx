@@ -67,6 +67,7 @@ const AboutContainer = () => {
         height={1131}
         quality={80}
         className="absolute top-[30%] left-[-840px] h-auto max-w-none z-20 pointer-events-none"
+        style={{ filter: 'blur(10px)', willChange: 'filter' }}
       />
       <Image
         src="/about-red-decor-right.png"
