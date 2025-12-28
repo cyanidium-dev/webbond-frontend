@@ -47,7 +47,7 @@ function AccordionTrigger({
           viewBox="0 0 32 32"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200 w-[32px] h-[32px]"
+          className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200 w-[32px] h-[32px] will-change-transform"
         >
           <path
             d="M16 0L17.0748 14.9252L32 16L17.0748 17.0748L16 32L14.9252 17.0748L0 16L14.9252 14.9252L16 0Z"
@@ -67,7 +67,7 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm"
+      className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm will-change-[height,transform] transform-gpu"
       {...props}
     >
       <div className={cn('pt-0 pb-4', className)}>{children}</div>
