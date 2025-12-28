@@ -14,6 +14,78 @@ const nextConfig: NextConfig = {
     ],
     // minimumCacheTTL: 2592000,
   },
+  async headers() {
+    return [
+      {
+        // Apply these headers to all routes
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          // Скрываем информацию о сервере
+          {
+            key: 'Server',
+            value: '',
+          },
+        ],
+      },
+      // {
+      //   source: '/sw.js',
+      //   headers: [
+      //     {
+      //       key: 'Content-Type',
+      //       value: 'application/javascript; charset=utf-8',
+      //     },
+      //     {
+      //       key: 'Cache-Control',
+      //       value: 'no-cache, no-store, must-revalidate',
+      //     },
+      //     {
+      //       key: 'Content-Security-Policy',
+      //       value: "default-src 'self'; script-src 'self'",
+      //     },
+      //   ],
+      // },
+      {
+        // Для статических изображений только Cache-Control
+        source: '/:all*(svg|jpg|jpeg|png|webp)',
+        headers: [
+          {
+            key: 'Cache-control',
+            value: 'public, max-age=31536000, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      {
+        // Для оптимизированных изображений Next.js только Cache-Control
+        source: '/_next/image/:path*',
+        headers: [
+          {
+            key: 'Cache-control',
+            value: 'public, max-age=31536000, stale-while-revalidate=86400',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();

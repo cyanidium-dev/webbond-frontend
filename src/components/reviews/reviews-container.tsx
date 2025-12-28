@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import ReviewsSlider from './reviews-slider';
 import SkobkiUI from './skobki-ui';
 // import ReviewsShadow from './reviews-shadow';
@@ -13,12 +14,13 @@ const ReviewsContainer = () => {
       </p>
       <ReviewsSlider />
       <SkobkiUI className="absolute top-[308px] right-[-40px] -z-10 pointer-events-none" />
-      {/* <div
-        className="w-[1176px] h-[1006px] absolute pointer-events-none top-[-20px] right-[-400px] -z-20"
-        style={{ filter: 'blur(30px)', willChange: 'filter' }}
-      >
-        <ReviewsShadow className="w-[1176px] h-[1006px] max-w-none" />
-      </div> */}
+      <Image
+        src="/reviews-shadow.webp"
+        alt="reviews-shadow"
+        width={1176}
+        height={1106}
+        className="absolute max-w-none top-[-80px] right-[-680px] pointer-events-none select-none -z-20"
+      />
     </section>
   );
 };

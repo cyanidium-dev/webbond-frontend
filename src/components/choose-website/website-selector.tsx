@@ -100,7 +100,7 @@ const WebsiteSelector = () => {
                 alt="choosefon"
                 width={360}
                 height={550}
-                quality={100}
+                quality={75}
                 className="absolute top-[-13px] left-[36px] max-w-none h-auto w-[360px]"
               />
             </m.div>

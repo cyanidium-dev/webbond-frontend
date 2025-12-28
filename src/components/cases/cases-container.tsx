@@ -4,7 +4,7 @@ import CasesSlider from './cases-slider';
 
 const CasesContainer = () => {
   return (
-    <section className="px-[20px] relative pt-[148px]">
+    <section className="px-[20px] relative z-10 pt-[148px]">
       <Image
         src="/cases-radial-shadow.webp"
         alt="cases-red-decor-right"
@@ -30,10 +30,10 @@ const CasesContainer = () => {
       <Image
         src="/case-red-decor-left.png"
         alt="case-red-decor-left"
-        width={1192}
-        height={1192}
-        quality={100}
-        className="h-auto max-w-none absolute bottom-[-765px] left-[-730px] pointer-events-none contrast-125 saturate-150 z-20 opacity-85"
+        width={692}
+        height={850}
+        quality={80}
+        className="h-auto max-w-none absolute bottom-[-510px] left-[-470px] scale-[1.65] pointer-events-none contrast-125 saturate-150 z-20 opacity-85"
       />
     </section>
   );

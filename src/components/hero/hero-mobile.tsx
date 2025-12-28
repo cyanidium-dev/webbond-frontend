@@ -1,14 +1,24 @@
+'use client';
+
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 import Image from 'next/image';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 
 import SplineGlobe from '../ui/spline-globe';
 
 const HeroMobile = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { amount: 0.1 });
+
   return (
-    <section className="px-[20px] pt-[106px] pb-[148px] relative overflow-hidden">
+    <section
+      ref={containerRef}
+      className="px-[20px] pt-[106px] pb-[148px] relative overflow-hidden"
+    >
       {/* Используем scale, чтобы "зумировать" сцену */}
       <div className="absolute top-[-10%] -right-[77%] w-[150%] h-[120%] z-0 pointer-events-none scale-[1.1] origin-top-right">
-        <SplineGlobe />
+        {isInView && <SplineGlobe />}
       </div>
       <div className="relative z-10">
         <p className="mb-[74px] max-w-[206px] ml-auto text-[12px] leading-[120%] font-light font-montserrat text-right text-white">

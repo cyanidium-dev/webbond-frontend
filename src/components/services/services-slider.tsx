@@ -74,6 +74,7 @@ const ServicesSlider = () => {
                       alt="services-slider-image"
                       width={370}
                       height={489}
+                      quality={75}
                       className="absolute max-w-none w-[370px] h-auto right-[-120px] bottom-[-63%]"
                     />
                   </div>
@@ -83,6 +84,7 @@ const ServicesSlider = () => {
                   alt="services-slider-image"
                   width={378}
                   height={241}
+                  quality={75}
                   className="absolute left-0 bottom-[-212px] max-w-none w-[378px] h-auto"
                 />
               </div>

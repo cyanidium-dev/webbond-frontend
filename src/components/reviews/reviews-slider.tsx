@@ -25,7 +25,7 @@ const ReviewsSlider = () => {
                   alt={reviewItem.name}
                   width={58}
                   height={58}
-                  quality={80}
+                  quality={75}
                   className="object-cover rounded-full"
                 />
                 <div className="flex flex-col">
