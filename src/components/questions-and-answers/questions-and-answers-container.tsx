@@ -23,7 +23,7 @@ const QuestionsAndAnswersContainer = () => {
         width={898}
         height={388}
         quality={100}
-        className="absolute bottom-[-90px] left-[-100px] max-w-none -z-20 pointer-events-none mix-blend-screen contrast-125 saturate-150"
+        className="absolute bottom-[-90px] left-[-100px] max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
       />
     </section>
   );
