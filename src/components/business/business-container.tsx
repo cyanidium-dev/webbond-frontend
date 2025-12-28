@@ -39,7 +39,7 @@ const BusinessContainer = () => {
         height={1257}
         sizes="(max-width: 768px) 100vw, 1257px"
         quality={100}
-        className="absolute top-[-30px] right-[-750px] max-w-none pointer-events-none -z-20 mix-blend-screen contrast-125 saturate-150"
+        className="absolute top-[-30px] right-[-750px] max-w-none pointer-events-none -z-20 contrast-125 saturate-150"
       />
 
       <Image
