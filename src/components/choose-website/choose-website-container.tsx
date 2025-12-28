@@ -11,7 +11,8 @@ const ChooseWebsiteContainer = () => {
         alt="choose-website-banner"
         width={1000}
         height={1000}
-        quality={75}
+        sizes="(max-width: 768px) 100vw, 1000px"
+        quality={60}
         className="h-auto max-w-none w-[277.8vw] absolute top-[20px] left-[-105.6vw] contrast-125 saturate-150"
       />
       <h2 className="mb-[22px] max-w-[320px] font-manrope font-light text-[40px] leading-[120%] text-white uppercase">

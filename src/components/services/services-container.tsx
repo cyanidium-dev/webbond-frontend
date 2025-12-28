@@ -22,7 +22,8 @@ const ServicesContainer = () => {
           alt="services-container-title-banner"
           width={616}
           height={155}
-          quality={100}
+          sizes="(max-width: 768px) 100vw, 616px"
+          quality={80}
           className="absolute left-[-48px] max-w-none w-[616px] h-[155px]"
         />
         <Image
@@ -30,7 +31,8 @@ const ServicesContainer = () => {
           alt="services-shadow"
           width={700}
           height={824}
-          quality={80}
+          sizes="(max-width: 768px) 100vw, 700px"
+          quality={60}
           className="absolute left-[-200px] top-[-100px] max-w-none pointer-events-none select-none"
         />
       </div>

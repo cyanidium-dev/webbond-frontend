@@ -141,7 +141,8 @@ const Burger = ({ isOpen, setIsOpen }: BurgerProps) => {
           alt="menu decor"
           width={670}
           height={670}
-          quality={80}
+          sizes="(max-width: 768px) 100vw, 670px"
+          quality={60}
           className="absolute -bottom-[270px] -right-[300px] -z-10 w-[670px] h-auto pointer-events-none select-none max-w-none contrast-125 saturate-150"
           priority
         />

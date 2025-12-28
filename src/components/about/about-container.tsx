@@ -65,16 +65,17 @@ const AboutContainer = () => {
         alt="about-radial-shadow"
         width={1158}
         height={1131}
-        quality={75}
+        sizes="(max-width: 768px) 100vw, 1158px"
+        quality={60}
         className="absolute top-[30%] left-[-840px] h-auto max-w-none z-20 pointer-events-none"
-        // style={{ filter: 'blur(10px)', willChange: 'filter' }}
       />
       <Image
         src="/about-red-decor-right.webp"
         alt="about-red-decor-right"
         width={1300}
         height={1300}
-        quality={75}
+        sizes="(max-width: 768px) 100vw, 1300px"
+        quality={100}
         className="absolute top-[150px] right-[-840px] h-auto max-w-none z-20 pointer-events-none contrast-125 saturate-150"
       />
     </section>

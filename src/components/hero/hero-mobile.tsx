@@ -18,7 +18,7 @@ const HeroMobile = () => {
     >
       {/* Используем scale, чтобы "зумировать" сцену */}
       <div className="absolute top-[-10%] -right-[77%] w-[150%] h-[120%] z-0 pointer-events-none scale-[1.1] origin-top-right">
-        {isInView && <SplineGlobe />}
+        <SplineGlobe isVisible={isInView} />
       </div>
       <div className="relative z-10">
         <p className="mb-[74px] max-w-[206px] ml-auto text-[12px] leading-[120%] font-light font-montserrat text-right text-white">

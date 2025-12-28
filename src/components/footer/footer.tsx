@@ -8,14 +8,15 @@ const Footer = () => {
 
       <div className="relative w-full h-[143px] flex items-center rounded-[12px]">
         {/* Логотип со встроенным градиентным фоном теперь внизу */}
-        <FooterLogo className="absolute inset-0 w-full max-w-[400px]" />
+        <FooterLogo className="absolute inset-0 w-full" />
 
         {/* Декор накладывается сверху в режиме multiply для эффекта глубоких теней */}
         <Image
           src="/footer-decor.png"
           alt="Footer Decor"
           fill
-          quality={100}
+          sizes="(max-width: 768px) 100vw, 400px"
+          quality={60}
           className="object-cover opacity-60 mix-blend-multiply pointer-events-none z-10"
         />
       </div>
@@ -24,3 +25,4 @@ const Footer = () => {
 };
 
 export default Footer;
+ 

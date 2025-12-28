@@ -19,6 +19,8 @@ const ReviewsContainer = () => {
         alt="reviews-shadow"
         width={1176}
         height={1106}
+        sizes="(max-width: 768px) 100vw, 1176px"
+        quality={60}
         className="absolute max-w-none top-[-80px] right-[-680px] pointer-events-none select-none -z-20"
       />
     </section>

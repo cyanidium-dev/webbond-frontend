@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import GooeyWhiteButton from '../ui/gooey-white-button';
-// import BusinessRadialShadow from './business-radial-shadow';
 
 const BusinessContainer = () => {
   return (
@@ -9,8 +8,9 @@ const BusinessContainer = () => {
         <Image
           src="/Business-phone.png"
           alt="business-left-decor"
-          quality={80}
           fill
+          sizes="(max-width: 768px) 100vw, 320px"
+          quality={100}
           className="object-contain pointer-events-none"
         />
       </div>
@@ -35,17 +35,22 @@ const BusinessContainer = () => {
       <Image
         src="/business-right-decor.png"
         alt="business-left-decor"
-        quality={80}
         width={1257}
         height={1257}
+        sizes="(max-width: 768px) 100vw, 1257px"
+        quality={100}
         className="absolute top-[-30px] right-[-750px] max-w-none pointer-events-none -z-20 mix-blend-screen contrast-125 saturate-150"
       />
-      <div
-        className="absolute top-[300px] left-[-5px] pointer-events-none -z-10"
-        style={{ filter: 'blur(30px)', willChange: 'filter' }}
-      >
-        {/* <BusinessRadialShadow /> */}
-      </div>
+
+      <Image
+        src="/business-shadow.webp"
+        alt="business-shadow"
+        width={520}
+        height={1637}
+        sizes="(max-width: 768px) 100vw, 520px"
+        quality={60}
+        className="absolute w-[520px] h-[1637px] top-[150px] left-0 max-w-none pointer-events-none -z-20"
+      />
     </section>
   );
 };

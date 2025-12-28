@@ -92,7 +92,8 @@ const WebsiteSelector = () => {
                 src={selectedData.fonImage}
                 alt="choosefon"
                 fill
-                quality={80}
+                sizes="(max-width: 768px) 100vw, 320px"
+                quality={60}
                 className="rounded-[14px]"
               />
               <Image
@@ -100,7 +101,8 @@ const WebsiteSelector = () => {
                 alt="choosefon"
                 width={360}
                 height={550}
-                quality={75}
+                sizes="(max-width: 768px) 100vw, 360px"
+                quality={60}
                 className="absolute top-[-13px] left-[36px] max-w-none h-auto w-[360px]"
               />
             </m.div>
