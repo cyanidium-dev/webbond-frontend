@@ -66,7 +66,7 @@ const AboutContainer = () => {
         width={1158}
         height={1131}
         sizes="(max-width: 768px) 100vw, 1158px"
-        quality={60}
+        quality={100}
         className="absolute top-[30%] left-[-840px] h-auto max-w-none z-20 pointer-events-none"
       />
       <Image

@@ -12,7 +12,7 @@ const ChooseWebsiteContainer = () => {
         width={1000}
         height={1000}
         sizes="(max-width: 768px) 100vw, 1000px"
-        quality={60}
+        quality={100}
         className="h-auto max-w-none w-[277.8vw] absolute top-[20px] left-[-105.6vw] contrast-125 saturate-150"
       />
       <h2 className="mb-[22px] max-w-[320px] font-manrope font-light text-[40px] leading-[120%] text-white uppercase">
@@ -26,7 +26,7 @@ const ChooseWebsiteContainer = () => {
             alt="mobile-title-banner badge"
             width={93}
             height={50}
-            quality={75}
+            quality={80}
           />
         </div>
         <div className="font-montserrat font-light text-[12px] leading-[120%] text-white text-right max-w-[173px] ml-auto">

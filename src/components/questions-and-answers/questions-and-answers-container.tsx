@@ -10,7 +10,7 @@ const QuestionsAndAnswersContainer = () => {
         width={1582}
         height={1477}
         sizes="(max-width: 768px) 100vw, 1582px"
-        quality={60}
+        quality={100}
         className="absolute w-[1582px] h-[1477px] top-[-120px] left-[-440px] max-w-none -z-10 pointer-events-none"
       />
       <h2 className="max-w-[240px] mb-[48px] font-manrope font-light text-[40px] leading-[120%] text-white uppercase [text-shadow:4px_3px_9px_rgba(255,0,166,0.2)]">

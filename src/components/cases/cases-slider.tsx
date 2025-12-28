@@ -22,7 +22,7 @@ const CasesSlider = () => {
                   src={caseItem.image}
                   alt={caseItem.title}
                   fill
-                  quality={75}
+                  quality={80}
                   className="object-cover rounded-[13px]"
                 />
                 <div className="absolute top-[15px] right-[15px] z-10 w-[52px] h-[52px] rounded-full flex items-center justify-center bg-white">

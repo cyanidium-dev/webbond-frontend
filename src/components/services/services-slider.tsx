@@ -75,7 +75,7 @@ const ServicesSlider = () => {
                       width={370}
                       height={489}
                       sizes="(max-width: 768px) 100vw, 370px"
-                      quality={60}
+                      quality={80}
                       className="absolute max-w-none w-[370px] h-auto right-[-120px] bottom-[-63%]"
                     />
                   </div>
@@ -86,7 +86,7 @@ const ServicesSlider = () => {
                   width={378}
                   height={241}
                   sizes="(max-width: 768px) 100vw, 378px"
-                  quality={60}
+                  quality={80}
                   className="absolute left-0 bottom-[-212px] max-w-none w-[378px] h-auto"
                 />
               </div>

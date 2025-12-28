@@ -23,7 +23,7 @@ const TeamSlider = () => {
                 src={teamItem.image}
                 alt={teamItem.name}
                 fill
-                quality={75}
+                quality={80}
                 className="object-contain rounded-[13px]"
               />
               <div className="mt-auto flex flex-col gap-[6px] relative z-10">

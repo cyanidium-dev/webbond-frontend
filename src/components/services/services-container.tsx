@@ -32,7 +32,7 @@ const ServicesContainer = () => {
           width={700}
           height={824}
           sizes="(max-width: 768px) 100vw, 700px"
-          quality={60}
+          quality={100}
           className="absolute left-[-200px] top-[-100px] max-w-none pointer-events-none select-none"
         />
       </div>
