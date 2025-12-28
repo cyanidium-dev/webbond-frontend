@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 const ServicesSlider = () => {
   return (
-    <section className="mt-[-97px]">
+    <section className="mt-[-97px] mb-[36px]">
       <Carousel>
         <CarouselContent>
           {servicesData.map((service) => (

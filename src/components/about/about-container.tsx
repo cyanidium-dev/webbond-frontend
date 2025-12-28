@@ -3,7 +3,7 @@ import GooeyWhiteButton from '../ui/gooey-white-button';
 
 const AboutContainer = () => {
   return (
-    <section className="relative z-10 px-[20px] pt-[150px] pb-[68px]">
+    <section className="relative z-20 px-[20px] pt-[150px] pb-[68px]">
       <h2 className="mb-[28px] text-[40px] font-manrope font-light uppercase text-white leading-[120%]">
         Om WebBond {'{ }'} Code.Site.Art
       </h2>
@@ -75,7 +75,7 @@ const AboutContainer = () => {
         width={1300}
         height={1300}
         quality={80}
-        className="absolute top-[150px] right-[-840px] h-auto max-w-none z-20 pointer-events-none mix-blend-screen contrast-125 saturate-150"
+        className="absolute top-[150px] right-[-840px] h-auto max-w-none z-20 pointer-events-none contrast-125 saturate-150"
       />
     </section>
   );

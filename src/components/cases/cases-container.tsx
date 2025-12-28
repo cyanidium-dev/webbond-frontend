@@ -4,7 +4,15 @@ import CasesSlider from './cases-slider';
 
 const CasesContainer = () => {
   return (
-    <section className="px-[20px] relative z-10 pt-[148px]">
+    <section className="px-[20px] relative pt-[148px]">
+      <Image
+        src="/cases-radial-shadow.webp"
+        alt="cases-red-decor-right"
+        width={580}
+        height={611}
+        quality={80}
+        className="h-auto max-w-none absolute top-[-180px] left-[-70px] right-0 pointer-events-none -z-10"
+      />
       <h2 className="ml-auto max-w-[275px] mb-[24px] text-[40px] font-manrope font-light uppercase text-right text-white leading-[120%]">
         <span className="text-[#818181]">Cases</span> WebBond {'{ }'}{' '}
         CodeSite.Art

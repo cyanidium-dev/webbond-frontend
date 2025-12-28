@@ -1,6 +1,6 @@
 import Image from 'next/image';
-// import ShadowFigure from './shadow-figure';
 import ServicesSlider from './services-slider';
+import GooeyWhiteButton from '../ui/gooey-white-button';
 
 const ServicesContainer = () => {
   return (
@@ -25,9 +25,22 @@ const ServicesContainer = () => {
           quality={100}
           className="absolute left-[-48px] max-w-none w-[616px] h-[155px]"
         />
-        {/* <ShadowFigure className="absolute top-[-60%] left-0 right-0 w-full" /> */}
+        <Image
+          src="/services-shadow.webp"
+          alt="services-shadow"
+          width={700}
+          height={824}
+          quality={80}
+          className="absolute left-[-200px] top-[-100px] max-w-none pointer-events-none select-none"
+        />
       </div>
       <ServicesSlider />
+      <GooeyWhiteButton
+        text="Få et tilbud"
+        className="mx-auto text-start w-full text-[14px] font-montserrat font-light text-black"
+        width={310}
+        height={52}
+      />
     </section>
   );
 };
