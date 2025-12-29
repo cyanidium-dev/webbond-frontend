@@ -31,7 +31,7 @@ const HeroMobile = () => {
           <h1 className="max-w-[261px] font-manrope text-[40px] leading-[120%] text-white uppercase font-light">
             hjemmeside, SEO, logo og annoncer
           </h1>
-          <div className="absolute bottom-[10px] right-[12px] flex items-center justify-center rounded-[20px] w-[67px] py-1 ppx-[7px] backdrop-blur-[17.71900749206543px] bg-white/3 shadow-[inset_2px_-1px_5px_-1px_rgba(255,255,255,0.12)]">
+          <div className="absolute bottom-[10px] right-[12px] flex items-center justify-center rounded-[20px] w-[67px] py-1 px-[7px] backdrop-blur-[17.71900749206543px] bg-white/3 shadow-[inset_2px_-1px_5px_-1px_rgba(255,255,255,0.12)]">
             <Image
               src="/mobile-title-banner.png"
               alt="mobile-title-banner badge"

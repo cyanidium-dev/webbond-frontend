@@ -14,9 +14,10 @@ import { cn } from '@/lib/utils';
 
 interface LangsProps {
   className?: string;
+  triggerClassName?: string;
 }
 
-const LocaleSwitcher = ({ className }: LangsProps) => {
+const LocaleSwitcher = ({ className, triggerClassName }: LangsProps) => {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -49,14 +50,19 @@ const LocaleSwitcher = ({ className }: LangsProps) => {
     <div className={cn('relative', className)}>
       <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
         <DropdownMenuTrigger asChild>
-          <button className="cursor-pointer flex items-center gap-[6px] text-white outline-none">
-            <span className="font-montserrat font-medium text-[14px] uppercase">
+          <button
+            className={cn(
+              'cursor-pointer flex items-center gap-[6px] text-white outline-none text-[14px]',
+              triggerClassName,
+            )}
+          >
+            <span className="font-montserrat font-medium uppercase">
               {currentLanguage.label}
             </span>
             {isOpen ? (
-              <ChevronUp className="w-[16px] h-[16px]" />
+              <ChevronUp className="w-[1em] h-[1em]" />
             ) : (
-              <ChevronDown className="w-[16px] h-[16px]" />
+              <ChevronDown className="w-[1em] h-[1em]" />
             )}
           </button>
         </DropdownMenuTrigger>

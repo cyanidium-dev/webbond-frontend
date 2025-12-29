@@ -46,9 +46,9 @@ export default function SplineGlobe({
         WebkitMaskImage: 'radial-gradient(circle, black 50%, transparent 100%)',
       }}
     >
-      {/* Fallback Image (Immediate LCP & Offline/Hidden State) */}
+      {/* Fallback Image (Mobile) */}
       <div
-        className={`absolute right-[40%] top-[50px] w-[360px] h-[813px] transition-opacity duration-1000 ${
+        className={`absolute right-[40%] top-[50px] w-[360px] h-[813px] transition-opacity duration-1000 md:hidden ${
           shouldLoadSpline && isVisible && isSplineReady
             ? 'opacity-0 pointer-events-none'
             : 'opacity-100'
@@ -62,6 +62,25 @@ export default function SplineGlobe({
           quality={100}
           className="w-full h-full object-cover"
         />
+      </div>
+
+      {/* Fallback Image (Desktop) */}
+      <div
+        className={`absolute inset-0 top-[40px] w-full h-full transition-opacity duration-1000 hidden md:flex items-center justify-center ${
+          shouldLoadSpline && isVisible && isSplineReady
+            ? 'opacity-0 pointer-events-none'
+            : 'opacity-100'
+        }`}
+      >
+        <div className="relative w-[80%] h-[80%]">
+          <Image
+            src="/desktop-globus.webp"
+            alt="Globe placeholder desktop"
+            fill
+            quality={100}
+            className="object-contain object-center"
+          />
+        </div>
       </div>
 
       {shouldLoadSpline && isVisible && (

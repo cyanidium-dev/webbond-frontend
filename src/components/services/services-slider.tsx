@@ -8,7 +8,6 @@ import {
 } from '@/components/ui/carousel';
 import { servicesData } from './services-data';
 import Image from 'next/image';
-// import GlassGooeyButton from '../ui/glass-gooey-button';
 
 const ServicesSlider = () => {
   return (
@@ -58,14 +57,6 @@ const ServicesSlider = () => {
                       </div>
                     </div>
                   </button>
-                  {/* <GlassGooeyButton
-                    className="w-full text-white relative z-10"
-                    width={127}
-                    height={34}
-                    backgroundColor="rgba(255, 255, 255, 0.03)"
-                    blur="8px"
-                    boxShadow="inset 3px -1px 9px -1px rgba(255, 255, 255, 0.12)"
-                  /> */}
                 </div>
                 <div className="relative rounded-[6px] w-full h-[165px] bg-[linear-gradient(168deg,#e63b44_0%,#1b0000_100%)]">
                   <div className="relative overflow-hidden w-full h-full rounded-[6px]">

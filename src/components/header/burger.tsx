@@ -14,7 +14,6 @@ import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import { LazyMotion, domAnimation, m, Variants } from 'framer-motion';
 import ArrowUpRightForBtn from './arrow-up-right-for-btn';
-import MobileLaptopHeader from '../ui/mobile-laptop-header';
 import { useEffect } from 'react';
 
 interface BurgerProps {
