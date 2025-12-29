@@ -3,7 +3,7 @@ import MobileLaptopHeader from '../ui/mobile-laptop-header';
 
 const Header = () => {
   return (
-    <header className=''>
+    <header>
       <div className="hidden lg:block">
         <DesktopHeader />
       </div>

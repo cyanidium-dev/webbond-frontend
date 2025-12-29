@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { cn } from '@/lib/utils';
 import { LazyMotion, domAnimation, m, Variants } from 'framer-motion';
 
@@ -22,7 +21,7 @@ const containerVariants: Variants = {
 
 const circleVariants: Variants = {
   initial: { x: 0 },
-  hover: { x: 5 },
+  hover: { x: 2 },
 };
 
 const textVariants: Variants = {
