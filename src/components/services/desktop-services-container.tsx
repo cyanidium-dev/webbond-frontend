@@ -38,7 +38,7 @@ const DesktopServicesContainer = () => {
         height={900}
         sizes="100vw"
         quality={100}
-        className="absolute left-[150px] top-[-50px] -z-10 pointer-events-none select-none blur-[44px] transform-gpu"
+        className="absolute left-[150px] top-[-50px] -z-10 pointer-events-none select-none blur-[44px]"
       />
     </section>
   );

@@ -133,7 +133,7 @@ const ServiceDesktopSlider = () => {
                 {/** PRESERVED CARD CONTENT START */}
                 <div
                   onClick={handleSlideClick}
-                  className={`mx-auto w-[495px] relative pt-[10px] pr-[10px] pb-[10px] pl-[24px] flex gap-6 backdrop-blur-2xl bg-white/3 rounded-[20px] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden isolation-isolate transform-gpu backface-visibility-hidden pointer-events-auto ${
+                  className={`mx-auto w-[495px] relative pt-[10px] pr-[10px] pb-[10px] pl-[24px] flex gap-6 backdrop-blur-2xl bg-white/3 rounded-[20px] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden pointer-events-auto ${
                     handleSlideClick ? 'cursor-pointer' : ''
                   }`}
                 >
