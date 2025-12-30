@@ -17,16 +17,26 @@ export default function SplineGlobe({
   const [isSplineReady, setIsSplineReady] = useState(false);
   const splineRef = useRef<any>(null);
 
+  // Тайм-аут бездействия: 1 минута.
+  // Если пользователь не активен это время, сцена выгружается для экономии ресурсов.
+  const IDLE_TIMEOUT = 1 * 60 * 1000;
+
+  const [isIdle, setIsIdle] = useState(false);
+  const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const ignoreWakeupUntilRef = useRef<number>(0);
+
   useEffect(() => {
-    // Delay loading of Spline to prioritize LCP
+    // Задержка загрузки Spline для оптимизации LCP (Largest Contentful Paint).
+    // Позволяет сначала загрузить основной контент страницы, а тяжелую 3D сцену — чуть позже.
     const timer = setTimeout(() => {
       setShouldLoadSpline(true);
-    }, 1000); // 1.0s delay after mount
+    }, 1000); // 1.0сек задержка после монтирования
 
     return () => clearTimeout(timer);
   }, []);
 
-  // Strict visibility control: Unmount/Reset when not visible
+  // Строгий контроль видимости: Если компонент скрыт пропсом isVisible,
+  // мы сбрасываем состояние готовности.
   useEffect(() => {
     if (!isVisible) {
       setIsSplineReady(false);
@@ -38,6 +48,84 @@ export default function SplineGlobe({
     setIsSplineReady(true);
   };
 
+  // Логика отслеживания бездействия пользователя
+  useEffect(() => {
+    if (!shouldLoadSpline) return;
+
+    const onActivity = () => {
+      // Если мы сейчас в режиме "бездействия", проверяем "льготный период" (grace period).
+      // Это защита от ложных срабатываний: когда Spline исчезает, макет может сдвинуться,
+      // вызывая событие mousemove, которое ошибочно разбудило бы сцену обратно.
+      if (isIdle) {
+        if (Date.now() < ignoreWakeupUntilRef.current) {
+          return; // Игнорируем события в период блокировки
+        }
+        setIsIdle(false); // Пользователь вернулся, просыпаемся
+      }
+
+      // Сбрасываем таймер при любой активности
+      if (idleTimerRef.current) {
+        clearTimeout(idleTimerRef.current);
+      }
+
+      // Устанавливаем таймер на 1 минуту
+      idleTimerRef.current = setTimeout(() => {
+        setIsIdle(true);
+        // Устанавливаем "льготный период" (1 секунда) после ухода в сон,
+        // в течение которого мы игнорируем ВСЕ события ввода.
+        ignoreWakeupUntilRef.current = Date.now() + 1000;
+      }, IDLE_TIMEOUT);
+    };
+
+    // Запускаем таймер при инициализации
+    onActivity();
+
+    // Оптимизированный обработчик событий (Throttling).
+    // Функция проверки активности будет вызываться не чаще 2 раз в секунду,
+    // даже если событий (например, движения мыши) сотни в секунду.
+    let lastCall = 0;
+    const throttledHandler = () => {
+      const now = Date.now();
+      if (now - lastCall > 500) {
+        lastCall = now;
+        onActivity();
+      }
+    };
+
+    const events = [
+      'mousemove',
+      'mousedown',
+      'keydown',
+      'touchstart',
+      'scroll',
+      'wheel',
+    ];
+
+    // Вешаем слушатели на окно (window), чтобы ловить активность в любом месте сайта.
+    // passive: true улучшает производительность скролла.
+    events.forEach((event) =>
+      window.addEventListener(event, throttledHandler, {
+        capture: true,
+        passive: true,
+      }),
+    );
+
+    return () => {
+      if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
+      events.forEach((event) =>
+        window.removeEventListener(event, throttledHandler, { capture: true }),
+      );
+    };
+  }, [shouldLoadSpline, isIdle]);
+
+  // Определяем, нужно ли рендерить сцену Spline.
+  // Она должна быть: разрешена к загрузке (shouldLoadSpline) И видима (isVisible) И НЕ в режиме простоя (!isIdle).
+  const showSpline = shouldLoadSpline && isVisible && !isIdle;
+
+  // Определяем, нужно ли показывать картинку-заглушку.
+  // Показываем если: Spline не должен отображаться ИЛИ он еще не загрузился полностью.
+  const showPlaceholder = !showSpline || !isSplineReady;
+
   return (
     <div
       className="w-full h-full relative"
@@ -46,12 +134,10 @@ export default function SplineGlobe({
         WebkitMaskImage: 'radial-gradient(circle, black 50%, transparent 100%)',
       }}
     >
-      {/* Fallback Image (Mobile) */}
+      {/* Заглушка для Мобильных устройств */}
       <div
         className={`absolute right-[40%] top-[50px] w-[360px] h-[813px] transition-opacity duration-1000 md:hidden ${
-          shouldLoadSpline && isVisible && isSplineReady
-            ? 'opacity-0 pointer-events-none'
-            : 'opacity-100'
+          !showPlaceholder ? 'opacity-0 pointer-events-none' : 'opacity-100' // Видна, пока Spline не готов или спит
         }`}
       >
         <Image
@@ -64,12 +150,10 @@ export default function SplineGlobe({
         />
       </div>
 
-      {/* Fallback Image (Desktop) */}
+      {/* Заглушка для Десктопа */}
       <div
         className={`absolute inset-0 top-[40px] w-full h-full transition-opacity duration-1000 hidden md:flex items-center justify-center ${
-          shouldLoadSpline && isVisible && isSplineReady
-            ? 'opacity-0 pointer-events-none'
-            : 'opacity-100'
+          !showPlaceholder ? 'opacity-0 pointer-events-none' : 'opacity-100' // Видна, пока Spline не готов или спит
         }`}
       >
         <div className="relative w-[80%] h-[80%]">
@@ -83,7 +167,7 @@ export default function SplineGlobe({
         </div>
       </div>
 
-      {shouldLoadSpline && isVisible && (
+      {showSpline && (
         <div
           className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
             isSplineReady ? 'opacity-100' : 'opacity-0'
@@ -98,7 +182,7 @@ export default function SplineGlobe({
         </div>
       )}
 
-      {/* Watermark Cover */}
+      {/* Затемнение (Watermark Cover) в углу, на всякий случай */}
       <div className="absolute bottom-[16px] right-[16px] w-[140px] h-[36px] bg-[#0c0c0c] z-50 pointer-events-none" />
     </div>
   );
