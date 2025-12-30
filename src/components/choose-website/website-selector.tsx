@@ -99,11 +99,11 @@ const WebsiteSelector = () => {
               <Image
                 src={selectedData.phoneImage}
                 alt="choosefon"
-                width={360}
+                width={330}
                 height={550}
-                sizes="(max-width: 768px) 100vw, 360px"
+                sizes="(max-width: 768px) 100vw, 330px"
                 quality={100}
-                className="absolute top-[-13px] left-[36px] max-w-none h-auto w-[360px]"
+                className="absolute top-[90px] left-[50px] max-w-none h-auto w-[330px]"
               />
             </m.div>
           </AnimatePresence>

@@ -14,18 +14,38 @@ const BusinessContainer = () => {
           className="object-contain pointer-events-none"
         />
       </div>
-      <h2 className="max-w-[320px] font-manrope text-[40px] font-light uppercase text-white leading-[120%] mb-[32px]">
-        Tag din virksomhed <span className="text-[#999]">til</span> næste{' '}
-        <span className="text-[#999]">niveau med</span> WebBond
-        <span className="text-[#999]">
-          <span className="inline-block">{'{ }'}</span> CodeSite.
-        </span>
-        Art
-      </h2>
-      <p className="ml-auto max-w-[234px] mb-[44px] font-montserrat font-light text-[14px] text-white leading-[120%]">
-        Din ambition, vores ekspertise — sammen gør vi din virksomhed synlig,
-        effektiv og profitabel
-      </p>
+      <div className="relative">
+        <h2 className="max-w-[320px] font-manrope text-[40px] font-light uppercase text-white leading-[120%] mb-[32px]">
+          Tag din virksomhed <span className="text-[#999]">til</span> næste{' '}
+          <span className="text-[#999]">niveau med</span> WebBond
+          <span className="text-[#999]">
+            <span className="inline-block">{'{ }'}</span> CodeSite.
+          </span>
+          Art
+        </h2>
+        <div className="absolute right-0 top-0 flex items-center justify-center rounded-[37px] w-[84px] py-[6px] px-[9px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
+          <Image
+            src="/mobile-title-banner.png"
+            alt="mobile-title-banner badge"
+            width={64}
+            height={34}
+            quality={80}
+          />
+        </div>
+      </div>
+      <div className="relative">
+        <p className="ml-auto pr-[20px] max-w-[254px] mb-[44px] font-montserrat font-light text-[14px] text-white leading-[120%]">
+          Din ambition, vores ekspertise — sammen gør vi din virksomhed synlig,
+          effektiv og profitabel
+        </p>
+        <Image
+          src="/hero-mobile-description-vetical-lie.png"
+          alt="hero-mobile-description-vetical-lie"
+          width={2}
+          height={51}
+          className="absolute bottom-0 right-0 w-[2px] h-[51px]"
+        />
+      </div>
       <GooeyWhiteButton
         text="Start samarbejdet"
         className="mx-auto text-start w-full text-[14px] font-montserrat font-light text-black"

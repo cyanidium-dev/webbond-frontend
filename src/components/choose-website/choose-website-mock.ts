@@ -5,8 +5,8 @@ export interface WebsiteType {
   fonImage: string;
   fonImageDesktop: string;
   phoneImage: string;
-  bannerImage: string;
   firstTitle: string;
+  bannerImage: string;
   secondTitle: string;
   firstTitleList: string[];
   secondTitleList: string[];
@@ -20,7 +20,7 @@ export const WEBSITE_TYPES_MOCK: WebsiteType[] = [
       'En enkel side med alt det vigtigste – perfekt, når du vil præsentere ét produkt eller én tjeneste og få kunder hurtigt',
     fonImage: '/choose-fon.webp',
     fonImageDesktop: '/choose-fon-desktop.webp',
-    phoneImage: '/choose-iphone.png',
+    phoneImage: '/choose-iphone.webp',
     bannerImage: '/banner-for-choose-list.webp',
     firstTitle: 'Hvem passer det til',
     secondTitle: 'Fordele',
@@ -39,28 +39,44 @@ export const WEBSITE_TYPES_MOCK: WebsiteType[] = [
     id: 'hjemmeside',
     type: 'Hjemmeside',
     description:
-      'En komplet hjemmeside til din virksomhed, der fortæller din historie og viser dine ydelser frem på den bedste måde',
+      'En professionelt website, der viser alt, hvad din virksomhed tilbyder — bygget til at skabe tillid og tiltrække kunder fra Google.',
     fonImage: '/choose-fon.webp',
     fonImageDesktop: '/choose-fon-desktop.webp',
-    phoneImage: '/choose-iphone.png',
-    bannerImage: '/banner-for-choose-list.webp',
+    phoneImage: '/choose-iphone-2.webp',
+    bannerImage: '/banner-for-choose-list-2.webp',
     firstTitle: 'Struktur',
     secondTitle: 'Vækst',
-    firstTitleList: ['Brugervenlig', 'Responsivt design', 'Moderne layout'],
-    secondTitleList: ['Tillidsskabende', 'Brand identity', 'Skalérbar løsning'],
+    firstTitleList: [
+      'Virksomheder med flere tjenester',
+      'Servicefirmaer og konsulenter',
+      'Dem, der ønsker stabil trafik uden annoncer',
+    ],
+    secondTitleList: [
+      'Vises højt på Google (SEO-optimeret)',
+      'Bygger tillid hos kunder',
+      'Giver en jævn strøm af henvendelser',
+    ],
   },
   {
     id: 'webshop',
     type: 'Webshop',
     description:
-      'En professionel webshop med fokus på salg, brugervenlighed og sikkerhed, så dine kunder kan handle trygt og nemt',
+      'En webshop, der gør det nemt at sælge online – automatiske betalinger, ordrer og lagerstyring samlet ét sted.',
     fonImage: '/choose-fon.webp',
     fonImageDesktop: '/choose-fon-desktop.webp',
-    phoneImage: '/choose-iphone.png',
-    bannerImage: '/banner-for-choose-list.webp',
+    phoneImage: '/choose-iphone-3.webp',
+    bannerImage: '/banner-for-choose-list-3.webp',
     firstTitle: 'Salg',
     secondTitle: 'Effektivitet',
-    firstTitleList: ['Nem betaling', 'Produktoffers', 'Lagerstyring'],
-    secondTitleList: ['Øget omsætning', 'Automatisering', 'Kundeindsigt'],
+    firstTitleList: [
+      'Fysiske butikker, der vil sælge online',
+      'Producenter og håndværkere',
+      'Dem, der vil spare tid på manuelle opgaver',
+    ],
+    secondTitleList: [
+      'Salg 24/7 – selv når du sover',
+      'Automatiseret system sparer tid og fejl',
+      'Flere kunder, større omsætning',
+    ],
   },
 ];
