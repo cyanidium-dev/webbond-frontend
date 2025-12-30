@@ -50,7 +50,7 @@ export default async function RootLayout({
       <body
         className={`${montserrat.variable} ${inter.variable} ${manrope.variable} antialiased`}
       >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider><main className="overflow-x-clip">{children}</main></NextIntlClientProvider>
       </body>
     </html>
   );
