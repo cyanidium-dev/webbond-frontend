@@ -85,8 +85,8 @@ const DesktopChooseWebsiteContainer = () => {
                     src={activeContent.fonImageDesktop}
                     alt="choosefon"
                     fill
-                    sizes="(max-width: 768px) 100vw, 320px"
-                    quality={100}
+                    sizes="(max-width: 768px) 100vw, 392px"
+                    quality={80}
                     className="object-cover rounded-[14px]"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(0,0,0,0.9)_0%,transparent_40%)] pointer-events-none" />
@@ -95,8 +95,8 @@ const DesktopChooseWebsiteContainer = () => {
                     alt="choosefon"
                     width={500}
                     height={946}
-                    sizes="100vw"
-                    quality={100}
+                    sizes="(max-width: 768px) 100vw, 500px"
+                    quality={80}
                     className="absolute top-[160px] left-[70px] select-none pointer-events-none max-w-none h-auto w-[500px] origin-top-left z-10"
                   />
                 </div>
@@ -188,7 +188,7 @@ const DesktopChooseWebsiteContainer = () => {
           alt="mobile-title-banner badge"
           width={1200}
           height={1200}
-          quality={100}
+          quality={80}
           sizes="100vw"
           className="absolute bottom-[450px] xl:bottom-[-35px] left-[115px] -z-10 max-w-none pointer-events-none select-none contrast-300"
         />

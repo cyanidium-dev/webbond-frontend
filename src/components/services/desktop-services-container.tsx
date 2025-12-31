@@ -48,8 +48,8 @@ const DesktopServicesContainer = () => {
         alt="shadow-slider"
         width={1280}
         height={322}
-        sizes="100vw"
-        quality={100}
+        sizes="(max-width: 1280px) 100vw, 1280px"
+        quality={80}
         className="absolute left-[-10%] right-[-10%] mx-auto w-[105%] max-w-none md:top-[480px] lg:top-[380px] -z-20 pointer-events-none select-none h-auto"
       />
     </section>

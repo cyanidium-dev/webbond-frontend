@@ -14,7 +14,7 @@ const HeroDesktop = () => {
 
   return (
     <section ref={containerRef} className="pt-[96px] pb-[93px] relative">
-      <div className="absolute top-[-17%] 2xl:top-[-9%] right-1/2 translate-x-1/2 scale-[1.2] 2xl:scale-[1.5] w-full h-full pointer-events-none">
+      <div className="absolute top-[-140px] 2xl:top-[-90px] right-1/2 translate-x-1/2 scale-[1.2] 2xl:scale-[1.5] w-full h-full pointer-events-none">
         <SplineGlobe isVisible={isInView} />
       </div>
       <div className="flex justify-between relative">
@@ -23,7 +23,7 @@ const HeroDesktop = () => {
             {t('subtitle')}
           </p>
           <div className="flex">
-            <h1 className="max-w-[624px] font-manrope text-[64px] leading-[120%] text-white uppercase font-light mb-[42px]">
+            <h1 className="max-w-[624px] min-h-[154px] font-manrope text-[64px] leading-[120%] text-white uppercase font-light mb-[42px]">
               {t('title')}
             </h1>
             <div className="flex items-center justify-center mt-auto mb-[50px] ml-[23px] rounded-[37px] w-[121px] h-fit py-[9px] px-[14px] backdrop-blur-[17.71900749206543px] bg-white/3 shadow-[inset_2px_-1px_5px_-1px_rgba(255,255,255,0.12)]">

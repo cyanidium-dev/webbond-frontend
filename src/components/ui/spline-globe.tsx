@@ -145,7 +145,8 @@ export default function SplineGlobe({
           alt="Globe placeholder"
           width={360}
           height={813}
-          quality={100}
+          quality={80}
+          priority
           className="w-full h-full object-cover"
         />
       </div>
@@ -161,7 +162,8 @@ export default function SplineGlobe({
             src="/desktop-globus.webp"
             alt="Globe placeholder desktop"
             fill
-            quality={100}
+            quality={80}
+            priority
             className="object-contain object-center"
           />
         </div>
