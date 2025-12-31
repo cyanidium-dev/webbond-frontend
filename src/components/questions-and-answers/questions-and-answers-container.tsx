@@ -16,7 +16,7 @@ const QuestionsAndAnswersContainer = () => {
         height={1477}
         sizes="33vw"
         quality={100}
-        className="absolute top-[-120px] left-[-440px] max-w-none -z-10 pointer-events-none blur-[44px]"
+        className="absolute top-[-120px] left-[-440px] max-w-none -z-10 pointer-events-none blur-[24px]"
       />
       {/* radial shadow right*/}
       <Image
