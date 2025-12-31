@@ -15,8 +15,8 @@ const QuestionsAndAnswersContainer = () => {
         width={1582}
         height={1477}
         sizes="33vw"
-        quality={75}
-        className="absolute top-[-120px] left-[-440px] max-w-none -z-10 pointer-events-none"
+        quality={100}
+        className="absolute top-[-120px] left-[-440px] max-w-none -z-10 pointer-events-none blur-[84px]"
       />
       {/* radial shadow right*/}
       <Image
@@ -25,7 +25,7 @@ const QuestionsAndAnswersContainer = () => {
         width={1500}
         height={1500}
         sizes="33vw"
-        quality={75}
+        quality={100}
         className="hidden md:block absolute bottom-[-300px] right-[-400px] max-w-none -z-20 pointer-events-none blur-[44px]"
       />
       <h2 className="max-w-[240px] md:max-w-full mb-[48px] font-manrope font-light text-[40px] md:text-[64px] leading-[120%] text-white uppercase [text-shadow:4px_3px_9px_rgba(255,0,166,0.2)]">
@@ -38,7 +38,7 @@ const QuestionsAndAnswersContainer = () => {
         width={898}
         height={388}
         sizes="33vw"
-        quality={80}
+        quality={100}
         className="absolute bottom-[-90px] left-[-100px] max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
       />
     </section>

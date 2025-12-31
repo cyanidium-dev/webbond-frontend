@@ -26,17 +26,17 @@ const AboutDesktopContainer = () => {
         height={1500}
         sizes="100vw"
         quality={80}
-        className="absolute top-[-550px] left-[-1090px] origin-top-left scale-[1.18] h-auto max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
+        className="absolute top-[-550px] left-[-1090px] 2xl:left-[-980px] origin-top-left scale-[1.18] h-auto max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
       />
       {/* shadow */}
       <Image
         src="/about-desktop-shadow.webp"
         alt="about-desktop-shadow"
-        width={600}
-        height={800}
-        sizes="100vw"
-        quality={75}
-        className="absolute top-[-50px] right-[-10px] origin-top-right h-auto max-w-none -z-10 pointer-events-none blur-[64px]"
+        width={1000}
+        height={600}
+        sizes="33vw"
+        quality={100}
+        className="absolute top-[-280px] right-[-270px] 2xl:top-[100px] 2xl:w-[800px] 2xl:h-[600px] 2xl:right-[-20px] origin-top-right h-auto max-w-none -z-10 pointer-events-none blur-[64px]"
       />
       {/* radial shadow left*/}
       <Image
@@ -44,8 +44,8 @@ const AboutDesktopContainer = () => {
         alt="about-desktop-radial-shadow-left"
         width={1200}
         height={1300}
-        sizes="100vw"
-        quality={75}
+        sizes="33vw"
+        quality={100}
         className="absolute bottom-[-200px] left-[-600px] origin-top-left h-auto max-w-none -z-30 pointer-events-none blur-[44px]"
       />
       <div className="mb-[29px] ml-auto flex items-center justify-center rounded-[37px] w-[121px] py-[9px] px-[14px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">

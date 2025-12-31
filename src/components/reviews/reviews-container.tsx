@@ -17,18 +17,18 @@ const ReviewsContainer = () => {
         width={1500}
         height={1500}
         sizes="100vw"
-        quality={80}
+        quality={100}
         className="hidden md:block absolute max-w-none top-[-155px] left-[50%] translate-x-[-50%] pointer-events-none select-none contrast-125 saturate-150 -z-30"
       />
       {/* shadow on center decor */}
       <Image
         src="/review-desktop-shadow-on.webp"
         alt="review-desktop-shadow-on"
-        width={1200}
-        height={600}
-        sizes="100vw"
-        quality={80}
-        className="absolute top-[350px] left-[-50px] h-auto max-w-none -z-20 pointer-events-none blur-[44px]"
+        width={1000}
+        height={800}
+        sizes="33vw"
+        quality={100}
+        className="absolute w-[1150px] 2xl:w-[1000px] top-[320px] left-0 2xl:top-[420px] 2xl:left-[150px] h-auto max-w-none -z-20 pointer-events-none"
       />
       <div className="md:flex md:justify-between md:mb-[75px]">
         <h2 className="md:order-1 max-w-[307px] md:max-w-full mb-[24px] md:mb-0 md:mt-[-10px] font-manrope font-light text-[40px] md:text-[64px] leading-[120%] text-white uppercase">
