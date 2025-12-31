@@ -38,7 +38,16 @@ const DesktopCasesContainer = () => {
     };
   }, [api]);
   return (
-    <section className="pt-[183px] pb-[74px]">
+    <section className="pt-[183px] relative">
+      <Image
+        src="/desktop-cases-shadow.webp"
+        alt="shadow-slider"
+        width={1300}
+        height={1300}
+        sizes="100vw"
+        quality={60}
+        className="absolute right-[-550px] top-[-650px] max-w-none -z-10 pointer-events-none select-none blur-[44px]"
+      />
       <Carousel
         setApi={setApi}
         opts={{
@@ -84,7 +93,7 @@ const DesktopCasesContainer = () => {
                     src={caseItem.image}
                     alt={caseItem.title}
                     fill
-                    quality={100}
+                    quality={80}
                     sizes="(max-width: 1250px) 45vw, 500px"
                     className="object-fill rounded-[20px]"
                   />

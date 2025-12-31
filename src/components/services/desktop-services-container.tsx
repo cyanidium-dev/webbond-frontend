@@ -37,7 +37,7 @@ const DesktopServicesContainer = () => {
         width={1050}
         height={900}
         sizes="100vw"
-        quality={100}
+        quality={60}
         className="absolute left-[150px] top-[-50px] -z-10 pointer-events-none select-none blur-[44px]"
       />
       <Image

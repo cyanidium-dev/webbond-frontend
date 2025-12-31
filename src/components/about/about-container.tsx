@@ -39,7 +39,7 @@ const AboutContainer = () => {
         </li>
         <li className="relative flex items-center justify-end w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden">
           <p className="w-full max-w-[191px] font-manrope font-light text-base text-white leading-[120%] uppercase break-words">
-            Synlighed: Bliv set online og skab indtryк hos dine kunder
+            Synlighed: Bliv set online og skab indtryk hos dine kunder
           </p>
           <div className="absolute top-[-25px] left-0 font-montserrat font-semibold text-[145px] leading-[120%] pointer-events-none select-none z-0 bg-linear-to-b from-white/25 to-white/0 bg-clip-text text-transparent">
             2

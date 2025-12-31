@@ -30,10 +30,10 @@ const QuestionsAccordion = () => {
             value={`question-${id}`}
             className="border-none rounded-[50px] backdrop-blur-sm bg-[rgba(18,18,18,0.26)] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] transform-gpu will-change-[filter,backdrop-filter,transform]"
           >
-            <AccordionTrigger className="h-[96px] cursor-pointer items-center group px-[32px] py-[31px] text-[14px] text-white font-montserrat font-light leading-[120%]">
+            <AccordionTrigger className="h-[96px] cursor-pointer items-center group px-[32px] py-[31px] text-[14px] md:text-[20px] text-white font-montserrat font-light leading-[120%]">
               <span className="pr-4 text-left leading-snug">{question}</span>
             </AccordionTrigger>
-            <AccordionContent className="px-6 pb-6 text-[12px] md:text-[16px] text-white/70 lg:px-10 lg:pb-8">
+            <AccordionContent className="px-6 pb-6 text-[12px] md:text-[20px] text-white/70 lg:px-10 lg:pb-8">
               {answer}
             </AccordionContent>
           </AccordionItem>
@@ -46,7 +46,7 @@ const QuestionsAccordion = () => {
               value={`question-${id}`}
               className="border-none rounded-[50px] backdrop-blur-sm bg-[rgba(18,18,18,0.26)] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] transform-gpu will-change-[filter,backdrop-filter,transform]"
             >
-              <AccordionTrigger className="h-[96px] cursor-pointer items-center group px-[32px] py-[31px] text-[14px] text-white font-montserrat font-light leading-[120%]">
+              <AccordionTrigger className="h-[96px] cursor-pointer items-center group px-[32px] py-[31px] text-[14px] md:text-[20px] text-white font-montserrat font-light leading-[120%]">
                 <span className="pr-4 text-left leading-snug">{question}</span>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6 text-[12px] md:text-[16px] text-white/70 lg:px-10 lg:pb-8">

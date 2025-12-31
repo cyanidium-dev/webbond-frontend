@@ -118,7 +118,7 @@ const ServiceDesktopSlider = () => {
             alt="slider-shadow"
             width={800}
             height={430}
-            quality={100}
+            quality={80}
             sizes="100vw"
             className="select-none pointer-events-none"
           />

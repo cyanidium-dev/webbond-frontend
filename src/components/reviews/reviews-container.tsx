@@ -1,19 +1,43 @@
 import Image from 'next/image';
 import ReviewsSlider from './reviews-slider';
 import SkobkiUI from './skobki-ui';
+import SkobkiDesktop from './skobki-desktop';
 // import ReviewsShadow from './reviews-shadow';
 
 const ReviewsContainer = () => {
   return (
-    <section className="relative px-[20px] pt-[148px]">
-      <h2 className="max-w-[307px] mb-[24px] font-manrope font-light text-[40px] leading-[120%] text-white uppercase">
-        Vores kunders anmeldelser
-      </h2>
-      <p className="max-w-[191px] font-montserrat font-light text-[14px] leading-[120%] text-white mb-[44px]">
-        Se hvad vores kunder siger om os, og gennemgå vores anmeldelser
-      </p>
+    <section className="relative px-[20px] md:px-0 pt-[148px]">
+      {/* center decor */}
+      <Image
+        src="/review-desktop-centr-decor.webp"
+        alt="review-desktop-centr-decor"
+        width={1500}
+        height={1500}
+        sizes="100vw"
+        quality={80}
+        className="hidden md:block absolute max-w-none top-[-155px] left-[50%] translate-x-[-50%] pointer-events-none select-none contrast-125 saturate-150 -z-30"
+      />
+      {/* shadow on center decor */}
+      <Image
+        src="/review-desktop-shadow-on.webp"
+        alt="review-desktop-shadow-on"
+        width={1200}
+        height={600}
+        sizes="100vw"
+        quality={80}
+        className="absolute top-[350px] left-[-50px] h-auto max-w-none -z-20 pointer-events-none blur-[44px]"
+      />
+      <div className="md:flex md:justify-between md:mb-[75px]">
+        <h2 className="md:order-1 max-w-[307px] md:max-w-full mb-[24px] md:mb-0 md:mt-[-10px] font-manrope font-light text-[40px] md:text-[64px] leading-[120%] text-white uppercase">
+          Vores kunders anmeldelser
+        </h2>
+        <p className="md:order-0 max-w-[191px] font-montserrat font-light text-[14px] leading-[120%] text-white mb-[44px] md:mb-0">
+          Se hvad vores kunder siger om os, og gennemgå vores anmeldelser
+        </p>
+      </div>
       <ReviewsSlider />
-      <SkobkiUI className="absolute top-[308px] right-[-40px] -z-10 pointer-events-none" />
+      <SkobkiUI className="md:hidden absolute top-[308px] right-[-40px] -z-10 pointer-events-none select-none" />
+      <SkobkiDesktop className="hidden md:block absolute top-[508px] right-[-30px] -z-10 pointer-events-none select-none" />
       <Image
         src="/reviews-shadow.webp"
         alt="reviews-shadow"
@@ -21,7 +45,7 @@ const ReviewsContainer = () => {
         height={1106}
         sizes="(max-width: 768px) 100vw, 1176px"
         quality={100}
-        className="absolute max-w-none top-[-80px] right-[-680px] pointer-events-none select-none -z-20"
+        className="md:hidden absolute max-w-none top-[-80px] right-[-680px] pointer-events-none select-none -z-20"
       />
     </section>
   );
