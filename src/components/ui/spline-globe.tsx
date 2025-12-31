@@ -146,7 +146,7 @@ export default function SplineGlobe({
           width={360}
           height={813}
           quality={80}
-          priority
+          fetchPriority="high"
           className="w-full h-full object-cover"
         />
       </div>
@@ -163,7 +163,7 @@ export default function SplineGlobe({
             alt="Globe placeholder desktop"
             fill
             quality={80}
-            priority
+            fetchPriority="high"
             className="object-contain object-center"
           />
         </div>

@@ -4,6 +4,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const nextConfig: NextConfig = {
   reactCompiler: true,
   images: {
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 408, 470],
     qualities: [60, 75, 80, 100],
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
