@@ -31,8 +31,8 @@ const AboutDesktopContainer = () => {
         width={600}
         height={800}
         sizes="100vw"
-        quality={80}
-        className="absolute top-[-50px] right-[-10px] origin-top-right h-auto max-w-none -z-10 pointer-events-none blur-[44px]"
+        quality={75}
+        className="absolute top-[-50px] right-[-10px] origin-top-right h-auto max-w-none -z-10 pointer-events-none blur-[64px]"
       />
       {/* radial shadow left*/}
       <Image
