@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { Link } from '@/i18n/navigation';
 
 const Logo = ({
   className,
@@ -9,7 +10,7 @@ const Logo = ({
   onClick?: () => void;
 }) => {
   return (
-    <>
+    <Link href="#hero" className="flex items-center shrink-0">
       <Image
         src="/logo-mobile.svg"
         alt="Logo"
@@ -25,7 +26,7 @@ const Logo = ({
         height={20}
         className={cn('hidden lg:block', className)}
       />
-    </>
+    </Link>
   );
 };
 

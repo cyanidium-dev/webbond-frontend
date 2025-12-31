@@ -116,10 +116,7 @@ const GooeyWhiteButton = ({
 
         {/* Слой контента */}
         <div className="relative z-10 flex h-full w-full items-center">
-          {/* Spacer to balance the icon area on the right */}
-          <div style={{ width: height }} className="shrink-0" />
-
-          <span className="flex-1 leading-none">{text}</span>
+          <span className="flex-1 pl-6 leading-none">{text}</span>
 
           <div
             style={{ width: height }}

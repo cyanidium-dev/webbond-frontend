@@ -53,15 +53,15 @@ const ServiceDesktopSlider = () => {
         z: 0,
       };
     } else {
-      // Hidden
+      // Hidden (Loop Behind)
       return {
-        x: diff < 0 ? '-120%' : '120%',
+        x: '0%',
         y: '0%',
-        zIndex: 10,
+        zIndex: 5,
         scale: 1,
-        opacity: 0,
+        opacity: 1,
         rotateX: 0.01,
-        z: 0,
+        z: -200,
       };
     }
   };

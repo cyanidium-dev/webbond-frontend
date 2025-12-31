@@ -9,8 +9,11 @@ import {
 import Image from 'next/image';
 import { TEAM_DATA } from './team-data';
 import GooeyWhiteButton from '../ui/gooey-white-button';
+import { useTranslations } from 'next-intl';
 
 const DesktopTeamContainer = () => {
+  const t = useTranslations('Team');
+
   return (
     <section className="relative pb-[191px]">
       <Image
@@ -35,11 +38,11 @@ const DesktopTeamContainer = () => {
       <Carousel>
         <div className="flex items-center mb-[132px]">
           <h2 className="max-w-[200px] lg:max-w-[375px] relative md:text-[60px] lg:text-[64px] font-manrope font-light uppercase text-white leading-[120%] before:content-[''] before:block before:absolute before:top-1/2 before:-translate-y-1/2 before:right-[-46px] before:w-[20px] before:h-[20px] before:bg-white before:rounded-full">
-            Vores team
+            {t('title')}
           </h2>
           <GooeyWhiteButton
-            text="Оm Os"
-            className="ml-[84px] text-start w-full text-[14px] font-montserrat font-light text-black"
+            text={t('buttonAbout')}
+            className="ml-[84px] text-center w-full text-[14px] font-montserrat font-light text-black"
             width={236}
             height={52}
           />

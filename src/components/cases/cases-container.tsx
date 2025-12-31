@@ -1,8 +1,13 @@
+
+'use client';
 import Image from 'next/image';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 import CasesSlider from './cases-slider';
+import { useTranslations } from 'next-intl';
 
 const CasesContainer = () => {
+  const t = useTranslations('Cases');
+
   return (
     <section className="px-[20px] relative z-10 pt-[148px]">
       <Image
@@ -15,16 +20,17 @@ const CasesContainer = () => {
         className="h-auto max-w-none absolute top-[-180px] left-[-70px] right-0 pointer-events-none -z-10"
       />
       <h2 className="relative z-10 ml-auto max-w-[275px] mb-[24px] text-[40px] font-manrope font-light uppercase text-right text-white leading-[120%]">
-        <span className="text-[#818181]">Cases</span> WebBond {'{ }'}{' '}
-        CodeSite.Art
+        {t.rich('title', {
+          gray: (chunks) => <span className="text-[#818181]">{chunks}</span>,
+        })}
       </h2>
       <p className="font-monserat text-[14px] font-light text-white leading-[120%] max-w-[186px] mb-[32px]">
-        Virksomheder, der har betroet os deres forretning
+        {t('subtitle')}
       </p>
       <CasesSlider />
       <GooeyWhiteButton
-        text="Få et tilbud"
-        className="mx-auto text-start w-full text-[14px] font-montserrat font-light text-black"
+        text={t('button')}
+        className="mx-auto text-center w-full text-[14px] font-montserrat font-light text-black"
         width={310}
         height={52}
       />

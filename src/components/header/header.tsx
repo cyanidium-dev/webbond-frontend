@@ -3,11 +3,11 @@ import MobileLaptopHeader from '../ui/mobile-laptop-header';
 
 const Header = () => {
   return (
-    <header>
-      <div className="hidden lg:block">
+    <header className="fixed top-0 left-0 right-0 z-100 px-[20px] md:px-[32px] pt-[20px] md:pt-[30px] pointer-events-none">
+      <div className="hidden lg:block pointer-events-auto">
         <DesktopHeader />
       </div>
-      <div className="lg:hidden">
+      <div className="lg:hidden pointer-events-auto">
         <MobileLaptopHeader />
       </div>
     </header>

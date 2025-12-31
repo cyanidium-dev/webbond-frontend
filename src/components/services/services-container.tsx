@@ -1,19 +1,24 @@
+
+'use client';
 import Image from 'next/image';
 import ServicesSlider from './services-slider';
 import GooeyWhiteButton from '../ui/gooey-white-button';
+import { useTranslations } from 'next-intl';
 
 const ServicesContainer = () => {
+  const t = useTranslations('Services');
+
   return (
     <section className="px-[20px] pb-[148px]">
       <h2 className="font-light font-manrope text-[40px] leading-[120%] text-white uppercase max-w-[260px]">
-        Services og Priser
+        {t('title')}
       </h2>
       <div className="relative mt-[32px] mb-[37px]">
         <div className="absolute bottom-0 left-[-48px] flex flex-row items-center transform rotate-90 text-[20px] uppercase font-montserrat text-white before:content-[''] before:w-[10px] before:h-[10px] before:bg-[#939393] before:rounded-full before:mr-[14px]">
-          Services
+          {t('verticalText')}
         </div>
         <div className="ml-auto max-w-[310px] font-manrope font-light uppercase text-[20px] leading-[120%] text-right text-white">
-          Fra idé til resultat — kreativitet og kode i én formel
+          {t('subtitle')}
         </div>
       </div>
       <div className="relative -mx-[20px] h-[155px]">
@@ -38,8 +43,8 @@ const ServicesContainer = () => {
       </div>
       <ServicesSlider />
       <GooeyWhiteButton
-        text="Få et tilbud"
-        className="mx-auto text-start w-full text-[14px] font-montserrat font-light text-black"
+        text={t('button')}
+        className="mx-auto text-center w-full text-[14px] font-montserrat font-light text-black"
         width={310}
         height={52}
       />

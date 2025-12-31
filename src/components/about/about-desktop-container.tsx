@@ -1,7 +1,11 @@
+'use client';
 import Image from 'next/image';
 import GooeyWhiteButton from '../ui/gooey-white-button';
+import { useTranslations } from 'next-intl';
 
 const AboutDesktopContainer = () => {
+  const t = useTranslations('About');
+
   return (
     <section className="relative pt-[162px] pb-[173px]">
       {/* right decor */}
@@ -55,7 +59,7 @@ const AboutDesktopContainer = () => {
       </div>
       <div className="max-w-[951px] ml-auto">
         <h2 className="mb-[40px] text-[64px] font-manrope font-light uppercase text-white leading-[120%]">
-          Om WebBond {'{ }'} Code.Site.Art
+          {t('title')}
         </h2>
         <div className="relative pl-[20px]">
           <Image
@@ -67,20 +71,20 @@ const AboutDesktopContainer = () => {
           />
 
           <p className="font-monserat text-[18px] text-white leading-[120%] mb-[25px] max-w-[270px]">
-            <span className="text-[#818181]">
-              Vi kombinerer kreativitet, kode og strategi i ét partnerskab
-            </span>{' '}
-            for at <span className="text-[#818181]">gøre</span> din virksomhed
-            stærkere og mere succesfuld
+            {t.rich('description', {
+              gray: (chunks) => (
+                <span className="text-[#818181]">{chunks}</span>
+              ),
+            })}
           </p>
         </div>
         <p className="relative max-w-[407px] font-manrope text-[20px] font-light uppercase text-white leading-[120%] ml-auto mb-[48px] after:content-[''] after:block after:absolute after:top-1/2 after:-translate-y-1/2 after:left-[-36px] after:w-[20px] after:h-[20px] after:bg-white after:rounded-full after:z-20">
-          Resultater, du får i samarbejde med os:
+          {t('resultsTitle')}
         </p>
         <ul className="flex justify-end gap-[20px] relative z-30 mb-[48px]">
           <li className="relative w-[304px] h-[213px] p-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden">
             <p className="font-manrope font-light text-[24px] text-white leading-[120%] uppercase">
-              Vækst: Tiltræk flere kunder og øg dit salg
+              {t('growth')}
             </p>
             <div className="absolute bottom-[-45px] right-[25px] font-montserrat font-semibold text-[145px] leading-[120%] pointer-events-none select-none z-30 bg-linear-to-b from-white/25 to-white/0 bg-clip-text text-transparent">
               1
@@ -89,7 +93,7 @@ const AboutDesktopContainer = () => {
           </li>
           <li className="flex items-end relative w-[304px] h-[213px] p-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden">
             <p className="font-manrope font-light text-[24px] text-white leading-[120%] uppercase">
-              Synlighed: Bliv set online og skab indtryk hos dine kunder
+              {t('visibility')}
             </p>
             <div className="absolute top-[-65px] right-[25px] font-montserrat font-semibold text-[145px] leading-[120%] pointer-events-none select-none z-0 bg-linear-to-b from-white/25 to-white/0 bg-clip-text text-transparent">
               2
@@ -97,7 +101,7 @@ const AboutDesktopContainer = () => {
           </li>
           <li className="relative w-[304px] h-[213px] p-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden">
             <p className="font-manrope font-light text-[24px] text-white leading-[120%] uppercase">
-              Effektivitet: Spar tid med smarte, automatiserede løsninger
+              {t('efficiency')}
             </p>
             <div className="absolute bottom-[-50px] right-[15px] font-montserrat font-semibold text-[145px] leading-[120%] pointer-events-none select-none z-0 bg-linear-to-b from-white/25 to-white/0 bg-clip-text text-transparent">
               3
@@ -106,8 +110,8 @@ const AboutDesktopContainer = () => {
         </ul>
         <div className="flex items-center">
           <GooeyWhiteButton
-            text="Få et tilbud"
-            className="relative z-30 text-start w-full text-[14px] font-montserrat font-light text-black"
+            text={t('button')}
+            className="relative z-30 text-center w-full text-[14px] font-montserrat font-light text-black"
             width={236}
             height={52}
           />

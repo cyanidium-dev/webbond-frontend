@@ -5,11 +5,13 @@ import Image from 'next/image';
 import { LazyMotion, domAnimation, useAnimate } from 'framer-motion';
 import { WEBSITE_TYPES_MOCK } from './choose-website-mock';
 import GooeyWhiteButton from '../ui/gooey-white-button';
+import { useTranslations } from 'next-intl';
 
 const DesktopChooseWebsiteContainer = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [scope, animate] = useAnimate();
   const isAnimatingRef = useRef(false);
+  const t = useTranslations('ChooseWebsite');
 
   const activeContent = WEBSITE_TYPES_MOCK[activeIndex];
 
@@ -42,13 +44,14 @@ const DesktopChooseWebsiteContainer = () => {
       <section ref={scope} className="relative">
         <div className="mb-[55px]">
           <h2 className="max-w-[990px] font-manrope font-light text-[64px] leading-[120%] text-white uppercase">
-            <span className="text-[#818181]">Vælg et website,</span> der
-            arbejder for din virksomhed
+            {t.rich('title', {
+              gray: (chunks) => (
+                <span className="text-[#818181]">{chunks}</span>
+              ),
+            })}
           </h2>
           <p className="font-montserrat font-light text-[14px] xl:mt-[-70px] leading-[120%] text-white max-w-[343px] ml-auto">
-            Landingpages, hjemmesider eller webshops — et værktøj, der
-            tiltrækker kunder, øger indtjeningen og frigør tid til at udvikle
-            din virksomhed
+            {t('subtitle')}
           </p>
         </div>
 
@@ -63,7 +66,7 @@ const DesktopChooseWebsiteContainer = () => {
                   isActive ? 'bg-white text-[#0a0705]' : 'bg-white/3 text-white'
                 }`}
               >
-                {item.type}
+                {t(`types.${item.id}.label`)}
               </li>
             );
           })}
@@ -75,7 +78,7 @@ const DesktopChooseWebsiteContainer = () => {
             <div className="relative w-[392px] h-[646px] bg-white/6 rounded-[14px] shrink-0">
               <div className="animate-content w-full h-full">
                 <p className="absolute z-10 top-[32px] right-[27px] max-w-[189px] leading-[120%] font-montserrat font-light text-[14px] text-white">
-                  {activeContent.description}
+                  {t(`types.${activeContent.id}.description`)}
                 </p>
                 <div className="relative w-full h-full">
                   <Image
@@ -106,15 +109,17 @@ const DesktopChooseWebsiteContainer = () => {
                 <div className="flex-1 xl:flex-none xl:w-[35vw] rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
                   <div className="animate-content h-full flex flex-col">
                     <h2 className="mb-[35px] font-manrope font-light text-[32px] text-white uppercase leading-[120%]">
-                      {activeContent.firstTitle}
+                      {t(`types.${activeContent.id}.firstSection.title`)}
                     </h2>
                     <ul className="flex flex-col gap-[12px] max-w-[330px] mt-auto">
-                      {activeContent.firstTitleList.map((item, i) => (
+                      {['0', '1', '2'].map((key) => (
                         <li
                           className="relative w-full min-h-[61px] py-[15px] pl-[60px] pr-[20px] rounded-[40px] bg-[#0a0705] flex items-center font-montserrat font-light text-[14px] text-white leading-[120%] before:content-[''] before:absolute before:left-[24px] before:w-[18px] before:h-[18px] before:bg-white before:rounded-full"
-                          key={`list-1-${i}`}
+                          key={`list-1-${key}`}
                         >
-                          {item}
+                          {t(
+                            `types.${activeContent.id}.firstSection.items.${key}`,
+                          )}
                         </li>
                       ))}
                     </ul>
@@ -125,15 +130,17 @@ const DesktopChooseWebsiteContainer = () => {
                 <div className="flex-1 xl:flex-none xl:w-[25vw] rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
                   <div className="animate-content h-full flex flex-col">
                     <h2 className="mb-[35px] font-manrope font-light text-[32px] text-white uppercase leading-[120%]">
-                      {activeContent.secondTitle}
+                      {t(`types.${activeContent.id}.secondSection.title`)}
                     </h2>
                     <ul className="flex flex-col gap-[12px] mt-auto">
-                      {activeContent.secondTitleList.map((item, i) => (
+                      {['0', '1', '2'].map((key) => (
                         <li
                           className="relative w-full min-h-[61px] py-[15px] pl-[60px] pr-[20px] rounded-[40px] bg-[#0a0705] flex items-center font-montserrat font-light text-[14px] text-white leading-[120%] before:content-[''] before:absolute before:left-[24px] before:w-[18px] before:h-[18px] before:bg-white before:rounded-full"
-                          key={`list-2-${i}`}
+                          key={`list-2-${key}`}
                         >
-                          {item}
+                          {t(
+                            `types.${activeContent.id}.secondSection.items.${key}`,
+                          )}
                         </li>
                       ))}
                     </ul>
@@ -170,8 +177,8 @@ const DesktopChooseWebsiteContainer = () => {
           </div>
           <div className="flex-1 h-px bg-linear-to-r from-[#FFFFFF] to-[#0A0704]"></div>
           <GooeyWhiteButton
-            text="Start samarbejdet"
-            className="mx-auto text-start w-full text-[14px] font-montserrat font-light text-black"
+            text={t('buttonStart')}
+            className="mx-auto text-center w-full text-[14px] font-montserrat font-light text-black"
             width={267}
             height={52}
           />

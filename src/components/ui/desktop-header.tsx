@@ -218,7 +218,7 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
         <div className="relative z-10 flex h-full w-full items-center pl-[26px] pr-[12px]">
           {/* Левая часть (Динамическая ширина - тянется, на XL фиксированная как раньше) */}
           <div className="flex xl:w-[855px] items-center justify-between">
-            <Link href="#" className="shrink-0">
+            <Link href="#hero" className="shrink-0">
               <Image
                 src="/desktop-logo.svg"
                 alt="Logo"

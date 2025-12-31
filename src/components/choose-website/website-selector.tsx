@@ -11,10 +11,12 @@ import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 import { WEBSITE_TYPES_MOCK } from './choose-website-mock';
 import { LazyMotion, domAnimation, m, AnimatePresence } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 const WebsiteSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedId, setSelectedId] = useState(WEBSITE_TYPES_MOCK[0].id);
+  const t = useTranslations('ChooseWebsite');
 
   const selectedData =
     WEBSITE_TYPES_MOCK.find((item) => item.id === selectedId) ||
@@ -26,7 +28,7 @@ const WebsiteSelector = () => {
         <DropdownMenuTrigger asChild>
           <button className="w-full px-[18px] h-[53px] rounded-[42px] backdrop-blur-xl bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] cursor-pointer flex justify-between items-center text-white outline-none">
             <span className="font-manrope font-light text-[14px] uppercase text-white">
-              {selectedData.type}
+              {t(`types.${selectedData.id}.label`)}
             </span>
             {isOpen ? (
               <ChevronUp className="w-[16px] h-[16px]" />
@@ -65,7 +67,7 @@ const WebsiteSelector = () => {
                     )}
                   </div>
                   <span className="font-manrope font-light text-[14px] uppercase text-white">
-                    {item.type}
+                    {t(`types.${item.id}.label`)}
                   </span>
                 </div>
               </DropdownMenuItem>
@@ -86,7 +88,7 @@ const WebsiteSelector = () => {
               className="mx-auto relative max-w-[320px] h-[333px] bg-white/6 rounded-[14px]"
             >
               <p className="absolute z-10 top-[24px] right-[16px] max-w-[183px] leading-[120%] font-montserrat font-light text-[12px] text-white">
-                {selectedData.description}
+                {t(`types.${selectedData.id}.description`)}
               </p>
               <Image
                 src={selectedData.fonImage}

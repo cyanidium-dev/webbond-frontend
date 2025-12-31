@@ -1,7 +1,11 @@
+'use client';
 import QuestionsAccordion from './questions-accordion';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const QuestionsAndAnswersContainer = () => {
+  const t = useTranslations('Questions');
+
   return (
     <section className="relative px-[20px] md:px-0 pt-[148px] md:pt-[178px]">
       {/* questions-shadow left */}
@@ -25,7 +29,7 @@ const QuestionsAndAnswersContainer = () => {
         className="hidden md:block absolute bottom-[-300px] right-[-400px] max-w-none -z-20 pointer-events-none blur-[44px]"
       />
       <h2 className="max-w-[240px] md:max-w-full mb-[48px] font-manrope font-light text-[40px] md:text-[64px] leading-[120%] text-white uppercase [text-shadow:4px_3px_9px_rgba(255,0,166,0.2)]">
-        Spørgsmål og svar
+        {t('title')}
       </h2>
       <QuestionsAccordion />
       <Image

@@ -12,11 +12,13 @@ import { CASES_MOCK_DATA } from './cases-mock-data';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import GooeyWhiteButton from '../ui/gooey-white-button';
+import { useTranslations } from 'next-intl';
 
 const DesktopCasesContainer = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+  const t = useTranslations('Cases');
 
   useEffect(() => {
     if (!api) {
@@ -56,18 +58,19 @@ const DesktopCasesContainer = () => {
         }}
       >
         <h2 className="relative mb-[48px] text-[75px] font-manrope font-light uppercase text-white leading-[120%]">
-          <span className="text-[#818181]">Cases</span> WebBond {'{ }'}{' '}
-          CodeSite.Art
+          {t.rich('title', {
+            gray: (chunks) => <span className="text-[#818181]">{chunks}</span>,
+          })}
         </h2>
         <div className="flex items-center mb-[60px]">
           <GooeyWhiteButton
-            text="Få et tilbud"
-            className="text-start w-full text-[14px] font-montserrat font-light text-black"
+            text={t('button')}
+            className="text-center w-full text-[14px] font-montserrat font-light text-black"
             width={236}
             height={52}
           />
           <p className="ml-[48px] max-w-[230px] text-[14px] font-montserrat font-light text-white leading-[120%]">
-            Virksomheder, der har betroet os deres forretning
+            {t('subtitle')}
           </p>
           {/* Custom Navigation Buttons */}
           <div className="flex items-center gap-[24px] ml-auto">

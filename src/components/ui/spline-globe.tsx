@@ -156,7 +156,7 @@ export default function SplineGlobe({
           !showPlaceholder ? 'opacity-0 pointer-events-none' : 'opacity-100' // Видна, пока Spline не готов или спит
         }`}
       >
-        <div className="relative w-[80%] h-[80%]">
+        <div className="relative w-[83%] h-[83%]">
           <Image
             src="/desktop-globus.webp"
             alt="Globe placeholder desktop"

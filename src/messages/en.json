@@ -5,5 +5,179 @@
     "prices": "PRICES",
     "about": "ABOUT",
     "cases": "CASES"
+  },
+  "Hero": {
+    "subtitle": "EVERYTHING FOR YOUR BUSINESS:",
+    "title": "WEBSITE, SEO, LOGO AND ADS",
+    "description": "We transform your websites into customer-generating machines",
+    "mainDescription": "<gray>With our complete solution in one place, you save</gray> both time and money, <gray>while</gray> we create results for your entire business",
+    "button": "Order your website",
+    "verticalText": "Cases",
+    "digitalAgency": "Digital agency"
+  },
+  "Services": {
+    "title": "SERVICES AND PRICES",
+    "subtitle": "From idea to result — creativity and code in one formula",
+    "description": "Websites on pure code, SEO, advertising and branding — everything you need for a successful online business",
+    "button": "Get a quote",
+    "verticalText": "Services"
+  },
+  "ChooseWebsite": {
+    "title": "<gray>Choose a website,</gray> that works for your business",
+    "subtitle": "Landing pages, websites or webshops — a tool that attracts customers, increases earnings and frees up time to develop your business",
+    "buttonOrder": "Order your website",
+    "buttonStart": "Start cooperation",
+    "types": {
+      "landingpage": {
+        "label": "LANDING PAGE",
+        "description": "A simple page with all the essentials – perfect when you want to present one product or service and get customers quickly",
+        "firstSection": {
+          "title": "WHO IS IT FOR",
+          "items": {
+            "0": "A specific product or campaign",
+            "1": "Startups and small businesses, personal brands",
+            "2": "Services with one clear offer"
+          }
+        },
+        "secondSection": {
+          "title": "BENEFITS",
+          "items": {
+            "0": "Focuses customer attention on one goal",
+            "1": "Quick launch and low price",
+            "2": "Provides quick results and sales"
+          }
+        }
+      },
+      "hjemmeside": {
+        "label": "WEBSITE",
+        "description": "A professional website that shows everything your business offers — built to build trust and attract customers from Google.",
+        "firstSection": {
+          "title": "STRUCTURE",
+          "items": {
+            "0": "Companies with multiple services",
+            "1": "Service firms and consultants",
+            "2": "Those who want stable traffic without ads"
+          }
+        },
+        "secondSection": {
+          "title": "GROWTH",
+          "items": {
+            "0": "Appears high on Google (SEO optimized)",
+            "1": "Builds trust with customers",
+            "2": "Provides a steady stream of inquiries"
+          }
+        }
+      },
+      "webshop": {
+        "label": "WEBSHOP",
+        "description": "A webshop that makes it easy to sell online – automatic payments, orders, and inventory management all in one place.",
+        "firstSection": {
+          "title": "SALES",
+          "items": {
+            "0": "Physical stores that want to sell online",
+            "1": "Manufacturers and craftsmen",
+            "2": "Those who want to save time on manual tasks"
+          }
+        },
+        "secondSection": {
+          "title": "EFFICIENCY",
+          "items": {
+            "0": "Sales 24/7 – even while you sleep",
+            "1": "Automated system saves time and errors",
+            "2": "More customers, higher revenue"
+          }
+        }
+      }
+    }
+  },
+  "Cases": {
+    "title": "<gray>Cases</gray> WebBond '{ }' CodeSite.Art",
+    "subtitle": "Companies that have entrusted us with their business",
+    "button": "Get a quote"
+  },
+  "About": {
+    "title": "About WebBond '{ }' Code.Site.Art",
+    "description": "<gray>We combine creativity, code and strategy in one partnership</gray> to <gray>make</gray> your business stronger and more successful",
+    "resultsTitle": "Results you get in cooperation with us:",
+    "growth": "Growth: Attract more customers and increase your sales",
+    "visibility": "Visibility: Be seen online and make an impression on your customers",
+    "efficiency": "Efficiency: Save time with smart, automated solutions",
+    "button": "Get a quote"
+  },
+  "Team": {
+    "title": "Our team",
+    "buttonQuote": "Get a quote",
+    "buttonAbout": "About Us"
+  },
+  "Reviews": {
+    "title": "Reviews",
+    "subtitle": "See what our customers say about us, and browse our reviews"
+  },
+  "Business": {
+    "title": "Take your business <gray>to</gray> the next <gray>level with</gray> WebBond <gray>'{ }' CodeSite.</gray> Art",
+    "description": "Your ambition, our expertise — together we make your business visible, effective and profitable",
+    "button": "Start cooperation"
+  },
+  "Contacts": {
+    "cvr": "CVR:44894181",
+    "city": "Copenhagen",
+    "email": "Email: info@webbond.dk",
+    "button": "Contact Us"
+  },
+  "Questions": {
+    "title": "Questions and answers",
+    "seeMore": "See other questions",
+    "q1": {
+      "question": "How long does it take to create a website?",
+      "answer": "It depends on the scope of the project, but typically a standard website takes 2-4 weeks, while webshops can take 4-8 weeks."
+    },
+    "q2": {
+      "question": "How much does a website cost per month?",
+      "answer": "We have no hidden monthly fees. You only pay for your hosting and domain, which typically costs around 15-30 EUR per month."
+    },
+    "q3": {
+      "question": "What is best – Wix, WordPress or your solution?",
+      "answer": "Our solution is tailored to your needs with a focus on speed, security, and conversion, often exceeding the limitations found in Wix or WordPress."
+    },
+    "q4": {
+      "question": "Are there extra costs for maintaining the website?",
+      "answer": "No, once your website is finished, you own it 100%. However, we offer optional service agreements if you want us to update the content for you."
+    },
+    "q5": {
+      "question": "What are the conditions for cooperation?",
+      "answer": "We start with a non-binding meeting to understand your needs. Then we send a quote, and once approved, we begin design and development."
+    },
+    "q6": {
+      "question": "Is it possible to pay in installments?",
+      "answer": "Yes, we offer flexible payment plans, so you can split your payment over several months without extra interest or fees."
+    },
+    "q7": {
+      "question": "If I don't have texts, images or structure – do you help with that?",
+      "answer": "Yes, absolutely! We can help with copywriting, professional images, and a logical structure that ensures the best user experience."
+    },
+    "q8": {
+      "question": "Is SEO free?",
+      "answer": "Basic SEO setup is often included in our packages, but ongoing SEO optimization to rank high on Google requires a separate effort."
+    },
+    "q9": {
+      "question": "How much does SEO cost per month?",
+      "answer": "The price varies depending on your industry and competition, but we always tailor a solution that fits your budget and goals."
+    },
+    "q10": {
+      "question": "Are Google Ads and SEO the same?",
+      "answer": "No, Google Ads is paid advertising (results here and now), while SEO is organic optimization that provides long-term results without click costs."
+    },
+    "q11": {
+      "question": "Can I do SEO myself?",
+      "answer": "You can do a lot yourself, but professional SEO requires technical insight and ongoing strategic work to achieve and maintain top rankings on Google."
+    },
+    "q12": {
+      "question": "How much does a logo cost?",
+      "answer": "A professional logo typically starts from 350 EUR depending on complexity. We always provide several drafts and files for both print and web."
+    },
+    "q13": {
+      "question": "Do you also make business cards and branding material?",
+      "answer": "Yes, we are happy to help with the full graphic expression, including business cards, letterheads, and other branding material, so your visual identity is consistent."
+    }
   }
 }

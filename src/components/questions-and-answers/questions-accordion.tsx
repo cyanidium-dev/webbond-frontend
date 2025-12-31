@@ -6,11 +6,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-
 import { QUESTIONS_DATA } from './questions-data';
+import { useTranslations } from 'next-intl';
 
 const QuestionsAccordion = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const t = useTranslations('Questions');
 
   // Show first 5 items
   const firstFive = QUESTIONS_DATA.slice(0, 5);
@@ -24,33 +25,37 @@ const QuestionsAccordion = () => {
         collapsible
         className="relative z-10 flex flex-col gap-4"
       >
-        {firstFive.map(({ question, answer, id }) => (
+        {firstFive.map(({ id }) => (
           <AccordionItem
             key={id}
             value={`question-${id}`}
             className="border-none rounded-[50px] backdrop-blur-sm bg-[rgba(18,18,18,0.26)] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] transform-gpu will-change-[filter,backdrop-filter,transform]"
           >
             <AccordionTrigger className="h-[96px] cursor-pointer items-center group px-[32px] py-[31px] text-[14px] md:text-[20px] text-white font-montserrat font-light leading-[120%]">
-              <span className="pr-4 text-left leading-snug">{question}</span>
+              <span className="pr-4 text-left leading-snug">
+                {t(`q${id}.question`)}
+              </span>
             </AccordionTrigger>
             <AccordionContent className="px-6 pb-6 text-[12px] md:text-[20px] text-white/70 lg:px-10 lg:pb-8">
-              {answer}
+              {t(`q${id}.answer`)}
             </AccordionContent>
           </AccordionItem>
         ))}
 
         {isExpanded &&
-          remaining.map(({ question, answer, id }) => (
+          remaining.map(({ id }) => (
             <AccordionItem
               key={id}
               value={`question-${id}`}
               className="border-none rounded-[50px] backdrop-blur-sm bg-[rgba(18,18,18,0.26)] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] transform-gpu will-change-[filter,backdrop-filter,transform]"
             >
               <AccordionTrigger className="h-[96px] cursor-pointer items-center group px-[32px] py-[31px] text-[14px] md:text-[20px] text-white font-montserrat font-light leading-[120%]">
-                <span className="pr-4 text-left leading-snug">{question}</span>
+                <span className="pr-4 text-left leading-snug">
+                  {t(`q${id}.question`)}
+                </span>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6 text-[12px] md:text-[16px] text-white/70 lg:px-10 lg:pb-8">
-                {answer}
+                {t(`q${id}.answer`)}
               </AccordionContent>
             </AccordionItem>
           ))}
@@ -62,7 +67,7 @@ const QuestionsAccordion = () => {
           className="h-[96px] flex items-center justify-between px-[32px] py-[31px] rounded-[50px] bg-white cursor-pointer group"
         >
           <span className="text-[14px] text-black font-montserrat font-light leading-[120%] uppercase">
-            Se andre spørgsmål
+            {t('seeMore')}
           </span>
           <svg
             width="32"

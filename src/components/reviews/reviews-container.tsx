@@ -1,10 +1,13 @@
+'use client';
 import Image from 'next/image';
 import ReviewsSlider from './reviews-slider';
 import SkobkiUI from './skobki-ui';
 import SkobkiDesktop from './skobki-desktop';
-// import ReviewsShadow from './reviews-shadow';
+import { useTranslations } from 'next-intl';
 
 const ReviewsContainer = () => {
+  const t = useTranslations('Reviews');
+
   return (
     <section className="relative px-[20px] md:px-0 pt-[148px]">
       {/* center decor */}
@@ -29,10 +32,10 @@ const ReviewsContainer = () => {
       />
       <div className="md:flex md:justify-between md:mb-[75px]">
         <h2 className="md:order-1 max-w-[307px] md:max-w-full mb-[24px] md:mb-0 md:mt-[-10px] font-manrope font-light text-[40px] md:text-[64px] leading-[120%] text-white uppercase">
-          Vores kunders anmeldelser
+          {t('title')}
         </h2>
         <p className="md:order-0 max-w-[191px] font-montserrat font-light text-[14px] leading-[120%] text-white mb-[44px] md:mb-0">
-          Se hvad vores kunder siger om os, og gennemgå vores anmeldelser
+          {t('subtitle')}
         </p>
       </div>
       <ReviewsSlider />
