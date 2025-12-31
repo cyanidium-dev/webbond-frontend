@@ -28,7 +28,7 @@ const ReviewsContainer = () => {
         height={800}
         sizes="33vw"
         quality={100}
-        className="absolute w-[1150px] 2xl:w-[1000px] top-[320px] left-0 2xl:top-[420px] 2xl:left-[150px] h-auto max-w-none -z-20 pointer-events-none"
+        className="hidden md:block absolute w-[1150px] 2xl:w-[1000px] top-[320px] left-0 2xl:top-[420px] 2xl:left-[150px] h-auto max-w-none -z-20 pointer-events-none"
       />
       <div className="md:flex md:justify-between md:mb-[75px]">
         <h2 className="md:order-1 max-w-[307px] md:max-w-full mb-[24px] md:mb-0 md:mt-[-10px] font-manrope font-light text-[40px] md:text-[64px] leading-[120%] text-white uppercase">
