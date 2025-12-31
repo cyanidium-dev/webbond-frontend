@@ -95,7 +95,7 @@ const WebsiteSelector = () => {
                 alt="choosefon"
                 fill
                 sizes="(max-width: 768px) 100vw, 320px"
-                quality={100}
+                quality={75}
                 className="rounded-[14px]"
               />
               <Image
@@ -104,7 +104,7 @@ const WebsiteSelector = () => {
                 width={330}
                 height={550}
                 sizes="(max-width: 768px) 100vw, 330px"
-                quality={100}
+                quality={75}
                 className="absolute top-[90px] left-[50px] max-w-none h-auto w-[330px]"
               />
             </m.div>

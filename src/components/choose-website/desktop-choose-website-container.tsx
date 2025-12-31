@@ -93,11 +93,11 @@ const DesktopChooseWebsiteContainer = () => {
                   <Image
                     src={activeContent.phoneImage}
                     alt="choosefon"
-                    width={500}
-                    height={946}
-                    sizes="(max-width: 768px) 100vw, 500px"
-                    quality={80}
-                    className="absolute top-[160px] left-[70px] select-none pointer-events-none max-w-none h-auto w-[500px] origin-top-left z-10"
+                    width={330}
+                    height={624}
+                    sizes="(max-width: 1024px) 100vw, 330px"
+                    quality={75}
+                    className="absolute top-[160px] left-[70px] select-none pointer-events-none max-w-none h-auto w-[330px] origin-top-left z-10"
                   />
                 </div>
               </div>
@@ -155,8 +155,8 @@ const DesktopChooseWebsiteContainer = () => {
                     src={activeContent.bannerImage}
                     alt="choosebanner"
                     fill
-                    sizes="(max-width: 768px) 100vw, 600px"
-                    quality={100}
+                    sizes="(max-width: 1280px) 100vw, 600px"
+                    quality={75}
                     className="object-cover"
                   />
                 </div>
@@ -188,7 +188,7 @@ const DesktopChooseWebsiteContainer = () => {
           alt="mobile-title-banner badge"
           width={1200}
           height={1200}
-          quality={80}
+          quality={75}
           sizes="100vw"
           className="absolute bottom-[450px] xl:bottom-[-35px] left-[115px] -z-10 max-w-none pointer-events-none select-none contrast-300"
         />
