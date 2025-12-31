@@ -103,7 +103,7 @@ const WebsiteSelector = () => {
                 alt="choosefon"
                 width={330}
                 height={550}
-                sizes="(max-width: 768px) 100vw, 330px"
+                sizes="(max-width: 330px) 100vw, 330px"
                 quality={75}
                 className="absolute top-[90px] left-[50px] max-w-none h-auto w-[330px]"
               />
