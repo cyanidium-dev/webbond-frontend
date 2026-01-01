@@ -90,9 +90,9 @@ const HeroSlider = () => {
                     alt={slide.title}
                     width={408}
                     height={562}
-                    sizes="(max-width: 768px) 100vw, 204px"
+                    sizes="(max-width: 768px) 200px, 408px"
                     priority={index === 0}
-                    quality={80}
+                    quality={90}
                     className="absolute right-0 bottom-0"
                   />
                 </div>
@@ -102,9 +102,9 @@ const HeroSlider = () => {
                 alt={slide.title}
                 width={470}
                 height={314}
-                sizes="(max-width: 768px) 100vw, 235px"
+                sizes="(max-width: 768px) 470px, 235px"
                 priority={index === 0}
-                quality={80}
+                quality={90}
                 className="absolute left-[100px] bottom-0 scale-[0.8] origin-bottom-left"
               />
             </m.div>
