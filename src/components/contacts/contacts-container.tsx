@@ -1,4 +1,3 @@
-
 'use client';
 import FacebookIcon from './facebook-icon';
 import LinkedinIcon from './linkedin-icon';
@@ -11,18 +10,22 @@ export const links = [
   {
     icon: <FacebookIcon />,
     href: 'https://www.facebook.com/',
+    label: 'Facebook',
   },
   {
     icon: <InstagramIcon />,
     href: 'https://www.instagram.com/',
+    label: 'Instagram',
   },
   {
     icon: <LinkedinIcon />,
     href: 'https://www.linkedin.com/',
+    label: 'LinkedIn',
   },
   {
     icon: <TelegramIcon />,
     href: 'https://www.telegram.org/',
+    label: 'Telegram',
   },
 ];
 
@@ -43,7 +46,7 @@ const ContactsContainer = () => {
       <ul className="flex items-center gap-[15px] mt-[36px] mb-[44px]">
         {links.map((link, index) => (
           <li key={index}>
-            <a href={link.href} target="_blank">
+            <a href={link.href} target="_blank" aria-label={link.label}>
               {link.icon}
             </a>
           </li>

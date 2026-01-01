@@ -86,10 +86,6 @@ export const metadata: Metadata = {
     apple: '/apple-icon',
     icon: '/icon',
   },
-  other: {
-    preconnect: 'https://cdn.sanity.io',
-    'dns-prefetch': 'https://cdn.sanity.io',
-  },
 };
 
 export function generateStaticParams() {
@@ -111,6 +107,10 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning={true}>
       <head>
+        <link rel="preconnect" href="https://cdn.sanity.io" />
+        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+        <link rel="preconnect" href="https://prod.spline.design" />
+        <link rel="dns-prefetch" href="https://prod.spline.design" />
         <link
           rel="preload"
           as="fetch"

@@ -1,4 +1,3 @@
-
 'use client';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 import { links } from './contacts-container';
@@ -29,7 +28,7 @@ const ContactsDesktop = () => {
       <ul className="flex items-center gap-[15px]">
         {links.map((link, index) => (
           <li key={index}>
-            <a href={link.href} target="_blank">
+            <a href={link.href} target="_blank" aria-label={link.label}>
               {link.icon}
             </a>
           </li>
