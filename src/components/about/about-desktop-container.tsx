@@ -11,53 +11,48 @@ const AboutDesktopContainer = () => {
     <LazyMotion features={domAnimation}>
       <section className="relative pt-[162px] pb-[173px]">
         {/* decor elements */}
-        <m.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 2, delay: 0.5 }}
-        >
-          {/* right decor */}
-          <Image
-            src="/about-desktop-right-decor.webp"
-            alt="about-red-decor-right"
-            width={1800}
-            height={1800}
-            sizes="100vw"
-            quality={80}
-            className="absolute top-[-470px] right-[-900px] origin-top-right scale-[1.03] h-auto max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
-          />
-          {/* left decor */}
-          <Image
-            src="/about-desktop-left-decor.webp"
-            alt="about-red-decor-left"
-            width={1500}
-            height={1500}
-            sizes="100vw"
-            quality={80}
-            className="absolute top-[-550px] left-[-1090px] 2xl:left-[-980px] origin-top-left scale-[1.18] h-auto max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
-          />
-          {/* shadow */}
-          <Image
-            src="/about-desktop-shadow.webp"
-            alt="about-desktop-shadow"
-            width={1000}
-            height={600}
-            sizes="33vw"
-            quality={100}
-            className="absolute top-[-280px] right-[-270px] 2xl:top-[100px] 2xl:w-[800px] 2xl:h-[600px] 2xl:right-[-20px] origin-top-right h-auto max-w-none -z-10 pointer-events-none blur-3xl"
-          />
-          {/* radial shadow left*/}
-          <Image
-            src="/about-desktop-radial-shadow-left.webp"
-            alt="about-desktop-radial-shadow-left"
-            width={1200}
-            height={1300}
-            sizes="33vw"
-            quality={100}
-            className="absolute bottom-[-200px] left-[-600px] origin-top-left h-auto max-w-none -z-30 pointer-events-none blur-[44px]"
-          />
-        </m.div>
+
+        {/* right decor */}
+        <Image
+          src="/about-desktop-right-decor.webp"
+          alt="about-red-decor-right"
+          width={1800}
+          height={1800}
+          sizes="100vw"
+          quality={80}
+          className="absolute top-[-470px] right-[-900px] origin-top-right scale-[1.03] h-auto max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
+        />
+        {/* left decor */}
+        <Image
+          src="/about-desktop-left-decor.webp"
+          alt="about-red-decor-left"
+          width={1500}
+          height={1500}
+          sizes="100vw"
+          quality={80}
+          className="absolute top-[-550px] left-[-1090px] 2xl:left-[-980px] origin-top-left scale-[1.18] h-auto max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
+        />
+        {/* shadow */}
+        <Image
+          src="/about-desktop-shadow.webp"
+          alt="about-desktop-shadow"
+          width={1000}
+          height={600}
+          sizes="33vw"
+          quality={100}
+          className="absolute top-[-280px] right-[-270px] 2xl:top-[100px] 2xl:w-[800px] 2xl:h-[600px] 2xl:right-[-20px] origin-top-right h-auto max-w-none -z-10 pointer-events-none blur-3xl"
+        />
+        {/* radial shadow left*/}
+        <Image
+          src="/about-desktop-radial-shadow-left.webp"
+          alt="about-desktop-radial-shadow-left"
+          width={1200}
+          height={1300}
+          sizes="33vw"
+          quality={100}
+          className="absolute bottom-[-200px] left-[-600px] origin-top-left h-auto max-w-none -z-30 pointer-events-none blur-[44px]"
+        />
+
         <m.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
