@@ -110,6 +110,14 @@ export default async function RootLayout({
   setRequestLocale(locale);
   return (
     <html lang={locale} suppressHydrationWarning={true}>
+      <head>
+        <link
+          rel="preload"
+          as="fetch"
+          href="https://prod.spline.design/S6FngPEV2SNfSBPp/scene.splinecode"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
         className={`${montserrat.variable} ${inter.variable} ${manrope.variable} antialiased`}
       >
