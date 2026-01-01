@@ -3,6 +3,7 @@ import Image from 'next/image';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 import ServiceDesktopSlider from './service-desktop-slider';
 import { useTranslations } from 'next-intl';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 
 const DesktopServicesContainer = () => {
   const t = useTranslations('Services');
@@ -34,24 +35,35 @@ const DesktopServicesContainer = () => {
         </div>
       </div>
       <ServiceDesktopSlider />
-      <Image
-        src="/shadow-slider.webp"
-        alt="shadow-slider"
-        width={1050}
-        height={900}
-        sizes="33vw"
-        quality={60}
-        className="absolute left-[150px] top-[-50px] -z-10 pointer-events-none select-none blur-[44px]"
-      />
-      <Image
-        src="/desktop-text-service.webp"
-        alt="shadow-slider"
-        width={1280}
-        height={322}
-        sizes="(max-width: 1280px) 100vw, 1280px"
-        quality={80}
-        className="absolute left-[-10%] right-[-10%] mx-auto w-[105%] max-w-none md:top-[480px] lg:top-[380px] -z-20 pointer-events-none select-none h-auto"
-      />
+      <LazyMotion features={domAnimation}>
+        <Image
+          src="/shadow-slider.webp"
+          alt="shadow-slider"
+          width={1050}
+          height={900}
+          sizes="33vw"
+          quality={60}
+          className="absolute left-[150px] top-[-50px] -z-10 pointer-events-none select-none blur-[44px]"
+        />
+
+        <m.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="absolute left-[-10%] right-[-10%] mx-auto w-[105%] max-w-none md:top-[480px] lg:top-[380px] -z-20 pointer-events-none select-none h-auto"
+        >
+          <Image
+            src="/desktop-text-service.webp"
+            alt="desktop-text-service"
+            width={1280}
+            height={322}
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            quality={80}
+            className="w-full h-auto"
+          />
+        </m.div>
+      </LazyMotion>
     </section>
   );
 };

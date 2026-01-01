@@ -178,6 +178,7 @@ export default function SplineGlobe({
           className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
             isSplineReady ? 'opacity-100' : 'opacity-0'
           }`}
+          style={{ aspectRatio: '1/1' }}
         >
           <Suspense fallback={<div className="w-full h-full bg-transparent" />}>
             <Spline

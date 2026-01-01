@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react';
 import Image from 'next/image';
-import { LazyMotion, domAnimation, useAnimate } from 'framer-motion';
+import { LazyMotion, domAnimation, useAnimate, m } from 'framer-motion';
 import { WEBSITE_TYPES_MOCK } from './choose-website-mock';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 import { useTranslations } from 'next-intl';
@@ -43,23 +43,61 @@ const DesktopChooseWebsiteContainer = () => {
     <LazyMotion features={domAnimation}>
       <section ref={scope} className="relative">
         <div className="mb-[55px]">
-          <h2 className="max-w-[990px] font-manrope font-light text-[64px] leading-[120%] text-white uppercase">
+          <m.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="max-w-[990px] font-manrope font-light text-[64px] leading-[120%] text-white uppercase"
+          >
             {t.rich('title', {
               gray: (chunks) => (
                 <span className="text-[#818181]">{chunks}</span>
               ),
             })}
-          </h2>
-          <p className="font-montserrat font-light text-[14px] xl:mt-[-70px] leading-[120%] text-white max-w-[343px] ml-auto">
+          </m.h2>
+          <m.p
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+            className="font-montserrat font-light text-[14px] xl:mt-[-70px] leading-[120%] text-white max-w-[343px] ml-auto"
+          >
             {t('subtitle')}
-          </p>
+          </m.p>
         </div>
 
-        <ul className="flex gap-[20px] mb-[55px]">
+        <m.ul
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-50px' }}
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.07,
+                delayChildren: 0.3,
+              },
+            },
+          }}
+          className="flex gap-[20px] mb-[55px]"
+        >
           {WEBSITE_TYPES_MOCK.map((item, index) => {
             const isActive = activeIndex === index;
             return (
-              <li
+              <m.li
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.6,
+                      ease: [0.215, 0.61, 0.355, 1], // easeOutCubic/Quart flavor
+                    },
+                  },
+                }}
                 key={item.id}
                 onClick={() => handleToggle(index)}
                 className={`font-manrope font-light text-[24px] uppercase leading-[120%] rounded-[56px] flex items-center justify-center w-full h-[83px] backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] cursor-pointer transition-all duration-300 ease-in-out active:scale-[0.95] ${
@@ -67,10 +105,10 @@ const DesktopChooseWebsiteContainer = () => {
                 }`}
               >
                 {t(`types.${item.id}.label`)}
-              </li>
+              </m.li>
             );
           })}
-        </ul>
+        </m.ul>
 
         <div className="relative min-h-[646px] mb-[44px]">
           <div className="flex flex-col xl:flex-row gap-[20px]">

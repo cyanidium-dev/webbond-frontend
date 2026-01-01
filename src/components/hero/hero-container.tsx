@@ -1,15 +1,17 @@
-import HeroDesktop from './hero-desktop';
-import HeroMobile from './hero-mobile';
+import dynamic from 'next/dynamic';
+
+const HeroDesktop = dynamic(() => import('./hero-desktop'), { ssr: true });
+const HeroMobile = dynamic(() => import('./hero-mobile'), { ssr: true });
 
 const HeroContainer = () => {
   return (
     <section>
-      <div className='md:hidden'>
+      <div className="md:hidden">
         <HeroMobile />
-          </div>
-          <div className='hidden md:block'>
-            <HeroDesktop />
-          </div>
+      </div>
+      <div className="hidden md:block">
+        <HeroDesktop />
+      </div>
     </section>
   );
 };
