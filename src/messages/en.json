@@ -179,5 +179,30 @@
       "question": "Do you also make business cards and branding material?",
       "answer": "Yes, we are happy to help with the full graphic expression, including business cards, letterheads, and other branding material, so your visual identity is consistent."
     }
+  },
+  "FeedbackModal": {
+    "title": "From Idea to Business",
+    "description": "We transform your business into a system that works and creates profit for you.",
+    "form": {
+      "namePlaceholder": "Your Name",
+      "phonePlaceholder": "Phone",
+      "emailPlaceholder": "E-mail",
+      "messagePlaceholder": "Message",
+      "submit": "Send Message",
+      "loading": "Sending..."
+    },
+    "validation": {
+      "nameMin": "Name must be at least 2 characters",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Invalid phone number",
+      "emailInvalid": "Invalid email address",
+      "messageRequired": "Message is required",
+      "messageMax": "Message is too long"
+    }
+  },
+  "SuccessModal": {
+    "title": "Thank you for your information!",
+    "description": "We have received your information and will get back to you as soon as possible.",
+    "button": "Close"
   }
 }

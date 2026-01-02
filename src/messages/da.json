@@ -179,5 +179,30 @@
       "question": "Laver I også visitkort og brandingmateriale?",
       "answer": "Ja, vi hjælper gerne med det fulde grafiske udtryk, herunder visitkort, brevpapir og andet brandingmateriale, så din visuelle identitet er sammenhængende."
     }
+  },
+  "FeedbackModal": {
+    "title": "Fra idé til forretning",
+    "description": "Vi forvandler din virksomhed til et system, der fungerer og skaber profit for dig.",
+    "form": {
+      "namePlaceholder": "Dit navn",
+      "phonePlaceholder": "Telefon",
+      "emailPlaceholder": "E-mail",
+      "messagePlaceholder": "Besked",
+      "submit": "Send besked",
+      "loading": "Sender..."
+    },
+    "validation": {
+      "nameMin": "Navnet skal være mindst 2 tegn",
+      "phoneRequired": "Telefonnummer er påkrævet",
+      "phoneInvalid": "Ugyldigt telefonnummer",
+      "emailInvalid": "Ugyldig e-mailadresse",
+      "messageRequired": "Besked er påkrævet",
+      "messageMax": "Beskeden er for lang"
+    }
+  },
+  "SuccessModal": {
+    "title": "Tak for dine oplysninger!",
+    "description": "Vi har modtaget dine oplysninger og vender tilbage til dig snarest muligt.",
+    "button": "Luk"
   }
 }

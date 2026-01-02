@@ -11,7 +11,7 @@ const ReviewsContainer = () => {
 
   return (
     <LazyMotion features={domAnimation}>
-      <section className="relative px-[20px] md:px-0 pt-[148px]">
+      <section className="relative px-[20px] md:px-0 pt-[148px] md:pt-0">
         {/* decor elements (shadows) - static */}
         <div>
           {/* center decor */}
@@ -22,7 +22,7 @@ const ReviewsContainer = () => {
             height={1500}
             sizes="100vw"
             quality={100}
-            className="hidden md:block absolute max-w-none top-[-155px] left-[50%] translate-x-[-50%] pointer-events-none select-none contrast-125 saturate-150 -z-30"
+            className="hidden md:block absolute max-w-none top-[-300px] left-[50%] translate-x-[-50%] pointer-events-none select-none contrast-125 saturate-150 -z-30"
           />
           {/* shadow on center decor */}
           <Image
@@ -32,7 +32,7 @@ const ReviewsContainer = () => {
             height={800}
             sizes="33vw"
             quality={100}
-            className="hidden md:block absolute w-[1150px] 2xl:w-[1000px] top-[320px] left-0 2xl:top-[420px] 2xl:left-[150px] h-auto max-w-none -z-20 pointer-events-none"
+            className="hidden md:block absolute w-[1150px] top-[230px] left-0 h-auto max-w-none -z-20 pointer-events-none"
           />
         </div>
 
@@ -61,7 +61,7 @@ const ReviewsContainer = () => {
         {/* Brackets and shadows (bottom/side decor) - static */}
         <div>
           <SkobkiUI className="md:hidden absolute top-[308px] right-[-40px] -z-10 pointer-events-none select-none" />
-          <SkobkiDesktop className="hidden md:block absolute top-[508px] right-[-30px] -z-10 pointer-events-none select-none" />
+          <SkobkiDesktop className="hidden md:block absolute top-[370px] right-[-30px] -z-10 pointer-events-none select-none" />
           <Image
             src="/reviews-shadow.webp"
             alt="reviews-shadow"

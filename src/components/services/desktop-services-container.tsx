@@ -9,8 +9,9 @@ const DesktopServicesContainer = () => {
   const t = useTranslations('Services');
 
   return (
-    <section className="pt-[118px] pb-[200px] relative">
-      <div className="flex justify-between mb-0 lg:mb-[100px]">
+    <section className="pt-[118px] pb-[168px] relative">
+      <div className="flex justify-between mb-0 lg:mb-0">
+        {/* <div className="flex justify-between mb-0 lg:mb-[100px]"> */}
         <div className="flex flex-col relative">
           <p className="max-w-[300px] md:mt-[15px] mb-[58px] font-montserrat font-light text-[14px] text-white leading-[120%]">
             {t('description')}
@@ -42,8 +43,8 @@ const DesktopServicesContainer = () => {
           width={1050}
           height={900}
           sizes="33vw"
-          quality={60}
-          className="absolute left-[150px] top-[-50px] -z-10 pointer-events-none select-none blur-[44px]"
+          quality={100}
+          className="absolute left-[150px] top-[-50px] -z-10 pointer-events-none select-none"
         />
 
         <m.div
@@ -51,7 +52,7 @@ const DesktopServicesContainer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="absolute left-[-10%] right-[-10%] mx-auto w-[105%] max-w-none md:top-[480px] lg:top-[380px] -z-20 pointer-events-none select-none h-auto"
+          className="absolute left-[-11%] right-[-11%] mx-auto w-[105%] max-w-none md:top-[480px] lg:top-[270px] xl:top-[260px] -z-20 pointer-events-none select-none h-auto"
         >
           <Image
             src="/desktop-text-service.webp"

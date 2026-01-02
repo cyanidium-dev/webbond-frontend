@@ -118,7 +118,7 @@ const ServiceDesktopSlider = () => {
             alt="slider-shadow"
             width={800}
             height={430}
-            quality={80}
+            quality={60}
             sizes="100vw"
             className="select-none pointer-events-none"
           />
@@ -140,7 +140,7 @@ const ServiceDesktopSlider = () => {
                 opacity: styles.opacity,
                 rotateX: styles.rotateX,
                 z: styles.z,
-                width: '495px',
+                maxWidth: '520px',
                 transformStyle: 'preserve-3d',
               }}
             >
@@ -165,7 +165,7 @@ const ServiceDesktopSlider = () => {
                     handleNext();
                   }
                 }}
-                className="mx-auto w-[495px] relative pt-[10px] pr-[10px] pb-[10px] pl-[24px] flex gap-6 backdrop-blur-2xl bg-white/3 rounded-[20px] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden pointer-events-auto cursor-pointer"
+                className="mx-auto max-w-[520px] relative pt-[10px] pr-[10px] pb-[10px] pl-[24px] flex gap-6 backdrop-blur-2xl bg-white/3 rounded-[20px] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden pointer-events-auto cursor-pointer"
               >
                 <div className="mt-[10px]">
                   <h2 className="font-manrope font-light text-[32px] leading-[120%] text-white uppercase mb-[20px]">

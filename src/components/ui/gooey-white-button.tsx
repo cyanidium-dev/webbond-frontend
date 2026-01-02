@@ -1,6 +1,8 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { LazyMotion, domAnimation, m, Variants } from 'framer-motion';
+import { Loader2 } from 'lucide-react';
+import { useLayoutEffect, useRef, useState } from 'react';
 
 const circleVariants: Variants = {
   initial: { x: 0 },
@@ -12,8 +14,12 @@ interface GooeyWhiteButtonProps {
   className?: string;
   icon?: React.ReactNode;
   onClick?: () => void;
-  width?: number;
+  width?: number; // Optional now, will be used as initial/min width
   height?: number;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  isLoading?: boolean;
+  loadingText?: string;
 }
 
 const GooeyWhiteButton = ({
@@ -21,9 +27,31 @@ const GooeyWhiteButton = ({
   className,
   icon,
   onClick,
-  width = 236,
+  width: initialWidth,
   height = 52,
+  type = 'button',
+  disabled = false,
+  isLoading = false,
+  loadingText,
 }: GooeyWhiteButtonProps) => {
+  const containerRef = useRef<HTMLButtonElement>(null);
+  const [width, setWidth] = useState(initialWidth || 236);
+
+  useLayoutEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.contentRect) {
+          setWidth(entry.contentRect.width);
+        }
+      }
+    });
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   const radius = height / 2;
   const bridgeWidth = height * 1.327; // Пропорция из оригинала (69/52)
   const mainBodyRight = width - bridgeWidth;
@@ -65,14 +93,20 @@ const GooeyWhiteButton = ({
   return (
     <LazyMotion features={domAnimation}>
       <m.button
+        ref={containerRef}
+        type={type}
+        disabled={disabled || isLoading}
         onClick={onClick}
         initial="initial"
-        whileHover="hover"
+        whileHover={disabled || isLoading ? 'initial' : 'hover'}
         className={cn(
-          'group relative flex cursor-pointer items-center overflow-visible bg-transparent transition-transform active:scale-95',
+          'group relative flex cursor-pointer items-center overflow-visible bg-transparent transition-all',
+          !disabled && !isLoading && 'active:scale-95',
+          (disabled || isLoading) &&
+            'cursor-not-allowed opacity-50 grayscale-[0.5]',
           className,
         )}
-        style={{ width, height }}
+        style={{ width: initialWidth || '100%', height }}
       >
         {/* Динамический фон отрисованный напрямую в SVG с поддержкой Gooey эффекта */}
         <svg
@@ -116,11 +150,20 @@ const GooeyWhiteButton = ({
 
         {/* Слой контента */}
         <div className="relative z-10 flex h-full w-full items-center">
-          <span className="flex-1 pl-6 leading-none">{text}</span>
+          <span className="flex-1 pl-6 leading-none flex items-center">
+            {isLoading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                {loadingText || text}
+              </>
+            ) : (
+              text
+            )}
+          </span>
 
           <div
             style={{ width: height }}
-            className="flex shrink-0 items-center justify-center"
+            className="flex shrink-0 items-center justify-center text-black"
           >
             {icon || (
               <m.svg

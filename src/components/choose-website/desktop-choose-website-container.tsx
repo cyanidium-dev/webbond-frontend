@@ -67,58 +67,37 @@ const DesktopChooseWebsiteContainer = () => {
           </m.p>
         </div>
 
-        <m.ul
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-50px' }}
-          variants={{
-            hidden: { opacity: 0 },
-            show: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.07,
-                delayChildren: 0.3,
-              },
-            },
-          }}
-          className="flex gap-[20px] mb-[55px]"
-        >
+        <ul className="flex gap-[20px] mb-[55px]">
           {WEBSITE_TYPES_MOCK.map((item, index) => {
             const isActive = activeIndex === index;
             return (
-              <m.li
-                variants={{
-                  hidden: { opacity: 0, y: 15 },
-                  show: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 0.6,
-                      ease: [0.215, 0.61, 0.355, 1], // easeOutCubic/Quart flavor
-                    },
-                  },
-                }}
+              <li
                 key={item.id}
                 onClick={() => handleToggle(index)}
                 className={`font-manrope font-light text-[24px] uppercase leading-[120%] rounded-[56px] flex items-center justify-center w-full h-[83px] backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] cursor-pointer transition-all duration-300 ease-in-out active:scale-[0.95] ${
                   isActive ? 'bg-white text-[#0a0705]' : 'bg-white/3 text-white'
                 }`}
               >
-                {t(`types.${item.id}.label`)}
-              </m.li>
+                <span>{t(`types.${item.id}.label`)}</span>
+              </li>
             );
           })}
-        </m.ul>
+        </ul>
 
         <div className="relative min-h-[646px] mb-[44px]">
           <div className="flex flex-col xl:flex-row gap-[20px]">
             {/* Phone Card - Static Container */}
             <div className="relative w-[392px] h-[646px] bg-white/6 rounded-[14px] shrink-0">
               <div className="animate-content w-full h-full">
-                <p className="absolute z-10 top-[32px] right-[27px] max-w-[189px] leading-[120%] font-montserrat font-light text-[14px] text-white">
+                <m.p
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="absolute z-10 top-[32px] right-[27px] max-w-[189px] leading-[120%] font-montserrat font-light text-[14px] text-white"
+                >
                   {t(`types.${activeContent.id}.description`)}
-                </p>
-                <div className="relative w-full h-full">
+                </m.p>
+                <div className="relative w-full h-full rounded-[14px]">
                   <Image
                     src={activeContent.fonImageDesktop}
                     alt="choosefon"
@@ -127,7 +106,7 @@ const DesktopChooseWebsiteContainer = () => {
                     quality={80}
                     className="object-cover rounded-[14px]"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(0,0,0,0.9)_0%,transparent_40%)] pointer-events-none" />
+                  <div className="absolute inset-0 pointer-events-none" />
                   <Image
                     src={activeContent.phoneImage}
                     alt="choosefon"
@@ -144,20 +123,28 @@ const DesktopChooseWebsiteContainer = () => {
             <div className="flex flex-col gap-[20px]">
               <div className="flex gap-[20px]">
                 {/* First Info Card - Static Container */}
-                <div className="flex-1 xl:flex-none xl:w-[35vw] rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
+                <div className="flex-1 xl:flex-503 w-full rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
+                  {/* <div className="flex-1 xl:flex-none xl:w-[35vw] rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]"> */}
                   <div className="animate-content h-full flex flex-col">
-                    <h2 className="mb-[35px] font-manrope font-light text-[32px] text-white uppercase leading-[120%]">
+                    <m.h2
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8 }}
+                      className="mb-[35px] font-manrope font-light text-[32px] text-white uppercase leading-[120%]"
+                    >
                       {t(`types.${activeContent.id}.firstSection.title`)}
-                    </h2>
-                    <ul className="flex flex-col gap-[12px] max-w-[330px] mt-auto">
+                    </m.h2>
+                    <ul className="flex flex-col gap-[12px] mt-auto">
                       {['0', '1', '2'].map((key) => (
                         <li
                           className="relative w-full min-h-[61px] py-[15px] pl-[60px] pr-[20px] rounded-[40px] bg-[#0a0705] flex items-center font-montserrat font-light text-[14px] text-white leading-[120%] before:content-[''] before:absolute before:left-[24px] before:w-[18px] before:h-[18px] before:bg-white before:rounded-full"
                           key={`list-1-${key}`}
                         >
-                          {t(
-                            `types.${activeContent.id}.firstSection.items.${key}`,
-                          )}
+                          <span className="w-[290px]">
+                            {t(
+                              `types.${activeContent.id}.firstSection.items.${key}`,
+                            )}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -165,11 +152,17 @@ const DesktopChooseWebsiteContainer = () => {
                 </div>
 
                 {/* Second Info Card - Static Container */}
-                <div className="flex-1 xl:flex-none xl:w-[25vw] rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
+                <div className="flex-1 xl:flex-[341] w-full rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
+                  {/* <div className="flex-1 xl:flex-none xl:w-[25vw] rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]"> */}
                   <div className="animate-content h-full flex flex-col">
-                    <h2 className="mb-[35px] font-manrope font-light text-[32px] text-white uppercase leading-[120%]">
+                    <m.h2
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8 }}
+                      className="mb-[35px] font-manrope font-light text-[32px] text-white uppercase leading-[120%]"
+                    >
                       {t(`types.${activeContent.id}.secondSection.title`)}
-                    </h2>
+                    </m.h2>
                     <ul className="flex flex-col gap-[12px] mt-auto">
                       {['0', '1', '2'].map((key) => (
                         <li
@@ -223,12 +216,13 @@ const DesktopChooseWebsiteContainer = () => {
         </div>
         <Image
           src="/decor-chosse-desktop.webp"
-          alt="mobile-title-banner badge"
-          width={1200}
-          height={1200}
-          quality={75}
-          sizes="100vw"
-          className="absolute bottom-[450px] xl:bottom-[-35px] left-[115px] -z-10 max-w-none pointer-events-none select-none contrast-300"
+          alt="decor-chosse-desktop"
+          width={1150}
+          height={1150}
+          quality={100}
+          sizes="50vw"
+          className="absolute bottom-[450px] xl:bottom-[-105px] left-[115px] -z-10 max-w-none pointer-events-none select-none"
+          // className="absolute bottom-[450px] xl:bottom-[-35px] left-[115px] -z-10 max-w-none pointer-events-none select-none contrast-300"
         />
       </section>
     </LazyMotion>

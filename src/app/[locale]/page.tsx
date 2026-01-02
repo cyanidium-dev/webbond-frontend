@@ -83,7 +83,7 @@ export default async function Home({
   const { locale } = await params;
   setRequestLocale(locale);
   return (
-    <section className="pt-[60px] md:pt-[110px] pb-[20px] md:pb-[30px] md:container md:mx-auto md:px-[32px]">
+    <section className="pt-[60px] md:pt-[110px] pb-[20px] md:pb-[30px] md:max-w-[1340px] md:mx-auto md:px-[32px]">
       <Header />
       <div id="hero">
         <HeroContainer />

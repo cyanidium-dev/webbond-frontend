@@ -173,7 +173,7 @@ export default function SplineGlobe({
 
       {/* Заглушка для Десктопа */}
       <div
-        className={`absolute inset-0 top-[40px] w-full h-full transition-opacity duration-1000 hidden md:flex items-center justify-center ${
+        className={`absolute inset-0 top-[45px] w-full h-full transition-opacity duration-1000 hidden md:flex items-center justify-center ${
           !showPlaceholder ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
       >

@@ -16,7 +16,7 @@ const ReviewsSlider = () => {
         {REVIEWS_DATA.map((reviewItem) => (
           <CarouselItem
             key={reviewItem.id}
-            className="pl-4 md:pl-[20px] basis-full md:basis-1/2 2xl:basis-1/3"
+            className="pl-4 md:pl-[20px] basis-full md:basis-1/2"
           >
             <div className="relative w-full h-[160px] md:h-[300px] p-[20px] md:p-[34px] rounded-[6px] md:rounded-[12px] flex flex-col backdrop-blur-sm md:backdrop-blur-xl bg-white/3 shadow-[inset_2px_-1px_5px_-1px_rgba(255,255,255,0.12)]">
               <div className="flex gap-[28px] md:gap-[54px]">

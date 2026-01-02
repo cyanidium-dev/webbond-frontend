@@ -8,12 +8,18 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import LocaleSwitcher from '@/components/header/lang-switch';
+import dynamic from 'next/dynamic';
+
+const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+  ssr: false,
+});
 
 interface DesktopHeaderProps {
   className?: string;
 }
 
 export default function DesktopHeader({ className }: DesktopHeaderProps) {
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
   const t = useTranslations();
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(1216);
@@ -59,6 +65,7 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
 
   const currentPath = getPath(width);
   const circleCx = 932 + (width - 1216);
+  const leftSectionWidth = 887 + (width - 1216);
 
   return (
     <LazyMotion features={domAnimation}>
@@ -67,9 +74,13 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
         initial="initial"
         whileHover="hover"
         className={cn(
-          'relative w-full max-w-[1216px] 2xl:max-w-[1536px] h-[60px] mx-auto',
+          'relative w-full max-w-[1276px] h-[60px] mx-auto',
           className,
         )}
+        // className={cn(
+        //   'relative w-full max-w-[1216px] 2xl:max-w-[1536px] h-[60px] mx-auto',
+        //   className,
+        // )}
       >
         {/* SVG определения для масок и фильтров */}
         <svg className="pointer-events-none absolute h-0 w-0">
@@ -217,7 +228,11 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
         {/* Слой контента */}
         <div className="relative z-10 flex h-full w-full items-center pl-[26px] pr-[12px]">
           {/* Левая часть (Динамическая ширина - тянется, на XL фиксированная как раньше) */}
-          <div className="flex xl:w-[855px] items-center justify-between">
+          <div
+            className="flex items-center justify-start lg:pr-[20px] xl:pr-[40px]"
+            style={{ width: `${leftSectionWidth}px` }}
+          >
+            {/* <div className="flex xl:w-[855px] items-center justify-between"> */}
             <Link href="#hero" className="shrink-0">
               <Image
                 src="/desktop-logo.svg"
@@ -227,26 +242,30 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
               />
             </Link>
             {/* Nav */}
-            <nav className="flex items-center gap-2 ml-[30px] mr-[20px] xl:ml-[73px] xl:mr-[54px] 2xl:ml-[300px] xl:gap-8 2xl:gap-10">
+            <nav className="flex items-center ml-[30px] mr-[20px] lg:ml-auto lg:mr-0 lg:gap-2 xl:gap-8">
+              {/* <nav className="flex items-center gap-2 ml-[30px] mr-[20px] xl:ml-[73px] xl:mr-[54px] 2xl:ml-[300px] xl:gap-8 2xl:gap-10"> */}
               {navItems.map((item) => (
                 <a
                   key={item.titleKey}
                   href={item.href}
-                  className="font-montserrat text-[12px] xl:text-[14px] text-white transition-[color, scale] duration-300 ease-in-out hover:text-red-400 hover:scale-105 uppercase leading-[120%] whitespace-nowrap"
+                  className="font-montserrat text-[12px] xl:text-[16px] text-white transition-[color, scale] duration-300 ease-in-out hover:text-red-400 hover:scale-105 uppercase leading-[120%] whitespace-nowrap"
                 >
                   {t(item.titleKey)}
                 </a>
               ))}
             </nav>
             {/* Language switch */}
-            <div className="flex items-center gap-[16px] xl:gap-[32px] shrink-0">
+            <div className="flex items-center justify-start gap-[16px] lg:gap-[16px] xl:gap-[32px] lg:ml-[30px] xl:ml-[54px]">
               <div className="h-6 w-px bg-white/10" />
               <LocaleSwitcher triggerClassName="font-montserrat text-[16px] font-medium text-white hover:text-white gap-2 leading-[125%] uppercase" />
             </div>
           </div>
 
           {/* Правая часть (Фиксированная ширина относительно правого края - сдвигается вместе с вырезом) */}
-          <div className="flex items-center hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer shrink-0 ml-auto">
+          <div
+            onClick={() => setIsFeedbackOpen(true)}
+            className="flex items-center hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer shrink-0 ml-auto"
+          >
             <span className="font-montserrat text-[12px] xl:text-[14px] text-white uppercase leading-[143%] mr-[45px]">
               BOOK EN KONSULTATION
             </span>
@@ -261,6 +280,7 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
           </div>
         </div>
       </m.header>
+      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
     </LazyMotion>
   );
 }
