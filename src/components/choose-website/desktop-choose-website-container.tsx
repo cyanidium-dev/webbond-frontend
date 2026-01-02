@@ -43,28 +43,16 @@ const DesktopChooseWebsiteContainer = () => {
     <LazyMotion features={domAnimation}>
       <section ref={scope} className="relative">
         <div className="mb-[55px]">
-          <m.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="max-w-[990px] font-manrope font-light text-[64px] leading-[120%] text-white uppercase"
-          >
+          <h2 className="max-w-[990px] font-manrope font-light text-[64px] leading-[120%] text-white uppercase">
             {t.rich('title', {
               gray: (chunks) => (
                 <span className="text-[#818181]">{chunks}</span>
               ),
             })}
-          </m.h2>
-          <m.p
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="font-montserrat font-light text-[14px] xl:mt-[-70px] leading-[120%] text-white max-w-[343px] ml-auto"
-          >
+          </h2>
+          <p className="font-montserrat font-light text-[14px] xl:mt-[-70px] leading-[120%] text-white max-w-[343px] ml-auto">
             {t('subtitle')}
-          </m.p>
+          </p>
         </div>
 
         <ul className="flex gap-[20px] mb-[55px]">
@@ -87,16 +75,14 @@ const DesktopChooseWebsiteContainer = () => {
         <div className="relative min-h-[646px] mb-[44px]">
           <div className="flex flex-col xl:flex-row gap-[20px]">
             {/* Phone Card - Static Container */}
-            <div className="relative w-[392px] h-[646px] bg-white/6 rounded-[14px] shrink-0">
+            <div className="relative w-[392px] h-[646px] bg-white/6 rounded-[14px] shrink-0 overflow-hidden">
               <div className="animate-content w-full h-full">
-                <m.p
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="absolute z-10 top-[32px] right-[27px] max-w-[189px] leading-[120%] font-montserrat font-light text-[14px] text-white"
-                >
+                <p className="absolute z-10 top-[32px] right-[27px] max-w-[189px] leading-[120%] font-montserrat font-light text-[14px] text-white">
                   {t(`types.${activeContent.id}.description`)}
-                </m.p>
+                </p>
+                {/* Dark Corner Shadow Overlay */}
+                <div className="absolute w-[490px] h-[490px] left-[0px] bottom-[0px] bg-[radial-gradient(circle_at_0%_100%,_rgba(0,0,0,0.9)_0%,_transparent_60%)] z-20 pointer-events-none" />
+
                 <div className="relative w-full h-full rounded-[14px]">
                   <Image
                     src={activeContent.fonImageDesktop}
@@ -126,14 +112,9 @@ const DesktopChooseWebsiteContainer = () => {
                 <div className="flex-1 xl:flex-503 w-full rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
                   {/* <div className="flex-1 xl:flex-none xl:w-[35vw] rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]"> */}
                   <div className="animate-content h-full flex flex-col">
-                    <m.h2
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.8 }}
-                      className="mb-[35px] font-manrope font-light text-[32px] text-white uppercase leading-[120%]"
-                    >
+                    <h2 className="mb-[35px] font-manrope font-light text-[32px] text-white uppercase leading-[120%]">
                       {t(`types.${activeContent.id}.firstSection.title`)}
-                    </m.h2>
+                    </h2>
                     <ul className="flex flex-col gap-[12px] mt-auto">
                       {['0', '1', '2'].map((key) => (
                         <li
@@ -155,14 +136,9 @@ const DesktopChooseWebsiteContainer = () => {
                 <div className="flex-1 xl:flex-[341] w-full rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
                   {/* <div className="flex-1 xl:flex-none xl:w-[25vw] rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]"> */}
                   <div className="animate-content h-full flex flex-col">
-                    <m.h2
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.8 }}
-                      className="mb-[35px] font-manrope font-light text-[32px] text-white uppercase leading-[120%]"
-                    >
+                    <h2 className="mb-[35px] font-manrope font-light text-[32px] text-white uppercase leading-[120%]">
                       {t(`types.${activeContent.id}.secondSection.title`)}
-                    </m.h2>
+                    </h2>
                     <ul className="flex flex-col gap-[12px] mt-auto">
                       {['0', '1', '2'].map((key) => (
                         <li
@@ -214,6 +190,16 @@ const DesktopChooseWebsiteContainer = () => {
             height={52}
           />
         </div>
+        <div className="animate-content absolute bottom-[50px] left-[-80px] -z-20 w-[600px] h-[600px] pointer-events-none select-none">
+          <Image
+            src={activeContent.fonImageDesktop}
+            alt="shadow-decoration"
+            fill
+            quality={60}
+            className="blur-[120px] opacity-20 object-contain brightness-50 contrast-125"
+          />
+        </div>
+
         <Image
           src="/decor-chosse-desktop.webp"
           alt="decor-chosse-desktop"
@@ -222,7 +208,6 @@ const DesktopChooseWebsiteContainer = () => {
           quality={100}
           sizes="50vw"
           className="absolute bottom-[450px] xl:bottom-[-105px] left-[115px] -z-10 max-w-none pointer-events-none select-none"
-          // className="absolute bottom-[450px] xl:bottom-[-35px] left-[115px] -z-10 max-w-none pointer-events-none select-none contrast-300"
         />
       </section>
     </LazyMotion>
