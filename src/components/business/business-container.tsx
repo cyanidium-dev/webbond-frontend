@@ -20,9 +20,10 @@ const BusinessContainer = () => {
           <Image
             src="/Business-phone.png"
             alt="business-left-decor"
-            fill
+            width={320}
+            height={437}
             sizes="(max-width: 768px) 100vw, 320px"
-            quality={100}
+            quality={80}
             className="object-contain pointer-events-none"
           />
         </m.div>
@@ -108,7 +109,7 @@ const BusinessContainer = () => {
             width={520}
             height={1637}
             sizes="(max-width: 768px) 100vw, 520px"
-            quality={60}
+            quality={100}
             className="absolute w-[520px] h-[1637px] top-[150px] left-0 max-w-none pointer-events-none -z-20"
           />
         </m.div>

@@ -20,7 +20,7 @@ const ReviewsContainer = () => {
             alt="review-desktop-centr-decor"
             width={1500}
             height={1500}
-            sizes="100vw"
+            sizes="(max-width: 1500px) 100vw, 1500px"
             quality={100}
             className="hidden md:block absolute max-w-none top-[-300px] left-[50%] translate-x-[-50%] pointer-events-none select-none contrast-125 saturate-150 -z-30"
           />
@@ -30,7 +30,7 @@ const ReviewsContainer = () => {
             alt="review-desktop-shadow-on"
             width={1000}
             height={800}
-            sizes="33vw"
+            sizes="(max-width: 1150px) 100vw, 1150px"
             quality={100}
             className="hidden md:block absolute w-[1150px] top-[230px] left-0 h-auto max-w-none -z-20 pointer-events-none"
           />

@@ -22,8 +22,8 @@ const DesktopBisinesContainer = () => {
             alt="business-left-decor"
             width={500}
             height={700}
-            sizes="33vw"
-            quality={100}
+            sizes="(max-width: 1280px) 33vw, 500px"
+            quality={80}
             className="scale-[1.1] object-contain"
           />
         </m.div>
@@ -40,7 +40,7 @@ const DesktopBisinesContainer = () => {
             alt="business-desktop-decor"
             width={1600}
             height={1600}
-            sizes="100vw"
+            sizes="(max-width: 1600px) 100vw, 1600px"
             quality={100}
             className="absolute top-[-150px] right-[-900px] 2xl:right-[-1000px] max-w-none pointer-events-none -z-10 contrast-110 saturate-170"
           />
@@ -50,8 +50,8 @@ const DesktopBisinesContainer = () => {
             alt="business-desktop-shadow"
             width={1300}
             height={900}
-            sizes="33vw"
-            quality={100}
+            sizes="(max-width: 1300px) 100vw, 1300px"
+            quality={40}
             className="absolute bottom-[-550px] right-[-900px] max-w-none pointer-events-none -z-10 blur-[44px]"
           />
           {/* radial light shadow */}

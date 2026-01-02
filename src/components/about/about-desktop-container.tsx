@@ -19,8 +19,8 @@ const AboutDesktopContainer = () => {
             alt="about-red-decor-right"
             width={1700}
             height={1700}
-            sizes="100vw"
-            quality={100}
+            sizes="(max-width: 1700px) 100vw, 1700px"
+            quality={80}
             className="absolute top-[-450px] md:right-[-1050px] lg:right-[-800px] origin-top-right h-auto max-w-none pointer-events-none contrast-125 saturate-150"
           />
           {/* left decor */}
@@ -29,8 +29,8 @@ const AboutDesktopContainer = () => {
             alt="about-red-decor-left"
             width={1500}
             height={1500}
-            sizes="100vw"
-            quality={100}
+            sizes="(max-width: 1500px) 100vw, 1500px"
+            quality={80}
             className="absolute top-[-550px] md:left-[-1190px] lg:left-[-1060px] origin-top-left scale-[1.18] h-auto max-w-none pointer-events-none contrast-125 saturate-150"
             // className="absolute top-[-550px] left-[-1090px] 2xl:left-[-980px] origin-top-left scale-[1.18] h-auto max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
           />
@@ -53,8 +53,8 @@ const AboutDesktopContainer = () => {
           alt="about-desktop-radial-shadow-left"
           width={1200}
           height={1300}
-          sizes="33vw"
-          quality={100}
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          quality={40}
           className="absolute bottom-[-200px] left-[-600px] origin-top-left h-auto max-w-none -z-30 pointer-events-none blur-[44px]"
         />
 

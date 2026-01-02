@@ -14,9 +14,9 @@ const QuestionsAndAnswersContainer = () => {
         alt="questions-shadow"
         width={1582}
         height={1477}
-        sizes="33vw"
+        sizes="(max-width: 1582px) 100vw, 1582px"
         quality={100}
-        className="absolute top-[-120px] left-[-440px] max-w-none -z-10 pointer-events-none xl:blur-[24px]"
+        className="absolute top-[-120px] left-[-440px] max-w-none -z-10 pointer-events-none xl:blur-xl"
       />
       {/* radial shadow right*/}
       <Image
@@ -24,7 +24,7 @@ const QuestionsAndAnswersContainer = () => {
         alt="questions-desktop-radial-shadow"
         width={1500}
         height={1500}
-        sizes="33vw"
+        sizes="(max-width: 1500px) 100vw, 1500px"
         quality={100}
         className="hidden md:block absolute bottom-[-300px] right-[-400px] max-w-none -z-20 pointer-events-none blur-[44px]"
       />
@@ -37,7 +37,7 @@ const QuestionsAndAnswersContainer = () => {
         alt="questions-right-decor"
         width={898}
         height={388}
-        sizes="33vw"
+        sizes="(max-width: 898px) 100vw, 898px"
         quality={100}
         className="absolute bottom-[-60px] left-[-100px] max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
       />

@@ -42,8 +42,8 @@ const DesktopServicesContainer = () => {
           alt="shadow-slider"
           width={1050}
           height={900}
-          sizes="33vw"
-          quality={100}
+          sizes="(max-width: 1050px) 100vw, 1050px"
+          quality={40}
           className="absolute left-0 lg:left-[10px] xl:left-[150px] top-[-50px] -z-10 pointer-events-none select-none blur-2xl"
         />
 
