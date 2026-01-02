@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
     imageSizes: [
       16, 32, 48, 64, 96, 128, 256, 330, 384, 392, 408, 470, 578, 600,
     ],
-    qualities: [40, 60, 70, 75, 80, 100],
+    qualities: [40, 60, 70, 75, 80, 90, 100],
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {

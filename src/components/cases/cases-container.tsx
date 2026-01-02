@@ -15,7 +15,7 @@ const CasesContainer = () => {
         width={580}
         height={611}
         sizes="(max-width: 768px) 100vw, 580px"
-        quality={40}
+        quality={90}
         className="h-auto max-w-none absolute top-[-180px] left-[-70px] right-0 pointer-events-none -z-10"
       />
       <h2 className="relative z-10 ml-auto max-w-[275px] mb-[24px] text-[40px] font-manrope font-light uppercase text-right text-white leading-[120%]">
@@ -39,7 +39,7 @@ const CasesContainer = () => {
         width={692}
         height={850}
         sizes="(max-width: 768px) 100vw, 692px"
-        quality={60}
+        quality={100}
         className="h-auto max-w-none absolute bottom-[-510px] left-[-470px] scale-[1.65] pointer-events-none contrast-125 saturate-150 z-20 opacity-85"
       />
     </section>
