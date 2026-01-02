@@ -5,12 +5,15 @@ import Image from 'next/image';
 import GlassGooeyButton from '../ui/glass-gooey-button';
 import { m, useInView, useAnimate } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import MarqueeText from '../ui/marquee-text';
 
 const ServiceDesktopSlider = () => {
   const [scope, animate] = useAnimate();
   const currentIndexRef = useRef(0);
   const isInView = useInView(scope);
   const isAnimatingRef = useRef(false);
+  const t = useTranslations('Services');
 
   const getSlideStyles = (index: number, activeIndex: number) => {
     // Calculate distance accounting for wrap-around
@@ -165,48 +168,52 @@ const ServiceDesktopSlider = () => {
                     handleNext();
                   }
                 }}
-                className="mx-auto max-w-[520px] relative pt-[10px] pr-[10px] pb-[10px] pl-[24px] flex gap-6 backdrop-blur-2xl bg-white/3 rounded-[20px] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden pointer-events-auto cursor-pointer"
+                className="mx-auto w-[450px] relative pt-[16px] pr-[10px] pb-[16px] pl-[24px] flex gap-6 backdrop-blur-2xl bg-white/3 rounded-[20px] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden pointer-events-auto cursor-pointer"
               >
-                <div className="mt-[10px]">
-                  <h2 className="font-manrope font-light text-[32px] leading-[120%] text-white uppercase mb-[20px]">
-                    {service.title}
-                  </h2>
-                  <p className="font-montserrat font-light text-[12px] leading-[120%] text-[#bebebe] max-w-[189px] mb-[24px]">
-                    {service.description}
-                  </p>
-                  <div className="font-montserrat font-light text-[14px] text-white uppercase mb-[24px]">
-                    {service.price}
-                  </div>
-                  <GlassGooeyButton
-                    text="Se mere"
-                    width={149}
-                    height={43}
-                    blur="36px"
-                    boxShadow="inset 3px -1px 11px -1px rgba(255, 255, 255, 0.12)"
-                    className="relative z-10 text-white text-[12px] font-montserrat font-light leading-[167%] mt-auto cursor-pointer"
+                <div className="flex flex-col h-full w-[189px]">
+                  <MarqueeText
+                    text={t(`items.${service.id}.title`)}
+                    className="font-manrope font-light text-[32px] leading-[120%] text-white uppercase mb-[12px] w-full"
                   />
+                  <p className="font-montserrat font-light text-[12px] leading-[120%] text-[#bebebe] mb-[16px]">
+                    {t(`items.${service.id}.description`)}
+                  </p>
+                  <MarqueeText
+                    text={t(`items.${service.id}.price`)}
+                    className="font-montserrat font-light text-[14px] text-white uppercase mb-[16px] w-full"
+                  />
+                  <div className="mt-auto">
+                    <GlassGooeyButton
+                      text={t('seeMore')}
+                      width={149}
+                      height={43}
+                      blur="36px"
+                      boxShadow="inset 3px -1px 11px -1px rgba(255, 255, 255, 0.12)"
+                      className="relative z-10 text-white text-[12px] font-montserrat font-light leading-[167%] cursor-pointer"
+                    />
+                  </div>
                 </div>
                 <div className="relative rounded-[6px] w-full min-h-full bg-[linear-gradient(168deg,#e63b44_0%,#1b0000_100%)]">
                   <div className="relative overflow-hidden w-full h-full rounded-[6px]">
                     <Image
                       src={service.imageDesktop}
                       alt="services-slider-image"
-                      width={530}
-                      height={610}
-                      sizes="(max-width: 768px) 100vw, 530px"
+                      width={450}
+                      height={450}
+                      sizes="(max-width: 768px) 100vw, 450px"
                       quality={80}
-                      className="absolute max-w-none w-[530px] h-auto right-[-170px] bottom-[-70%]"
+                      className="absolute max-w-none h-auto right-[-145px] bottom-[-135px]"
                     />
                   </div>
                 </div>
                 <Image
                   src={service.imageMobile}
                   alt="services-slider-image"
-                  width={600}
-                  height={261}
-                  sizes="(max-width: 768px) 100vw, 600px"
+                  width={540}
+                  height={200}
+                  sizes="(max-width: 768px) 100vw, 540px"
                   quality={80}
-                  className="absolute left-0 bottom-[-370px] max-w-none w-[600px] h-auto pointer-events-none"
+                  className="absolute left-[30px] bottom-[-260px] max-w-none pointer-events-none"
                 />
               </div>
               {/** PRESERVED CARD CONTENT END */}

@@ -21,7 +21,7 @@ const AboutDesktopContainer = () => {
             height={1700}
             sizes="100vw"
             quality={100}
-            className="absolute top-[-450px] right-[-800px] origin-top-right h-auto max-w-none pointer-events-none contrast-125 saturate-150"
+            className="absolute top-[-450px] md:right-[-1050px] lg:right-[-800px] origin-top-right h-auto max-w-none pointer-events-none contrast-125 saturate-150"
           />
           {/* left decor */}
           <Image
@@ -31,7 +31,7 @@ const AboutDesktopContainer = () => {
             height={1500}
             sizes="100vw"
             quality={100}
-            className="absolute top-[-550px] left-[-1060px] origin-top-left scale-[1.18] h-auto max-w-none pointer-events-none contrast-125 saturate-150"
+            className="absolute top-[-550px] md:left-[-1190px] lg:left-[-1060px] origin-top-left scale-[1.18] h-auto max-w-none pointer-events-none contrast-125 saturate-150"
             // className="absolute top-[-550px] left-[-1090px] 2xl:left-[-980px] origin-top-left scale-[1.18] h-auto max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
           />
           {/* shadow */}
@@ -143,9 +143,12 @@ const AboutDesktopContainer = () => {
                   show: { opacity: 1, x: 0 },
                 }}
                 transition={{ duration: 0.8 }}
-                className="font-manrope font-light text-[24px] text-white leading-[120%] uppercase"
+                className="max-w-[199px] font-manrope font-light text-[24px] text-white leading-[120%] uppercase"
               >
-                {t('growth')}
+                <span className="block mb-[20px]">{t('growthTitle')}</span>
+                <span className="block text-[14px] leading-[120%]">
+                  {t('growthDesc')}
+                </span>
               </m.p>
               <m.div
                 variants={{
@@ -165,9 +168,12 @@ const AboutDesktopContainer = () => {
                   show: { opacity: 1, x: 0 },
                 }}
                 transition={{ duration: 0.8 }}
-                className="font-manrope font-light text-[24px] text-white leading-[120%] uppercase"
+                className="max-w-[264px] font-manrope font-light text-[24px] text-white leading-[120%] uppercase"
               >
-                {t('visibility')}
+                <span className="block mb-[20px]">{t('visibilityTitle')}</span>
+                <span className="block text-[14px] leading-[120%]">
+                  {t('visibilityDesc')}
+                </span>
               </m.p>
               <m.div
                 variants={{
@@ -187,9 +193,12 @@ const AboutDesktopContainer = () => {
                   show: { opacity: 1, x: 0 },
                 }}
                 transition={{ duration: 0.8 }}
-                className="font-manrope font-light text-[24px] text-white leading-[120%] uppercase"
+                className="max-w-[176px] font-manrope font-light text-[24px] text-white leading-[120%] uppercase"
               >
-                {t('efficiency')}
+                <span className="block mb-[20px]">{t('efficiencyTitle')}</span>
+                <span className="block text-[14px] leading-[120%]">
+                  {t('efficiencyDesc')}
+                </span>
               </m.p>
               <m.div
                 variants={{

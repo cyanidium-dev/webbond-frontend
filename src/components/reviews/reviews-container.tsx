@@ -42,7 +42,7 @@ const ReviewsContainer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="md:order-1 max-w-[307px] md:max-w-full mb-[24px] md:mb-0 md:mt-[-10px] font-manrope font-light text-[40px] md:text-[64px] leading-[120%] text-white uppercase"
+            className=" md:order-1 max-w-[307px] md:max-w-[500px] xl:max-w-full mb-[24px] md:mb-0 md:mt-[-10px] font-manrope font-light text-[40px] md:text-[64px] leading-[120%] text-white uppercase"
           >
             {t('title')}
           </m.h2>

@@ -80,8 +80,13 @@ const AboutContainer = () => {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="relative flex items-center w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden"
           >
-            <p className="w-full max-w-[183px] font-manrope font-light text-base text-white leading-[120%] uppercase wrap-break-word">
-              {t('growth')}
+            <p className="w-full max-w-[183px] font-manrope font-light text-white leading-[120%] wrap-break-word">
+              <span className="block font-light uppercase text-base mb-3">
+                {t('growthTitle')}
+              </span>
+              <span className="block text-[10px] leading-[120%] text-white">
+                {t('growthDesc')}
+              </span>
             </p>
             <div className="absolute top-[-15px] right-[17px] font-montserrat font-semibold text-[145px] leading-[120%] pointer-events-none select-none z-30 bg-linear-to-b from-white/25 to-white/0 bg-clip-text text-transparent">
               1
@@ -96,7 +101,12 @@ const AboutContainer = () => {
             className="relative flex items-center justify-end w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden"
           >
             <p className="w-full max-w-[191px] font-manrope font-light text-base text-white leading-[120%] uppercase wrap-break-word">
-              {t('visibility')}
+              <span className="block font-light uppercase text-base mb-3">
+                {t('visibilityTitle')}
+              </span>
+              <span className="block text-[10px] leading-[120%] text-white">
+                {t('visibilityDesc')}
+              </span>
             </p>
             <div className="absolute top-[-25px] left-0 font-montserrat font-semibold text-[145px] leading-[120%] pointer-events-none select-none z-0 bg-linear-to-b from-white/25 to-white/0 bg-clip-text text-transparent">
               2
@@ -111,7 +121,12 @@ const AboutContainer = () => {
             className="relative flex items-center w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden"
           >
             <p className="w-full max-w-[210px] font-manrope font-light text-base text-white leading-[120%] uppercase wrap-break-word">
-              {t('efficiency')}
+              <span className="block font-light uppercase text-base mb-3">
+                {t('efficiencyTitle')}
+              </span>
+              <span className="block text-[10px] leading-[120%] text-white">
+                {t('efficiencyDesc')}
+              </span>
             </p>
             <div className="absolute top-[-20px] right-0 font-montserrat font-semibold text-[145px] leading-[120%] pointer-events-none select-none z-0 bg-linear-to-b from-white/25 to-white/0 bg-clip-text text-transparent">
               3

@@ -20,7 +20,45 @@
     "subtitle": "Fra idé til resultat — kreativitet og kode i én formel",
     "description": "Hjemmesider på ren kode, SEO, reklame og branding — alt, hvad du behøver for en succesfuld online-forretning",
     "button": "Få et tilbud",
-    "verticalText": "Services"
+    "verticalText": "Services",
+    "seeMore": "Se mere",
+    "items": {
+      "1": {
+        "title": "Hjemmeside",
+        "description": "En hjemmeside, der gør det nemt for dine kunder at finde dig og købe dine produkter",
+        "price": "Pris fra 37.500 kr (5000€)"
+      },
+      "2": {
+        "title": "SEO",
+        "description": "Bliv fundet på Google, så flere mennesker opdager din virksomhed",
+        "price": "Pris fra 6.000 kr/måned (800€)"
+      },
+      "3": {
+        "title": "Logo",
+        "description": "Et logo, der gør det nemt for folk at genkende din virksomhed",
+        "price": "Pris fra 3.000 kr (400€)"
+      },
+      "4": {
+        "title": "Google Ads",
+        "description": "Annonce på Google, så kunder ser dig og kommer til din virksomhed",
+        "price": "Pris fra 3.750 kr/måned (600€)"
+      },
+      "5": {
+        "title": "FB & Instagram ADS",
+        "description": "Reklame på sociale medier, der fanger folks opмærksomhed og skaber nye kunder",
+        "price": "Pris fra 3.750 kr/måned (600€)"
+      },
+      "6": {
+        "title": "Motion Design",
+        "description": "Videoer og animationer, der gør dit brand levende og spændende for kunderne",
+        "price": "Pris fra 2.000 kr (250€)"
+      },
+      "7": {
+        "title": "Kalkulatorer",
+        "description": "Interaktive værktøjer, så folk hurtigt kan se priser og muligheder",
+        "price": "Pris fra 4.500 kr (600€)"
+      }
+    }
   },
   "ChooseWebsite": {
     "title": "<gray>Vælg et website,</gray> der arbejder for din virksomhed",
@@ -99,9 +137,12 @@
     "title": "Om WebBond '{ }' Code.Site.Art",
     "description": "<gray>Vi kombinerer kreativitet, kode og strategi i ét partnerskab</gray> for at <gray>gøre</gray> din virksomhed stærkere og mere succesfuld",
     "resultsTitle": "Resultater, du får i samarbejde med os:",
-    "growth": "Vækst: Tiltræk flere kunder og øg dit salg",
-    "visibility": "Synlighed: Bliv set online og skab indtryk hos dine kunder",
-    "efficiency": "Effektivitet: Spar tid med smarte, automatiserede løsninger",
+    "growthTitle": "Synlighed:",
+    "growthDesc": "Bliv set online og styrk dit brand med professionelt design og SEO",
+    "visibilityTitle": "Vækst:",
+    "visibilityDesc": "Flere kunder og øget salg gennem målrettede kampagner og optimerede websites",
+    "efficiencyTitle": "Effektivitet:",
+    "efficiencyDesc": "Spar tid med automatiserede løsninger og samlet digital service ét sted",
     "button": "Få et tilbud"
   },
   "Team": {
@@ -129,55 +170,55 @@
     "seeMore": "Se andre spørgsmål",
     "q1": {
       "question": "Hvor lang tid tager det at lave en hjemmeside?",
-      "answer": "Det afhænger af projektets omfang, men typisk tager en standard hjemmeside 2-4 uger, mens webshops kan tage 4-8 uger."
+      "answer": "Små projekter tager normalt 2–3 uger, mens større websites tager op til 8 uger, afhængigt af funktioner og design."
     },
     "q2": {
       "question": "Hvad koster en hjemmeside om måneden?",
-      "answer": "Vi har ingen skjulte månedlige gebyrer. Du betaler kun for din hosting og domæne, hvilket typisk koster omkring 100-200 kr. om måneden."
+      "answer": "En professionel hjemmeside starter fra ca. 37.500 kr (5000€) og opefter, afhængigt af design, antal sider og funktioner. Den præcise pris får du efter en gratis konsultation, hvor vi gennemgår dit projekt."
     },
     "q3": {
       "question": "Hvad er bedst – Wix, WordPress eller jeres løsning?",
-      "answer": "Vores løsning er skræddersyet til dine behov med fokus på hastighed, sikkerhed og konvertering, hvilket ofte overgår de begrænsninger, man finder i Wix eller WordPress."
+      "answer": "Ingen af platformene kan levere de resultater, vi gør. Vi bygger hjemmesider på ren kode, uden afhængighed af platforme, med livstidsgaranti på vores system. Det betyder maksimal hastighed, fleksibilitet og sikkerhed."
     },
     "q4": {
       "question": "Er der ekstra udgifter til vedligeholdelse af hjemmesiden?",
-      "answer": "Nej, når din hjemmeside er færdig, ejer du den 100%. Vi tilbyder dog valgfri serviceaftaler, hvis du ønsker, at vi opdaterer indholdet for dig."
+      "answer": "Du betaler kun for domæne og hosting, afhængigt af størrelsen på dit site. Der findes både gratis og betalte løsninger."
     },
     "q5": {
       "question": "Hvad er betingelserne for samarbejde?",
-      "answer": "Vi starter med et uforpligtende møde for at forstå dine behov. Derefter sender vi et tilbud, og når det er godkendt, påbegynder vi design og udvikling."
+      "answer": "Vi starter med en gratis konsultation, derefter laver vi et tilbud. Når du godkender det, underskriver vi kontrakten, og efter 50 % forudbetaling begynder vi arbejdet."
     },
     "q6": {
       "question": "Er der mulighed for afbetaling?",
-      "answer": "Ja, vi tilbyder fleksible betalingsordninger, så du kan opdele din betaling over flere måneder uden ekstra renter eller gebyrer."
+      "answer": "Ja, vi tilbyder fleksible betalingsaftaler i 2–4 rater efter aftale, så du nemt kan planlægge din investering."
     },
     "q7": {
       "question": "Hvis jeg ikke har tekster, billeder eller struktur – hjælper I med det?",
-      "answer": "Ja, absolut! Vi kan hjælpe med både tekstforfatning, professionelle billeder og en logisk struktur, der sikrer den bedste brugeroplevelse."
+      "answer": "Ja, selvfølgelig! Under den gratis konsultation gennemgår vi dit projekt og laver tekster, billeder og struktur for dig. Du fortæller bare om din virksomhed — vi klarer resten."
     },
     "q8": {
       "question": "Er SEO gratis?",
-      "answer": "Grundlæggende SEO-opsætning er ofte inkluderet i vores pakker, men løbende SEO-optimering for at rangere højt på Google kræver en separat indsats."
+      "answer": "Nej, SEO er ikke gratis – men det er en investering, der hurtigt betaler sig. Du betaler for arbejdet én gang, og resultaterne fortsætter med at skabe trafik og kunder over tid."
     },
     "q9": {
       "question": "Hvad koster SEO om måneden?",
-      "answer": "Prisen varierer alt efter din branche og konkurrence, men vi skræddersyer altid en løsning, der passer til dit budget og dine mål."
+      "answer": "SEO koster fra ca. 6.000 kr/måned (800€) om måneden og opefter, afhængigt af branche, konkurrence og mål. Vi tilpasser altid løsningen, så du får mest muligt ud af dit budget."
     },
     "q10": {
       "question": "Er Google Ads og SEO det samme?",
-      "answer": "Nej, Google Ads er betalt annoncering (resultater her og nu), mens SEO er organisk optimering, der giver langsigtede resultater uden klikomkostninger."
+      "answer": "Nej. Google Ads er betalte annoncer, mens SEO handler om at blive fundet organisk uden at betale pr. klik. Sammen giver de den bedste effekt."
     },
     "q11": {
       "question": "Kan jeg selv lave SEO?",
-      "answer": "Du kan gøre meget selv, men professionel SEO kræver teknisk indsigt og løbende strategisk arbejde for at opnå og bevare topplaceringer på Google."
+      "answer": "Det er bedst at overlade det til specialister. Vi arbejder med professionelle værktøjer som Ahrefs, Semrush, SEOAbility og Screaming Frog, kombineret med mange års erfaring. Det giver et langt stærkere og hurtigere resultat."
     },
     "q12": {
       "question": "Hvad koster et logo?",
-      "answer": "Et professionelt logo starter typisk fra 2.500 kr. alt efter kompleksitet. Vi leverer altid flere udkast og filer til både tryk og web."
+      "answer": "Et professionelt logo koster fra ca. 3.000 kr (400€) og opefter, men vi tilbyder også komplet branding med visuel identitet, farver, skrifttyper og designmanual."
     },
     "q13": {
       "question": "Laver I også visitkort og brandingmateriale?",
-      "answer": "Ja, vi hjælper gerne med det fulde grafiske udtryk, herunder visitkort, brevpapir og andet brandingmateriale, så din visuelle identitet er sammenhængende."
+      "answer": "Ja, vi designer visitkort, flyers, brandbøger og marketingstrategier, så din virksomhed får et samlet, professionelt udtryk."
     }
   },
   "FeedbackModal": {

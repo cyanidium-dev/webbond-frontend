@@ -152,7 +152,7 @@ const DesktopCasesContainer = () => {
               {CASES_MOCK_DATA.map((caseItem) => (
                 <CarouselItem
                   key={caseItem.id}
-                  className="pl-5 md:basis-[70%] lg:basis-[50%] xl:basis-[40%]"
+                  className="pl-5 md:basis-[60%] lg:basis-[45%] xl:basis-[40%]"
                 >
                   <m.div
                     variants={{

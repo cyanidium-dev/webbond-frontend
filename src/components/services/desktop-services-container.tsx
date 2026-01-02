@@ -44,16 +44,10 @@ const DesktopServicesContainer = () => {
           height={900}
           sizes="33vw"
           quality={100}
-          className="absolute left-[150px] top-[-50px] -z-10 pointer-events-none select-none"
+          className="absolute left-0 lg:left-[10px] xl:left-[150px] top-[-50px] -z-10 pointer-events-none select-none blur-2xl"
         />
 
-        <m.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-          className="absolute left-[-11%] right-[-11%] mx-auto w-[105%] max-w-none md:top-[480px] lg:top-[270px] xl:top-[260px] -z-20 pointer-events-none select-none h-auto"
-        >
+        <div className="absolute left-[-11%] right-[-11%] mx-auto w-[105%] max-w-none md:top-[310px] lg:top-[270px] xl:top-[260px] -z-20 pointer-events-none select-none h-auto">
           <Image
             src="/desktop-text-service.webp"
             alt="desktop-text-service"
@@ -63,7 +57,7 @@ const DesktopServicesContainer = () => {
             quality={80}
             className="w-full h-auto"
           />
-        </m.div>
+        </div>
       </LazyMotion>
     </section>
   );

@@ -8,25 +8,30 @@ import {
 } from '@/components/ui/carousel';
 import { servicesData } from './services-data';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import MarqueeText from '../ui/marquee-text';
 
 const ServicesSlider = () => {
+  const t = useTranslations('Services');
   return (
     <section className="mt-[-97px] mb-[36px]">
       <Carousel>
         <CarouselContent>
           {servicesData.map((service) => (
             <CarouselItem key={service.id}>
-              <div className="relative pt-[6px] pr-[6px] pb-[14px] pl-[16px] flex gap-3 backdrop-blur-sm bg-white/3 rounded-[13px] shadow-[inset_2px_-1px_6px_-1px_rgba(255,255,255,0.12)]">
+              <div className="relative pt-[6px] pr-[6px] pb-[14px] pl-[16px] flex gap-3 backdrop-blur-sm bg-white/3 rounded-[13px] shadow-[inset_2px_-1px_6px_-1px_rgba(255,255,255,0.12)] overflow-hidden">
                 <div className="mt-[10px]">
-                  <h2 className="font-manrope font-light text-[20px] leading-[120%] text-white uppercase mb-[12px]">
-                    {service.title}
-                  </h2>
+                  <MarqueeText
+                    text={t(`items.${service.id}.title`)}
+                    className="font-manrope font-light text-[20px] leading-[120%] text-white uppercase mb-[12px] w-[122px]"
+                  />
                   <p className="font-montserrat font-light text-[8px] leading-[120%] text-[#bebebe] max-w-[122px] mb-[15px]">
-                    {service.description}
+                    {t(`items.${service.id}.description`)}
                   </p>
-                  <div className="font-montserrat font-light text-[9px] text-white uppercase mb-[23px]">
-                    {service.price}
-                  </div>
+                  <MarqueeText
+                    text={t(`items.${service.id}.price`)}
+                    className="font-montserrat font-light text-[9px] text-white uppercase mb-[23px] w-[122px]"
+                  />
                   <button className="group relative z-10 w-[127px] h-[34px] active:scale-95 transition-transform">
                     <Image
                       src="/btn-test.png"
@@ -38,7 +43,7 @@ const ServicesSlider = () => {
                     <div className="absolute inset-0 z-10 flex items-center">
                       {/* Спейсер слева для центрирования относительно тела кнопки (не считая кружка) */}
                       <span className="flex-1 text-center font-montserrat text-[12px] font-light text-white leading-none">
-                        Se mere
+                        {t('seeMore')}
                       </span>
                       {/* Область для иконки справа (34px - это высота/диаметр кружка) */}
                       <div className="w-[34px] flex shrink-0 items-center justify-center">
@@ -74,11 +79,11 @@ const ServicesSlider = () => {
                 <Image
                   src={service.imageMobile}
                   alt="services-slider-image"
-                  width={378}
+                  width={375}
                   height={241}
-                  sizes="(max-width: 768px) 100vw, 378px"
+                  sizes="(max-width: 768px) 100vw, 380px"
                   quality={80}
-                  className="absolute left-0 bottom-[-212px] max-w-none w-[378px] h-auto"
+                  className="absolute left-[13px] bottom-[-165px] max-w-none"
                 />
               </div>
             </CarouselItem>
