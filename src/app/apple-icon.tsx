@@ -13,7 +13,7 @@ export default function AppleIcon() {
     (
       <div
         style={{
-          fontSize: 32,
+          fontSize: 52,
           textAlign: 'center',
           background: 'linear-gradient(to bottom, #434343, #000000)',
           width: '100%',
@@ -22,8 +22,8 @@ export default function AppleIcon() {
           alignItems: 'center',
           justifyContent: 'center',
           color: '#e6533c',
-          borderRadius: '20%', // Apple любит скруглённые
-          border: '8px solid #254f43',
+          borderRadius: '50%', // Apple любит скруглённые
+          border: '5px solid #e6533c',
           fontWeight: 'bold',
         }}
       >
