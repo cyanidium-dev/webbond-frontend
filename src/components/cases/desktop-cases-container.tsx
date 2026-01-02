@@ -162,19 +162,16 @@ const DesktopCasesContainer = () => {
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                   >
                     <Link href={`/cases/${caseItem.id}`}>
-                      <m.div
-                        whileHover={{ y: -10 }}
-                        className="relative w-full max-w-[495px] min-h-[600px] rounded-[20px] p-[24px] flex flex-col group"
-                      >
+                      <div className="relative w-full max-w-[495px] min-h-[600px] rounded-[20px] p-[24px] flex flex-col group">
                         <Image
                           src={caseItem.image}
                           alt={caseItem.title}
                           fill
                           quality={80}
                           sizes="(max-width: 1250px) 45vw, 500px"
-                          className="object-fill rounded-[20px] transition-transform duration-500 group-hover:scale-[1.02]"
+                          className="object-fill rounded-[20px] transition-transform duration-500"
                         />
-                        <div className="absolute top-[24px] right-[24px] z-10 w-[60px] h-[60px] rounded-full flex items-center justify-center bg-white transition-transform duration-300 group-hover:rotate-45">
+                        <div className="absolute top-[24px] right-[24px] z-10 w-[60px] h-[60px] rounded-full flex items-center justify-center bg-white transition-transform duration-300">
                           <svg
                             width="21"
                             height="19"
@@ -204,7 +201,7 @@ const DesktopCasesContainer = () => {
                             </li>
                           ))}
                         </ul>
-                      </m.div>
+                      </div>
                     </Link>
                   </m.div>
                 </CarouselItem>
