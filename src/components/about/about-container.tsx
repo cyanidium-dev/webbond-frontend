@@ -161,7 +161,7 @@ const AboutContainer = () => {
             height={1300}
             sizes="(max-width: 768px) 100vw, 1300px"
             quality={100}
-            className="absolute top-[150px] right-[-840px] h-auto max-w-none z-20 pointer-events-none contrast-125 saturate-150 safari-filter-fix"
+            className="absolute top-[150px] right-[-840px] h-auto max-w-none z-20 pointer-events-none contrast-125 saturate-150"
           />
         </m.div>
       </section>

@@ -29,7 +29,7 @@ const Footer = () => {
           fill
           sizes="100vw"
           quality={80}
-          className="object-cover opacity-40 mix-blend-overlay pointer-events-none saturate-150 contrast-150 z-10 safari-filter-fix"
+          className="object-cover opacity-40 mix-blend-overlay pointer-events-none saturate-150 contrast-150 z-10"
         />
         <Image
           src="/desktop-footer-text.svg"

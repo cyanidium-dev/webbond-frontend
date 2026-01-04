@@ -21,7 +21,7 @@ const AboutDesktopContainer = () => {
             height={1700}
             sizes="(max-width: 1700px) 100vw, 1700px"
             quality={80}
-            className="absolute top-[-450px] md:right-[-1050px] lg:right-[-800px] origin-top-right h-auto max-w-none pointer-events-none contrast-125 saturate-150 safari-filter-fix"
+            className="absolute top-[-450px] md:right-[-1050px] lg:right-[-800px] origin-top-right h-auto max-w-none pointer-events-none contrast-125 saturate-150"
           />
           {/* left decor */}
           <Image
@@ -31,7 +31,7 @@ const AboutDesktopContainer = () => {
             height={1500}
             sizes="(max-width: 1500px) 100vw, 1500px"
             quality={80}
-            className="absolute top-[-550px] md:left-[-1190px] lg:left-[-1060px] origin-top-left scale-[1.18] h-auto max-w-none pointer-events-none contrast-125 saturate-150 safari-filter-fix"
+            className="absolute top-[-550px] md:left-[-1190px] lg:left-[-1060px] origin-top-left scale-[1.18] h-auto max-w-none pointer-events-none contrast-125 saturate-150"
           />
           {/* shadow */}
           <Image

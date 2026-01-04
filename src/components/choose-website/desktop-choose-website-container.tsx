@@ -194,7 +194,7 @@ const DesktopChooseWebsiteContainer = () => {
             alt="shadow-decoration"
             fill
             quality={60}
-            className="blur-[120px] opacity-20 object-contain brightness-50 contrast-125 safari-filter-fix"
+            className="blur-[120px] opacity-20 object-contain brightness-50 contrast-125"
           />
         </div>
 

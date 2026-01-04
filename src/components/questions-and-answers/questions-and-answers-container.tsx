@@ -39,7 +39,7 @@ const QuestionsAndAnswersContainer = () => {
         height={388}
         sizes="(max-width: 898px) 100vw, 898px"
         quality={100}
-        className="absolute bottom-[-60px] left-[-100px] max-w-none -z-20 pointer-events-none contrast-125 saturate-150 safari-filter-fix"
+        className="absolute bottom-[-60px] left-[-100px] max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
       />
     </section>
   );

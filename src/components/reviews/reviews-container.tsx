@@ -22,7 +22,7 @@ const ReviewsContainer = () => {
             height={1500}
             sizes="(max-width: 1500px) 100vw, 1500px"
             quality={100}
-            className="hidden md:block absolute max-w-none top-[-260px] lg:top-[-360px] xl:top-[-300px] left-[50%] translate-x-[-50%] pointer-events-none select-none contrast-125 saturate-150 -z-30 safari-filter-fix"
+            className="hidden md:block absolute max-w-none top-[-260px] lg:top-[-360px] xl:top-[-300px] left-[50%] translate-x-[-50%] pointer-events-none select-none contrast-125 saturate-150 -z-30"
           />
           {/* shadow on center decor */}
           <Image

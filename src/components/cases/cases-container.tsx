@@ -40,7 +40,7 @@ const CasesContainer = () => {
         height={850}
         sizes="(max-width: 768px) 100vw, 692px"
         quality={100}
-        className="h-auto max-w-none absolute bottom-[-510px] left-[-470px] scale-[1.65] pointer-events-none contrast-125 saturate-150 z-20 opacity-85 safari-filter-fix"
+        className="h-auto max-w-none absolute bottom-[-510px] left-[-470px] scale-[1.65] pointer-events-none contrast-125 saturate-150 z-20 opacity-85"
       />
     </section>
   );

@@ -182,7 +182,7 @@ const Burger = ({ isOpen, setIsOpen, onOpenFeedback }: BurgerProps) => {
             height={670}
             sizes="(max-width: 768px) 100vw, 670px"
             quality={60}
-            className="absolute -bottom-[270px] -right-[300px] w-[670px] h-auto pointer-events-none select-none max-w-none contrast-125 saturate-150 safari-filter-fix"
+            className="absolute -bottom-[270px] -right-[300px] w-[670px] h-auto pointer-events-none select-none max-w-none contrast-125 saturate-150"
             priority
           />
         )}

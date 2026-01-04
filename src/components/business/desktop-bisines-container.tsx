@@ -42,7 +42,7 @@ const DesktopBisinesContainer = () => {
             height={1600}
             sizes="(max-width: 1600px) 100vw, 1600px"
             quality={100}
-            className="absolute top-[-150px] right-[-900px] 2xl:right-[-1000px] max-w-none pointer-events-none -z-10 contrast-110 saturate-170 safari-filter-fix"
+            className="absolute top-[-150px] right-[-900px] 2xl:right-[-1000px] max-w-none pointer-events-none -z-10 contrast-110 saturate-170"
           />
           {/* shadow dark on decor */}
           <Image

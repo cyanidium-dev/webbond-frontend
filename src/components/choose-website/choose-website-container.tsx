@@ -26,7 +26,7 @@ const ChooseWebsiteContainer = () => {
             height={1000}
             sizes="(max-width: 768px) 100vw, 1000px"
             quality={80}
-            className="h-auto max-w-none w-[277.8vw] contrast-125 saturate-150 safari-filter-fix"
+            className="h-auto max-w-none w-[277.8vw] contrast-125 saturate-150"
           />
         </m.div>
         <m.h2
