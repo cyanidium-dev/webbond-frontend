@@ -24,9 +24,9 @@ const QuestionsAndAnswersContainer = () => {
         src="/desktop-questions-shadow.webp"
         alt="questions-desktop-radial-shadow"
         width={1500}
-        height={1500}
+        height={1466}
         sizes="(max-width: 1500px) 100vw, 1500px"
-        quality={100}
+        quality={80}
         className="hidden md:block absolute bottom-[-300px] right-[-400px] max-w-none -z-20 pointer-events-none opacity-70 transform-gpu"
       />
       <h2 className="max-w-[240px] md:max-w-full mb-[48px] lg:mb-[24px] xl:mb-[48px] font-manrope font-light text-[40px] md:text-[64px] lg:text-[48px] xl:text-[64px] leading-[120%] text-white uppercase [text-shadow:4px_3px_9px_rgba(255,0,166,0.2)]">
