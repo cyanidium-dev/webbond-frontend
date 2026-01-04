@@ -17,9 +17,9 @@ const HeroDesktop = () => {
       ref={containerRef}
       className="pt-[96px] lg:pt-[45px] xl:pt-[96px] pb-[93px] lg:pb-[40px] xl:pb-[93px] relative"
     >
-      {/* <div className="absolute top-[-140px] lg:top-[-100px] xl:top-[-150px] right-1/2 translate-x-1/2 scale-[1.2] lg:scale-[1.0] xl:scale-[1.2] w-full h-full pointer-events-none">
+      <div className="absolute top-[-140px] lg:top-[-100px] xl:top-[-150px] right-1/2 translate-x-1/2 scale-[1.2] lg:scale-[1.0] xl:scale-[1.2] w-full h-full pointer-events-none">
         <SplineGlobe isVisible={isInView} />
-      </div> */}
+      </div>
       <div className="flex justify-between relative">
         <div className="flex flex-col">
           <p className="font-light font-manrope text-[16px] leading-[120%] text-white uppercase mb-[12px] lg:mb-[6px] xl:mb-[12px]">

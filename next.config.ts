@@ -3,7 +3,19 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  experimental: {
+    optimizePackageImports: [
+      'lucide-react',
+      '@radix-ui/react-accordion',
+      '@radix-ui/react-dialog',
+      '@radix-ui/react-dropdown-menu',
+      '@radix-ui/react-label',
+      '@radix-ui/react-slot',
+      'framer-motion',
+    ],
+  },
   images: {
+    minimumCacheTTL: 31536000,
     imageSizes: [
       16, 32, 48, 64, 96, 128, 256, 330, 384, 392, 408, 470, 578, 600,
     ],
@@ -15,7 +27,6 @@ const nextConfig: NextConfig = {
         hostname: 'nashkiev.ua',
       },
     ],
-    // minimumCacheTTL: 2592000,
   },
   async headers() {
     return [

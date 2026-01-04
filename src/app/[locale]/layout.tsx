@@ -5,6 +5,7 @@ import { routing } from '@/i18n/routing';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
+import { FramerMotionProvider } from '@/components/ui/framer-motion-provider';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -122,7 +123,9 @@ export default async function RootLayout({
         className={`${montserrat.variable} ${inter.variable} ${manrope.variable} antialiased`}
       >
         <NextIntlClientProvider>
-          <main className="overflow-x-clip">{children}</main>
+          <FramerMotionProvider>
+            <main className="overflow-x-clip">{children}</main>
+          </FramerMotionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

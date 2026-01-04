@@ -1,15 +1,15 @@
+
+'use client';
+import { useIsMobile } from '@/hooks/use-mobile';
 import CasesContainer from './cases-container';
 import DesktopCasesContainer from './desktop-cases-container';
 
 const CasesWrapper = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section>
-      <div className="md:hidden">
-        <CasesContainer />
-      </div>
-      <div className="hidden md:block">
-        <DesktopCasesContainer />
-      </div>
+      {isMobile ? <CasesContainer /> : <DesktopCasesContainer />}
     </section>
   );
 };

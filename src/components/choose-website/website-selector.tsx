@@ -10,7 +10,7 @@ import {
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 import { WEBSITE_TYPES_MOCK } from './choose-website-mock';
-import { LazyMotion, domAnimation, m, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
 const WebsiteSelector = () => {
@@ -77,39 +77,37 @@ const WebsiteSelector = () => {
       </DropdownMenu>
 
       <div className="relative mt-[32px] mb-[28px] h-[333px]">
-        <LazyMotion features={domAnimation}>
-          <AnimatePresence mode="wait">
-            <m.div
-              key={selectedData.id}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4, ease: 'easeInOut' }}
-              className="mx-auto relative max-w-[320px] h-[333px] bg-white/6 rounded-[14px] will-change-[opacity,transform] transform-gpu"
-            >
-              <p className="absolute z-10 top-[24px] right-[16px] max-w-[183px] leading-[120%] font-montserrat font-light text-[12px] text-white">
-                {t(`types.${selectedData.id}.description`)}
-              </p>
-              <Image
-                src={selectedData.fonImage}
-                alt="choosefon"
-                fill
-                sizes="(max-width: 768px) 100vw, 320px"
-                quality={75}
-                className="rounded-[14px]"
-              />
-              <Image
-                src={selectedData.phoneImage}
-                alt="choosefon"
-                width={330}
-                height={550}
-                sizes="(max-width: 330px) 100vw, 330px"
-                quality={75}
-                className="absolute top-[90px] left-[50px] max-w-none h-auto w-[330px]"
-              />
-            </m.div>
-          </AnimatePresence>
-        </LazyMotion>
+        <AnimatePresence mode="wait">
+          <m.div
+            key={selectedData.id}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className="mx-auto relative max-w-[320px] h-[333px] bg-white/6 rounded-[14px] will-change-[opacity,transform] transform-gpu"
+          >
+            <p className="absolute z-10 top-[24px] right-[16px] max-w-[183px] leading-[120%] font-montserrat font-light text-[12px] text-white">
+              {t(`types.${selectedData.id}.description`)}
+            </p>
+            <Image
+              src={selectedData.fonImage}
+              alt="choosefon"
+              fill
+              sizes="(max-width: 768px) 100vw, 320px"
+              quality={75}
+              className="rounded-[14px]"
+            />
+            <Image
+              src={selectedData.phoneImage}
+              alt="choosefon"
+              width={330}
+              height={550}
+              sizes="(max-width: 330px) 100vw, 330px"
+              quality={75}
+              className="absolute top-[90px] left-[50px] max-w-none h-auto w-[330px]"
+            />
+          </m.div>
+        </AnimatePresence>
       </div>
     </>
   );

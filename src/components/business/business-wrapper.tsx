@@ -1,15 +1,14 @@
-import DesktopBisinesContainer from './desktop-bisines-container';
+'use client';
+import { useIsMobile } from '@/hooks/use-mobile';
 import BusinessContainer from './business-container';
+import DesktopBusinessContainer from './desktop-bisines-container';
 
 const BusinessWrapper = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section>
-      <div className="md:hidden">
-        <BusinessContainer />
-      </div>
-      <div className="hidden md:block">
-        <DesktopBisinesContainer />
-      </div>
+      {isMobile ? <BusinessContainer /> : <DesktopBusinessContainer />}
     </section>
   );
 };

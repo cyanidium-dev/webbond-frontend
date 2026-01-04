@@ -3,13 +3,27 @@ import Image from 'next/image';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 import ServiceDesktopSlider from './service-desktop-slider';
 import { useTranslations } from 'next-intl';
-import { LazyMotion, domAnimation, m } from 'framer-motion';
+
+import { m } from 'framer-motion';
 
 const DesktopServicesContainer = () => {
   const t = useTranslations('Services');
 
   return (
-    <section className="pt-[118px] pb-[168px] relative">
+    <m.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transitionEnd: { transform: 'none' },
+      }}
+      viewport={{ once: true, margin: '-100px' }}
+      transition={{
+        duration: 0.8,
+        ease: 'easeOut',
+      }}
+      className="pt-[118px] pb-[168px] relative"
+    >
       <div className="flex justify-between mb-0 lg:mb-0">
         <div className="flex flex-col relative">
           <p className="max-w-[300px] md:mt-[15px] mb-[58px] font-montserrat font-light text-[12px] md:text-[13px] xl:text-[14px] text-white leading-[120%]">
@@ -35,30 +49,30 @@ const DesktopServicesContainer = () => {
         </div>
       </div>
       <ServiceDesktopSlider />
-      <LazyMotion features={domAnimation}>
-        <Image
-          src="/shadow-slider.webp"
-          alt="shadow-slider"
-          width={1050}
-          height={900}
-          sizes="(max-width: 1050px) 100vw, 1050px"
-          quality={100}
-          className="absolute left-0 lg:left-[10px] xl:left-[150px] top-[-50px] -z-10 pointer-events-none select-none blur-3xl"
-        />
+      <Image
+        src="/shadow-slider.webp"
+        alt="shadow-slider"
+        width={1050}
+        height={900}
+        sizes="(max-width: 1050px) 100vw, 1050px"
+        quality={100}
+        priority
+        className="absolute left-0 lg:left-[10px] xl:left-[150px] top-[-50px] -z-10 pointer-events-none select-none blur-3xl opacity-80"
+      />
 
-        <div className="absolute left-[-11%] right-[-11%] mx-auto w-[105%] max-w-none md:top-[310px] lg:top-[270px] xl:top-[260px] -z-20 pointer-events-none select-none h-auto">
-          <Image
-            src="/desktop-text-service.webp"
-            alt="desktop-text-service"
-            width={1280}
-            height={322}
-            sizes="(max-width: 1280px) 100vw, 1280px"
-            quality={80}
-            className="w-full h-auto"
-          />
-        </div>
-      </LazyMotion>
-    </section>
+      <div className="absolute left-[-11%] right-[-11%] mx-auto w-[105%] max-w-none md:top-[310px] lg:top-[270px] xl:top-[260px] -z-20 pointer-events-none select-none h-auto">
+        <Image
+          src="/desktop-text-service.webp"
+          alt="desktop-text-service"
+          width={1280}
+          height={322}
+          sizes="(max-width: 1280px) 100vw, 1280px"
+          quality={80}
+          priority
+          className="w-full h-auto"
+        />
+      </div>
+    </m.section>
   );
 };
 

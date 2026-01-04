@@ -51,16 +51,7 @@ const MarqueeText: React.FC<MarqueeTextProps> = ({
 
   const animationName = `marquee-${id}`;
 
-  if (!mounted) {
-    return (
-      <div
-        className={`overflow-hidden whitespace-nowrap relative ${className}`}
-      >
-        <span className="inline-block">{text}</span>
-      </div>
-    );
-  }
-
+  // Render a stable container that doesn't change structure after mount
   return (
     <div
       ref={containerRef}
@@ -78,36 +69,45 @@ const MarqueeText: React.FC<MarqueeTextProps> = ({
         className="inline-block"
         style={{
           display: 'inline-block',
-          animation: shouldAnimate
-            ? `${animationName} ${duration}s linear infinite`
-            : 'none',
+          animation:
+            shouldAnimate && mounted
+              ? `${animationName} ${duration}s linear infinite`
+              : 'none',
           willChange: 'transform',
         }}
       >
         <span ref={textRef} className="inline-block">
           {text}
         </span>
-        {shouldAnimate && (
-          <span className="inline-block" style={{ paddingLeft: `${gap}px` }}>
+        {(shouldAnimate || !mounted) && (
+          <span
+            className="inline-block opacity-0 lg:opacity-100"
+            style={{
+              paddingLeft: `${gap}px`,
+              visibility: shouldAnimate ? 'visible' : 'hidden',
+            }}
+          >
             {text}
           </span>
         )}
       </div>
 
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-        @keyframes ${animationName} {
-          0% {
-            transform: translateX(0);
+      {shouldAnimate && mounted && (
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+          @keyframes ${animationName} {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-${scrollDistance}px);
+            }
           }
-          100% {
-            transform: translateX(-${scrollDistance}px);
-          }
-        }
-      `,
-        }}
-      />
+        `,
+          }}
+        />
+      )}
     </div>
   );
 };

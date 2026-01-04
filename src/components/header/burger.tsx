@@ -12,7 +12,7 @@ import { navItems } from '@/components/header/navigate-data';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
-import { LazyMotion, domAnimation, m, Variants } from 'framer-motion';
+import { m, AnimatePresence, Variants } from 'framer-motion';
 import ArrowUpRightForBtn from './arrow-up-right-for-btn';
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
@@ -122,35 +122,33 @@ const Burger = ({ isOpen, setIsOpen, onOpenFeedback }: BurgerProps) => {
           {view === 'nav' ? (
             <>
               <nav className="flex-1 mb-[40px]">
-                <LazyMotion features={domAnimation}>
-                  <m.ul
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="flex flex-col gap-[32px] will-change-[opacity]"
-                  >
-                    {navItems.map((item) => (
-                      <m.li
-                        key={item.titleKey}
-                        variants={itemVariants}
-                        className="pt-[12px] pb-[20px] relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[270px] after:bg-linear-to-r after:from-[#E63B44] after:to-transparent will-change-[opacity,transform] transform-gpu"
+                <m.ul
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="flex flex-col gap-[32px] will-change-[opacity]"
+                >
+                  {navItems.map((item) => (
+                    <m.li
+                      key={item.titleKey}
+                      variants={itemVariants}
+                      className="pt-[12px] pb-[20px] relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[270px] after:bg-linear-to-r after:from-[#E63B44] after:to-transparent will-change-[opacity,transform] transform-gpu"
+                    >
+                      <Link
+                        locale={locale}
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`text-base leading-[120%] font-montserrat transition-all duration-300 ${
+                          isActive(item.href)
+                            ? 'text-[#00dfd0]'
+                            : 'text-white hover:text-[#00dfd0]'
+                        }`}
                       >
-                        <Link
-                          locale={locale}
-                          href={item.href}
-                          onClick={() => setIsOpen(false)}
-                          className={`text-base leading-[120%] font-montserrat transition-all duration-300 ${
-                            isActive(item.href)
-                              ? 'text-[#00dfd0]'
-                              : 'text-white hover:text-[#00dfd0]'
-                          }`}
-                        >
-                          {t(item.titleKey)}
-                        </Link>
-                      </m.li>
-                    ))}
-                  </m.ul>
-                </LazyMotion>
+                        {t(item.titleKey)}
+                      </Link>
+                    </m.li>
+                  ))}
+                </m.ul>
               </nav>
               <Button
                 onClick={() => {

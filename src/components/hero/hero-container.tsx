@@ -1,19 +1,16 @@
+
+'use client';
 import dynamic from 'next/dynamic';
+
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroDesktop = dynamic(() => import('./hero-desktop'), { ssr: true });
 const HeroMobile = dynamic(() => import('./hero-mobile'), { ssr: true });
 
 const HeroContainer = () => {
-  return (
-    <section>
-      <div className="md:hidden">
-        <HeroMobile />
-      </div>
-      <div className="hidden md:block">
-        <HeroDesktop />
-      </div>
-    </section>
-  );
+  const isMobile = useIsMobile();
+
+  return <section>{isMobile ? <HeroMobile /> : <HeroDesktop />}</section>;
 };
 
 export default HeroContainer;

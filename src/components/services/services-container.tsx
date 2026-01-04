@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import ServicesSlider from './services-slider';
 import GooeyWhiteButton from '../ui/gooey-white-button';
-import { LazyMotion, domAnimation, m } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
 const ServicesContainer = () => {
@@ -21,37 +21,35 @@ const ServicesContainer = () => {
           {t('subtitle')}
         </div>
       </div>
-      <LazyMotion features={domAnimation}>
-        <div className="relative -mx-[20px] h-[155px]">
-          <m.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 1.2, ease: 'easeOut' }}
-            className="absolute left-[-48px] max-w-none w-[616px] h-[155px] will-change-[opacity,transform] transform-gpu"
-          >
-            <Image
-              src="/services-text-removebg-preview.png"
-              alt="services-container-title-banner"
-              width={616}
-              height={155}
-              sizes="(max-width: 768px) 100vw, 616px"
-              quality={80}
-              className="w-full h-full"
-            />
-          </m.div>
-
+      <div className="relative -mx-[20px] h-[155px]">
+        <m.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
+          className="absolute left-[-48px] max-w-none w-[616px] h-[155px] will-change-transform"
+        >
           <Image
-            src="/services-shadow.webp"
-            alt="services-shadow"
-            width={700}
-            height={824}
-            sizes="(max-width: 768px) 100vw, 700px"
-            quality={40}
-            className="absolute left-[-200px] top-[-100px] max-w-none pointer-events-none select-none"
+            src="/services-text-removebg-preview.png"
+            alt="services-container-title-banner"
+            width={616}
+            height={155}
+            sizes="(max-width: 768px) 100vw, 616px"
+            quality={80}
+            className="w-full h-full"
           />
-        </div>
-      </LazyMotion>
+        </m.div>
+
+        <Image
+          src="/services-shadow.webp"
+          alt="services-shadow"
+          width={700}
+          height={824}
+          sizes="(max-width: 768px) 100vw, 700px"
+          quality={40}
+          className="absolute left-[-200px] top-[-100px] max-w-none pointer-events-none select-none"
+        />
+      </div>
       <ServicesSlider />
       <GooeyWhiteButton
         text={t('button')}

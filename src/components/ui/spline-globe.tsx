@@ -18,17 +18,19 @@ export default function SplineGlobe({
   const splineRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // States for pausing logic
+  // States for lifecycle management
   const [isInViewport, setIsInViewport] = useState(false);
   const [isPageVisible, setIsPageVisible] = useState(true);
   const [isIdle, setIsIdle] = useState(false);
+  const [isActuallyMounted, setIsActuallyMounted] = useState(false);
 
   // Тайм-аут бездействия: 1 минута.
   const IDLE_TIMEOUT = 1 * 60 * 1000;
   const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const unmountTimerRef = useRef<NodeJS.Timeout | null>(null);
   const ignoreWakeupUntilRef = useRef<number>(0);
 
-  // 1. Задержка первичной загрузки Spline для LCP
+  // 1. Задержка первичной загрузки Spline для LCP (только один раз)
   useEffect(() => {
     const timer = setTimeout(() => {
       setShouldLoadSpline(true);
@@ -44,7 +46,7 @@ export default function SplineGlobe({
       ([entry]) => {
         setIsInViewport(entry.isIntersecting);
       },
-      { threshold: 0 }, // Паузим сразу, как только полностью ушел с экрана
+      { threshold: 0 },
     );
 
     observer.observe(containerRef.current);
@@ -114,8 +116,32 @@ export default function SplineGlobe({
     };
   }, [shouldLoadSpline, isIdle]);
 
-  // 5. Управление паузой Spline
-  // Мы паузим если: любой из факторов (viewport, visibility, idle, prop isVisible) говорит остановиться
+  // 5. Управление жизненным циклом (монтирование/размонтирование)
+  useEffect(() => {
+    if (!shouldLoadSpline) return;
+
+    const isActive = isVisible && isInViewport && isPageVisible && !isIdle;
+
+    if (isActive) {
+      if (unmountTimerRef.current) clearTimeout(unmountTimerRef.current);
+      setIsActuallyMounted(true);
+    } else {
+      // Даем 3 секунды на плавное исчезновение и чтобы избежать дерганья при скролле
+      if (!unmountTimerRef.current) {
+        unmountTimerRef.current = setTimeout(() => {
+          setIsActuallyMounted(false);
+          setIsSplineReady(false); // Сбрасываем готовность для плавного проявления в следующий раз
+          unmountTimerRef.current = null;
+        }, 3000);
+      }
+    }
+
+    return () => {
+      if (unmountTimerRef.current) clearTimeout(unmountTimerRef.current);
+    };
+  }, [isVisible, isInViewport, isPageVisible, isIdle, shouldLoadSpline]);
+
+  // 6. Управление паузой Spline (если он смонтирован)
   useEffect(() => {
     if (!splineRef.current) return;
 
@@ -137,11 +163,9 @@ export default function SplineGlobe({
     setIsSplineReady(true);
   };
 
-  // Заглушка показывается до готовности Spline или при паузе
-  // НО: мы теперь НЕ размонтируем Spline, просто прячем его и паузим.
-  // Это сохранит WebGL контекст.
+  // Заглушка показывается, пока Spline не готов или не должен быть активен
   const showPlaceholder =
-    !isSplineReady || isIdle || !isVisible || !isPageVisible;
+    !isSplineReady || isIdle || !isVisible || !isPageVisible || !isInViewport;
 
   return (
     <div
@@ -191,7 +215,7 @@ export default function SplineGlobe({
         </div>
       </div>
 
-      {shouldLoadSpline && (
+      {isActuallyMounted && (
         <div
           className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
             isSplineReady && !showPlaceholder

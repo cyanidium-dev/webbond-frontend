@@ -1,16 +1,13 @@
+'use client';
+import { useIsMobile } from '@/hooks/use-mobile';
 import DesktopTeamContainer from './desktop-team-container';
 import TeamContainer from './team-container';
 
 const TeamWrapper = () => {
+  const isMobile = useIsMobile();
+
   return (
-    <section>
-      <div className="md:hidden">
-        <TeamContainer />
-      </div>
-      <div className="hidden md:block">
-        <DesktopTeamContainer />
-      </div>
-    </section>
+    <section>{isMobile ? <TeamContainer /> : <DesktopTeamContainer />}</section>
   );
 };
 
