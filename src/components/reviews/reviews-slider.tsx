@@ -18,7 +18,7 @@ const ReviewsSlider = () => {
             key={reviewItem.id}
             className="pl-4 md:pl-[20px] basis-full lg:basis-1/2"
           >
-            <div className="relative w-full h-[160px] md:h-[300px] p-[20px] md:p-[34px] rounded-[6px] md:rounded-[12px] flex flex-col backdrop-blur-lg bg-white/3 shadow-[inset_2px_-1px_5px_-1px_rgba(255,255,255,0.12)] safari-blur-fix">
+            <div className="relative w-full h-[160px] md:h-[300px] p-[20px] md:p-[34px] rounded-[6px] md:rounded-[12px] flex flex-col backdrop-blur-lg bg-white/3 shadow-[inset_2px_-1px_5px_-1px_rgba(255,255,255,0.12)] safari-blur-fix will-change-transform transform-gpu">
               <div className="flex gap-[28px] md:gap-[54px]">
                 <Image
                   src={reviewItem.image}

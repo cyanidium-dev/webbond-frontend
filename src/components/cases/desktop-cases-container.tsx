@@ -50,7 +50,7 @@ const DesktopCasesContainer = () => {
           height={1300}
           sizes="100vw"
           quality={60}
-          className="absolute right-[-550px] top-[-650px] max-w-none -z-10 pointer-events-none select-none blur-sm"
+          className="absolute right-[-550px] top-[-650px] max-w-none -z-10 pointer-events-none select-none blur-3xl"
         />
         <Carousel
           setApi={setApi}
@@ -64,7 +64,7 @@ const DesktopCasesContainer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="relative mb-[32px] xl:mb-[48px] text-[45px] lg:text-[60px] xl:text-[75px] font-manrope font-light uppercase text-white leading-[120%]"
+            className="relative mb-[32px] xl:mb-[48px] text-[45px] lg:text-[60px] xl:text-[75px] font-manrope font-light uppercase text-white leading-[120%] will-change-[opacity,transform] transform-gpu"
           >
             {t.rich('title', {
               gray: (chunks) => (

@@ -75,13 +75,13 @@ const DesktopChooseWebsiteContainer = () => {
         <div className="relative min-h-[500px] lg:min-h-[530px] xl:min-h-[646px] mb-[44px]">
           <div className="flex flex-col lg:flex-row gap-[15px] xl:gap-[20px]">
             {/* Phone Card - Static Container */}
-            <div className="relative w-full lg:w-[320px] xl:w-[392px] h-[450px] lg:h-[530px] xl:h-[646px] bg-white/6 rounded-[14px] shrink-0 overflow-hidden lg:overflow-visible">
-              <div className="animate-content w-full h-full">
+            <div className="relative w-full lg:w-[320px] xl:w-[392px] h-[450px] bg-white/6 lg:h-[530px] xl:h-[646px] rounded-[14px] shrink-0 overflow-hidden lg:overflow-visible">
+              <div className="animate-content w-full h-full will-change-[opacity,transform] transform-gpu">
                 <p className="absolute z-10 top-[24px] lg:top-[24px] xl:top-[32px] right-[20px] lg:right-[20px] xl:right-[27px] max-w-[150px] xl:max-w-[189px] leading-[120%] font-montserrat font-light text-[12px] xl:text-[14px] text-white">
                   {t(`types.${activeContent.id}.description`)}
                 </p>
                 {/* Dark Corner Shadow Overlay */}
-                <div className="absolute w-[490px] h-[490px] left-0 bottom-0 bg-[radial-gradient(circle_at_0%_100%,_rgba(0,0,0,0.9)_0%,_transparent_60%)] z-20 pointer-events-none" />
+                <div className="rounded-[14px] absolute w-[490px] h-[490px] left-0 bottom-0 bg-[radial-gradient(circle_at_0%_100%,_rgba(0,0,0,0.9)_0%,_transparent_60%)] z-20 pointer-events-none" />
 
                 <div className="relative w-full h-full rounded-[14px]">
                   <Image
@@ -110,7 +110,7 @@ const DesktopChooseWebsiteContainer = () => {
               <div className="flex flex-col md:flex-row gap-[15px] xl:gap-[20px]">
                 {/* First Info Card - Static Container */}
                 <div className="flex-1 xl:flex-503 w-full rounded-[14px] py-[20px] px-[18px] xl:py-[28px] xl:px-[24px] bg-white/3 backdrop-blur-sm shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
-                  <div className="animate-content h-full flex flex-col">
+                  <div className="animate-content h-full flex flex-col will-change-[opacity,transform] transform-gpu">
                     <h2 className="mb-[20px] xl:mb-[35px] font-manrope font-light text-[22px] lg:text-[24px] xl:text-[32px] text-white uppercase leading-[120%]">
                       {t(`types.${activeContent.id}.firstSection.title`)}
                     </h2>
@@ -133,7 +133,7 @@ const DesktopChooseWebsiteContainer = () => {
 
                 {/* Second Info Card - Static Container */}
                 <div className="flex-1 xl:flex-[341] w-full rounded-[14px] py-[20px] px-[18px] xl:py-[28px] xl:px-[24px] bg-white/3 backdrop-blur-sm shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
-                  <div className="animate-content h-full flex flex-col">
+                  <div className="animate-content h-full flex flex-col will-change-[opacity,transform] transform-gpu">
                     <h2 className="mb-[20px] xl:mb-[35px] font-manrope font-light text-[22px] lg:text-[24px] xl:text-[32px] text-white uppercase leading-[120%]">
                       {t(`types.${activeContent.id}.secondSection.title`)}
                     </h2>
@@ -155,7 +155,7 @@ const DesktopChooseWebsiteContainer = () => {
 
               {/* Banner - Static Container */}
               <div className="relative w-full lg:w-[480px] xl:w-[600px] h-[200px] lg:h-[240px] xl:h-[298px] rounded-[14px] overflow-hidden ml-auto">
-                <div className="animate-content w-full h-full relative">
+                <div className="animate-content w-full h-full relative will-change-[opacity,transform] transform-gpu">
                   <Image
                     src={activeContent.bannerImage}
                     alt="choosebanner"
@@ -188,7 +188,7 @@ const DesktopChooseWebsiteContainer = () => {
             className="mx-auto text-center w-[267px] lg:w-[220px] h-[52px] lg:h-[48px] text-[14px] font-montserrat font-light text-black"
           />
         </div>
-        <div className="animate-content absolute bottom-[50px] left-[-80px] -z-20 w-[600px] h-[600px] pointer-events-none select-none">
+        <div className="animate-content absolute bottom-[50px] left-[-80px] -z-20 w-[600px] h-[600px] pointer-events-none select-none will-change-[opacity,transform] transform-gpu">
           <Image
             src={activeContent.fonImageDesktop}
             alt="shadow-decoration"

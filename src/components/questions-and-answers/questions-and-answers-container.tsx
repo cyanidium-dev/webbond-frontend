@@ -16,7 +16,7 @@ const QuestionsAndAnswersContainer = () => {
         height={1477}
         sizes="(max-width: 1582px) 100vw, 1582px"
         quality={100}
-        className="absolute top-[-120px] left-[-440px] max-w-none -z-10 pointer-events-none xl:blur-sm"
+        className="absolute top-[-120px] left-[-440px] max-w-none -z-10 pointer-events-none blur-sm"
       />
       {/* radial shadow right*/}
       <Image
@@ -39,7 +39,7 @@ const QuestionsAndAnswersContainer = () => {
         height={388}
         sizes="(max-width: 898px) 100vw, 898px"
         quality={100}
-        className="absolute bottom-[-60px] left-[-100px] max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
+        className="absolute bottom-[-60px] left-[-100px] max-w-none -z-20 pointer-events-none"
       />
     </section>
   );

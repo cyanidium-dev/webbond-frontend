@@ -28,7 +28,7 @@ const ServicesContainer = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 1.2, ease: 'easeOut' }}
-            className="absolute left-[-48px] max-w-none w-[616px] h-[155px]"
+            className="absolute left-[-48px] max-w-none w-[616px] h-[155px] will-change-[opacity,transform] transform-gpu"
           >
             <Image
               src="/services-text-removebg-preview.png"

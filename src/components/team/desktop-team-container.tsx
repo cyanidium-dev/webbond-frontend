@@ -33,7 +33,7 @@ const DesktopTeamContainer = () => {
         height={1200}
         sizes="100vw"
         quality={100}
-        className="absolute bottom-[-600px] right-[-800px] max-w-none -z-20 pointer-events-none"
+        className="absolute bottom-[-600px] right-[-800px] max-w-none -z-20 pointer-events-none blur-3xl"
       />
       <Carousel>
         <div className="flex items-center mb-[60px] lg:mb-[80px] xl:mb-[132px]">
@@ -65,7 +65,7 @@ const DesktopTeamContainer = () => {
                 key={teamItem.id}
                 className="pl-4 md:basis-1/3 lg:basis-1/4 xl:basis-1/4"
               >
-                <div className="relative w-full max-w-[280px] md:max-w-[300px] lg:max-w-[320px] xl:max-w-[389px] h-[280px] md:h-[300px] lg:h-[330px] xl:h-[398px] p-[10px] md:p-[12px] xl:p-[16px] rounded-[12px] flex flex-col backdrop-blur-md bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] safari-blur-fix">
+                <div className="relative w-full max-w-[280px] md:max-w-[300px] lg:max-w-[320px] xl:max-w-[389px] h-[280px] md:h-[300px] lg:h-[330px] xl:h-[398px] p-[10px] md:p-[12px] xl:p-[16px] rounded-[12px] flex flex-col backdrop-blur-md bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] safari-blur-fix will-change-transform transform-gpu">
                   <Image
                     src={teamItem.image}
                     alt={teamItem.name}

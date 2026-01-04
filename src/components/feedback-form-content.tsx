@@ -152,7 +152,7 @@ const FeedbackFormContent = ({
                       <Input
                         placeholder={t('form.namePlaceholder')}
                         {...field}
-                        className="h-[45px] [@media(max-height:800px)]:h-[46px] md:h-[52px] rounded-[38px] border border-white px-4 font-montserrat text-[14px] text-white placeholder:text-white focus-visible:border-red-200 focus-visible:ring-0"
+                        className="h-[45px] [@media(max-height:800px)]:h-[46px] md:h-[52px] rounded-[38px] border border-white px-4 font-montserrat text-[16px] text-white placeholder:text-white focus-visible:border-red-200 focus-visible:ring-0"
                       />
                     </FormControl>
                     <FormMessage className="ml-4" />
@@ -214,7 +214,7 @@ const FeedbackFormContent = ({
                           limitMaxLength={true}
                           value={field.value}
                           onChange={field.onChange}
-                          className="flex h-full w-full items-center font-montserrat text-[14px] text-white placeholder:text-white/50 
+                          className="flex h-full w-full items-center font-montserrat text-[16px] text-white placeholder:text-white/50 
                             [&>input]:h-full [&>input]:border-none [&>input]:bg-transparent [&>input]:outline-none [&>input]:placeholder:text-white/50 [&>input]:px-4
                             [&_select]:appearance-none
                             [&_.PhoneInputCountry]:flex [&_.PhoneInputCountry]:items-center [&_.PhoneInputCountry]:h-full [&_.PhoneInputCountry]:pl-4 [&_.PhoneInputCountry]:pr-[40px] [&_.PhoneInputCountry]:border-r [&_.PhoneInputCountry]:border-white/20 [&_.PhoneInputCountry]:gap-[10px]
@@ -239,7 +239,7 @@ const FeedbackFormContent = ({
                       <Input
                         placeholder={t('form.emailPlaceholder')}
                         {...field}
-                        className="h-[45px] [@media(max-height:800px)]:h-[46px] md:h-[52px] rounded-[38px] border border-white px-4 font-montserrat text-[14px] text-white placeholder:text-white focus-visible:border-red-200 focus-visible:ring-0"
+                        className="h-[45px] [@media(max-height:800px)]:h-[46px] md:h-[52px] rounded-[38px] border border-white px-4 font-montserrat text-[16px] text-white placeholder:text-white focus-visible:border-red-200 focus-visible:ring-0"
                       />
                     </FormControl>
                     <FormMessage className="ml-4" />
@@ -255,7 +255,7 @@ const FeedbackFormContent = ({
                       <Textarea
                         placeholder={t('form.messagePlaceholder')}
                         {...field}
-                        className="h-[100px] [@media(max-height:800px)]:h-[90px] lg:h-[128px] rounded-[18px] border border-white px-4 py-3 font-montserrat text-[14px] text-white placeholder:text-white focus-visible:border-red-200 focus-visible:ring-0"
+                        className="h-[100px] [@media(max-height:800px)]:h-[90px] lg:h-[128px] rounded-[18px] border border-white px-4 py-3 font-montserrat text-[16px] text-white placeholder:text-white focus-visible:border-red-200 focus-visible:ring-0"
                       />
                     </FormControl>
                     <FormMessage className="ml-4" />

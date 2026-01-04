@@ -100,7 +100,7 @@ const GooeyWhiteButton = ({
         initial="initial"
         whileHover={disabled || isLoading ? 'initial' : 'hover'}
         className={cn(
-          'group relative flex cursor-pointer items-center overflow-visible bg-transparent transition-all',
+          'group relative flex cursor-pointer items-center overflow-visible bg-transparent transition-all will-change-transform',
           !disabled && !isLoading && 'active:scale-95',
           (disabled || isLoading) &&
             'cursor-not-allowed opacity-50 grayscale-[0.5]',

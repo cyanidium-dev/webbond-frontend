@@ -41,7 +41,7 @@ const AboutDesktopContainer = () => {
             height={600}
             sizes="33vw"
             quality={100}
-            className="absolute top-[-140px] w-[1000px] h-[700px] right-[-270px] origin-top-right max-w-none pointer-events-none blur-sm"
+            className="absolute top-[-140px] w-[1000px] h-[700px] right-[-270px] origin-top-right max-w-none pointer-events-none blur-3xl"
           />
         </div>
 
@@ -53,7 +53,7 @@ const AboutDesktopContainer = () => {
           height={1300}
           sizes="(max-width: 1200px) 100vw, 1200px"
           quality={100}
-          className="absolute bottom-[-200px] left-[-600px] origin-top-left h-auto max-w-none -z-30 pointer-events-none blur-sm"
+          className="absolute bottom-[-200px] left-[-600px] origin-top-left h-auto max-w-none -z-30 pointer-events-none blur-3xl"
         />
 
         <m.div
@@ -78,7 +78,7 @@ const AboutDesktopContainer = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="mb-[32px] md:mb-[40px] text-[42px] md:text-[52px] xl:text-[64px] font-manrope font-light uppercase text-white leading-[120%]"
+            className="mb-[32px] md:mb-[40px] text-[42px] md:text-[52px] xl:text-[64px] font-manrope font-light uppercase text-white leading-[120%] will-change-[opacity,transform] transform-gpu"
           >
             {t('title')}
           </m.h2>

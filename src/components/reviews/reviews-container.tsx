@@ -42,7 +42,7 @@ const ReviewsContainer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className=" md:order-1 max-w-[407px] md:max-w-full md:text-right lg:max-w-[700px] xl:max-w-full mb-[24px] md:mb-0 md:mt-[-10px] font-manrope font-light text-[40px] md:text-[64px] lg:text-[48px] xl:text-[64px] leading-[120%] text-white uppercase"
+            className=" md:order-1 max-w-[407px] md:max-w-full md:text-right lg:max-w-[700px] xl:max-w-full mb-[24px] md:mb-0 md:mt-[-10px] font-manrope font-light text-[40px] md:text-[64px] lg:text-[48px] xl:text-[64px] leading-[120%] text-white uppercase will-change-[opacity,transform] transform-gpu"
           >
             {t('title')}
           </m.h2>
@@ -51,7 +51,7 @@ const ReviewsContainer = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="md:order-0 max-w-[191px] font-montserrat font-light text-[14px] leading-[120%] text-white mb-[44px] md:mb-0"
+            className="md:order-0 max-w-[191px] font-montserrat font-light text-[14px] leading-[120%] text-white mb-[44px] md:mb-0 will-change-[opacity,transform] transform-gpu"
           >
             {t('subtitle')}
           </m.p>

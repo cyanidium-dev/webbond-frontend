@@ -29,14 +29,14 @@ const Footer = () => {
           fill
           sizes="100vw"
           quality={80}
-          className="object-cover opacity-40 mix-blend-overlay pointer-events-none saturate-150 contrast-150 z-10"
+          className="object-cover opacity-40 mix-blend-overlay pointer-events-none saturate-150 contrast-150 z-10 rounded-[12px]"
         />
         <Image
           src="/desktop-footer-text.svg"
           alt="Desktop Footer Text"
           width={1162}
           height={241}
-          className="absolute left-[20px] bottom-[20px] mt-auto object-cover opacity-60 mix-blend-overlay pointer-events-none z-20 md:w-[670px] lg:w-[920px] xl:w-[1162px] 2xl:w-[1380px] h-auto"
+          className="absolute left-[20px] bottom-[20px] mt-auto object-cover opacity-60 mix-blend-overlay pointer-events-none z-20 md:w-[670px] lg:w-[920px] xl:w-[1162px] h-auto"
         />
       </div>
     </footer>

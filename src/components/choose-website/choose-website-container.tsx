@@ -17,7 +17,7 @@ const ChooseWebsiteContainer = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, delay: 1.5 }}
-          className="absolute top-[20px] left-[-105.6vw] pointer-events-none select-none z-[-1]"
+          className="absolute top-[20px] left-[-105.6vw] pointer-events-none select-none z-[-1] will-change-[opacity] transform-gpu"
         >
           <Image
             src="/fon-choose.png"
@@ -34,7 +34,7 @@ const ChooseWebsiteContainer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="mb-[22px] max-w-[320px] font-manrope font-light text-[40px] leading-[120%] text-white uppercase"
+          className="mb-[22px] max-w-[320px] font-manrope font-light text-[40px] leading-[120%] text-white uppercase will-change-[opacity,transform] transform-gpu"
         >
           {t.rich('title', {
             gray: (chunks) => <span className="text-[#818181]">{chunks}</span>,
@@ -45,7 +45,7 @@ const ChooseWebsiteContainer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
-          className="flex items-center mb-[22px]"
+          className="flex items-center mb-[22px] will-change-[opacity,transform] transform-gpu"
         >
           <div className="flex items-center justify-center rounded-[37px] w-[121px] py-[9px] px-[14px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] safari-blur-fix">
             <Image

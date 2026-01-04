@@ -67,7 +67,7 @@ const HeroSlider = () => {
                 opacity: isInitial ? 1 : 0,
                 pointerEvents: isInitial ? 'auto' : 'none',
               }}
-              className={`absolute inset-0 flex p-[16px] pl-[24px] slide-${index}`}
+              className={`absolute inset-0 flex p-[16px] pl-[24px] slide-${index} will-change-[opacity] transform-gpu`}
             >
               <div className="flex flex-col z-10">
                 <h2 className="mb-[18px] max-w-[170px] font-manrope font-light text-[28px] leading-[120%] text-white uppercase">

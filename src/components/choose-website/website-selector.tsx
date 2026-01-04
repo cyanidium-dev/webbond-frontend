@@ -85,7 +85,7 @@ const WebsiteSelector = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4, ease: 'easeInOut' }}
-              className="mx-auto relative max-w-[320px] h-[333px] bg-white/6 rounded-[14px]"
+              className="mx-auto relative max-w-[320px] h-[333px] bg-white/6 rounded-[14px] will-change-[opacity,transform] transform-gpu"
             >
               <p className="absolute z-10 top-[24px] right-[16px] max-w-[183px] leading-[120%] font-montserrat font-light text-[12px] text-white">
                 {t(`types.${selectedData.id}.description`)}

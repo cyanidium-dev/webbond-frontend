@@ -15,7 +15,7 @@ const AboutContainer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="mb-[28px] text-[40px] font-manrope font-light uppercase text-white leading-[120%]"
+          className="mb-[28px] text-[40px] font-manrope font-light uppercase text-white leading-[120%] will-change-[opacity,transform] transform-gpu"
         >
           {t('title')}
         </m.h2>
@@ -41,7 +41,7 @@ const AboutContainer = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
-            className="font-monserat text-base text-white leading-[120%] mb-[66px] max-w-[275px]"
+            className="font-monserat text-base text-white leading-[120%] mb-[66px] max-w-[275px] will-change-[opacity,transform] transform-gpu"
           >
             {t.rich('description', {
               gray: (chunks) => (
@@ -55,7 +55,7 @@ const AboutContainer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="relative font-manrope text-[20px] font-light uppercase text-white leading-[120%] ml-auto mb-[58px] max-w-[171px] after:content-[''] after:block after:absolute after:top-1/2 after:-translate-y-1/2 after:left-[-36px] after:w-[20px] after:h-[20px] after:bg-white after:rounded-full after:z-20"
+          className="relative font-manrope text-[20px] font-light uppercase text-white leading-[120%] ml-auto mb-[58px] max-w-[171px] after:content-[''] after:block after:absolute after:top-1/2 after:-translate-y-1/2 after:left-[-36px] after:w-[20px] after:h-[20px] after:bg-white after:rounded-full after:z-20 will-change-[opacity,transform] transform-gpu"
         >
           {t('resultsTitle')}
         </m.p>
@@ -78,7 +78,7 @@ const AboutContainer = () => {
               show: { opacity: 1, x: 0 },
             }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="relative flex items-center w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden safari-blur-fix"
+            className="relative flex items-center w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden safari-blur-fix will-change-[opacity,transform] transform-gpu"
           >
             <p className="w-full max-w-[183px] font-manrope font-light text-white leading-[120%] wrap-break-word">
               <span className="block font-light uppercase text-base mb-3">
@@ -98,7 +98,7 @@ const AboutContainer = () => {
               show: { opacity: 1, x: 0 },
             }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="relative flex items-center justify-end w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden safari-blur-fix"
+            className="relative flex items-center justify-end w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden safari-blur-fix will-change-[opacity,transform] transform-gpu"
           >
             <p className="w-full max-w-[191px] font-manrope font-light text-base text-white leading-[120%] uppercase wrap-break-word">
               <span className="block font-light uppercase text-base mb-3">
@@ -118,7 +118,7 @@ const AboutContainer = () => {
               show: { opacity: 1, x: 0 },
             }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="relative flex items-center w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden safari-blur-fix"
+            className="relative flex items-center w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden safari-blur-fix will-change-[opacity,transform] transform-gpu"
           >
             <p className="w-full max-w-[210px] font-manrope font-light text-base text-white leading-[120%] uppercase wrap-break-word">
               <span className="block font-light uppercase text-base mb-3">

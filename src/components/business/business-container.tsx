@@ -15,7 +15,7 @@ const BusinessContainer = () => {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="relative w-full h-[437px]"
+          className="relative w-full h-[437px] will-change-[opacity,transform] transform-gpu"
         >
           <Image
             src="/Business-phone.png"
@@ -33,7 +33,7 @@ const BusinessContainer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-[320px] font-manrope text-[40px] font-light uppercase text-white leading-[120%] mb-[32px]"
+            className="max-w-[320px] font-manrope text-[40px] font-light uppercase text-white leading-[120%] mb-[32px] will-change-[opacity,transform] transform-gpu"
           >
             {t.rich('title', {
               gray: (chunks) => <span className="text-[#999]">{chunks}</span>,

@@ -22,7 +22,7 @@ const ContactsDesktop = () => {
             },
           },
         }}
-        className="hidden md:flex items-center justify-between mb-[41px]"
+        className="hidden md:flex items-center justify-between mb-[41px] will-change-[opacity]"
       >
         <m.div
           variants={{

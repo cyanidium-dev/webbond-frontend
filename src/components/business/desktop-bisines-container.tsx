@@ -15,7 +15,7 @@ const DesktopBisinesContainer = () => {
           whileInView={{ opacity: 1, x: 0, rotate: 10 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="absolute max-w-none top-1/2 left-[-210px] -translate-y-1/2 origin-top-left pointer-events-none select-none z-10"
+          className="absolute max-w-none top-1/2 left-[-210px] -translate-y-1/2 origin-top-left pointer-events-none select-none z-10 will-change-[opacity,transform] transform-gpu"
         >
           <Image
             src="/Business-phone.png"

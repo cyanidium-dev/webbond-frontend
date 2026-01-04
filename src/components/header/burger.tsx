@@ -127,13 +127,13 @@ const Burger = ({ isOpen, setIsOpen, onOpenFeedback }: BurgerProps) => {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-col gap-[32px]"
+                    className="flex flex-col gap-[32px] will-change-[opacity]"
                   >
                     {navItems.map((item) => (
                       <m.li
                         key={item.titleKey}
                         variants={itemVariants}
-                        className="pt-[12px] pb-[20px] relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[270px] after:bg-linear-to-r after:from-[#E63B44] after:to-transparent"
+                        className="pt-[12px] pb-[20px] relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[270px] after:bg-linear-to-r after:from-[#E63B44] after:to-transparent will-change-[opacity,transform] transform-gpu"
                       >
                         <Link
                           locale={locale}
