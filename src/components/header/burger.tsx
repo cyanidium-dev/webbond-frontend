@@ -12,7 +12,7 @@ import { navItems } from '@/components/header/navigate-data';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
-import { m, AnimatePresence, Variants } from 'framer-motion';
+import { m, Variants } from 'framer-motion';
 import ArrowUpRightForBtn from './arrow-up-right-for-btn';
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
@@ -24,6 +24,10 @@ const FeedbackFormContent = dynamic(
   },
 );
 
+const SuccessModal = dynamic(() => import('@/components/success-modal'), {
+  ssr: false,
+});
+
 interface BurgerProps {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
@@ -32,6 +36,7 @@ interface BurgerProps {
 
 const Burger = ({ isOpen, setIsOpen, onOpenFeedback }: BurgerProps) => {
   const [view, setView] = useState<'nav' | 'feedback'>('nav');
+  const [showSuccess, setShowSuccess] = useState(false);
   const t = useTranslations();
   const pathname = usePathname();
   const locale = useLocale();
@@ -168,7 +173,12 @@ const Burger = ({ isOpen, setIsOpen, onOpenFeedback }: BurgerProps) => {
               </Button>
             </>
           ) : (
-            <FeedbackFormContent onSuccess={() => setIsOpen(false)} />
+            <FeedbackFormContent
+              onSuccess={() => {
+                setIsOpen(false);
+                setShowSuccess(true);
+              }}
+            />
           )}
         </div>
         {/* FIXED DECORATION IMAGE */}
@@ -185,6 +195,7 @@ const Burger = ({ isOpen, setIsOpen, onOpenFeedback }: BurgerProps) => {
           />
         )}
       </SheetContent>
+      <SuccessModal isOpen={showSuccess} onOpenChange={setShowSuccess} />
     </Sheet>
   );
 };

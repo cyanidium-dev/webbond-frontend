@@ -238,7 +238,8 @@
       "phoneInvalid": "Invalid phone number",
       "emailInvalid": "Invalid email address",
       "messageRequired": "Message is required",
-      "messageMax": "Message is too long"
+      "messageMax": "Message is too long",
+      "submitError": "An error occurred. Please try again later."
     }
   },
   "SuccessModal": {

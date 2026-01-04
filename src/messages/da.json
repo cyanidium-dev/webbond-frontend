@@ -238,7 +238,8 @@
       "phoneInvalid": "Ugyldigt telefonnummer",
       "emailInvalid": "Ugyldig e-mailadresse",
       "messageRequired": "Besked er påkrævet",
-      "messageMax": "Beskeden er for lang"
+      "messageMax": "Beskeden er for lang",
+      "submitError": "Der opstod en fejl. Prøv venligst igen senere."
     }
   },
   "SuccessModal": {

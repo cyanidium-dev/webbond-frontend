@@ -8,6 +8,8 @@ import {
 } from '@/components/ui/dialog';
 import { XIcon } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
+import { useState, useEffect } from 'react';
+import SuccessModal from './success-modal';
 
 interface FeedbackModalProps {
   isOpen: boolean;
@@ -16,6 +18,19 @@ interface FeedbackModalProps {
 
 const FeedbackModalContent = ({ isOpen, onOpenChange }: FeedbackModalProps) => {
   const t = useTranslations('FeedbackModal');
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Reset state after modal closes completely
+  useEffect(() => {
+    if (!isOpen) {
+      const timer = setTimeout(() => setIsSubmitted(false), 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
+
+  if (isSubmitted && isOpen) {
+    return <SuccessModal isOpen={isOpen} onOpenChange={onOpenChange} />;
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
@@ -28,7 +43,7 @@ const FeedbackModalContent = ({ isOpen, onOpenChange }: FeedbackModalProps) => {
           <XIcon className="h-6 w-6" />
           <span className="sr-only">Close</span>
         </DialogClose>
-        <FeedbackFormContent onSuccess={() => onOpenChange(false)} />
+        <FeedbackFormContent onSuccess={() => setIsSubmitted(true)} />
       </DialogContent>
     </Dialog>
   );

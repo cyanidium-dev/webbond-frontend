@@ -1,4 +1,3 @@
-
 'use client';
 import dynamic from 'next/dynamic';
 
@@ -9,6 +8,8 @@ const HeroMobile = dynamic(() => import('./hero-mobile'), { ssr: true });
 
 const HeroContainer = () => {
   const isMobile = useIsMobile();
+
+  if (isMobile === undefined) return <div className="min-h-screen" />;
 
   return <section>{isMobile ? <HeroMobile /> : <HeroDesktop />}</section>;
 };

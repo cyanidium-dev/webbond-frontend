@@ -32,7 +32,7 @@ const FeedbackFormContent = ({
   onSuccess,
   className,
 }: FeedbackFormContentProps) => {
-  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+  const [submissionError, setSubmissionError] = useState<string | null>(null);
   const t = useTranslations('FeedbackModal');
 
   const formSchema = z.object({
@@ -78,29 +78,25 @@ const FeedbackFormContent = ({
   });
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    setSubmissionError(null);
     try {
       const message = `<b>🔔 Ny anmodning om konsultation</b>\n\n👤 <b>Navn:</b> ${data.username}\n📱 <b>Telefon:</b> <code>${data.phone}</code>\n📧 <b>E-mail:</b> ${data.email}\n💬 <b>Besked:</b> ${data.message}\n\n<i>🚀 Anmodning fra kontaktformularen</i>`;
 
       await sendNotification(message, { parseMode: 'HTML' });
 
-      // Success
+      // Success - notify parent to switch view or close
       if (onSuccess) onSuccess();
       form.reset();
-      setIsSuccessOpen(true);
     } catch (error) {
       console.error('Failed to send notification:', error);
+      setSubmissionError(t('validation.submitError'));
     }
   };
 
   return (
     <>
       <div className={cn('relative', className)}>
-        <m.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="absolute -z-10 top-[-1050px] left-[-650px] md:top-[-950px] md:left-[-650px] pointer-events-none select-none will-change-opacity transform-gpu"
-        >
+        <div className="absolute -z-10 top-[-1050px] left-[-650px] md:top-[-950px] md:left-[-650px] pointer-events-none select-none opacity-60 transform-gpu">
           <Image
             src="/feddback-modal-shadow.webp"
             alt="Feedback Modal Shadow"
@@ -110,13 +106,8 @@ const FeedbackFormContent = ({
             quality={60}
             className="max-w-none"
           />
-        </m.div>
-        <m.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-          className="absolute -z-10 bottom-[-1050px] right-[-750px] md:bottom-[-1050px] md:right-[-750px] pointer-events-none select-none will-change-opacity transform-gpu"
-        >
+        </div>
+        <div className="absolute -z-10 bottom-[-1050px] right-[-750px] md:bottom-[-1050px] md:right-[-750px] pointer-events-none select-none opacity-60 transform-gpu">
           <Image
             src="/feddback-modal-shadow.webp"
             alt="Feedback Modal Shadow"
@@ -126,26 +117,21 @@ const FeedbackFormContent = ({
             quality={60}
             className="max-w-none rotate-180"
           />
-        </m.div>
-
-        <div className="flex flex-col items-center [@media(max-height:800px)]:items-start">
-          <m.h2
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="mb-[24px] [@media(max-height:800px)]:mb-[20px] font-manrope font-light text-[40px] [@media(max-height:800px)]:text-[32px] md:text-[48px] lg:text-[64px] uppercase text-white leading-[120%] [@media(max-height:800px)]:text-left will-change-[opacity,transform] transform-gpu"
-          >
-            {t('title')}
-          </m.h2>
-          <m.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
-            className="mb-[24px] [@media(max-height:800px)]:mb-[20px] font-montserrat font-light text-[12px] md:text-[14px] text-white leading-[120%] [@media(max-height:800px)]:text-left will-change-[opacity,transform] transform-gpu"
-          >
-            {t('description')}
-          </m.p>
         </div>
+
+        <m.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="flex flex-col items-center [@media(max-height:800px)]:items-start will-change-[opacity,transform] transform-gpu"
+        >
+          <h2 className="mb-[24px] [@media(max-height:800px)]:mb-[20px] font-manrope font-light text-[40px] [@media(max-height:800px)]:text-[32px] md:text-[48px] lg:text-[64px] uppercase text-white leading-[120%] [@media(max-height:800px)]:text-left">
+            {t('title')}
+          </h2>
+          <p className="mb-[24px] [@media(max-height:800px)]:mb-[20px] font-montserrat font-light text-[12px] md:text-[14px] text-white leading-[120%] [@media(max-height:800px)]:text-left">
+            {t('description')}
+          </p>
+        </m.div>
 
         <Form {...form}>
           <form
@@ -271,6 +257,11 @@ const FeedbackFormContent = ({
                 </FormItem>
               )}
             />
+            {submissionError && (
+              <p className="text-red-500 text-[14px] font-montserrat text-center animate-in fade-in slide-in-from-top-1 duration-300">
+                {submissionError}
+              </p>
+            )}
             <GooeyWhiteButton
               type="submit"
               text={t('form.submit')}
@@ -283,7 +274,6 @@ const FeedbackFormContent = ({
           </form>
         </Form>
       </div>
-      <SuccessModal isOpen={isSuccessOpen} onOpenChange={setIsSuccessOpen} />
     </>
   );
 };

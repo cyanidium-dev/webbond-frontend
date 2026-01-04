@@ -6,6 +6,8 @@ import TeamContainer from './team-container';
 const TeamWrapper = () => {
   const isMobile = useIsMobile();
 
+  if (isMobile === undefined) return null;
+
   return (
     <section>{isMobile ? <TeamContainer /> : <DesktopTeamContainer />}</section>
   );

@@ -6,6 +6,8 @@ import DesktopBusinessContainer from './desktop-bisines-container';
 const BusinessWrapper = () => {
   const isMobile = useIsMobile();
 
+  if (isMobile === undefined) return null;
+
   return (
     <section>
       {isMobile ? <BusinessContainer /> : <DesktopBusinessContainer />}
