@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
         hostname: 'nashkiev.ua',
       },
     ],
-    minimumCacheTTL: 2592000,
+    // minimumCacheTTL: 2592000,
   },
   async headers() {
     return [
