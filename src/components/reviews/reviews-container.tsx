@@ -22,7 +22,7 @@ const ReviewsContainer = () => {
             height={1500}
             sizes="(max-width: 1500px) 100vw, 1500px"
             quality={100}
-            className="hidden md:block absolute max-w-none top-[-300px] left-[50%] translate-x-[-50%] pointer-events-none select-none contrast-125 saturate-150 -z-30"
+            className="hidden md:block absolute max-w-none top-[-260px] lg:top-[-360px] xl:top-[-300px] left-[50%] translate-x-[-50%] pointer-events-none select-none contrast-125 saturate-150 -z-30 safari-filter-fix"
           />
           {/* shadow on center decor */}
           <Image
@@ -36,13 +36,13 @@ const ReviewsContainer = () => {
           />
         </div>
 
-        <div className="md:flex md:justify-between md:mb-[75px]">
+        <div className="md:flex md:justify-between md:mb-[75px] lg:mb-[40px] xl:mb-[75px]">
           <m.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className=" md:order-1 max-w-[307px] md:max-w-[500px] xl:max-w-full mb-[24px] md:mb-0 md:mt-[-10px] font-manrope font-light text-[40px] md:text-[64px] leading-[120%] text-white uppercase"
+            className=" md:order-1 max-w-[407px] md:max-w-full md:text-right lg:max-w-[700px] xl:max-w-full mb-[24px] md:mb-0 md:mt-[-10px] font-manrope font-light text-[40px] md:text-[64px] lg:text-[48px] xl:text-[64px] leading-[120%] text-white uppercase"
           >
             {t('title')}
           </m.h2>
@@ -61,7 +61,7 @@ const ReviewsContainer = () => {
         {/* Brackets and shadows (bottom/side decor) - static */}
         <div>
           <SkobkiUI className="md:hidden absolute top-[308px] right-[-40px] -z-10 pointer-events-none select-none" />
-          <SkobkiDesktop className="hidden md:block absolute top-[370px] right-[-30px] -z-10 pointer-events-none select-none" />
+          <SkobkiDesktop className="hidden md:block absolute lg:top-[308px] xl:top-[370px] right-[-30px] -z-10 pointer-events-none select-none" />
           <Image
             src="/reviews-shadow.webp"
             alt="reviews-shadow"

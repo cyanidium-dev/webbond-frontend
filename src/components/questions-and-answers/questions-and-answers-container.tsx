@@ -7,7 +7,7 @@ const QuestionsAndAnswersContainer = () => {
   const t = useTranslations('Questions');
 
   return (
-    <section className="relative px-[20px] md:px-0 pt-[148px] md:pt-[178px]">
+    <section className="relative px-[20px] md:px-0 pt-[148px] md:pt-[178px] lg:pt-[100px] xl:pt-[178px]">
       {/* questions-shadow left */}
       <Image
         src="/questions-shadow.webp"
@@ -16,7 +16,7 @@ const QuestionsAndAnswersContainer = () => {
         height={1477}
         sizes="(max-width: 1582px) 100vw, 1582px"
         quality={100}
-        className="absolute top-[-120px] left-[-440px] max-w-none -z-10 pointer-events-none xl:blur-xl"
+        className="absolute top-[-120px] left-[-440px] max-w-none -z-10 pointer-events-none xl:blur-sm"
       />
       {/* radial shadow right*/}
       <Image
@@ -26,9 +26,9 @@ const QuestionsAndAnswersContainer = () => {
         height={1500}
         sizes="(max-width: 1500px) 100vw, 1500px"
         quality={100}
-        className="hidden md:block absolute bottom-[-300px] right-[-400px] max-w-none -z-20 pointer-events-none blur-[44px]"
+        className="hidden md:block absolute bottom-[-300px] right-[-400px] max-w-none -z-20 pointer-events-none blur-sm"
       />
-      <h2 className="max-w-[240px] md:max-w-full mb-[48px] font-manrope font-light text-[40px] md:text-[64px] leading-[120%] text-white uppercase [text-shadow:4px_3px_9px_rgba(255,0,166,0.2)]">
+      <h2 className="max-w-[240px] md:max-w-full mb-[48px] lg:mb-[24px] xl:mb-[48px] font-manrope font-light text-[40px] md:text-[64px] lg:text-[48px] xl:text-[64px] leading-[120%] text-white uppercase [text-shadow:4px_3px_9px_rgba(255,0,166,0.2)]">
         {t('title')}
       </h2>
       <QuestionsAccordion />
@@ -39,7 +39,7 @@ const QuestionsAndAnswersContainer = () => {
         height={388}
         sizes="(max-width: 898px) 100vw, 898px"
         quality={100}
-        className="absolute bottom-[-60px] left-[-100px] max-w-none -z-20 pointer-events-none contrast-125 saturate-150"
+        className="absolute bottom-[-60px] left-[-100px] max-w-none -z-20 pointer-events-none contrast-125 saturate-150 safari-filter-fix"
       />
     </section>
   );

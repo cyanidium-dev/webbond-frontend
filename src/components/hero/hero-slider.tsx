@@ -49,7 +49,7 @@ const HeroSlider = () => {
     <LazyMotion features={domAnimation}>
       <div
         ref={scope}
-        className="w-full relative flex mt-auto ml-auto max-w-[474px] rounded-[20px] py-[16px] pr-[16px] pl-[24px] backdrop-blur-sm bg-white/3 shadow-[inset_2px_-1px_6px_-1px_rgba(255,255,255,0.12)] min-h-[313px]"
+        className="w-full relative flex mt-auto ml-auto max-w-[474px] rounded-[20px] py-[16px] pr-[16px] pl-[24px] backdrop-blur-sm bg-white/3 shadow-[inset_2px_-1px_6px_-1px_rgba(255,255,255,0.12)] min-h-[313px] safari-blur-fix"
         onMouseEnter={() => {
           isPausedRef.current = true;
         }}

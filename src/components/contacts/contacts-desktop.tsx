@@ -39,7 +39,7 @@ const ContactsDesktop = () => {
           />
         </m.div>
 
-        <div className="flex flex-col xl:flex-row items-center gap-[20px] xl:gap-[72px]">
+        <div className="flex flex-col lg:flex-row items-center gap-[20px] xl:gap-[72px]">
           {[t('cvr'), t('city'), t('email')].map((text, idx) => (
             <m.div
               key={idx}

@@ -42,7 +42,7 @@ const DesktopBisinesContainer = () => {
             height={1600}
             sizes="(max-width: 1600px) 100vw, 1600px"
             quality={100}
-            className="absolute top-[-150px] right-[-900px] 2xl:right-[-1000px] max-w-none pointer-events-none -z-10 contrast-110 saturate-170"
+            className="absolute top-[-150px] right-[-900px] 2xl:right-[-1000px] max-w-none pointer-events-none -z-10 contrast-110 saturate-170 safari-filter-fix"
           />
           {/* shadow dark on decor */}
           <Image
@@ -52,7 +52,7 @@ const DesktopBisinesContainer = () => {
             height={900}
             sizes="(max-width: 1300px) 100vw, 1300px"
             quality={40}
-            className="absolute bottom-[-550px] right-[-900px] max-w-none pointer-events-none -z-10 blur-[44px]"
+            className="absolute bottom-[-550px] right-[-900px] max-w-none pointer-events-none -z-10 blur-md"
           />
           {/* radial light shadow */}
           <Image
@@ -62,7 +62,7 @@ const DesktopBisinesContainer = () => {
             height={1340}
             sizes="33vw"
             quality={80}
-            className="absolute bottom-[-350px] right-[-900px] max-w-none pointer-events-none -z-30 blur-[44px]"
+            className="absolute bottom-[-350px] right-[-900px] max-w-none pointer-events-none -z-30 blur-md"
           />
         </m.div>
         <div className="flex flex-col max-w-[841px] mx-auto">
@@ -71,7 +71,7 @@ const DesktopBisinesContainer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="font-manrope text-[64px] font-light uppercase text-white text-center leading-[120%] mb-[60px]"
+            className="font-manrope text-[48px] xl:text-[64px] font-light uppercase text-white text-center leading-[120%] mb-[60px]"
           >
             {t.rich('title', {
               gray: (chunks) => <span className="text-[#999]">{chunks}</span>,
@@ -104,7 +104,7 @@ const DesktopBisinesContainer = () => {
                 {t('description')}
               </p>
             </div>
-            <div className="flex items-center justify-center rounded-[37px] w-[121px] py-[9px] px-[14px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
+            <div className="flex items-center justify-center rounded-[37px] w-[121px] py-[9px] px-[14px] backdrop-blur-md bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] safari-blur-fix">
               <Image
                 src="/mobile-title-banner.png"
                 alt="mobile-title-banner badge"

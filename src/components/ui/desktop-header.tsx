@@ -77,10 +77,6 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
           'relative w-full max-w-[1276px] h-[60px] mx-auto',
           className,
         )}
-        // className={cn(
-        //   'relative w-full max-w-[1216px] 2xl:max-w-[1536px] h-[60px] mx-auto',
-        //   className,
-        // )}
       >
         {/* SVG определения для масок и фильтров */}
         <svg className="pointer-events-none absolute h-0 w-0">

@@ -23,7 +23,7 @@ const DesktopChooseWebsiteContainer = () => {
     // Animate out content
     await animate(
       '.animate-content',
-      { opacity: 0, y: 10, filter: 'blur(5px)' },
+      { opacity: 0, y: 10 },
       { duration: 0.3, ease: 'easeInOut' },
     );
 
@@ -32,7 +32,7 @@ const DesktopChooseWebsiteContainer = () => {
     // Animate in content
     await animate(
       '.animate-content',
-      { opacity: 1, y: 0, filter: 'blur(0px)' },
+      { opacity: 1, y: 0 },
       { duration: 0.3, ease: 'easeInOut' },
     );
 
@@ -42,27 +42,27 @@ const DesktopChooseWebsiteContainer = () => {
   return (
     <LazyMotion features={domAnimation}>
       <section ref={scope} className="relative">
-        <div className="mb-[55px]">
-          <h2 className="max-w-[990px] font-manrope font-light text-[64px] leading-[120%] text-white uppercase">
+        <div className="mb-[40px] lg:mb-[30px] xl:mb-[55px]">
+          <h2 className="max-w-[990px] font-manrope font-light text-[42px] lg:text-[48px] xl:text-[64px] leading-[120%] text-white uppercase">
             {t.rich('title', {
               gray: (chunks) => (
                 <span className="text-[#818181]">{chunks}</span>
               ),
             })}
           </h2>
-          <p className="font-montserrat font-light text-[14px] xl:mt-[-70px] leading-[120%] text-white max-w-[343px] ml-auto">
+          <p className="font-montserrat font-light text-[12px] lg:text-[13px] xl:text-[14px] lg:mt-[-40px] xl:mt-[-70px] leading-[120%] text-white max-w-[343px] ml-auto">
             {t('subtitle')}
           </p>
         </div>
 
-        <ul className="flex gap-[20px] mb-[55px]">
+        <ul className="flex gap-[10px] xl:gap-[20px] mb-[40px] lg:mb-[35px] xl:mb-[55px]">
           {WEBSITE_TYPES_MOCK.map((item, index) => {
             const isActive = activeIndex === index;
             return (
               <li
                 key={item.id}
                 onClick={() => handleToggle(index)}
-                className={`font-manrope font-light text-[24px] uppercase leading-[120%] rounded-[56px] flex items-center justify-center w-full h-[83px] backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] cursor-pointer transition-all duration-300 ease-in-out active:scale-[0.95] ${
+                className={`font-manrope font-light text-[16px] lg:text-[18px] xl:text-[24px] uppercase leading-[120%] rounded-[56px] flex items-center justify-center w-full h-[60px] lg:h-[64px] xl:h-[83px] backdrop-blur-sm shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] cursor-pointer transition-all duration-300 ease-in-out active:scale-[0.95] safari-blur-fix ${
                   isActive ? 'bg-white text-[#0a0705]' : 'bg-white/3 text-white'
                 }`}
               >
@@ -72,23 +72,23 @@ const DesktopChooseWebsiteContainer = () => {
           })}
         </ul>
 
-        <div className="relative min-h-[646px] mb-[44px]">
-          <div className="flex flex-col xl:flex-row gap-[20px]">
+        <div className="relative min-h-[500px] lg:min-h-[530px] xl:min-h-[646px] mb-[44px]">
+          <div className="flex flex-col lg:flex-row gap-[15px] xl:gap-[20px]">
             {/* Phone Card - Static Container */}
-            <div className="relative w-[392px] h-[646px] bg-white/6 rounded-[14px] shrink-0 overflow-hidden">
+            <div className="relative w-full lg:w-[320px] xl:w-[392px] h-[450px] lg:h-[530px] xl:h-[646px] bg-white/6 rounded-[14px] shrink-0 overflow-hidden lg:overflow-visible">
               <div className="animate-content w-full h-full">
-                <p className="absolute z-10 top-[32px] right-[27px] max-w-[189px] leading-[120%] font-montserrat font-light text-[14px] text-white">
+                <p className="absolute z-10 top-[24px] lg:top-[24px] xl:top-[32px] right-[20px] lg:right-[20px] xl:right-[27px] max-w-[150px] xl:max-w-[189px] leading-[120%] font-montserrat font-light text-[12px] xl:text-[14px] text-white">
                   {t(`types.${activeContent.id}.description`)}
                 </p>
                 {/* Dark Corner Shadow Overlay */}
-                <div className="absolute w-[490px] h-[490px] left-[0px] bottom-[0px] bg-[radial-gradient(circle_at_0%_100%,_rgba(0,0,0,0.9)_0%,_transparent_60%)] z-20 pointer-events-none" />
+                <div className="absolute w-[490px] h-[490px] left-0 bottom-0 bg-[radial-gradient(circle_at_0%_100%,_rgba(0,0,0,0.9)_0%,_transparent_60%)] z-20 pointer-events-none" />
 
                 <div className="relative w-full h-full rounded-[14px]">
                   <Image
                     src={activeContent.fonImageDesktop}
                     alt="choosefon"
                     fill
-                    sizes="(max-width: 768px) 100vw, 392px"
+                    sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 320px, 392px"
                     quality={80}
                     className="object-cover rounded-[14px]"
                   />
@@ -98,30 +98,29 @@ const DesktopChooseWebsiteContainer = () => {
                     alt="choosefon"
                     width={500}
                     height={946}
-                    sizes="(max-width: 768px) 100vw, 500px"
+                    sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 400px, 500px"
                     quality={80}
-                    className="absolute top-[160px] left-[70px] select-none pointer-events-none max-w-none h-auto w-[500px] origin-top-left z-10"
+                    className="absolute top-[120px] lg:top-[130px] xl:top-[160px] left-[50px] lg:left-[55px] xl:left-[70px] select-none pointer-events-none max-w-none h-auto w-[400px] lg:w-[400px] xl:w-[500px] origin-top-left z-10"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col gap-[20px]">
-              <div className="flex gap-[20px]">
+            <div className="flex flex-col gap-[15px] xl:gap-[20px] w-full">
+              <div className="flex flex-col md:flex-row gap-[15px] xl:gap-[20px]">
                 {/* First Info Card - Static Container */}
-                <div className="flex-1 xl:flex-503 w-full rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
-                  {/* <div className="flex-1 xl:flex-none xl:w-[35vw] rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]"> */}
+                <div className="flex-1 xl:flex-503 w-full rounded-[14px] py-[20px] px-[18px] xl:py-[28px] xl:px-[24px] bg-white/3 backdrop-blur-sm shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
                   <div className="animate-content h-full flex flex-col">
-                    <h2 className="mb-[35px] font-manrope font-light text-[32px] text-white uppercase leading-[120%]">
+                    <h2 className="mb-[20px] xl:mb-[35px] font-manrope font-light text-[22px] lg:text-[24px] xl:text-[32px] text-white uppercase leading-[120%]">
                       {t(`types.${activeContent.id}.firstSection.title`)}
                     </h2>
-                    <ul className="flex flex-col gap-[12px] mt-auto">
+                    <ul className="flex flex-col gap-[10px] xl:gap-[12px] mt-auto">
                       {['0', '1', '2'].map((key) => (
                         <li
-                          className="relative w-full min-h-[61px] py-[15px] pl-[60px] pr-[20px] rounded-[40px] bg-[#0a0705] flex items-center font-montserrat font-light text-[14px] text-white leading-[120%] before:content-[''] before:absolute before:left-[24px] before:w-[18px] before:h-[18px] before:bg-white before:rounded-full"
+                          className="relative w-full min-h-[50px] xl:min-h-[61px] py-[10px] xl:py-[15px] pl-[44px] xl:pl-[60px] pr-[20px] rounded-[40px] bg-[#0a0705] flex items-center font-montserrat font-light text-[12px] xl:text-[14px] text-white leading-[120%] before:content-[''] before:absolute before:left-[16px] xl:before:left-[24px] before:w-[14px] xl:before:w-[18px] before:h-[14px] xl:before:h-[18px] before:bg-white before:rounded-full"
                           key={`list-1-${key}`}
                         >
-                          <span className="w-[290px]">
+                          <span className="w-full xl:w-[290px]">
                             {t(
                               `types.${activeContent.id}.firstSection.items.${key}`,
                             )}
@@ -133,16 +132,15 @@ const DesktopChooseWebsiteContainer = () => {
                 </div>
 
                 {/* Second Info Card - Static Container */}
-                <div className="flex-1 xl:flex-[341] w-full rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
-                  {/* <div className="flex-1 xl:flex-none xl:w-[25vw] rounded-[14px] py-[28px] px-[24px] bg-white/3 backdrop-blur-md shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]"> */}
+                <div className="flex-1 xl:flex-[341] w-full rounded-[14px] py-[20px] px-[18px] xl:py-[28px] xl:px-[24px] bg-white/3 backdrop-blur-sm shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
                   <div className="animate-content h-full flex flex-col">
-                    <h2 className="mb-[35px] font-manrope font-light text-[32px] text-white uppercase leading-[120%]">
+                    <h2 className="mb-[20px] xl:mb-[35px] font-manrope font-light text-[22px] lg:text-[24px] xl:text-[32px] text-white uppercase leading-[120%]">
                       {t(`types.${activeContent.id}.secondSection.title`)}
                     </h2>
-                    <ul className="flex flex-col gap-[12px] mt-auto">
+                    <ul className="flex flex-col gap-[10px] xl:gap-[12px] mt-auto">
                       {['0', '1', '2'].map((key) => (
                         <li
-                          className="relative w-full min-h-[61px] py-[15px] pl-[60px] pr-[20px] rounded-[40px] bg-[#0a0705] flex items-center font-montserrat font-light text-[14px] text-white leading-[120%] before:content-[''] before:absolute before:left-[24px] before:w-[18px] before:h-[18px] before:bg-white before:rounded-full"
+                          className="relative w-full min-h-[50px] xl:min-h-[61px] py-[10px] xl:py-[15px] pl-[44px] xl:pl-[60px] pr-[20px] rounded-[40px] bg-[#0a0705] flex items-center font-montserrat font-light text-[12px] xl:text-[14px] text-white leading-[120%] before:content-[''] before:absolute before:left-[16px] xl:before:left-[24px] before:w-[14px] xl:before:w-[18px] before:h-[14px] xl:before:h-[18px] before:bg-white before:rounded-full"
                           key={`list-2-${key}`}
                         >
                           {t(
@@ -156,13 +154,13 @@ const DesktopChooseWebsiteContainer = () => {
               </div>
 
               {/* Banner - Static Container */}
-              <div className="relative w-[600px] h-[298px] rounded-[14px] overflow-hidden ml-auto">
+              <div className="relative w-full lg:w-[480px] xl:w-[600px] h-[200px] lg:h-[240px] xl:h-[298px] rounded-[14px] overflow-hidden ml-auto">
                 <div className="animate-content w-full h-full relative">
                   <Image
                     src={activeContent.bannerImage}
                     alt="choosebanner"
                     fill
-                    sizes="(max-width: 1280px) 100vw, 600px"
+                    sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 480px, 600px"
                     quality={75}
                     className="object-cover"
                   />
@@ -185,9 +183,9 @@ const DesktopChooseWebsiteContainer = () => {
           <div className="flex-1 h-px bg-linear-to-r from-[#FFFFFF] to-[#0A0704]"></div>
           <GooeyWhiteButton
             text={t('buttonStart')}
-            className="mx-auto text-center w-full text-[14px] font-montserrat font-light text-black"
             width={267}
             height={52}
+            className="mx-auto text-center w-[267px] lg:w-[220px] h-[52px] lg:h-[48px] text-[14px] font-montserrat font-light text-black"
           />
         </div>
         <div className="animate-content absolute bottom-[50px] left-[-80px] -z-20 w-[600px] h-[600px] pointer-events-none select-none">
@@ -196,7 +194,7 @@ const DesktopChooseWebsiteContainer = () => {
             alt="shadow-decoration"
             fill
             quality={60}
-            className="blur-[120px] opacity-20 object-contain brightness-50 contrast-125"
+            className="blur-[120px] opacity-20 object-contain brightness-50 contrast-125 safari-filter-fix"
           />
         </div>
 
@@ -206,8 +204,8 @@ const DesktopChooseWebsiteContainer = () => {
           width={1150}
           height={1150}
           quality={100}
-          sizes="50vw"
-          className="absolute bottom-[450px] xl:bottom-[-105px] left-[115px] -z-10 max-w-none pointer-events-none select-none"
+          sizes="(max-width: 1280px) 800px, 1150px"
+          className="absolute bottom-[130px] lg:bottom-[-70px] xl:bottom-[15px] left-[-250px] lg:left-[50px] xl:left-[115px] -z-10 max-w-none lg:w-[1050px] lg:h-[1050px] xl:w-[1150px] xl:h-[1150px] pointer-events-none select-none"
         />
       </section>
     </LazyMotion>

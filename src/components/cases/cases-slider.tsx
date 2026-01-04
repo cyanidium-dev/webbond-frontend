@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import { CASES_MOCK_DATA} from './cases-mock-data';
+import { CASES_MOCK_DATA } from './cases-mock-data';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 
@@ -48,7 +48,7 @@ const CasesSlider = () => {
                 <ul className="relative z-10 mt-auto flex gap-1 flex-wrap">
                   {caseItem.services.map((service) => (
                     <li
-                      className="font-montserrat font-light text-[10px] lg:text-[14px] text-white leading-[120%] px-[15px] lg:px-[17px] py-[10px] lg:py-[12px] rounded-[21px] backdrop-blur-xl bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] flex justify-between items-center"
+                      className="font-montserrat font-light text-[10px] lg:text-[14px] text-white leading-[120%] px-[15px] lg:px-[17px] py-[10px] lg:py-[12px] rounded-[21px] backdrop-blur-xl bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] flex justify-between items-center safari-blur-fix"
                       key={service}
                     >
                       {service}

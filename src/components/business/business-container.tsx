@@ -44,7 +44,7 @@ const BusinessContainer = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="absolute right-0 top-0 flex items-center justify-center rounded-[37px] w-[84px] py-[6px] px-[9px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]"
+            className="absolute right-0 top-0 flex items-center justify-center rounded-[37px] w-[84px] py-[6px] px-[9px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] safari-blur-fix"
           >
             <Image
               src="/mobile-title-banner.png"
@@ -100,7 +100,7 @@ const BusinessContainer = () => {
             height={1257}
             sizes="(max-width: 768px) 100vw, 1257px"
             quality={100}
-            className="absolute top-[-30px] right-[-750px] max-w-none pointer-events-none -z-20 contrast-125 saturate-150"
+            className="absolute top-[-30px] right-[-750px] max-w-none pointer-events-none -z-20 contrast-125 saturate-150 safari-filter-fix"
           />
 
           <Image

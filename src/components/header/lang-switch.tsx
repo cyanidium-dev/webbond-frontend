@@ -68,7 +68,7 @@ const LocaleSwitcher = ({ className, triggerClassName }: LangsProps) => {
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="end"
-          className="relative border-none bg-white/3 backdrop-blur-[32px] rounded-[24px] p-[16px] w-[var(--radix-dropdown-menu-trigger-width)] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] mt-2 z-[250] overflow-hidden"
+          className="relative border-none bg-white/3 backdrop-blur-[32px] rounded-[24px] p-[16px] w-[var(--radix-dropdown-menu-trigger-width)] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] mt-2 z-[250] overflow-hidden safari-blur-fix"
         >
           {/* Gradient Border Overlay for Dropdown */}
           <div

@@ -26,7 +26,7 @@ const WebsiteSelector = () => {
     <>
       <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
         <DropdownMenuTrigger asChild>
-          <button className="w-full px-[18px] h-[53px] rounded-[42px] backdrop-blur-xl bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] cursor-pointer flex justify-between items-center text-white outline-none">
+          <button className="w-full px-[18px] h-[53px] rounded-[42px] backdrop-blur-xl bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] cursor-pointer flex justify-between items-center text-white outline-none safari-blur-fix">
             <span className="font-manrope font-light text-[14px] uppercase text-white">
               {t(`types.${selectedData.id}.label`)}
             </span>
@@ -39,7 +39,7 @@ const WebsiteSelector = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="start"
-          className="relative border-none bg-white/3 backdrop-blur-[32px] rounded-[24px] p-[16px] w-(--radix-dropdown-menu-trigger-width) shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] mt-2 z-250 overflow-hidden"
+          className="relative border-none bg-white/3 backdrop-blur-[32px] rounded-[24px] p-[16px] w-(--radix-dropdown-menu-trigger-width) shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] mt-2 z-250 overflow-hidden safari-blur-fix"
         >
           <div
             className="absolute inset-0 rounded-[24px] pointer-events-none"

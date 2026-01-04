@@ -26,7 +26,7 @@ const ChooseWebsiteContainer = () => {
             height={1000}
             sizes="(max-width: 768px) 100vw, 1000px"
             quality={80}
-            className="h-auto max-w-none w-[277.8vw] contrast-125 saturate-150"
+            className="h-auto max-w-none w-[277.8vw] contrast-125 saturate-150 safari-filter-fix"
           />
         </m.div>
         <m.h2
@@ -47,7 +47,7 @@ const ChooseWebsiteContainer = () => {
           transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
           className="flex items-center mb-[22px]"
         >
-          <div className="flex items-center justify-center rounded-[37px] w-[121px] py-[9px] px-[14px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
+          <div className="flex items-center justify-center rounded-[37px] w-[121px] py-[9px] px-[14px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] safari-blur-fix">
             <Image
               src="/mobile-title-banner.png"
               alt="mobile-title-banner badge"

@@ -3,12 +3,18 @@ import Burger from '../header/burger';
 import LocaleSwitcher from '../header/lang-switch';
 import Logo from '../header/logo';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
+
+const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+  ssr: false,
+});
 
 const MobileLaptopHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
-    <div className="relative flex items-center justify-between px-[20px] py-[15px] backdrop-blur-[32px] bg-white/3 rounded-[40px] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)]">
+    <div className="relative flex items-center justify-between px-[20px] py-[15px] backdrop-blur-[32px] bg-white/3 rounded-[40px] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] safari-blur-fix">
       {/* Gradient Border Overlay */}
       <div
         className="absolute inset-0 rounded-[40px] pointer-events-none"
@@ -26,8 +32,13 @@ const MobileLaptopHeader = () => {
       <div className="flex items-center gap-[24px]">
         <LocaleSwitcher />
         <div className="w-px h-[20px] bg-[#d2d2d2]"></div>
-        <Burger isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
+        <Burger
+          isOpen={isMenuOpen}
+          setIsOpen={setIsMenuOpen}
+          onOpenFeedback={() => setIsFeedbackOpen(true)}
+        />
       </div>
+      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
     </div>
   );
 };

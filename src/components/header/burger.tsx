@@ -14,14 +14,24 @@ import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import { LazyMotion, domAnimation, m, Variants } from 'framer-motion';
 import ArrowUpRightForBtn from './arrow-up-right-for-btn';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
+
+const FeedbackFormContent = dynamic(
+  () => import('@/components/feedback-form-content'),
+  {
+    ssr: false,
+  },
+);
 
 interface BurgerProps {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
+  onOpenFeedback?: () => void;
 }
 
-const Burger = ({ isOpen, setIsOpen }: BurgerProps) => {
+const Burger = ({ isOpen, setIsOpen, onOpenFeedback }: BurgerProps) => {
+  const [view, setView] = useState<'nav' | 'feedback'>('nav');
   const t = useTranslations();
   const pathname = usePathname();
   const locale = useLocale();
@@ -58,7 +68,14 @@ const Burger = ({ isOpen, setIsOpen }: BurgerProps) => {
   };
 
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen} modal={false}>
+    <Sheet
+      open={isOpen}
+      onOpenChange={(open) => {
+        setIsOpen(open);
+        if (!open) setTimeout(() => setView('nav'), 300); // Reset view after closing
+      }}
+      modal={false}
+    >
       <div className="relative lg:hidden flex items-center">
         <SheetTrigger asChild>
           <button className="outline-hidden">
@@ -88,63 +105,87 @@ const Burger = ({ isOpen, setIsOpen }: BurgerProps) => {
         onPointerDownOutside={(e) => e.preventDefault()}
         onInteractOutside={(e) => e.preventDefault()}
       >
-        <div className="flex flex-col h-full overflow-y-auto px-[20px] pt-[160px] pb-[40px]">
-          <LazyMotion features={domAnimation}>
-            {/* Accessibility - Hidden Title and Description */}
-            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-            <SheetDescription className="sr-only">
-              Main navigation menu with links to different sections
-            </SheetDescription>
+        <div
+          className={`flex flex-col h-full px-[20px] pb-[40px] relative z-10 ${
+            view === 'feedback'
+              ? 'overflow-visible pt-[120px]'
+              : 'overflow-y-auto pt-[160px]'
+          }`}
+        >
+          {/* Accessibility - Hidden Title and Description */}
+          <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+          <SheetDescription className="sr-only">
+            Main navigation menu with links to different sections
+          </SheetDescription>
 
-            {/* Mobile Navigation */}
-            <nav className="flex-1 mb-[40px]">
-              <m.ul
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                className="flex flex-col gap-[32px]"
-              >
-                {navItems.map((item) => (
-                  <m.li
-                    key={item.titleKey}
-                    variants={itemVariants}
-                    className="pt-[12px] pb-[20px] relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[270px] after:bg-linear-to-r after:from-[#E63B44] after:to-transparent"
+          {/* Mobile Navigation */}
+          {view === 'nav' ? (
+            <>
+              <nav className="flex-1 mb-[40px]">
+                <LazyMotion features={domAnimation}>
+                  <m.ul
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="flex flex-col gap-[32px]"
                   >
-                    <Link
-                      locale={locale}
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`text-base leading-[120%] font-montserrat transition-all duration-300 ${
-                        isActive(item.href)
-                          ? 'text-[#00dfd0]'
-                          : 'text-white hover:text-[#00dfd0]'
-                      }`}
-                    >
-                      {t(item.titleKey)}
-                    </Link>
-                  </m.li>
-                ))}
-              </m.ul>
-            </nav>
-          </LazyMotion>
-          <Button className="w-full text-[14px] uppercase text-white font-montserrat h-[60px] pl-[36px] pr-[13px] py-[13px] backdrop-blur-[32px] bg-white/3 rounded-[40px] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] shrink-0">
-            Book en konsultation
-            <div className="ml-auto w-[36px] h-[36px] flex items-center justify-center bg-white rounded-full">
-              <ArrowUpRightForBtn />
-            </div>
-          </Button>
+                    {navItems.map((item) => (
+                      <m.li
+                        key={item.titleKey}
+                        variants={itemVariants}
+                        className="pt-[12px] pb-[20px] relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-[270px] after:bg-linear-to-r after:from-[#E63B44] after:to-transparent"
+                      >
+                        <Link
+                          locale={locale}
+                          href={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className={`text-base leading-[120%] font-montserrat transition-all duration-300 ${
+                            isActive(item.href)
+                              ? 'text-[#00dfd0]'
+                              : 'text-white hover:text-[#00dfd0]'
+                          }`}
+                        >
+                          {t(item.titleKey)}
+                        </Link>
+                      </m.li>
+                    ))}
+                  </m.ul>
+                </LazyMotion>
+              </nav>
+              <Button
+                onClick={() => {
+                  if (window.innerWidth >= 768 && onOpenFeedback) {
+                    onOpenFeedback();
+                    setIsOpen(false);
+                  } else {
+                    setView('feedback');
+                  }
+                }}
+                className="w-full text-[14px] uppercase text-white font-montserrat h-[60px] pl-[36px] pr-[13px] py-[13px] backdrop-blur-[32px] bg-white/3 rounded-[40px] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] shrink-0 safari-blur-fix"
+              >
+                Book en konsultation
+                <div className="ml-auto w-[36px] h-[36px] flex items-center justify-center bg-white rounded-full">
+                  <ArrowUpRightForBtn />
+                </div>
+              </Button>
+            </>
+          ) : (
+            <FeedbackFormContent onSuccess={() => setIsOpen(false)} />
+          )}
         </div>
         {/* FIXED DECORATION IMAGE */}
-        <Image
-          src="/mobile-menu-decor.png"
-          alt="menu decor"
-          width={670}
-          height={670}
-          sizes="(max-width: 768px) 100vw, 670px"
-          quality={60}
-          className="absolute -bottom-[270px] -right-[300px] -z-10 w-[670px] h-auto pointer-events-none select-none max-w-none contrast-125 saturate-150"
-          priority
-        />
+        {view === 'nav' && (
+          <Image
+            src="/mobile-menu-decor.png"
+            alt="menu decor"
+            width={670}
+            height={670}
+            sizes="(max-width: 768px) 100vw, 670px"
+            quality={60}
+            className="absolute -bottom-[270px] -right-[300px] w-[670px] h-auto pointer-events-none select-none max-w-none contrast-125 saturate-150 safari-filter-fix"
+            priority
+          />
+        )}
       </SheetContent>
     </Sheet>
   );
