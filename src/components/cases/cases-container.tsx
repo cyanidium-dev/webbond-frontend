@@ -15,7 +15,7 @@ const CasesContainer = () => {
         width={580}
         height={611}
         sizes="(max-width: 768px) 100vw, 580px"
-        quality={90}
+        quality={100}
         className="h-auto max-w-none absolute top-[-180px] left-[-70px] right-0 pointer-events-none -z-10"
       />
       <h2 className="relative z-10 ml-auto max-w-[275px] mb-[24px] text-[40px] font-manrope font-light uppercase text-right text-white leading-[120%]">

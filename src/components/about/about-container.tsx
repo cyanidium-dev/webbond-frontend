@@ -75,7 +75,7 @@ const AboutContainer = () => {
             show: { opacity: 1, x: 0 },
           }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="relative flex items-center w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden safari-blur-fix will-change-transform"
+          className="relative flex items-center w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden"
         >
           <p className="w-full max-w-[183px] font-manrope font-light text-white leading-[120%] wrap-break-word">
             <span className="block font-light uppercase text-base mb-3">
@@ -95,7 +95,7 @@ const AboutContainer = () => {
             show: { opacity: 1, x: 0 },
           }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="relative flex items-center justify-end w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden safari-blur-fix will-change-transform"
+          className="relative flex items-center justify-end w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden"
         >
           <p className="w-full max-w-[191px] font-manrope font-light text-base text-white leading-[120%] uppercase wrap-break-word">
             <span className="block font-light uppercase text-base mb-3">
@@ -115,7 +115,7 @@ const AboutContainer = () => {
             show: { opacity: 1, x: 0 },
           }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="relative flex items-center w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden safari-blur-fix will-change-transform"
+          className="relative flex items-center w-full h-[109px] px-[20px] rounded-[12px] backdrop-blur-[32px] bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] overflow-hidden"
         >
           <p className="w-full max-w-[210px] font-manrope font-light text-base text-white leading-[120%] uppercase wrap-break-word">
             <span className="block font-light uppercase text-base mb-3">
