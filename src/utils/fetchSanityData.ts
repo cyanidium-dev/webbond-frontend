@@ -27,6 +27,10 @@ export const fetchSanityData = async <T = unknown>(
     const data = await response.json();
     return data as T;
   } catch (error) {
-    throw new Error("Failed to fetch Sanity data");
+    console.error("❌ [fetchSanityData] Error:", error);
+    if (error instanceof Error) {
+      throw error;
+    }
+    throw new Error(`Failed to fetch Sanity data: ${String(error)}`);
   }
 };
