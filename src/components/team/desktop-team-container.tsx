@@ -10,9 +10,16 @@ import Image from 'next/image';
 import { TEAM_DATA } from './team-data';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 import { useTranslations } from 'next-intl';
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+
+const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+  ssr: false,
+});
 
 const DesktopTeamContainer = () => {
   const t = useTranslations('Team');
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
     <section className="relative pb-[191px]">
@@ -42,6 +49,7 @@ const DesktopTeamContainer = () => {
           </h2>
           <GooeyWhiteButton
             text={t('buttonAbout')}
+            onClick={() => setIsFeedbackOpen(true)}
             width={236}
             height={52}
             className="ml-[80px] lg:ml-[84px] text-center w-[160px] md:w-[200px] lg:w-[220px] xl:w-[236px] h-[40px] md:h-[44px] lg:h-[48px] xl:h-[52px] text-[12px] md:text-[14px] font-montserrat font-light text-black"
@@ -87,6 +95,7 @@ const DesktopTeamContainer = () => {
           </CarouselContent>
         </div>
       </Carousel>
+      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
     </section>
   );
 };

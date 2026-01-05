@@ -3,9 +3,16 @@ import GooeyWhiteButton from '../ui/gooey-white-button';
 import { links } from './contacts-container';
 import { useTranslations } from 'next-intl';
 import { m } from 'framer-motion';
+import { useState } from 'react';
+import dynamic from 'next/dynamic';
+
+const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+  ssr: false,
+});
 
 const ContactsDesktop = () => {
   const t = useTranslations('Contacts');
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
     <m.div
@@ -33,6 +40,7 @@ const ContactsDesktop = () => {
       >
         <GooeyWhiteButton
           text={t('button')}
+          onClick={() => setIsFeedbackOpen(true)}
           className="text-center w-full text-[14px] font-montserrat font-light text-black"
           width={168}
           height={42}
@@ -40,7 +48,11 @@ const ContactsDesktop = () => {
       </m.div>
 
       <div className="flex flex-col lg:flex-row items-center gap-[20px] xl:gap-[72px]">
-        {[t('cvr'), t('city'), t('email')].map((text, idx) => (
+        {[
+          { text: t('cvr'), isEmail: false },
+          { text: t('city'), isEmail: false },
+          { text: t('email'), isEmail: true },
+        ].map((item, idx) => (
           <m.div
             key={idx}
             variants={{
@@ -54,7 +66,16 @@ const ContactsDesktop = () => {
                 : ''
             }`}
           >
-            {text}
+            {item.isEmail ? (
+              <a
+                href={`mailto:${item.text}`}
+                className="underline decoration-white/20 underline-offset-4 hover:decoration-white/50 transition-colors"
+              >
+                {item.text}
+              </a>
+            ) : (
+              item.text
+            )}
           </m.div>
         ))}
       </div>
@@ -88,6 +109,7 @@ const ContactsDesktop = () => {
           </m.li>
         ))}
       </m.ul>
+      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
     </m.div>
   );
 };

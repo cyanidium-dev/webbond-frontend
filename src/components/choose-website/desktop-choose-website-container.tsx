@@ -6,12 +6,18 @@ import { useAnimate, m } from 'framer-motion';
 import { WEBSITE_TYPES_MOCK } from './choose-website-mock';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 import { useTranslations } from 'next-intl';
+import dynamic from 'next/dynamic';
+
+const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+  ssr: false,
+});
 
 const DesktopChooseWebsiteContainer = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [scope, animate] = useAnimate();
   const isAnimatingRef = useRef(false);
   const t = useTranslations('ChooseWebsite');
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   const activeContent = WEBSITE_TYPES_MOCK[activeIndex];
 
@@ -180,6 +186,7 @@ const DesktopChooseWebsiteContainer = () => {
         <div className="flex-1 h-px bg-linear-to-r from-[#FFFFFF] to-[#0A0704]"></div>
         <GooeyWhiteButton
           text={t('buttonStart')}
+          onClick={() => setIsFeedbackOpen(true)}
           width={267}
           height={52}
           className="mx-auto text-center w-[267px] lg:w-[220px] h-[52px] lg:h-[48px] text-[14px] font-montserrat font-light text-black"
@@ -204,6 +211,7 @@ const DesktopChooseWebsiteContainer = () => {
         sizes="(max-width: 1280px) 800px, 1150px"
         className="absolute bottom-[130px] lg:bottom-[-70px] xl:bottom-[15px] left-[-250px] lg:left-[50px] xl:left-[115px] -z-10 max-w-none lg:w-[1050px] lg:h-[1050px] xl:w-[1150px] xl:h-[1150px] pointer-events-none select-none"
       />
+      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
     </section>
   );
 };

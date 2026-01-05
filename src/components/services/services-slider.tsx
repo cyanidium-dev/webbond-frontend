@@ -18,7 +18,7 @@ const ServicesSlider = () => {
       <Carousel>
         <CarouselContent>
           {servicesData.map((service) => (
-            <CarouselItem key={service.id}>
+            <CarouselItem key={service.id} className="basis-full sm:basis-1/2">
               <div className="relative pt-[6px] pr-[6px] pb-[14px] pl-[16px] flex gap-3 backdrop-blur-sm bg-white/3 rounded-[13px] shadow-[inset_2px_-1px_6px_-1px_rgba(255,255,255,0.12)] overflow-hidden safari-blur-fix will-change-transform transform-gpu">
                 <div className="mt-[10px]">
                   <MarqueeText

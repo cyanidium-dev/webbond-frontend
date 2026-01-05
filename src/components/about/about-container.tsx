@@ -3,18 +3,25 @@ import Image from 'next/image';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 import { useTranslations } from 'next-intl';
 import { m } from 'framer-motion';
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+
+const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+  ssr: false,
+});
 
 const AboutContainer = () => {
   const t = useTranslations('About');
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
-    <section className="relative z-20 px-[20px] pt-[150px] pb-[68px]">
+    <section className="relative z-20 px-[20px] sm:px-[40px] pt-[150px] pb-[68px]">
       <m.h2
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
-        className="mb-[28px] text-[40px] font-manrope font-light uppercase text-white leading-[120%] will-change-transform"
+        className="mb-[28px] text-[40px] sm:text-[48px] font-manrope font-light uppercase text-white leading-[120%] will-change-transform"
       >
         {t('title')}
       </m.h2>
@@ -40,7 +47,7 @@ const AboutContainer = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
-          className="font-monserat text-base text-white leading-[120%] mb-[66px] max-w-[275px] will-change-transform"
+          className="font-monserat text-base sm:text-lg text-white leading-[120%] mb-[66px] max-w-[275px] sm:max-w-[400px] will-change-transform"
         >
           {t.rich('description', {
             gray: (chunks) => <span className="text-[#818181]">{chunks}</span>,
@@ -132,10 +139,11 @@ const AboutContainer = () => {
       </m.ul>
       <GooeyWhiteButton
         text={t('button')}
+        onClick={() => setIsFeedbackOpen(true)}
         className="mx-auto relative z-30 text-center w-full text-[14px] font-montserrat font-light text-black"
-        width={310}
         height={52}
       />
+      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
       <m.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

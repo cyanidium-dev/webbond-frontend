@@ -143,7 +143,11 @@ export default function SplineGlobe({
 
   const handleOnLoad = (splineApp: any) => {
     splineRef.current = splineApp;
-    setIsSplineReady(true);
+    // Small delay to ensure the canvas has actually rendered the first frame
+    // and the layout is stable before fading it in.
+    setTimeout(() => {
+      setIsSplineReady(true);
+    }, 200);
   };
 
   // Заглушка показывается, пока Spline не готов или не должен быть активен
@@ -157,7 +161,7 @@ export default function SplineGlobe({
         className={`absolute right-[40%] top-[50px] w-[360px] h-[813px] transition-opacity duration-1000 md:hidden ${
           !showPlaceholder ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
-        style={{ display: shouldHideAll ? 'none' : 'block' }}
+        style={{ display: shouldHideAll ? 'none' : undefined }}
       >
         <Image
           src="/mobile-globus.webp"
@@ -177,7 +181,7 @@ export default function SplineGlobe({
         className={`absolute inset-0 top-[45px] w-full h-full transition-opacity duration-1000 hidden md:flex items-center justify-center ${
           !showPlaceholder ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
-        style={{ display: shouldHideAll ? 'none' : 'flex' }}
+        style={{ display: shouldHideAll ? 'none' : undefined }}
       >
         <div className="relative w-[83%] h-[83%]">
           <Image
@@ -199,7 +203,6 @@ export default function SplineGlobe({
             isSplineReady && !showPlaceholder ? 'opacity-100' : 'opacity-0'
           }`}
           style={{
-            aspectRatio: '1/1',
             maskImage: 'radial-gradient(circle, black 50%, transparent 100%)',
             WebkitMaskImage:
               'radial-gradient(circle, black 50%, transparent 100%)',

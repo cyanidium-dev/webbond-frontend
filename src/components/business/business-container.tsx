@@ -3,12 +3,19 @@ import Image from 'next/image';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 import { useTranslations } from 'next-intl';
 import { m } from 'framer-motion';
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+
+const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+  ssr: false,
+});
 
 const BusinessContainer = () => {
   const t = useTranslations('Business');
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
-    <section className="relative px-[20px] pt-[190px] pb-[148px]">
+    <section className="relative px-[20px] sm:px-[40px] pt-[190px] pb-[148px]">
       <m.div
         initial={{ opacity: 0, scale: 0.9, y: 30 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -32,7 +39,7 @@ const BusinessContainer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-[320px] font-manrope text-[40px] font-light uppercase text-white leading-[120%] mb-[32px] will-change-transform"
+          className="max-w-[320px] sm:max-w-[450px] font-manrope text-[40px] sm:text-[48px] font-light uppercase text-white leading-[120%] mb-[32px] will-change-transform"
         >
           {t.rich('title', {
             gray: (chunks) => <span className="text-[#999]">{chunks}</span>,
@@ -60,7 +67,7 @@ const BusinessContainer = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="ml-auto pr-[20px] max-w-[254px] mb-[44px] font-montserrat font-light text-[14px] text-white leading-[120%] will-change-transform"
+          className="ml-auto pr-[20px] max-w-[254px] sm:max-w-[350px] mb-[44px] font-montserrat font-light text-[14px] sm:text-[16px] text-white leading-[120%] will-change-transform"
         >
           {t('description')}
         </m.p>
@@ -82,10 +89,11 @@ const BusinessContainer = () => {
       </div>
       <GooeyWhiteButton
         text={t('button')}
+        onClick={() => setIsFeedbackOpen(true)}
         className="mx-auto text-center w-full text-[14px] font-montserrat font-light text-black"
-        width={310}
         height={52}
       />
+      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
       <m.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

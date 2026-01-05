@@ -5,9 +5,16 @@ import ServiceDesktopSlider from './service-desktop-slider';
 import { useTranslations } from 'next-intl';
 
 import { m } from 'framer-motion';
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+
+const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+  ssr: false,
+});
 
 const DesktopServicesContainer = () => {
   const t = useTranslations('Services');
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
     <m.section
@@ -31,6 +38,7 @@ const DesktopServicesContainer = () => {
           </p>
           <GooeyWhiteButton
             text={t('button')}
+            onClick={() => setIsFeedbackOpen(true)}
             className="text-center w-[200px] md:w-[236px] xl:w-full text-[12px] md:text-[14px] font-montserrat font-light text-black"
             width={236}
             height={52}
@@ -72,6 +80,7 @@ const DesktopServicesContainer = () => {
           className="w-full h-auto"
         />
       </div>
+      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
     </m.section>
   );
 };

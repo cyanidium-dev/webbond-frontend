@@ -5,12 +5,19 @@ import GooeyWhiteButton from '../ui/gooey-white-button';
 import WebsiteSelector from './website-selector';
 import { useTranslations } from 'next-intl';
 import { m } from 'framer-motion';
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+
+const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+  ssr: false,
+});
 
 const ChooseWebsiteContainer = () => {
   const t = useTranslations('ChooseWebsite');
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
-    <section className="relative px-[20px] z-20">
+    <section className="relative px-[20px] sm:px-[40px] z-20">
       <m.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -25,7 +32,7 @@ const ChooseWebsiteContainer = () => {
           height={1000}
           sizes="(max-width: 768px) 100vw, 1000px"
           quality={80}
-          className="h-auto max-w-none w-[277.8vw] contrast-125 saturate-150"
+          className="h-auto max-w-none w-[277.8vw] contrast-125 saturate-150 sm:hidden"
         />
       </m.div>
       <m.h2
@@ -33,7 +40,7 @@ const ChooseWebsiteContainer = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
-        className="mb-[22px] max-w-[320px] font-manrope font-light text-[40px] leading-[120%] text-white uppercase will-change-transform"
+        className="mb-[22px] max-w-[320px] sm:max-w-[450px] font-manrope font-light text-[40px] sm:text-[48px] leading-[120%] text-white uppercase will-change-transform"
       >
         {t.rich('title', {
           gray: (chunks) => <span className="text-[#818181]">{chunks}</span>,
@@ -55,7 +62,7 @@ const ChooseWebsiteContainer = () => {
             quality={80}
           />
         </div>
-        <div className="font-montserrat font-light text-[12px] leading-[120%] text-white text-right max-w-[173px] ml-auto">
+        <div className="font-montserrat font-light text-[12px] sm:text-[14px] leading-[120%] text-white text-right max-w-[173px] sm:max-w-[250px] ml-auto">
           {t('subtitle')}
         </div>
       </m.div>
@@ -73,10 +80,12 @@ const ChooseWebsiteContainer = () => {
       <ShadowEllipseForIphone className="absolute bottom-[-320px] right-[-30px] w-full" />
       <GooeyWhiteButton
         text={t('buttonOrder')}
+        onClick={() => setIsFeedbackOpen(true)}
         className="mx-auto text-center w-full text-[14px] font-montserrat font-light text-black"
         width={310}
         height={52}
       />
+      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
     </section>
   );
 };

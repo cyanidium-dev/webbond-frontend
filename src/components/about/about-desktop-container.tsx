@@ -3,9 +3,16 @@ import Image from 'next/image';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 import { useTranslations } from 'next-intl';
 import { m } from 'framer-motion';
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+
+const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+  ssr: false,
+});
 
 const AboutDesktopContainer = () => {
   const t = useTranslations('About');
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
     <section className="relative pt-[60px] lg:pt-[80px] pb-[100px] md:pb-[140px] xl:pb-[173px]">
@@ -227,11 +234,13 @@ const AboutDesktopContainer = () => {
             width={236}
             height={52}
             text={t('button')}
+            onClick={() => setIsFeedbackOpen(true)}
             className="relative z-30 text-center w-[200px] lg:w-[236px] h-[48px] lg:h-[52px] text-[12px] md:text-[14px] font-montserrat font-light text-black"
           />
           <div className="flex-1 h-px bg-linear-to-r from-[#FFFFFF] to-[#0A0704]"></div>
         </m.div>
       </div>
+      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
     </section>
   );
 };

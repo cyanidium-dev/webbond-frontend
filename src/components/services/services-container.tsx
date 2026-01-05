@@ -4,20 +4,27 @@ import ServicesSlider from './services-slider';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 import { m } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+
+const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+  ssr: false,
+});
 
 const ServicesContainer = () => {
   const t = useTranslations('Services');
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
-    <section className="px-[20px] pb-[148px]">
-      <h2 className="font-light font-manrope text-[40px] leading-[120%] text-white uppercase max-w-[260px]">
+    <section className="px-[20px] sm:px-[40px] pb-[148px]">
+      <h2 className="font-light font-manrope text-[40px] sm:text-[48px] leading-[120%] text-white uppercase max-w-[260px] sm:max-w-[400px]">
         {t('title')}
       </h2>
       <div className="relative mt-[32px] mb-[37px]">
-        <div className="absolute bottom-0 left-[-48px] flex flex-row items-center transform rotate-90 text-[20px] uppercase font-montserrat text-white before:content-[''] before:w-[10px] before:h-[10px] before:bg-[#939393] before:rounded-full before:mr-[14px]">
+        <div className="absolute bottom-0 left-[-48px] flex flex-row items-center transform rotate-90 text-[20px] sm:text-[24px] uppercase font-montserrat text-white before:content-[''] before:w-[10px] before:h-[10px] before:bg-[#939393] before:rounded-full before:mr-[14px]">
           {t('verticalText')}
         </div>
-        <div className="ml-auto max-w-[310px] font-manrope font-light uppercase text-[20px] leading-[120%] text-right text-white">
+        <div className="ml-auto max-w-[310px] sm:max-w-[400px] font-manrope font-light uppercase text-[20px] sm:text-[24px] leading-[120%] text-right text-white">
           {t('subtitle')}
         </div>
       </div>
@@ -27,7 +34,7 @@ const ServicesContainer = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="absolute left-[-48px] max-w-none w-[616px] h-[155px] will-change-transform"
+          className="absolute left-[-48px] sm:left-1/2 sm:-translate-x-1/2 max-w-none w-[616px] h-[155px] will-change-transform"
         >
           <Image
             src="/services-text-removebg-preview.png"
@@ -53,10 +60,11 @@ const ServicesContainer = () => {
       <ServicesSlider />
       <GooeyWhiteButton
         text={t('button')}
+        onClick={() => setIsFeedbackOpen(true)}
         className="mx-auto text-center w-full text-[14px] font-montserrat font-light text-black"
-        width={310}
         height={52}
       />
+      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
     </section>
   );
 };

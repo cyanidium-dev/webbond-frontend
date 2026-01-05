@@ -11,12 +11,12 @@ import { TEAM_DATA } from './team-data';
 
 const TeamSlider = () => {
   return (
-    <Carousel>
-      <CarouselContent className="-ml-4 pl-[20px]">
+    <Carousel className="w-full">
+      <CarouselContent className="-ml-4 pl-[20px] sm:pl-[40px]">
         {TEAM_DATA.map((teamItem) => (
           <CarouselItem
             key={teamItem.id}
-            className="pl-4 basis-[85%] md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+            className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
           >
             <div className="relative w-full max-w-[389px] h-[398px] p-[16px] rounded-[12px] flex flex-col backdrop-blur-md bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] will-change-transform transform-gpu">
               <Image

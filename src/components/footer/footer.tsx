@@ -4,7 +4,7 @@ import ContactsDesktop from '../contacts/contacts-desktop';
 
 const Footer = () => {
   return (
-    <footer className="px-[20px] md:px-0 pt-[20px] md:pt-0">
+    <footer className="px-[20px] sm:px-[40px] md:px-0 pt-[20px] md:pt-0">
       <div className="w-full h-px bg-linear-to-r from-white via-white to-[#686868] mb-[32px] md:mb-[41px]" />
       <ContactsDesktop />
 

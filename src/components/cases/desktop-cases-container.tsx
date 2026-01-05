@@ -14,12 +14,18 @@ import { Link } from '@/i18n/navigation';
 import GooeyWhiteButton from '../ui/gooey-white-button';
 import { useTranslations } from 'next-intl';
 import { m } from 'framer-motion';
+import dynamic from 'next/dynamic';
+
+const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+  ssr: false,
+});
 
 const DesktopCasesContainer = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
   const t = useTranslations('Cases');
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   useEffect(() => {
     if (!api) {
@@ -96,6 +102,7 @@ const DesktopCasesContainer = () => {
           >
             <GooeyWhiteButton
               text={t('button')}
+              onClick={() => setIsFeedbackOpen(true)}
               width={236}
               height={52}
               className="text-center w-[180px] md:w-[210px] xl:w-[236px] h-[44px] md:h-[48px] xl:h-[52px] text-[12px] md:text-[14px] font-montserrat font-light text-black"
@@ -232,6 +239,7 @@ const DesktopCasesContainer = () => {
           ))}
         </m.div>
       </Carousel>
+      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
     </section>
   );
 };

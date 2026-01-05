@@ -15,7 +15,7 @@ const CasesSlider = () => {
     <Carousel>
       <CarouselContent>
         {CASES_MOCK_DATA.map((caseItem) => (
-          <CarouselItem key={caseItem.id}>
+          <CarouselItem key={caseItem.id} className="basis-full sm:basis-1/2">
             <Link href={`/cases/${caseItem.id}`}>
               <div className="relative w-full max-w-[430px] min-h-[387px] rounded-[13px] p-[15px] flex flex-col">
                 <Image
