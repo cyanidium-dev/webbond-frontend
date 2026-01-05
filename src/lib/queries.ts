@@ -14,7 +14,8 @@ export const casesOnHomepageQuery = `
           url
         },
         crop,
-        hotspot
+        hotspot,
+        alt
       }
     },
     "services": services[]{
@@ -30,7 +31,8 @@ export const casesOnHomepageQuery = `
           url
         },
         crop,
-        hotspot
+        hotspot,
+        alt
       },
       "imageMobile": imageMobile{
         asset->{
@@ -38,7 +40,8 @@ export const casesOnHomepageQuery = `
           url
         },
         crop,
-        hotspot
+        hotspot,
+        alt
       },
       "button": {
         "text": button.text[$lang],
@@ -55,7 +58,8 @@ export const casesOnHomepageQuery = `
           url
         },
         crop,
-        hotspot
+        hotspot,
+        alt
       },
       "testimonialText": testimonialText[$lang],
       "imageDesktop": imageDesktop{
@@ -64,7 +68,8 @@ export const casesOnHomepageQuery = `
           url
         },
         crop,
-        hotspot
+        hotspot,
+        alt
       },
       "imageMobile": imageMobile{
         asset->{
@@ -72,7 +77,8 @@ export const casesOnHomepageQuery = `
           url
         },
         crop,
-        hotspot
+        hotspot,
+        alt
       }
     }
   }
