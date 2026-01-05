@@ -20,6 +20,7 @@ interface GooeyWhiteButtonProps {
   disabled?: boolean;
   isLoading?: boolean;
   loadingText?: string;
+  centerText?: boolean;
 }
 
 const GooeyWhiteButton = ({
@@ -33,6 +34,7 @@ const GooeyWhiteButton = ({
   disabled = false,
   isLoading = false,
   loadingText,
+  centerText = false,
 }: GooeyWhiteButtonProps) => {
   const containerRef = useRef<HTMLButtonElement>(null);
   const [width, setWidth] = useState(initialWidth || 236);
@@ -145,7 +147,13 @@ const GooeyWhiteButton = ({
 
       {/* Слой контента */}
       <div className="relative z-10 flex h-full w-full items-center">
-        <span className="flex-1 pl-6 leading-none flex items-center">
+        {centerText && <div style={{ width: height }} className="shrink-0" />}
+        <span
+          className={cn(
+            'flex-1 leading-none flex items-center',
+            centerText ? 'justify-center' : 'pl-6',
+          )}
+        >
           {isLoading ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />

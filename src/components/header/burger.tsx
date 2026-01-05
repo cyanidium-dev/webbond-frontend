@@ -24,6 +24,10 @@ const FeedbackFormContent = dynamic(
   },
 );
 
+const SuccessContent = dynamic(() => import('@/components/success-content'), {
+  ssr: false,
+});
+
 const SuccessModal = dynamic(() => import('@/components/success-modal'), {
   ssr: false,
 });
@@ -35,7 +39,7 @@ interface BurgerProps {
 }
 
 const Burger = ({ isOpen, setIsOpen, onOpenFeedback }: BurgerProps) => {
-  const [view, setView] = useState<'nav' | 'feedback'>('nav');
+  const [view, setView] = useState<'nav' | 'feedback' | 'success'>('nav');
   const [showSuccess, setShowSuccess] = useState(false);
   const t = useTranslations();
   const pathname = usePathname();
@@ -112,7 +116,7 @@ const Burger = ({ isOpen, setIsOpen, onOpenFeedback }: BurgerProps) => {
       >
         <div
           className={`flex flex-col h-full px-[20px] pb-[40px] relative z-10 ${
-            view === 'feedback'
+            view === 'feedback' || view === 'success'
               ? 'overflow-visible pt-[120px]'
               : 'overflow-y-auto pt-[160px]'
           }`}
@@ -172,13 +176,16 @@ const Burger = ({ isOpen, setIsOpen, onOpenFeedback }: BurgerProps) => {
                 </div>
               </Button>
             </>
-          ) : (
+          ) : view === 'feedback' ? (
             <FeedbackFormContent
               onSuccess={() => {
-                setIsOpen(false);
-                setShowSuccess(true);
+                setView('success');
               }}
             />
+          ) : (
+            <div className="flex-1 flex flex-col justify-center">
+              <SuccessContent onClose={() => setIsOpen(false)} />
+            </div>
           )}
         </div>
         {/* FIXED DECORATION IMAGE */}

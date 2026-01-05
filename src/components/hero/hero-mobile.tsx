@@ -9,7 +9,7 @@ import SplineGlobe from '../ui/spline-globe';
 
 const HeroMobile = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { amount: 0.1 });
+  const isInView = useInView(containerRef, { amount: 0 });
   const t = useTranslations('Hero');
 
   return (

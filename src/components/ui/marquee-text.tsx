@@ -81,7 +81,7 @@ const MarqueeText: React.FC<MarqueeTextProps> = ({
         </span>
         {(shouldAnimate || !mounted) && (
           <span
-            className="inline-block opacity-0 lg:opacity-100"
+            className="inline-block"
             style={{
               paddingLeft: `${gap}px`,
               visibility: shouldAnimate ? 'visible' : 'hidden',

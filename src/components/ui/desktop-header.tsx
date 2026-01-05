@@ -188,7 +188,7 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
           style={{
             backgroundColor: 'rgba(255, 255, 255, 0.03)',
             backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(32px)',
+            WebkitBackdropFilter: 'blur(8px)',
             maskImage: 'url(#header-mask-dynamic)',
             WebkitMaskImage: 'url(#header-mask-dynamic)',
           }}
@@ -228,18 +228,17 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
             className="flex items-center justify-start lg:pr-[20px] xl:pr-[40px]"
             style={{ width: `${leftSectionWidth}px` }}
           >
-            {/* <div className="flex xl:w-[855px] items-center justify-between"> */}
             <Link href="#hero" className="shrink-0">
               <Image
                 src="/desktop-logo.svg"
                 alt="Logo"
                 width={244}
                 height={14}
+                className="w-[234px] h-[14px] xl:w-[244px] xl:h-[14px]"
               />
             </Link>
             {/* Nav */}
-            <nav className="flex items-center ml-[30px] mr-[20px] lg:ml-auto lg:mr-0 lg:gap-2 xl:gap-8">
-              {/* <nav className="flex items-center gap-2 ml-[30px] mr-[20px] xl:ml-[73px] xl:mr-[54px] 2xl:ml-[300px] xl:gap-8 2xl:gap-10"> */}
+            <nav className="flex items-center ml-[30px] mr-[20px] lg:ml-auto lg:mr-0 lg:gap-4 xl:gap-8">
               {navItems.map((item) => (
                 <a
                   key={item.titleKey}
@@ -251,7 +250,7 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
               ))}
             </nav>
             {/* Language switch */}
-            <div className="flex items-center justify-start gap-[16px] lg:gap-[16px] xl:gap-[32px] lg:ml-[30px] xl:ml-[54px]">
+            <div className="flex items-center justify-start gap-[16px] lg:gap-[16px] xl:gap-[32px] lg:ml-[20px] xl:ml-[54px]">
               <div className="h-6 w-px bg-white/10" />
               <LocaleSwitcher triggerClassName="font-montserrat text-[16px] font-medium text-white hover:text-white gap-2 leading-[125%] uppercase" />
             </div>

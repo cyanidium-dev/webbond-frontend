@@ -96,7 +96,7 @@ const FeedbackFormContent = ({
   return (
     <>
       <div className={cn('relative', className)}>
-        <div className="absolute -z-10 top-[-1050px] left-[-650px] md:top-[-950px] md:left-[-650px] pointer-events-none select-none opacity-60 transform-gpu">
+        <div className="absolute -z-10 top-[-1050px] left-[-650px] md:top-[-950px] md:left-[-650px] pointer-events-none select-none transform-gpu">
           <Image
             src="/feddback-modal-shadow.webp"
             alt="Feedback Modal Shadow"
@@ -107,7 +107,7 @@ const FeedbackFormContent = ({
             className="max-w-none"
           />
         </div>
-        <div className="absolute -z-10 bottom-[-1050px] right-[-750px] md:bottom-[-1050px] md:right-[-750px] pointer-events-none select-none opacity-60 transform-gpu">
+        <div className="absolute -z-10 bottom-[-1050px] right-[-750px] md:bottom-[-1050px] md:right-[-750px] pointer-events-none select-none transform-gpu">
           <Image
             src="/feddback-modal-shadow.webp"
             alt="Feedback Modal Shadow"

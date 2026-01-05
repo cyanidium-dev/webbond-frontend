@@ -22,12 +22,11 @@ export default function SplineGlobe({
   const [isInViewport, setIsInViewport] = useState(false);
   const [isPageVisible, setIsPageVisible] = useState(true);
   const [isIdle, setIsIdle] = useState(false);
-  const [isActuallyMounted, setIsActuallyMounted] = useState(false);
+  const [isActivated, setIsActivated] = useState(false);
 
   // Тайм-аут бездействия: 1 минута.
   const IDLE_TIMEOUT = 1 * 60 * 1000;
   const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const unmountTimerRef = useRef<NodeJS.Timeout | null>(null);
   const ignoreWakeupUntilRef = useRef<number>(0);
 
   // 1. Задержка первичной загрузки Spline для LCP (только один раз)
@@ -116,29 +115,13 @@ export default function SplineGlobe({
     };
   }, [shouldLoadSpline, isIdle]);
 
-  // 5. Управление жизненным циклом (монтирование/размонтирование)
+  // 5. Управление жизненным циклом (первичная активация)
   useEffect(() => {
     if (!shouldLoadSpline) return;
 
-    const isActive = isVisible && isInViewport && isPageVisible && !isIdle;
-
-    if (isActive) {
-      if (unmountTimerRef.current) clearTimeout(unmountTimerRef.current);
-      setIsActuallyMounted(true);
-    } else {
-      // Даем 3 секунды на плавное исчезновение и чтобы избежать дерганья при скролле
-      if (!unmountTimerRef.current) {
-        unmountTimerRef.current = setTimeout(() => {
-          setIsActuallyMounted(false);
-          setIsSplineReady(false); // Сбрасываем готовность для плавного проявления в следующий раз
-          unmountTimerRef.current = null;
-        }, 3000);
-      }
+    if (isVisible && isInViewport && isPageVisible && !isIdle) {
+      setIsActivated(true);
     }
-
-    return () => {
-      if (unmountTimerRef.current) clearTimeout(unmountTimerRef.current);
-    };
   }, [isVisible, isInViewport, isPageVisible, isIdle, shouldLoadSpline]);
 
   // 6. Управление паузой Spline (если он смонтирован)
@@ -164,23 +147,17 @@ export default function SplineGlobe({
   };
 
   // Заглушка показывается, пока Spline не готов или не должен быть активен
-  const showPlaceholder =
-    !isSplineReady || isIdle || !isVisible || !isPageVisible || !isInViewport;
+  const showPlaceholder = !isSplineReady || isIdle || !isPageVisible;
+  const shouldHideAll = !isVisible || !isInViewport;
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full h-full relative"
-      style={{
-        maskImage: 'radial-gradient(circle, black 50%, transparent 100%)',
-        WebkitMaskImage: 'radial-gradient(circle, black 50%, transparent 100%)',
-      }}
-    >
+    <div ref={containerRef} className="w-full h-full relative">
       {/* Заглушка для Мобильных устройств */}
       <div
         className={`absolute right-[40%] top-[50px] w-[360px] h-[813px] transition-opacity duration-1000 md:hidden ${
           !showPlaceholder ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
+        style={{ display: shouldHideAll ? 'none' : 'block' }}
       >
         <Image
           src="/mobile-globus.webp"
@@ -200,6 +177,7 @@ export default function SplineGlobe({
         className={`absolute inset-0 top-[45px] w-full h-full transition-opacity duration-1000 hidden md:flex items-center justify-center ${
           !showPlaceholder ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
+        style={{ display: shouldHideAll ? 'none' : 'flex' }}
       >
         <div className="relative w-[83%] h-[83%]">
           <Image
@@ -215,14 +193,18 @@ export default function SplineGlobe({
         </div>
       </div>
 
-      {isActuallyMounted && (
+      {isActivated && (
         <div
           className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
-            isSplineReady && !showPlaceholder
-              ? 'opacity-100'
-              : 'opacity-0 pointer-events-none'
+            isSplineReady && !showPlaceholder ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ aspectRatio: '1/1' }}
+          style={{
+            aspectRatio: '1/1',
+            maskImage: 'radial-gradient(circle, black 50%, transparent 100%)',
+            WebkitMaskImage:
+              'radial-gradient(circle, black 50%, transparent 100%)',
+            display: shouldHideAll ? 'none' : 'block',
+          }}
         >
           <Suspense fallback={<div className="w-full h-full bg-transparent" />}>
             <Spline

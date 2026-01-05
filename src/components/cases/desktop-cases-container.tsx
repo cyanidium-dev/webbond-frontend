@@ -151,7 +151,7 @@ const DesktopCasesContainer = () => {
             {CASES_MOCK_DATA.map((caseItem) => (
               <CarouselItem
                 key={caseItem.id}
-                className="pl-5 md:basis-1/3 lg:basis-1/3 xl:basis-[40%]"
+                className="pl-5 basis-full md:basis-1/3 lg:basis-[28%] xl:basis-[40%]"
               >
                 <m.div
                   variants={{
@@ -162,14 +162,14 @@ const DesktopCasesContainer = () => {
                   className="will-change-[opacity,transform] transform-gpu"
                 >
                   <Link href={`/cases/${caseItem.id}`}>
-                    <div className="relative w-full max-w-[320px] lg:max-w-[400px] xl:max-w-[495px] min-h-[420px] lg:min-h-[500px] xl:min-h-[600px] rounded-[20px] p-[16px] xl:p-[24px] flex flex-col group">
+                    <div className="relative w-full max-w-[320px] lg:max-w-[340px] xl:max-w-[495px] min-h-[420px] lg:min-h-[420px] xl:min-h-[600px] rounded-[20px] p-[16px] xl:p-[24px] flex flex-col group overflow-hidden will-change-transform transform-gpu">
                       <Image
                         src={caseItem.image}
                         alt={caseItem.title}
                         fill
                         quality={80}
                         sizes="(max-width: 1250px) 45vw, 500px"
-                        className="object-fill rounded-[20px] transition-transform duration-500"
+                        className="object-cover rounded-[20px] transition-transform duration-500"
                       />
                       <div className="absolute top-[16px] xl:top-[24px] right-[16px] xl:right-[24px] z-10 w-[40px] md:w-[50px] xl:w-[60px] h-[40px] md:h-[50px] xl:h-[60px] rounded-full flex items-center justify-center bg-white transition-transform duration-300">
                         <svg

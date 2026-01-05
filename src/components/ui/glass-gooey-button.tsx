@@ -81,7 +81,7 @@ export default function GlassGooeyButton({
       whileHover="hover"
       variants={containerVariants}
       className={cn(
-        'group relative flex cursor-pointer items-center overflow-visible bg-transparent transition-transform active:scale-95 will-change-transform',
+        'group relative flex cursor-pointer items-center overflow-visible bg-transparent transition-transform active:scale-95',
         className,
       )}
       style={{ width, height }}
