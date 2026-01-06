@@ -16,7 +16,7 @@ export const casesOnHomepageQuery = `
     "hero": {
       "description": hero.description[$lang],
       "tags": hero.tags[]{
-        "text": $lang
+        "text": select($lang == "en" => en, $lang == "da" => da, en)
       },
       "image": hero.image{
         asset->{

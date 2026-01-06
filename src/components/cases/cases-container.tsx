@@ -5,12 +5,17 @@ import CasesSlider from './cases-slider';
 import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
+import { CaseWithLanguage } from '@/types/case';
 
 const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
   ssr: false,
 });
 
-const CasesContainer = () => {
+interface CasesContainerProps {
+  cases: CaseWithLanguage[];
+}
+
+const CasesContainer = ({ cases }: CasesContainerProps) => {
   const t = useTranslations('Cases');
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
@@ -33,7 +38,7 @@ const CasesContainer = () => {
       <p className="font-monserat text-[14px] sm:text-[16px] font-light text-white leading-[120%] max-w-[186px] sm:max-w-[300px] mb-[32px]">
         {t('subtitle')}
       </p>
-      <CasesSlider />
+      <CasesSlider cases={cases} />
       <GooeyWhiteButton
         text={t('button')}
         onClick={() => setIsFeedbackOpen(true)}

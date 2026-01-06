@@ -144,13 +144,16 @@ export type CaseWithLanguage = Omit<
   | 'imageBlock'
   | 'testimonial'
   | 'seo'
+  | 'slug'
 > & {
+  id: string
   title: string
+  slug: string
   homepageImage?: SanityImage
   homepageOrder?: number
   hero: Omit<CaseHero, 'description' | 'tags' | 'image'> & {
     description: string
-    tags?: string[]
+    tags?: Array<string | { text: string }>
     image?: SanityImage
   }
   services?: Array<{
