@@ -246,5 +246,12 @@
     "title": "Tak for dine oplysninger!",
     "description": "Vi har modtaget dine oplysninger og vender tilbage til dig snarest muligt.",
     "button": "Luk"
+  },
+  "CasePage": {
+    "Cta": {
+      "title": "Klar til at få din landingpage?",
+      "description": "Kontakt os i dag, og lad os skabe en landingpage, der øger dine resultater",
+      "button": "Bestil en landingpage"
+    }
   }
 }

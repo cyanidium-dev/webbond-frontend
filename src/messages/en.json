@@ -246,5 +246,13 @@
     "title": "Thank you for your information!",
     "description": "We have received your information and will get back to you as soon as possible.",
     "button": "Close"
+  },
+
+  "CasePage": {
+    "Cta": {
+      "title": "Ready to get your landing page?",
+      "description": "Contact us today and let us create a landing page that boosts your results",
+      "button": "Order a landing page"
+    }
   }
 }
