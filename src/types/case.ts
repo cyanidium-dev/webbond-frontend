@@ -69,7 +69,7 @@ export type Slug = {
 export type CaseHero = {
   description: LocaleText
   tags?: Array<LocaleText>
-  image: SanityImage
+  image?: SanityImage
 }
 
 // Services блок
@@ -126,6 +126,8 @@ export type Case = {
   title: LocaleText
   slug: Slug
   showOnHomepage: boolean
+  homepageImage?: SanityImage
+  homepageOrder?: number
   hero: CaseHero
   services?: CaseService[]
   imageBlock?: CaseImageBlock
@@ -144,9 +146,12 @@ export type CaseWithLanguage = Omit<
   | 'seo'
 > & {
   title: string
-  hero: Omit<CaseHero, 'description' | 'tags'> & {
+  homepageImage?: SanityImage
+  homepageOrder?: number
+  hero: Omit<CaseHero, 'description' | 'tags' | 'image'> & {
     description: string
     tags?: string[]
+    image?: SanityImage
   }
   services?: Array<{
     title: string
