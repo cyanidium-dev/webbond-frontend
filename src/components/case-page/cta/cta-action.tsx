@@ -10,7 +10,7 @@ const FeedbackModal = dynamic(() => import("@/components/feedback-modal"), {
 export function CtaActions({
   buttonText,
   className,
-  width = 236,
+  width,
   height = 52,
 }: {
   buttonText: string;
@@ -26,8 +26,8 @@ export function CtaActions({
         text={buttonText}
         onClick={() => setIsFeedbackOpen(true)}
         className={className}
-        width={width}
         height={height}
+        {...(width && { width })}
       />
       <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
     </>
