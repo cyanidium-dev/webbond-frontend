@@ -10,12 +10,14 @@ const CasesDynamicPage = async ({
 }) => {
   const { id } = await params;
   return (
-    <section className="pt-15 sm:pt-20 md:pt-[110px] pb-5 sm:pb-10 md:pb-[30px] overflow-y-clip md:max-w-[1340px] md:mx-auto md:px-8">
+    <>
       <Header />
-      <CtaWrapper />
-      <ContactsContainer />
+      <div className="pt-15 sm:pt-20 md:pt-[110px] pb-5 sm:pb-10 md:pb-[30px] overflow-y-clip md:max-w-[1340px] md:mx-auto md:px-8">
+        <CtaWrapper />
+        <ContactsContainer />
+      </div>
       <Footer />
-    </section>
+    </>
   );
 };
 

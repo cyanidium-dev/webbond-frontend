@@ -7,7 +7,7 @@ const CtaContainer = async () => {
   const t = await getTranslations("CasePage.Cta");
 
   return (
-    <section className="relative px-[20px] sm:px-[40px] pt-[190px] pb-[148px] ">
+    <div className="relative px-[20px] sm:px-[40px] pt-[190px] pb-[148px] ">
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: 30 }}
         whileInView={{ opacity: 0.9, scale: 1, y: 0 }}
@@ -111,7 +111,7 @@ const CtaContainer = async () => {
           className="absolute w-[370px] h-[290px] top-[180px] left-[450px] max-w-none pointer-events-none -z-20 blur-md"
         />
       </motion.div>
-    </section>
+    </div>
   );
 };
 
