@@ -1,12 +1,22 @@
 export const casesOnHomepageQuery = `
-  *[_type == "case" && showOnHomepage == true] | order(_createdAt desc) {
+  *[_type == "case" && showOnHomepage == true] | order(homepageOrder asc, _createdAt desc) {
     "id": _id,
     "title": title[$lang],
     "slug": slug.current,
+    "homepageImage": homepageImage{
+      asset->{
+        _id,
+        url
+      },
+      crop,
+      hotspot,
+      alt
+    },
+    "homepageOrder": homepageOrder,
     "hero": {
       "description": hero.description[$lang],
       "tags": hero.tags[]{
-        "text": $lang
+        "text": select($lang == "en" => en, $lang == "da" => da, en)
       },
       "image": hero.image{
         asset->{
