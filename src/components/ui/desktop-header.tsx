@@ -228,7 +228,7 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
             className="flex items-center justify-start lg:pr-[20px] xl:pr-[40px]"
             style={{ width: `${leftSectionWidth}px` }}
           >
-            <Link href="#hero" className="shrink-0">
+            <Link href="/#hero" className="shrink-0">
               <Image
                 src="/desktop-logo.svg"
                 alt="Logo"

@@ -10,7 +10,7 @@ const Logo = ({
   onClick?: () => void;
 }) => {
   return (
-    <Link href="#hero" className="flex items-center shrink-0">
+    <Link href="/#hero" className="flex items-center shrink-0">
       <Image
         src="/logo-mobile.svg"
         alt="Logo"
