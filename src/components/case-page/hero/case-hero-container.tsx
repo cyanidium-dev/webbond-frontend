@@ -2,27 +2,29 @@
 // import dynamic from 'next/dynamic';
 
 import { CaseWithLanguage } from '@/types/case';
+import CaseHeroMobile from './case-hero-mobile';
+import CaseHeroDesktop from './case-hero-desktop';
 
 // import { useIsMobile } from '@/hooks/use-mobile';
 
 // const HeroDesktop = dynamic(() => import('./hero-desktop'), { ssr: true });
 // const HeroMobile = dynamic(() => import('./hero-mobile'), { ssr: true });
 
-interface CtaHeroContainerProps {
+export interface CtaHeroContainerProps {
   content: CaseWithLanguage['hero'];
   title: CaseWithLanguage['title'];
 }
 
-const CtaHeroContainer = ({ content, title }: CtaHeroContainerProps) => {
+const CaseHeroContainer = (props: CtaHeroContainerProps) => {
   // const isMobile = useIsMobile();
 
   // if (isMobile === undefined) return <div className="min-h-screen" />;
+
   return (
-    <div>
-      <p>Cta Hero Container {title}</p>
-    </div>
+    <section>
+      <CaseHeroMobile props={props} /> : <CaseHeroDesktop props={props} />
+    </section>
   );
-  // return <section>{isMobile ? <HeroMobile /> : <HeroDesktop />}</section>;
 };
 
-export default CtaHeroContainer;
+export default CaseHeroContainer;
