@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-import Header from '@/components/header/header';
 import HeroContainer from '@/components/hero/hero-container';
 import { casesOnHomepageQuery } from "@/lib/queries";
 import { fetchSanityData } from "@/utils/fetchSanityData";
@@ -43,9 +42,7 @@ const ContactsContainer = dynamic(
   () => import('@/components/contacts/contacts-container'),
   { ssr: true },
 );
-const Footer = dynamic(() => import('@/components/footer/footer'), {
-  ssr: true,
-});
+
 
 import { getLocale } from 'next-intl/server';
 
@@ -92,8 +89,7 @@ export default async function Home({
 
 
   return (
-    <section className="pt-[60px] sm:pt-[80px] md:pt-[110px] pb-[20px] sm:pb-[40px] md:pb-[30px] overflow-y-clip md:max-w-[1340px] md:mx-auto md:px-[32px]">
-      <Header />
+    <div className='pt-[60px] sm:pt-[80px] md:pt-[110px]  overflow-y-clip md:max-w-[1340px] md:mx-auto md:px-[32px]'>
       <div id="hero">
         <HeroContainer />
       </div>
@@ -114,7 +110,6 @@ export default async function Home({
       <QuestionsAndAnswersContainer />
       <BusinessWrapper />
       <ContactsContainer />
-      <Footer />
-    </section>
+    </div>
   );
 }

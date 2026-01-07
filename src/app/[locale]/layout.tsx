@@ -6,6 +6,8 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { FramerMotionProvider } from '@/components/ui/framer-motion-provider';
+import Header from '@/components/header/header';
+import Footer from '@/components/footer/footer';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -124,7 +126,9 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider>
           <FramerMotionProvider>
+            <Header />
             <main className="overflow-x-clip">{children}</main>
+            <Footer />
           </FramerMotionProvider>
         </NextIntlClientProvider>
       </body>

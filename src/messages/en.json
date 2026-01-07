@@ -246,5 +246,13 @@
     "title": "Thank you for your information!",
     "description": "We have received your information and will get back to you as soon as possible.",
     "button": "Close"
+  },
+
+  "CasePage": {
+    "Cta": {
+      "title": "Contact us and get a tailored solution for your goals",
+      "description": "Your ambition, our expertise — together we make your business visible, efficient, and profitable",
+      "button": "Start the collaboration"
+    }
   }
 }

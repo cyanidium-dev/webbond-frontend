@@ -69,7 +69,7 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
 
   return (
     <LazyMotion features={domAnimation}>
-      <m.header
+      <m.div
         ref={containerRef}
         initial="initial"
         whileHover="hover"
@@ -274,7 +274,7 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
             </m.div>
           </div>
         </div>
-      </m.header>
+      </m.div>
       <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
     </LazyMotion>
   );
