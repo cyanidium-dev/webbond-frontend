@@ -8,6 +8,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { FramerMotionProvider } from '@/components/ui/framer-motion-provider';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
+import ScrollProvider from '@/utils/scrollProvider';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -124,6 +125,7 @@ export default async function RootLayout({
       <body
         className={`${montserrat.variable} ${inter.variable} ${manrope.variable} antialiased`}
       >
+        <ScrollProvider />
         <NextIntlClientProvider>
           <FramerMotionProvider>
             <Header />
