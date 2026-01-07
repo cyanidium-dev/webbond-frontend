@@ -240,13 +240,13 @@ export default function DesktopHeader({ className }: DesktopHeaderProps) {
             {/* Nav */}
             <nav className="flex items-center ml-[30px] mr-[20px] lg:ml-auto lg:mr-0 lg:gap-4 xl:gap-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.titleKey}
-                  href={item.href}
+                  href={`/${item.href}`}
                   className="font-montserrat text-[12px] xl:text-[16px] text-white transition-[color, scale] duration-300 ease-in-out hover:text-red-400 hover:scale-105 uppercase leading-[120%] whitespace-nowrap"
                 >
                   {t(item.titleKey)}
-                </a>
+                </Link>
               ))}
             </nav>
             {/* Language switch */}
