@@ -145,7 +145,7 @@ const Burger = ({ isOpen, setIsOpen, onOpenFeedback }: BurgerProps) => {
                     >
                       <Link
                         locale={locale}
-                        href={item.href}
+                        href={`/${item.href}`}
                         onClick={() => setIsOpen(false)}
                         className={`text-base leading-[120%] font-montserrat transition-all duration-300 ${
                           isActive(item.href)
