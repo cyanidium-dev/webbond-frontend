@@ -100,15 +100,26 @@ export const caseBySlugQuery = `
     _type,
     _createdAt,
     _updatedAt,
-
     "title": title[$lang],
-
     "slug": slug.current,
     showOnHomepage,
+    "homepageOrder": homepageOrder,
+
+    "homepageImage": homepageImage{
+      asset->{
+        _id,
+        url
+      },
+      crop,
+      hotspot,
+      alt
+    },
 
     "hero": {
       "description": hero.description[$lang],
-      "tags": hero.tags[][$lang],
+      "tags": hero.tags[]{
+        "text": select($lang == "en" => en, $lang == "da" => da, en)
+      },
       "image": hero.image{
         asset->{
           _id,
@@ -157,7 +168,6 @@ export const caseBySlugQuery = `
       "clientName": clientName[$lang],
       "clientPosition": clientPosition[$lang],
       "testimonialText": testimonialText[$lang],
-
       "clientPhoto": clientPhoto{
         asset->{
           _id,
@@ -167,7 +177,6 @@ export const caseBySlugQuery = `
         hotspot,
         alt
       },
-
       "imageDesktop": imageDesktop{
         asset->{
           _id,

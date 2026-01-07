@@ -16,16 +16,10 @@ const CasesDynamicPage = async ({
     lang: locale,
     slug: slug,
   });
-  console.log(currentCase);
 
   return (
     <div className='pt-15 sm:pt-20 md:pt-[110px] overflow-y-clip md:max-w-[1340px] md:mx-auto md:px-8'>
-      {currentCase?.hero && (
-        <CaseHeroContainer
-          content={currentCase?.hero}
-          title={currentCase?.title}
-        />
-      )}
+      {currentCase?.hero && <CaseHeroContainer currentCase={currentCase} />}
       <CtaWrapper />
       <ContactsContainer />
     </div>

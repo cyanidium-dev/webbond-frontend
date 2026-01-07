@@ -1,91 +1,104 @@
-'use client';
-import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import GooeyWhiteButton from '@/components/ui/gooey-white-button';
-import HeroSlider from '@/components/hero/hero-slider';
-import SplineGlobe from '@/components/ui/spline-globe';
-import { useRef } from 'react';
-import { useInView } from 'framer-motion';
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
-import { CtaHeroContainerProps } from './case-hero-container';
 
-const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
-  ssr: false,
-});
+import { CaseWithLanguage } from '@/types/case';
+import { urlForImage } from '@/lib/sanityClient';
+import * as motion from 'motion/react-client';
 
-const CaseHeroDesktop = ({ props }: { props: CtaHeroContainerProps }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { amount: 0 });
-  const t = useTranslations('Hero');
-  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
+const CaseHeroDesktop = ({
+  currentCase,
+}: {
+  currentCase: CaseWithLanguage;
+}) => {
+  const { title, hero, homepageImage } = currentCase;
+
+  const imageSource = hero?.image?.asset
+    ? hero.image
+    : homepageImage?.asset
+      ? homepageImage
+      : null;
+
+  const imageUrl = imageSource
+    ? urlForImage(imageSource).width(728).height(593).auto('format').url()
+    : '/placeholder-case.webp';
+
+  const imageAlt = hero.image?.alt || homepageImage?.alt || title;
 
   return (
-    <section
-      ref={containerRef}
-      className='pt-[96px] lg:pt-[45px] xl:pt-[96px] pb-[93px] lg:pb-[40px] xl:pb-[93px] relative'
-    >
-      <div className='absolute top-[-140px] lg:top-[-100px] xl:top-[-150px] right-1/2 translate-x-1/2 scale-[1.2] lg:scale-[1.0] xl:scale-[1.2] w-full h-full pointer-events-none'>
-        <SplineGlobe isVisible={isInView} />
-      </div>
-      <div className='flex justify-between relative'>
-        <div className='flex flex-col'>
-          <p className='font-light font-manrope text-[16px] leading-[120%] text-white uppercase mb-[12px] lg:mb-[6px] xl:mb-[12px]'>
-            {t('subtitle')}
-          </p>
-          <div className='flex'>
-            <h1 className='max-w-[624px] lg:max-w-[500px] xl:max-w-[624px] min-h-[154px] lg:min-h-[120px] xl:min-h-[154px] font-manrope text-[64px] lg:text-[48px] xl:text-[64px] leading-[120%] text-white uppercase font-light mb-[42px] lg:mb-[20px] xl:mb-[42px]'>
-              {t('title')}
-            </h1>
-            <div className='flex items-center justify-center mt-auto mb-[50px] lg:mb-[25px] xl:mb-[50px] ml-[23px] rounded-[37px] w-[121px] h-fit py-[9px] px-[14px] backdrop-blur-sm bg-white/3 shadow-[inset_2px_-1px_5px_-1px_rgba(255,255,255,0.12)] safari-blur-fix'>
-              <Image
-                src='/mobile-title-banner.png'
-                alt='mobile-title-banner badge'
-                width={93}
-                height={50}
-              />
-            </div>
-          </div>
-          <GooeyWhiteButton
-            text={t('button')}
-            onClick={() => setIsFeedbackOpen(true)}
-            className='text-center w-full text-[14px] font-montserrat font-light text-black'
-            width={313}
-            height={52}
-          />
-        </div>
+    <div className='hidden md:block pt-[45px] xl:pt-[87px] pb-[93px] lg:pb-[40px] xl:pb-[93px] relative'>
+      <div className='flex flex-col gap-[110px] relative z-10'>
+        <div className='flex flex-col relative gap-[18px] max-w-[320px] lg:max-w-[320px] xl:max-w-[327px] z-10'>
+          <h1 className=' font-manrope text-[36px] lg:text-[40px] leading-[120%] text-white uppercase font-light'>
+            {title}
+          </h1>
 
-        <p className='mt-[35px] lg:mt-[15px] xl:mt-[35px] max-w-[235px] text-[14px] leading-[120%] font-light font-montserrat text-right text-white'>
-          {t('description')}
-        </p>
-        <div className="absolute right-[-20px] bottom-[60px] lg:bottom-[30px] xl:bottom-[60px] transform rotate-90 text-[20px] leading-[120%] uppercase font-montserrat text-white before:content-[''] before:w-[10px] before:h-[10px] before:bg-[#939393] before:rounded-full before:absolute before:bottom-0 before:translate-x-[50%] before:left-[-50%] before:-translate-y-[50%]">
-          {t('verticalText')}
-        </div>
-      </div>
-      <div className='relative flex'>
-        <p className='absolute top-[100px] lg:top-[90px] xl:top-[100px] left-[-48px] transform max-w-[112px] -rotate-90 text-[14px] uppercase font-light font-manrope text-[#9a9a9a]'>
-          {t('digitalAgency')}
-        </p>
-        <div className='relative pl-[20px] max-w-[290px] md:mr-[20px] lg:mr-0 lg:max-w-[330px] ml-0 lg:ml-[70px] xl:ml-[157px] mt-auto mb-[23px] lg:mb-[15px] xl:mb-[23px]'>
-          <Image
-            src='/hero-mobile-description-vetical-lie.png'
-            alt='hero-mobile-description-vetical-lie'
-            width={2}
-            height={88}
-            className='absolute bottom-[-5px] left-0 w-[2px] h-[97px]'
-          />
-          <p className='font-montserrat font-light text-[18px] leading-[120%] text-white'>
-            {t.rich('mainDescription', {
-              gray: (chunks) => (
-                <span className='text-[#818181]'>{chunks}</span>
-              ),
-            })}
+          <p className='text-[10px] leading-[120%] font-light font-montserrat text-left text-[#bdbdbd]'>
+            {hero.description}
           </p>
         </div>
-        <HeroSlider />
+        {hero.tags && Array.isArray(hero.tags) && hero.tags.length > 0 && (
+          <ul className='relative z-10 mt-auto flex gap-1.5 flex-wrap max-w-[320px] lg:max-w-[380px] xl:max-w-[404px]   max-w-[404px]'>
+            {hero.tags.map((tag, index) => {
+              const tagText =
+                typeof tag === 'string'
+                  ? tag
+                  : (tag as { text?: string })?.text || '';
+              if (!tagText) return null;
+              return (
+                <li
+                  className='font-montserrat font-light text-[9px] lg:text-[14px] text-white leading-[120%] px-[15px] lg:px-[24px] py-[10px] lg:py-[15px] rounded-[32px] backdrop-blur-xl bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] flex justify-between items-center safari-blur-fix'
+                  key={index}
+                >
+                  {tagText}
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
-      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
-    </section>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+        className='absolute top-[-70px] translate-y-0.5 right-[-32px] will-change-[opacity,transform] w-full max-w-[568px] lg:max-w-[680px] xl:max-w-[728px] xl:h-[539px]'
+      >
+        <Image
+          src={imageUrl}
+          alt={imageAlt}
+          width={728}
+          height={593}
+          sizes='(max-width: 768px) 100vw, 728px'
+          quality={80}
+        />
+      </motion.div>
+      <div className='absolute top-[-114px] left-[-34px] w-[321px] '>
+        <Image
+          width={321}
+          height={357}
+          src='/case-hero-shadow.webp'
+          alt='case-hero-shadow'
+          sizes='(max-width: 1280px) 33vw, 321px'
+          className='pointer-events-none'
+        />
+      </div>
+      <motion.div
+        initial={{ opacity: 0, x: 100, rotate: 10 }}
+        whileInView={{ opacity: 1, x: 0, rotate: -5 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.2, ease: 'easeOut', delay: 1.5 }}
+        className='-z-10 absolute w-[1100px] lg:w-[1400px] top-[-371px] right-[-245px] lg:top-[-487px] xl:top-[-468px] lg:right-[-299px] xl:right-[-245px]  pointer-events-none select-none will-change-[opacity,transform] '
+      >
+        <Image
+          src='/case-hero-decor.webp'
+          alt='case-page-hero-decor'
+          width={1400}
+          height={1404}
+          sizes='(max-width: 1280px) 33vw, 1400px'
+          quality={80}
+          className='pointer-events-none contrast-150 saturate-150'
+        />
+      </motion.div>
+    </div>
   );
 };
 

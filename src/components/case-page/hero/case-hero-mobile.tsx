@@ -1,84 +1,92 @@
-'use client';
-import { useTranslations } from 'next-intl';
-
-import { useRef } from 'react';
-import { useInView } from 'framer-motion';
 import Image from 'next/image';
-import GooeyWhiteButton from '@/components/ui/gooey-white-button';
-import SplineGlobe from '@/components/ui/spline-globe';
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
-import { CtaHeroContainerProps } from './case-hero-container';
+import * as motion from 'motion/react-client';
 
-const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
-  ssr: false,
-});
+import { CaseWithLanguage } from '@/types/case';
+import { urlForImage } from '@/lib/sanityClient';
 
-const CaseHeroMobile = ({ props }: { props: CtaHeroContainerProps }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { amount: 0 });
-  const t = useTranslations('Hero');
-  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
+const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
+  const { title, hero, homepageImage } = currentCase;
+
+  const imageSource = hero?.image?.asset
+    ? hero.image
+    : homepageImage?.asset
+      ? homepageImage
+      : null;
+
+  const imageUrl = imageSource
+    ? urlForImage(imageSource).width(728).height(593).auto('format').url()
+    : '/placeholder-case.webp';
+
+  const imageAlt = hero.image?.alt || homepageImage?.alt || title;
 
   return (
-    <section
-      ref={containerRef}
-      className='px-[20px] sm:px-[40px] pt-[60px] sm:pt-[80px] pb-[148px] relative overflow-hidden'
-    >
-      {/* Используем scale, чтобы "зумировать" сцену */}
-      <div className='absolute top-[-110px] -right-[77%] w-[150%] h-[120%] z-0 pointer-events-none scale-[1.1] origin-top-right'>
-        <SplineGlobe isVisible={isInView} />
-      </div>
-      <div className='relative z-10'>
-        <p className='mb-[74px] max-w-[206px] sm:max-w-[300px] ml-auto text-[12px] sm:text-[14px] leading-[120%] font-light font-montserrat text-right text-white'>
-          {t('description')}
-        </p>
-        <p className='font-light font-manrope text-[14px] leading-[120%] text-white uppercase mb-[12px]'>
-          {t('subtitle')}
-        </p>
-        <div className='relative'>
-          <h1 className='max-w-[261px] sm:max-w-[450px] font-manrope text-[40px] sm:text-[48px] leading-[120%] text-white uppercase font-light'>
-            {t('title')}
-          </h1>
-          <div className='absolute bottom-[10px] right-[12px] flex items-center justify-center rounded-[20px] w-[67px] py-1 px-[7px] backdrop-blur-[17.71900749206543px] bg-white/3 shadow-[inset_2px_-1px_5px_-1px_rgba(255,255,255,0.12)] safari-blur-fix'>
-            <Image
-              src='/mobile-title-banner.png'
-              alt='mobile-title-banner badge'
-              width={51}
-              height={27}
-            />
-          </div>
-        </div>
-        <div className='relative mt-[80px] mb-[73px]'>
-          <p className='absolute top-[-10px] left-[-48px] transform max-w-[112px] -rotate-90 text-[14px] uppercase font-light font-manrope text-[#9a9a9a]'>
-            {t('digitalAgency')}
-          </p>
-          <div className='relative pl-[20px] max-w-[264px] ml-auto'>
-            <Image
-              src='/hero-mobile-description-vetical-lie.png'
-              alt='hero-mobile-description-vetical-lie'
-              width={2}
-              height={88}
-              className='absolute bottom-[-5px] left-0 w-[2px] h-[97px]'
-            />
-            <p className='font-montserrat font-light text-[14px] sm:text-[16px] leading-[120%] text-white max-w-[244px] sm:max-w-[350px] ml-auto'>
-              {t.rich('mainDescription', {
-                gray: (chunks) => (
-                  <span className='text-[#818181]'>{chunks}</span>
-                ),
-              })}
+    <div className='md:hidden pb-[100px] relative'>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+        className='absolute inset-x-0 h-[400px] top-[-60px] sm:top-[-80px] will-change-[opacity,transform] w-full mx-auto max-w-[560px] lg:max-w-[680px] xl:max-w-[728px] rounded-b-[14px] overflow-hidden'
+      >
+        <Image
+          src={imageUrl}
+          alt={imageAlt}
+          width={728}
+          height={593}
+          sizes='(max-width: 768px) 100vw, 728px'
+          quality={80}
+          className='w-full h-full min-h-[400px] object-cover'
+        />
+      </motion.div>
+      <div className='px-[20px] sm:px-[40px] pt-[375px]'>
+        <div className='flex flex-col gap-10'>
+          <div className='flex flex-col relative gap-[18px] max-w-[320px] lg:max-w-[320px] xl:max-w-[327px] z-10'>
+            <h1 className=' font-manrope text-[36px] leading-[120%] text-white uppercase font-light'>
+              {title}
+            </h1>
+            <p className='text-[10px] leading-[120%] font-light font-montserrat text-left text-[#bdbdbd]'>
+              {hero.description}
             </p>
           </div>
+          {hero.tags && Array.isArray(hero.tags) && hero.tags.length > 0 && (
+            <ul className='relative z-10 mt-auto flex gap-1.5 flex-wrap max-w-[360px] sm:max-w-[460px] lg:max-w-[380px] xl:max-w-[404px]'>
+              {hero.tags.map((tag, index) => {
+                const tagText =
+                  typeof tag === 'string'
+                    ? tag
+                    : (tag as { text?: string })?.text || '';
+                if (!tagText) return null;
+                return (
+                  <li
+                    className='font-montserrat font-light text-[10px] lg:text-[14px] text-white leading-[120%] px-[15px] lg:px-[17px] py-[10px] lg:py-[12px] rounded-[21px] backdrop-blur-xl bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] flex justify-between items-center safari-blur-fix'
+                    key={index}
+                  >
+                    {tagText}
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
-        <GooeyWhiteButton
-          text={t('button')}
-          onClick={() => setIsFeedbackOpen(true)}
-          className='mx-auto text-center w-full text-[14px] font-montserrat font-light text-black'
-          height={52}
-        />
+        <motion.div
+          initial={{ opacity: 0, x: 100, rotate: 20 }}
+          whileInView={{ opacity: 1, x: 0, rotate: 10 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: 'easeOut', delay: 1.5 }}
+          className='-z-10 absolute w-[745px] top-[-54px] right-[-410px] pointer-events-none select-none will-change-[opacity,transform]'
+        >
+          <Image
+            src='/case-hero-decor.webp'
+            alt='case-page-hero-decor'
+            width={745}
+            height={745}
+            sizes='(max-width: 1280px) 100vw, 745px'
+            quality={80}
+            className='pointer-events-none contrast-150 saturate-150'
+          />
+        </motion.div>
       </div>
-      <FeedbackModal isOpen={isFeedbackOpen} onOpenChange={setIsFeedbackOpen} />
-    </section>
+    </div>
   );
 };
 
