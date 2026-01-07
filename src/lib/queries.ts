@@ -84,3 +84,119 @@ export const casesOnHomepageQuery = `
   }
 `;
 
+export const caseBySlugQuery = `
+  *[_type == "case" && slug.current == $slug][0]{
+    "id": _id,
+    _type,
+    _createdAt,
+    _updatedAt,
+
+    "title": title[$lang],
+
+    "slug": slug.current,
+    showOnHomepage,
+
+    "hero": {
+      "description": hero.description[$lang],
+      "tags": hero.tags[][$lang],
+      "image": hero.image{
+        asset->{
+          _id,
+          url
+        },
+        crop,
+        hotspot,
+        alt
+      }
+    },
+
+    "services": services[]{
+      "title": title[$lang],
+      "description": description[]{
+        "text": text[$lang]
+      }
+    },
+
+    "imageBlock": imageBlock{
+      "imageDesktop": imageDesktop{
+        asset->{
+          _id,
+          url
+        },
+        crop,
+        hotspot,
+        alt
+      },
+      "imageMobile": imageMobile{
+        asset->{
+          _id,
+          url
+        },
+        crop,
+        hotspot,
+        alt
+      },
+      "button": {
+        "text": button.text[$lang],
+        "link": button.link
+      }
+    },
+
+    "testimonial": testimonial{
+      "description": description[$lang],
+      "clientName": clientName[$lang],
+      "clientPosition": clientPosition[$lang],
+      "testimonialText": testimonialText[$lang],
+
+      "clientPhoto": clientPhoto{
+        asset->{
+          _id,
+          url
+        },
+        crop,
+        hotspot,
+        alt
+      },
+
+      "imageDesktop": imageDesktop{
+        asset->{
+          _id,
+          url
+        },
+        crop,
+        hotspot,
+        alt
+      },
+      "imageMobile": imageMobile{
+        asset->{
+          _id,
+          url
+        },
+        crop,
+        hotspot,
+        alt
+      }
+    },
+
+    "seo": seo{
+      "metaTitle": metaTitle[$lang],
+      "metaDescription": metaDescription[$lang],
+      "keywords": keywords[][$lang],
+      "opengraphImage": opengraphImage{
+        asset->{
+          _id,
+          url
+        },
+        crop,
+        hotspot,
+        alt
+      },
+      "schemaJson": schemaJson{
+        asset->{
+          _ref,
+          _type
+        }
+      }
+    }
+  }
+`;

@@ -1,5 +1,5 @@
-'use client';
-import { useState, useEffect } from 'react';
+"use client";
+import { useState, useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -7,16 +7,16 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from '@/components/ui/carousel';
-import { CASES_MOCK_DATA } from './cases-mock-data';
-import Image from 'next/image';
-import { Link } from '@/i18n/navigation';
-import GooeyWhiteButton from '../ui/gooey-white-button';
-import { useTranslations } from 'next-intl';
-import { m } from 'framer-motion';
-import dynamic from 'next/dynamic';
+} from "@/components/ui/carousel";
+import { CASES_MOCK_DATA } from "./cases-mock-data";
+import Image from "next/image";
+import { Link } from "@/i18n/navigation";
+import GooeyWhiteButton from "../ui/gooey-white-button";
+import { useTranslations } from "next-intl";
+import { m } from "framer-motion";
+import dynamic from "next/dynamic";
 
-const FeedbackModal = dynamic(() => import('@/components/feedback-modal'), {
+const FeedbackModal = dynamic(() => import("@/components/feedback-modal"), {
   ssr: false,
 });
 
@@ -24,7 +24,7 @@ const DesktopCasesContainer = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
-  const t = useTranslations('Cases');
+  const t = useTranslations("Cases");
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   useEffect(() => {
@@ -38,12 +38,12 @@ const DesktopCasesContainer = () => {
     };
 
     onSelect();
-    api.on('select', onSelect);
-    api.on('reInit', onSelect);
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
 
     return () => {
-      api.off('select', onSelect);
-      api.off('reInit', onSelect);
+      api.off("select", onSelect);
+      api.off("reInit", onSelect);
     };
   }, [api]);
   return (
@@ -60,18 +60,18 @@ const DesktopCasesContainer = () => {
       <Carousel
         setApi={setApi}
         opts={{
-          align: 'start',
-          containScroll: 'trimSnaps',
+          align: "start",
+          containScroll: "trimSnaps",
         }}
       >
         <m.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative mb-[32px] xl:mb-[48px] text-[45px] lg:text-[60px] xl:text-[75px] font-manrope font-light uppercase text-white leading-[120%] will-change-[opacity,transform] transform-gpu"
         >
-          {t.rich('title', {
+          {t.rich("title", {
             gray: (chunks) => <span className="text-[#818181]">{chunks}</span>,
           })}
         </m.h2>
@@ -101,7 +101,7 @@ const DesktopCasesContainer = () => {
             className="will-change-[opacity,transform] transform-gpu"
           >
             <GooeyWhiteButton
-              text={t('button')}
+              text={t("button")}
               onClick={() => setIsFeedbackOpen(true)}
               width={236}
               height={52}
@@ -117,7 +117,7 @@ const DesktopCasesContainer = () => {
             transition={{ duration: 0.6 }}
             className="ml-[32px] md:ml-[48px] max-w-[230px] text-[12px] xl:text-[14px] font-montserrat font-light text-white leading-[120%] will-change-[opacity,transform] transform-gpu"
           >
-            {t('subtitle')}
+            {t("subtitle")}
           </m.p>
 
           <m.div
@@ -141,7 +141,7 @@ const DesktopCasesContainer = () => {
         <m.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={{
             hidden: { opacity: 0 },
             show: {
@@ -165,10 +165,10 @@ const DesktopCasesContainer = () => {
                     hidden: { opacity: 0, y: 40 },
                     show: { opacity: 1, y: 0 },
                   }}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
                   className="will-change-[opacity,transform] transform-gpu"
                 >
-                  <Link href={`/cases/${caseItem.id}`}>
+                  <Link href={`/cases/${caseItem.slug}`}>
                     <div className="relative w-full max-w-[320px] lg:max-w-[340px] xl:max-w-[495px] min-h-[420px] lg:min-h-[420px] xl:min-h-[600px] rounded-[20px] p-[16px] xl:p-[24px] flex flex-col group overflow-hidden will-change-transform transform-gpu">
                       <Image
                         src={caseItem.image}

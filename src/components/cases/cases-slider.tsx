@@ -1,14 +1,14 @@
-'use client';
+"use client";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
-import { CASES_MOCK_DATA } from './cases-mock-data';
-import Image from 'next/image';
-import { Link } from '@/i18n/navigation';
+} from "@/components/ui/carousel";
+import { CASES_MOCK_DATA } from "./cases-mock-data";
+import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 
 const CasesSlider = () => {
   return (
@@ -16,7 +16,7 @@ const CasesSlider = () => {
       <CarouselContent>
         {CASES_MOCK_DATA.map((caseItem) => (
           <CarouselItem key={caseItem.id} className="basis-full sm:basis-1/2">
-            <Link href={`/cases/${caseItem.id}`}>
+            <Link href={`/cases/${caseItem.slug}`}>
               <div className="relative w-full max-w-[430px] min-h-[387px] rounded-[13px] p-[15px] flex flex-col">
                 <Image
                   src={caseItem.image}
