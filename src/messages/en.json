@@ -254,5 +254,10 @@
       "description": "Your ambition, our expertise — together we make your business visible, efficient, and profitable",
       "button": "Start the collaboration"
     }
+  },
+
+  "Breadcrumbs": {
+    "home": "Home",
+    "cases": "Cases"
   }
 }

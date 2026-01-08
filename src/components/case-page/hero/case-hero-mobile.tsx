@@ -20,7 +20,7 @@ const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
   const imageAlt = hero.image?.alt || homepageImage?.alt || title;
 
   return (
-    <div className='md:hidden pb-[100px] relative'>
+    <div className='md:hidden pb-[86px] relative'>
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
           className='w-full h-full min-h-[414px] object-cover'
         />
       </motion.div>
-      <div className='px-[20px] sm:px-[40px] pt-[394px]'>
+      <div className='px-5 sm:px-10 pt-[394px]'>
         <div className='flex flex-col gap-10'>
           <div className='flex flex-col relative gap-[18px] max-w-[320px] lg:max-w-[320px] xl:max-w-[327px] z-10'>
             <h1 className=' font-manrope text-[36px] leading-[120%] text-white uppercase font-light'>
@@ -58,7 +58,7 @@ const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
                 if (!tagText) return null;
                 return (
                   <li
-                    className='font-montserrat font-light text-[10px] lg:text-[14px] text-white leading-[120%] px-[15px] lg:px-[17px] py-[10px] lg:py-[12px] rounded-[21px] backdrop-blur-xl bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] flex justify-between items-center safari-blur-fix'
+                    className='font-montserrat font-light text-[10px] lg:text-[14px] text-white leading-[120%] px-[15px] lg:px-[17px] py-[10px] lg:py-3 rounded-[21px] backdrop-blur-xl bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] flex justify-between items-center safari-blur-fix'
                     key={index}
                   >
                     {tagText}
