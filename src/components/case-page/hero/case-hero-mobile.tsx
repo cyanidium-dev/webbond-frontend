@@ -26,7 +26,7 @@ const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.5, delay: 0.5 }}
-        className='absolute inset-x-0 h-[400px] top-[-60px] sm:top-[-80px] will-change-[opacity,transform] w-full mx-auto max-w-[560px] lg:max-w-[680px] xl:max-w-[728px] rounded-b-[14px] overflow-hidden'
+        className='absolute inset-x-0 h-[414px] top-[-60px] sm:top-[-80px] will-change-[opacity,transform] w-full mx-auto max-w-[560px] lg:max-w-[680px] xl:max-w-[728px] rounded-b-[14px] overflow-hidden'
       >
         <Image
           src={imageUrl}
@@ -35,10 +35,10 @@ const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
           height={593}
           sizes='(max-width: 768px) 100vw, 728px'
           quality={80}
-          className='w-full h-full min-h-[400px] object-cover'
+          className='w-full h-full min-h-[414px] object-cover'
         />
       </motion.div>
-      <div className='px-[20px] sm:px-[40px] pt-[375px]'>
+      <div className='px-[20px] sm:px-[40px] pt-[394px]'>
         <div className='flex flex-col gap-10'>
           <div className='flex flex-col relative gap-[18px] max-w-[320px] lg:max-w-[320px] xl:max-w-[327px] z-10'>
             <h1 className=' font-manrope text-[36px] leading-[120%] text-white uppercase font-light'>
@@ -70,19 +70,19 @@ const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
         </div>
         <motion.div
           initial={{ opacity: 0, x: 100, rotate: 20 }}
-          whileInView={{ opacity: 1, x: 0, rotate: 10 }}
+          whileInView={{ opacity: 1, x: 0, rotate: 12 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: 'easeOut', delay: 1.5 }}
-          className='-z-10 absolute w-[745px] top-[-54px] right-[-410px] pointer-events-none select-none will-change-[opacity,transform]'
+          className='-z-10 absolute w-[893px] top-[-141px] sm:top-[-161px] left-[50%] translate-x-[-210px] pointer-events-none select-none will-change-[opacity,transform]'
         >
           <Image
             src='/case-hero-decor.webp'
             alt='case-page-hero-decor'
-            width={745}
-            height={745}
-            sizes='(max-width: 1280px) 100vw, 745px'
-            quality={80}
-            className='pointer-events-none contrast-150 saturate-150'
+            width={893}
+            height={911}
+            sizes='(max-width: 1280px) 100vw, 893px'
+            // quality={80}
+            className='pointer-events-none contrast-125 saturate-150 select-none transparent'
           />
         </motion.div>
       </div>
