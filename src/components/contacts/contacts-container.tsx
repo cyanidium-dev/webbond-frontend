@@ -40,16 +40,16 @@ const ContactsContainer = () => {
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
-    <section className="px-[20px] sm:px-[40px] pb-[36px] md:hidden">
+    <section className='px-5 sm:px-8 pb-[36px] md:hidden'>
       <div className="relative max-w-[130px] sm:max-w-[200px] font-manrope font-light text-[20px] sm:text-[24px] text-white leading-[120%] before:content-[''] before:block before:absolute before:bottom-[-40px] before:left-0 before:w-[16px] before:h-[16px] before:bg-white before:rounded-full">
         {t('cvr')}
       </div>
-      <div className="mt-[60px] relative max-w-[160px] font-manrope font-light text-[20px] text-white leading-[120%] before:content-[''] before:block before:absolute before:bottom-[-40px] before:left-0 before:w-[16px] before:h-[16px] before:bg-white before:rounded-full">
+      <div className="mt-15 relative max-w-[160px] font-manrope font-light text-[20px] text-white leading-[120%] before:content-[''] before:block before:absolute before:bottom-[-40px] before:left-0 before:w-[16px] before:h-[16px] before:bg-white before:rounded-full">
         {t('city')}
       </div>
       <a
         href={`mailto:${t('email')}`}
-        className="block mt-[60px] max-w-[228px] font-manrope font-light text-[20px] text-white leading-[120%] underline decoration-white/20 underline-offset-4"
+        className="block mt-15 max-w-[228px] font-manrope font-light text-[20px] text-white leading-[120%] underline decoration-white/20 underline-offset-4"
       >
         {t('email')}
       </a>

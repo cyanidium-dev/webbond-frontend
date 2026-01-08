@@ -14,7 +14,7 @@ function Breadcrumbs({ steps, className = '' }: BreadcrumbsProps) {
   return (
     <nav
       aria-label='Breadcrumb'
-      className={`relative z-10 flex items-center font-montserrat font-light leading-[120%] text-[12px] lg:text-[14px] ${className}`}
+      className={`relative z-10 flex flex-wrap items-center font-montserrat font-light leading-[120%] text-[12px] lg:text-[14px] ${className}`}
     >
       <ul className='flex items-center list-none p-0 m-0'>
         {steps.map((step, index) => {

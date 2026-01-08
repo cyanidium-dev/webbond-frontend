@@ -27,12 +27,9 @@ const CasesDynamicPage = async ({
   ];
 
   return (
-    <div className="pt-15 sm:pt-20 md:pt-[110px] overflow-y-clip md:max-w-[1340px] md:mx-auto md:px-8">
+    <div className="pt-15 sm:pt-20 md:pt-[110px] overflow-y-clip max-w-[1340px] mx-auto">
       {currentCase?.hero && <CaseHeroContainer currentCase={currentCase} />}
-      <Breadcrumbs
-        steps={breadcrumbSteps}
-        className="px-[20px] sm:px-[40px] md:px-0"
-      />
+      <Breadcrumbs steps={breadcrumbSteps} className="px-[20px] sm:px-[32px]" />
       <CaseServicesContainer services={currentCase?.services} />
       <CtaWrapper />
       <ContactsContainer />
