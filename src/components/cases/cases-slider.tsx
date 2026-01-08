@@ -1,15 +1,15 @@
-'use client';
+"use client";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
-import Image from 'next/image';
-import { Link } from '@/i18n/navigation';
-import { CaseWithLanguage } from '@/types/case';
-import { urlForImage } from '@/lib/sanityClient';
+} from "@/components/ui/carousel";
+import Image from "next/image";
+import { Link } from "@/i18n/navigation";
+import { CaseWithLanguage } from "@/types/case";
+import { urlForImage } from "@/lib/sanityClient";
 
 interface CasesSliderProps {
   cases: CaseWithLanguage[];
@@ -24,9 +24,12 @@ const CasesSlider = ({ cases }: CasesSliderProps) => {
             ? urlForImage(caseItem.homepageImage).width(430).height(387).url()
             : caseItem.hero.image
               ? urlForImage(caseItem.hero.image).width(430).height(387).url()
-              : '/placeholder-case.webp';
-          
-          const imageAlt = caseItem.homepageImage?.alt || caseItem.hero.image?.alt || caseItem.title;
+              : "/placeholder-case.webp";
+
+          const imageAlt =
+            caseItem.homepageImage?.alt ||
+            caseItem.hero.image?.alt ||
+            caseItem.title;
 
           return (
             <CarouselItem key={caseItem.id} className="basis-full sm:basis-1/2">
@@ -59,22 +62,27 @@ const CasesSlider = ({ cases }: CasesSliderProps) => {
                   <p className="relative z-10 font-montserrat font-light text-[8px] leading-[120%] text-[#bdbdbd] max-w-[122px] line-clamp-3">
                     {caseItem.hero.description}
                   </p>
-                  {caseItem.hero.tags && Array.isArray(caseItem.hero.tags) && caseItem.hero.tags.length > 0 && (
-                    <ul className="relative z-10 mt-auto flex gap-1 flex-wrap">
-                      {caseItem.hero.tags.map((tag, index) => {
-                        const tagText = typeof tag === 'string' ? tag : (tag as { text?: string })?.text || '';
-                        if (!tagText) return null;
-                        return (
-                          <li
-                            className="font-montserrat font-light text-[10px] lg:text-[14px] text-white leading-[120%] px-[15px] lg:px-[17px] py-[10px] lg:py-[12px] rounded-[21px] backdrop-blur-xl bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] flex justify-between items-center safari-blur-fix"
-                            key={index}
-                          >
-                            {tagText}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
+                  {caseItem.hero.tags &&
+                    Array.isArray(caseItem.hero.tags) &&
+                    caseItem.hero.tags.length > 0 && (
+                      <ul className="relative z-10 mt-auto flex gap-1 flex-wrap">
+                        {caseItem.hero.tags.map((tag, index) => {
+                          const tagText =
+                            typeof tag === "string"
+                              ? tag
+                              : (tag as { text?: string })?.text || "";
+                          if (!tagText) return null;
+                          return (
+                            <li
+                              className="font-montserrat font-light text-[10px] lg:text-[14px] text-white leading-[120%] px-[15px] lg:px-[17px] py-[10px] lg:py-[12px] rounded-[21px] backdrop-blur-xl bg-white/3 shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] flex justify-between items-center safari-blur-fix"
+                              key={index}
+                            >
+                              {tagText}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
                 </div>
               </Link>
             </CarouselItem>

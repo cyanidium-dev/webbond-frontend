@@ -14,7 +14,7 @@ const MobileLaptopHeader = () => {
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
-    <div className="relative flex items-center justify-between px-[20px] py-[15px] backdrop-blur-[32px] bg-white/3 rounded-[40px] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] safari-blur-fix">
+    <div className="relative flex items-center justify-between px-[20px] py-[12px] backdrop-blur-[32px] bg-white/3 rounded-[40px] shadow-[inset_3px_-1px_9px_-1px_rgba(255,255,255,0.12)] safari-blur-fix">
       {/* Gradient Border Overlay */}
       <div
         className="absolute inset-0 rounded-[40px] pointer-events-none"
