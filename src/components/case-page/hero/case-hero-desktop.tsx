@@ -24,7 +24,7 @@ const CaseHeroDesktop = ({
   const imageAlt = hero.image?.alt || homepageImage?.alt || title;
 
   return (
-    <div className='hidden md:block pt-[45px] xl:pt-[87px] pb-[93px] lg:pb-[40px] xl:pb-[93px] relative'>
+    <div className='hidden md:block pt-[45px] xl:pt-[87px] pb-[93px] lg:pb-[108px] relative'>
       <div className='flex flex-col gap-[110px] relative z-10'>
         <div className='flex flex-col relative gap-[18px] max-w-[320px] lg:max-w-[320px] xl:max-w-[327px] z-10'>
           <h1 className=' font-manrope text-[36px] lg:text-[40px] leading-[120%] text-white uppercase font-light'>
