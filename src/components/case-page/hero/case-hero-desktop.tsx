@@ -60,7 +60,7 @@ const CaseHeroDesktop = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.5, delay: 0.5 }}
-        className='absolute top-[-70px] translate-y-0.5 right-[-32px] will-change-[opacity,transform] w-full max-w-[568px] lg:max-w-[680px] xl:max-w-[728px] xl:h-[539px]'
+        className='absolute top-[-70px] translate-y-0.5 left-[425px] lg:left-[520px] will-change-[opacity,transform] w-full max-w-[568px] lg:max-w-[728px] xl:h-[539px]'
       >
         <Image
           src={imageUrl}
@@ -71,14 +71,14 @@ const CaseHeroDesktop = ({
           quality={80}
         />
       </motion.div>
-      <div className='absolute top-[-114px] left-[-34px] w-[321px] '>
+      <div className='absolute top-[-960px] left-[-990px] w-[1192px] '>
         <Image
-          width={321}
-          height={357}
+          width={1192}
+          height={1205}
           src='/case-hero-shadow.webp'
           alt='case-hero-shadow'
-          sizes='(max-width: 1280px) 33vw, 321px'
-          className='pointer-events-none'
+          sizes='(max-width: 1280px) 33vw, 1192px'
+          className='select-none pointer-events-none'
         />
       </div>
       <motion.div
@@ -86,7 +86,7 @@ const CaseHeroDesktop = ({
         whileInView={{ opacity: 1, x: 0, rotate: -5 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2, ease: 'easeOut', delay: 1.5 }}
-        className='-z-10 absolute w-[1100px] lg:w-[1400px] top-[-371px] right-[-245px] lg:top-[-487px] xl:top-[-468px] lg:right-[-299px] xl:right-[-245px]  pointer-events-none select-none will-change-[opacity,transform] '
+        className='-z-10 absolute w-[1100px] lg:w-[1400px] top-[-371px] left-[60px] lg:top-[-468px] lg:left-[60px] pointer-events-none select-none will-change-[opacity,transform] '
       >
         <Image
           src='/case-hero-decor.webp'
@@ -95,7 +95,7 @@ const CaseHeroDesktop = ({
           height={1404}
           sizes='(max-width: 1280px) 33vw, 1400px'
           quality={80}
-          className='pointer-events-none contrast-150 saturate-150'
+          className='pointer-events-none contrast-150 saturate-150 select-none'
         />
       </motion.div>
     </div>

@@ -22,7 +22,7 @@ const DesktopCtaContainer = async () => {
           height={1155}
           sizes="(max-width: 1280px) 33vw, 1159px"
           quality={80}
-          className="pointer-events-none mix-blend-hard-light"
+          className="pointer-events-none mix-blend-hard-light select-none"
         />
       </motion.div>
       <motion.div
@@ -39,7 +39,7 @@ const DesktopCtaContainer = async () => {
           height={912}
           sizes="33vw"
           quality={80}
-          className="absolute bottom-[-50px] right-[-384px] max-w-none pointer-events-none -z-30 blur-md"
+          className="absolute bottom-[-50px] right-[-384px] max-w-none pointer-events-none -z-30 blur-md select-none"
         />
       </motion.div>
       <div className="flex flex-col max-w-[841px] mx-auto">

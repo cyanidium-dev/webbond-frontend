@@ -22,7 +22,7 @@ const CtaContainer = async () => {
           height={1258}
           sizes="(max-width: 768px) 100vw, 1257px"
           quality={80}
-          className="min-w-[1257px] min-h-[1258px] pointer-events-none"
+          className="min-w-[1257px] min-h-[1258px] pointer-events-none select-none"
         />
       </motion.div>
 
@@ -100,7 +100,7 @@ const CtaContainer = async () => {
           width={696}
           height={826}
           quality={100}
-          className="absolute w-[696px] h-[826px] top-[128px] left-[-467px] max-w-none pointer-events-none -z-20 blur-[120px] safari-blur-fix"
+          className="absolute w-[696px] h-[826px] top-[128px] left-[-467px] max-w-none pointer-events-none -z-20 blur-[120px] safari-blur-fix select-none"
         />
         <Image
           src="/case-page-black-shadow-mobile.webp"
@@ -108,7 +108,7 @@ const CtaContainer = async () => {
           width={370}
           height={290}
           quality={100}
-          className="absolute w-[370px] h-[290px] top-[180px] left-[450px] max-w-none pointer-events-none -z-20 blur-md"
+          className="absolute w-[370px] h-[290px] top-[180px] left-[450px] max-w-none pointer-events-none -z-20 blur-md select-none"
         />
       </motion.div>
     </div>
