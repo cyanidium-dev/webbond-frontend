@@ -22,7 +22,7 @@ const HeroMobile = () => {
   return (
     <section
       ref={containerRef}
-      className="px-[20px] sm:px-[40px] pt-[60px] sm:pt-[80px] pb-[148px] relative overflow-hidden"
+      className="px-[20px] sm:px-[40px] pt-[45px] sm:pt-[80px] pb-[148px] relative overflow-hidden"
     >
       {/* Используем scale, чтобы "зумировать" сцену */}
       <div className="absolute top-[-110px] -right-[77%] w-[150%] h-[120%] z-0 pointer-events-none scale-[1.1] origin-top-right">
