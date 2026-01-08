@@ -13,7 +13,7 @@ const CtaContainer = async () => {
         whileInView={{ opacity: 0.9, scale: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="absolute max-w-none top-[22%] opacity-40 right-[-752px] -translate-y-1/2 origin-top-left pointer-events-none select-none contrast-125 saturate-150 brightness-110"
+        className="absolute max-w-none top-[-3%] opacity-40 right-[-752px] -translate-y-1/2 origin-top-left pointer-events-none select-none contrast-125 saturate-150 brightness-110 -z-10"
       >
         <Image
           src="/case-page-decor-mobile.webp"
