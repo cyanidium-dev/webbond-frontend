@@ -21,9 +21,9 @@ const CasesSlider = ({ cases }: CasesSliderProps) => {
       <CarouselContent>
         {cases.map((caseItem) => {
           const imageUrl = caseItem.homepageImage
-            ? urlForImage(caseItem.homepageImage).width(430).height(387).url()
+            ? urlForImage(caseItem.homepageImage).width(860).height(747).url()
             : caseItem.hero.image
-              ? urlForImage(caseItem.hero.image).width(430).height(387).url()
+              ? urlForImage(caseItem.hero.image).width(860).height(747).url()
               : "/placeholder-case.webp";
 
           const imageAlt =
@@ -41,6 +41,7 @@ const CasesSlider = ({ cases }: CasesSliderProps) => {
                     fill
                     quality={80}
                     className="object-cover rounded-[13px]"
+                    sizes="(max-width: 768px) 100vw, 430px"
                   />
                   <div className="absolute top-[15px] right-[15px] z-10 w-[52px] h-[52px] rounded-full flex items-center justify-center bg-white">
                     <svg
