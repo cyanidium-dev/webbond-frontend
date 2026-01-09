@@ -12,7 +12,7 @@ export const TEAM_DATA: TeamMember[] = [
     name: 'Fedor',
     lastName: 'Alpatov',
     position: 'Со-Оwner & Developer',
-    image: '/team-1.png',
+    image: '/team-1.webp',
   },
   {
     id: '2',
