@@ -18,7 +18,12 @@ const CaseHeroDesktop = ({
       : null;
 
   const imageUrl = imageSource
-    ? urlForImage(imageSource).width(728).height(593).auto("format").url()
+    ? urlForImage(imageSource)
+        .width(1456)
+        // .height(1186)
+        .quality(90)
+        .auto("format")
+        .url()
     : "/placeholder-case.webp";
 
   const imageAlt = hero.image?.alt || homepageImage?.alt || title;
@@ -68,7 +73,8 @@ const CaseHeroDesktop = ({
           width={728}
           height={593}
           sizes="(max-width: 768px) 100vw, 728px"
-          quality={80}
+          priority
+          className="w-full h-full object-cover"
         />
       </motion.div>
       <div className="absolute top-[-960px] left-[-990px] w-[1192px] ">
