@@ -1,4 +1,5 @@
 import CasePreviewContainer from "@/components/case-page/case-preview/case-preview-container";
+import CaseResultContainer from "@/components/case-page/case-result/case-result-container";
 import CtaWrapper from "@/components/case-page/cta/cta-wrapper";
 import CaseHeroContainer from "@/components/case-page/hero/case-hero-container";
 import CaseServicesContainer from "@/components/case-page/services/case-services-container";
@@ -36,6 +37,9 @@ const CasesDynamicPage = async ({
       )}
       {currentCase?.imageBlock && (
         <CasePreviewContainer imageBlock={currentCase?.imageBlock} />
+      )}
+      {currentCase?.testimonial && (
+        <CaseResultContainer result={currentCase?.testimonial} />
       )}
       <CtaWrapper />
       <ContactsContainer />

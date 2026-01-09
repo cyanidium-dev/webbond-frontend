@@ -42,7 +42,7 @@ const CasePreview = ({
     imageBlock?.imageMobile?.alt ||
     imageBlock?.imageDesktop?.alt ||
     "Case image";
-  console.log("imageSourceDesktop", imageSourceDesktop);
+
   return (
     <div className="relative px-5 sm:px-8">
       <>

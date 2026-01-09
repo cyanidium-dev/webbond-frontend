@@ -13,7 +13,7 @@ const DesktopCtaContainer = async () => {
         whileInView={{ opacity: 1, x: 0, rotate: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="absolute max-w-none top-[30%] left-[-680px] -translate-y-1/2 origin-top-left pointer-events-none select-none mix-blend-hard-light "
+        className="absolute max-w-none top-[-9%] left-[-663px] -translate-y-1/2 origin-top-left pointer-events-none select-none mix-blend-hard-light -z-10"
       >
         <Image
           src="/case-page-decor.webp"

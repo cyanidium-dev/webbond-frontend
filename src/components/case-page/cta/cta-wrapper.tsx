@@ -3,7 +3,7 @@ import DesktopCtaContainer from "./desktop-cta-container";
 
 const CtaWrapper = () => {
   return (
-    <section className="pt-[190px] pb-[148px]">
+    <section className="pt-[178px] md:pt-[214px] pb-[148px]">
       <CtaContainer />
       <DesktopCtaContainer />
     </section>
