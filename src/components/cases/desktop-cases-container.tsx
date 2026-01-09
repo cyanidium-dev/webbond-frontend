@@ -163,13 +163,13 @@ const DesktopCasesContainer = ({ cases }: DesktopCasesContainerProps) => {
             {cases.map((caseItem) => {
               const imageUrl = caseItem.homepageImage
                 ? urlForImage(caseItem.homepageImage)
-                    .width(500)
-                    .height(600)
+                    .width(1000)
+                    .height(1200)
                     .url()
                 : caseItem.hero.image
                   ? urlForImage(caseItem.hero.image)
-                      .width(500)
-                      .height(600)
+                      .width(1000)
+                      .height(1200)
                       .url()
                   : '/placeholder-case.webp';
 
@@ -218,7 +218,7 @@ const DesktopCasesContainer = ({ cases }: DesktopCasesContainerProps) => {
                           src={imageUrl}
                           alt={imageAlt}
                           fill
-                          quality={80}
+                          quality={90}
                           sizes='(max-width: 1250px) 45vw, 500px'
                           className='object-cover rounded-[20px] transition-transform duration-500'
                         />
