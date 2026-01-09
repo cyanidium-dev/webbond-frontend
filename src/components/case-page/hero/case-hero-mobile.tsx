@@ -14,7 +14,11 @@ const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
       : null;
 
   const imageUrl = imageSource
-    ? urlForImage(imageSource).width(728).height(593).auto("format").url()
+    ? urlForImage(imageSource)
+        .width(1200) // .height(1242)
+        .quality(90)
+        .auto("format")
+        .url()
     : "/placeholder-case.webp";
 
   const imageAlt = hero.image?.alt || homepageImage?.alt || title;
@@ -31,10 +35,10 @@ const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
         <Image
           src={imageUrl}
           alt={imageAlt}
-          width={728}
-          height={593}
-          sizes="(max-width: 768px) 100vw, 728px"
-          quality={80}
+          width={360}
+          height={414}
+          sizes="(max-width: 640px) 100vw, 560px"
+          priority
           className="w-full h-full min-h-[414px] object-cover"
         />
       </motion.div>

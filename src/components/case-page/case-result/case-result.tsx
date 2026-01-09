@@ -28,14 +28,20 @@ const CaseResult = async ({
 
   const imageUrlDesktop = imageSourceDesktop
     ? urlForImage(imageSourceDesktop)
-        .width(598)
-        .height(191)
+        .width(1196)
+        .height(382)
+        .quality(90)
         .auto("format")
         .url()
     : "/placeholder-case.webp";
 
   const imageUrlMobile = imageSourceMobile
-    ? urlForImage(imageSourceMobile).auto("format").url()
+    ? urlForImage(imageSourceMobile)
+        .width(1200)
+        .height(450)
+        .quality(90)
+        .auto("format")
+        .url()
     : "/placeholder-case.webp";
 
   const imageAltDesktop =
@@ -93,7 +99,7 @@ const CaseResult = async ({
                 src={imageUrlMobile}
                 alt={imageAltMobile}
                 fill
-                sizes="(max-width: 768px) 100vw, 728px"
+                sizes="(max-width: 768px) 100vw, 320px"
                 className="object-cover"
               />
             </motion.div>

@@ -24,14 +24,20 @@ const CasePreview = ({
 
   const imageUrlDesktop = imageSourceDesktop
     ? urlForImage(imageSourceDesktop)
-        .width(1216)
-        .height(478)
+        .width(2432)
+        .height(956)
+        .quality(85)
         .auto("format")
         .url()
     : "/placeholder-case.webp";
 
   const imageUrlMobile = imageSourceMobile
-    ? urlForImage(imageSourceMobile).width(320).height(635).auto("format").url()
+    ? urlForImage(imageSourceMobile)
+        .width(1200)
+        // .height(1270)
+        .quality(90)
+        .auto("format")
+        .url()
     : "/placeholder-case.webp";
 
   const imageAltDesktop =
@@ -57,7 +63,7 @@ const CasePreview = ({
             src={imageUrlMobile}
             alt={imageAltMobile}
             fill
-            sizes="(max-width: 768px) 100vw, 728px"
+            sizes="(max-width: 768px) 100vw, 600px"
             className="object-cover"
             // quality={80}
           />
