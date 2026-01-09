@@ -1,3 +1,4 @@
+import CasePreviewContainer from "@/components/case-page/case-preview/case-preview-container";
 import CtaWrapper from "@/components/case-page/cta/cta-wrapper";
 import CaseHeroContainer from "@/components/case-page/hero/case-hero-container";
 import CaseServicesContainer from "@/components/case-page/services/case-services-container";
@@ -30,7 +31,12 @@ const CasesDynamicPage = async ({
     <div className="pt-15 sm:pt-20 md:pt-[110px] overflow-y-clip max-w-[1340px] mx-auto">
       {currentCase?.hero && <CaseHeroContainer currentCase={currentCase} />}
       <Breadcrumbs steps={breadcrumbSteps} className="px-[20px] sm:px-[32px]" />
-      <CaseServicesContainer services={currentCase?.services} />
+      {currentCase?.services && (
+        <CaseServicesContainer services={currentCase?.services} />
+      )}
+      {currentCase?.imageBlock && (
+        <CasePreviewContainer imageBlock={currentCase?.imageBlock} />
+      )}
       <CtaWrapper />
       <ContactsContainer />
     </div>
