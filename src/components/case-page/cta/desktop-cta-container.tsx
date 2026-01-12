@@ -13,16 +13,16 @@ const DesktopCtaContainer = async () => {
         whileInView={{ opacity: 1, x: 0, rotate: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="absolute max-w-none top-[-9%] left-[-663px] -translate-y-1/2 origin-top-left pointer-events-none select-none mix-blend-hard-light -z-10"
+        className="absolute max-w-none top-[-12%] left-[-636px] -translate-y-1/2 origin-top-left pointer-events-none select-none -z-10"
       >
         <Image
-          src="/case-page-decor.webp"
+          src="/case-page-decor-desktop.webp"
           alt="case-page-decor"
           width={1159}
           height={1155}
           sizes="(max-width: 1280px) 33vw, 1159px"
           quality={80}
-          className="pointer-events-none mix-blend-hard-light select-none"
+          className="pointer-events-none contrast-150 saturate-150 mix-blend-hard-light select-none"
         />
       </motion.div>
       <motion.div
