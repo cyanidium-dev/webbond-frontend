@@ -83,17 +83,17 @@ const CaseHeroDesktop = ({
       </div>
       <motion.div
         initial={{ opacity: 0, x: 100, rotate: 10 }}
-        whileInView={{ opacity: 1, x: 0, rotate: -5 }}
+        whileInView={{ opacity: 1, x: 0, rotate: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2, ease: "easeOut", delay: 1.5 }}
-        className="-z-10 absolute w-[1100px] lg:w-[1400px] top-[-371px] left-[60px] lg:top-[-468px] lg:left-[92px] pointer-events-none select-none will-change-[opacity,transform] "
+        className="-z-10 absolute w-[1100px] lg:w-[1523px] top-[-371px] left-[60px] lg:top-[-534px] lg:left-[43px] pointer-events-none select-none will-change-[opacity,transform]"
       >
         <Image
-          src="/case-hero-decor.webp"
+          src="/case-hero-decor-desktop.png"
           alt="case-page-hero-decor"
-          width={1400}
-          height={1404}
-          sizes="(max-width: 1280px) 33vw, 1400px"
+          width={1523}
+          height={1535}
+          sizes="(max-width: 1280px) 33vw, 1523px"
           quality={80}
           className="pointer-events-none contrast-150 saturate-150 select-none"
         />

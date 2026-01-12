@@ -70,17 +70,17 @@ const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
         </div>
         <motion.div
           initial={{ opacity: 0, x: 100, rotate: 20 }}
-          whileInView={{ opacity: 1, x: 0, rotate: 12 }}
+          whileInView={{ opacity: 1, x: 0, rotate: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 1.5 }}
-          className="-z-10 absolute w-[893px] top-[-141px] sm:top-[-161px] left-[50%] translate-x-[-210px] pointer-events-none select-none will-change-[opacity,transform]"
+          className="-z-10 absolute w-[1123px] top-[-266px] sm:top-[-266px] left-[50%] translate-x-[-322px] pointer-events-none select-none will-change-[opacity,transform]"
         >
           <Image
-            src="/case-hero-decor.webp"
+            src="/case-hero-decor-mobile.png"
             alt="case-page-hero-decor"
-            width={893}
-            height={911}
-            sizes="(max-width: 1280px) 100vw, 893px"
+            width={1123}
+            height={1124}
+            sizes="(max-width: 1280px) 100vw, 1123px"
             // quality={80}
             className="pointer-events-none contrast-125 saturate-150 select-none transparent"
           />
