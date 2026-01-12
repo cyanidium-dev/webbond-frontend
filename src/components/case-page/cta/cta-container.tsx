@@ -16,13 +16,21 @@ const CtaContainer = async () => {
         className="absolute max-w-none top-[0] opacity-40 right-[-822px] -translate-y-1/2 origin-top-left pointer-events-none select-none -z-10"
       >
         <Image
-          src="/case-page-decor-mobile.png"
+          src="/case-page-decor-mobile.webp"
           alt="case-page-decor-mobile"
           width={1386}
           height={1386}
           sizes="(max-width: 768px) 100vw, 1386px"
           quality={80}
-          className="min-w-[1386px] min-h-[1386px] pointer-events-none select-none contrast-150 saturate-150 brightness-110"
+          className="min-w-[1386px] min-h-[1386px] mix-blend-hard-light pointer-events-none select-none contrast-150 saturate-150"
+        />
+        <Image
+          src="/case-page-black-shadow-mobile.webp"
+          alt="case-page-black-shadow-mobile"
+          width={370}
+          height={290}
+          quality={100}
+          className="absolute w-[370px] h-[290px] top-[727px] right-[675px] max-w-none pointer-events-none blur-md select-none"
         />
       </motion.div>
 
@@ -101,14 +109,6 @@ const CtaContainer = async () => {
           height={826}
           quality={100}
           className="absolute w-[696px] h-[826px] top-[128px] left-[-467px] max-w-none pointer-events-none -z-20 blur-[120px] safari-blur-fix select-none"
-        />
-        <Image
-          src="/case-page-black-shadow-mobile.webp"
-          alt="case-page-black-shadow-mobile"
-          width={370}
-          height={290}
-          quality={100}
-          className="absolute w-[370px] h-[290px] top-[180px] left-[450px] max-w-none pointer-events-none -z-20 blur-md select-none"
         />
       </motion.div>
     </div>

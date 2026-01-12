@@ -95,7 +95,7 @@ const CaseHeroDesktop = ({
           height={1535}
           sizes="(max-width: 1280px) 33vw, 1523px"
           quality={80}
-          className="pointer-events-none contrast-150 saturate-150 select-none"
+          className="pointer-events-none contrast-150 saturate-150 mix-blend-hard-light select-none"
         />
       </motion.div>
     </div>

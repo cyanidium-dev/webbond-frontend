@@ -73,7 +73,7 @@ const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
           whileInView={{ opacity: 1, x: 0, rotate: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 1.5 }}
-          className="-z-10 absolute w-[1123px] top-[-266px] sm:top-[-266px] left-[50%] translate-x-[-322px] pointer-events-none select-none will-change-[opacity,transform]"
+          className="-z-10 absolute w-[1123px] top-[-266px] sm:top-[-266px] left-[50%] translate-x-[-322px] pointer-events-none  select-none will-change-[opacity,transform]"
         >
           <Image
             src="/case-hero-decor-mobile.webp"
@@ -82,7 +82,7 @@ const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
             height={1124}
             sizes="(max-width: 1280px) 100vw, 1123px"
             // quality={80}
-            className="pointer-events-none contrast-125 saturate-150 select-none transparent"
+            className="pointer-events-none contrast-150 saturate-150 select-none mix-blend-hard-light"
           />
         </motion.div>
       </div>
