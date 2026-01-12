@@ -76,7 +76,7 @@ const CaseHeroMobile = ({ currentCase }: { currentCase: CaseWithLanguage }) => {
           className="-z-10 absolute w-[1123px] top-[-266px] sm:top-[-266px] left-[50%] translate-x-[-322px] pointer-events-none select-none will-change-[opacity,transform]"
         >
           <Image
-            src="/case-hero-decor-mobile.png"
+            src="/case-hero-decor-mobile.webp"
             alt="case-page-hero-decor"
             width={1123}
             height={1124}

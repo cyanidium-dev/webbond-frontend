@@ -89,7 +89,7 @@ const CaseHeroDesktop = ({
         className="-z-10 absolute w-[1100px] lg:w-[1523px] top-[-371px] left-[60px] lg:top-[-534px] lg:left-[43px] pointer-events-none select-none will-change-[opacity,transform]"
       >
         <Image
-          src="/case-hero-decor-desktop.png"
+          src="/case-hero-decor-desktop.webp"
           alt="case-page-hero-decor"
           width={1523}
           height={1535}
